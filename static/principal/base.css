@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import "/static/principal/fondo.css";
+
+/*-------------------------------------------------------------------------------------------------------------*/
+
+.navbar-container {
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  /*background-color: #333;*/
+  background-color: #3b5286;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.navbar-contenido-top {
+  /*background-color: #333;*/
+  background-color: #3b5286;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  position: absolute;
+}
+
+.navbar-contenido-top ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-contenido-top li {
+  float: left;
+  position: relative;
+}
+.navbar-contenido-top .rightNav {
+  float: right;
+}
+
+.navbar-contenido-top li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar-contenido-top li a:hover {
+  background-color: #526791;
+}
+
+.navbar-contenido-top li ul {
+  display: none;
+  position: relative;
+  top: 100%;
+  left: 0;
+  background-color: #3b5286;
+  width: inherit;
+
+}
+
+.navbar-contenido-top li:hover ul {
+  display: block;
+}
+
+.navbar-contenido-top li ul li {
+  float: none;
+  border-bottom: 2px solid #ccc;
+}
+
+.navbar-contenido-top li ul li a {
+  color: #fff;
+  display: block;
+}
+
+.navbar-contenido-top li ul li:last-child {
+  border-bottom: none;
+}
+
+.navbar-contenido-top li form {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding-right: 50px;
+  margin-right: 100px;
+  width: 500px;
+}
+
+.navbar-contenido-top li form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  position: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px ;
+  border-bottom: 4px solid #f6b7a6;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.navbar-contenido-top li form input[type="text"]:hover {
+  outline: none;
+  border-color: #d26085;
+}
+
+.navbar-contenido-top li form button[type="submit"] {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fd9701;
+  color: #fff;
+  border: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-contenido-top li form button[type="submit"]:hover {
+  background-color: #ef6c00;
+}
+/*-------------------------------------------------------------------------------------------------------------*/
+
+.navbar-side {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  /*background-color: #333;*/
+  background-color: #3b5286;
+  padding: 0;
+}
+
+.navbar-contenido-side {
+  /*background-color: #333;*/
+  background-color: #3b5286;
+  top: 0;
+  height: 100%;
+  position: relative;
+  list-style-type: none;
+}
+
+.navbar-contenido-side ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.navbar-contenido-side li {
+  float: left;
+  position: center;
+}
+
+.navbar-contenido-side li a {
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar-contenido-side li:hover {
+  background-color: #526791;
+}
+
+.navbar-contenido-side li ul li:last-child {
+  border-bottom: none;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/

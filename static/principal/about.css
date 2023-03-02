@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import "/static/principal/base.css";
+
+.container {
+  position: relative;
+  width: 100%;
+  margin-top: 200px;
+}
+
+.logo {
+    justify-content: center;
+    margin: 20px 0 100px 0;
+    display: flex;
+}
+
+img {
+    width: 60%;
+    height: 60%;
+}
+
+.container .titulo {
+    width: 70%;
+    margin: 100px 0 70px 150px;
+}
+
+.container .descripcion {
+    width: 80%;
+    margin: 150px 0 0 200px;
+}
+
+.container .info {
+    width: 70%;
+    margin: 200px 0 100px 200px;
+
+}
+
+.container .titulo h1 {
+    font-size: 60px;
+}
+
+.container .info h1 {
+    font-size: 40px;
+}
+
+.container .info h2 {
+    font-weight: lighter;
+}
+.container .info li {
+    margin-left: 40px;
+}
+
+.container .info li a {
+    text-decoration: none;
+    color: black;
+}

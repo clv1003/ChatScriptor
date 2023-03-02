@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="https://www.point-star.com/wp-content/uploads/2021/10/pngegg.png"/>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/loginregistro.css" />
+    <meta charset="UTF-8">
+    <title> DialogFlow </title>
+</head>
+<body>
+    <div id="patron-background"></div>
+
+    <a href="/"> <img alt="Logo Dialogflow" src="https://planetachatbot.com/wp-content/uploads/2021/05/DIALOGFLOW.png"> </a>
+
+    <div class="contenedor">
+        <div class="caja">
+            <h1> Inicio sesión </h1>
+            <form>
+                <div class="grupo">
+                    <input name="logname" type="text" required>
+                    <span class="brillo"></span>
+                    <span class="linea"></span>
+                    <label >Nombre/Email</label>
+                </div>
+
+                <div class="grupo">
+                    <input name="logpassword" type="password" required>
+                    <span class="brillo"></span>
+                    <span class="linea"></span>
+                    <label name="logpassword">Contresaña</label>
+                </div>
+            </form>
+
+            <ul class="wrapper">
+                <li class="icon google">
+                    <span class="tooltip">Google</span>
+                    <span><i class="fa fa-google"></i></span>
+                </li>
+                <li class="icon facebook">
+                    <span class="tooltip">Facebook</span>
+                    <span><i class="fa fa-facebook"></i></span>
+                </li>
+            </ul>
+            <br>
+            <button onclick="window.location.href='/paginaprincipal'" class="submit">Entrar</button>
+            <button onclick="window.location.href='/registro'" class="submit">Registrarse</button>
+        </div>
+    </div>
+
+</body>
+</html>

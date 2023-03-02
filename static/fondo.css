@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+body{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #000000;
+  	background-image: -webkit-linear-gradient(right, #fca864, #ffcd63);
+  	background-image: -moz-linear-gradient(right, #fca864, #ffcd63);
+  	background-image: -o-linear-gradient(right, #fca864, #ffcd63);
+  	background-image: -ms-linear-gradient(right, #fca864, #ffcd63);
+  	background-image: linear-gradient(right, #fca864, #ffcd63);
+	overflow-x: hidden;
+	alignment: center;
+}
+/*https://dbdzm869oupei.cloudfront.net/img/sticker/preview/75510.png*/
+#patron-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1; /*se asegura de que se muestra detras de los demas elementos*/
+	background-image: url("https://dbdzm869oupei.cloudfront.net/img/sticker/preview/75510.png");
+	background-repeat: repeat;
+	animation: animar-patron 10s linear infinite;
+}
+
+@keyframes animar-patron {
+	from {
+		background-position: 0 0; /*posicion inicial*/
+	}
+	to {
+		background-position: 100% 100%; /*posicion final*/
+	}
+}
