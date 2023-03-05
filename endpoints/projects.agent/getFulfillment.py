@@ -1,14 +1,18 @@
 import requests
-import json
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/fulfillment'
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+#url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/fulfillment'
+
+url = obtenerURL(2)
+token = obtenerToken()
 
 headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer {api_key}'
+    'Authorization': 'Bearer ' + token,
+    'Content-Type': 'application/json'
 }
 
-response = requests.get(url.format(project_id='{project_id}'), headers=headers)
+response = requests.get(url, headers=headers)
 
 if response.ok:
     response_json = response.json()

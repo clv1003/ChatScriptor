@@ -1,11 +1,18 @@
 import requests
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes/{entity_type_id}'
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+
+#url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes/{entity_type_id}'
+
+url = obtenerURL(4)+'{entity_type_id}'  # ASEGURARSE DE QUE ESTO NO FALLA PQ CASI SEGURO QUE VA A EXPLOTAR
+token = obtenerToken()
+
 headers = {
-    'Authorization': 'Bearer {api_key}',
+    'Authorization': 'Bearer ' + token
 }
 
-response = requests.delete(url.format(project_id='{project_id}', entity_type_id='{entity_type_id}'), headers=headers)
+response = requests.delete(url, headers=headers)
 
 if response.ok:
     print('Tipo de entidad eliminado exitosamente')

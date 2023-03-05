@@ -1,16 +1,22 @@
 import requests
-import json
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent:import'
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+#url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent:import'
+
+url = obtenerURL(1)+':import'
+token = obtenerToken()
+
 headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer {api_key}'
+    'Authorization': 'Bearer ' + token,
+    'Content-Type': 'application/json'
 }
+
 body = {
     'agentUri': 'gs://bucket-name/file-name.zip'
 }
 
-response = requests.post(url.format(project_id='tu-proyecto-id'), headers=headers, json=body)
+response = requests.post(url, headers=headers, json=body)
 
 if response.ok:
     response_json = response.json()

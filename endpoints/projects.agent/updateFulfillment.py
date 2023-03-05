@@ -1,9 +1,14 @@
 import requests
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent'
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+#url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent'
+
+url = obtenerURL(1)
+token = obtenerToken()
 
 headers = {
-    'Authorization': 'Bearer {api_key}',
+    'Authorization': 'Bearer ' + token,
     'Content-Type': 'application/json'
 }
 
@@ -19,7 +24,7 @@ data = {
     }
 }
 
-response = requests.patch(url.format(project_id='{project_id}'), headers=headers, params=params, json=data)
+response = requests.patch(url, headers=headers, params=params, json=data)
 
 if response.ok:
     print('Servicio de cumplimiento actualizado exitosamente')

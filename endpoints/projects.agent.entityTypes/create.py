@@ -1,10 +1,17 @@
 import requests
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes'
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+#url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes'
+
+url = obtenerURL(4)
+token = obtenerToken()
+
 headers = {
-    'Authorization': 'Bearer {api_key}',
+    'Authorization': 'Bearer ' + token,
     'Content-Type': 'application/json'
 }
+
 data = {
     'displayName': 'Nombre tipo entidad',
     'kind': 'KIND_MAP',
@@ -21,7 +28,7 @@ data = {
     ]
 }
 
-response = requests.post(url.format(project_id='{project_id}'), headers=headers, json=data)
+response = requests.post(url, headers=headers, json=data)
 
 if response.ok:
     print('Tipo de entidad creado exitosamente')
