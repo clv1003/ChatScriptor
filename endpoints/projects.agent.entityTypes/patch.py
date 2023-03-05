@@ -1,11 +1,16 @@
 import requests
 import json
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes/{entity_type_id}'
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+#url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes/{entity_type_id}'
+
+url = obtenerURL(4)+'{entity_type_id}'
+token = obtenerToken()
 
 headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer {api_key}'
+    'Authorization': 'Bearer ' + token,
+    'Content-Type': 'application/json'
 }
 
 data = {
@@ -13,7 +18,7 @@ data = {
     'kind': 'KIND_MAP'
 }
 
-response = requests.patch(url.format(project_id='{project_id}'), headers=headers, data=json.dumps(data))
+response = requests.patch(url, headers=headers, data=json.dumps(data))
 
 if response.ok:
     print('Tipo de entidad actualizado exitosamente')

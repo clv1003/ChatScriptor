@@ -1,20 +1,25 @@
 import requests
 import json
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent:export'
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+#url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent:export'
+
+url = obtenerURL(1)+':export'
+token = obtenerToken()
 
 headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer {api_key}'
+    'Authorization': 'Bearer ' + token,
+    'Content-Type': 'application/json'
 }
 
 data = {
-    'agentUri': 'projects/{project_id}/agent',
+    'agentUri': 'projects/tfg-dialogflow-clv/agent',
     'environment': 'draft',
-    'outputUri': 'gs://{bucket_name}/{file_name}.zip'
+    'outputUri': 'gs://{bucket_name}/{file_name}.zip'  # no se muy bien como se determinan estas etiquetas
 }
 
-response = requests.post(url.format(project_id='{project_id}'), headers=headers, data=json.dumps(data))
+response = requests.post(url, headers=headers, data=json.dumps(data))
 
 if response.ok:
     response_json = response.json()

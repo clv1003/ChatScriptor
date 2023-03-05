@@ -1,14 +1,18 @@
 import requests
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent'
-# project_id es el identificado del proyecto
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+# PARA ELIMINAR UN AGENTE
+
+url = obtenerURL(1)
+token = obtenerToken()
 
 headers = {
-    'Authorization': 'Bearer {api_key}'
+    'Authorization': 'Bearer ' + token,
+    'Content-Type': 'application/json'
 }
-# api_key es la clave API que se debe obtener para autenticarse en la API
 
-response = requests.delete(url.format(project_id='{project_id}'), headers=headers)
+response = requests.delete(url, headers=headers)
 
 if response.ok:
     print('El agente se eliminó con éxito')

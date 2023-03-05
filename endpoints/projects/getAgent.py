@@ -1,15 +1,18 @@
 import requests
-import json
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent'
-# project_id es el identificado del proyecto
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+# PARA OBTENER UN AGENTE
+
+url = obtenerURL(1)
+token = obtenerToken()
 
 headers = {
-    'Authorization': 'Bearer {api_key}'
+    'Authorization': 'Bearer ' + token,
+    'Content-Type': 'application/json'
 }
-# api_key es la clave API que se debe obtener para autenticarse en la API
 
-response = requests.get(url.format(project_id='{project_id}'), headers=headers)
+response = requests.get(url, headers=headers)
 
 if response.ok:
     response_json = response.json()

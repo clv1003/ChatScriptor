@@ -1,23 +1,24 @@
 import requests
 import json
 
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
 # PARA ACTUALIZAR EL AGENTE
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent'
-# project_id es el identificado del proyecto
+url = obtenerURL(1)
+token = obtenerToken()
 
 headers = {
-    'Authorization': 'Bearer {api_key}',
+    'Authorization': 'Bearer ' + token,
     'Content-Type': 'application/json'
 }
-# api_key es la clave API que se debe obtener para autenticarse en la API
 
 data = {
     'displayName': 'Nuevo nombre del agente',
     'description': 'Nueva descripción del agente'
 }
 
-response = requests.patch(url.format(project_id='{project_id}'), data=json.dumps(data), headers=headers)
+response = requests.patch(url, data=json.dumps(data), headers=headers)
 
 if response.ok:
     print('El agente se ha actualizado con éxito')

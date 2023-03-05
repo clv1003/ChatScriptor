@@ -352,12 +352,12 @@
   }
 \makeatother
 
-\newcommand{\nombre}{Nombre del alumno} %%% cambio de comando
+\newcommand{\nombre}{Claudia Landeira Viñuela} %%% cambio de comando
 
 % Datos de portada
-\title{título del TFG}
+\title{Interfaz gráfica para la gestión de chatbots en la plataforma DialogFlow}
 \author{\nombre}
-\tutor{nombre tutor}
+\tutor{Dr. Raúl Marticorena Sánchez}
 \date{\today}
 
 \begin{document}
@@ -374,11 +374,11 @@
 
 \noindent\includegraphics[width=\textwidth]{cabecera}\vspace{1cm}
 
-\noindent D. nombre tutor, profesor del departamento de nombre departamento, área de nombre área.
+\noindent D. Raúl Marticorena Sánchez, profesor del departamento de Ingeniería Civil, área de Lenguajes y Sistemas Informáticos.
 
 \noindent Expone:
 
-\noindent Que el alumno D. \nombre, con DNI dni, ha realizado el Trabajo final de Grado en Ingeniería Informática titulado título de TFG. 
+\noindent Que el alumno D. \nombre, con DNI 71052355L, ha realizado el Trabajo final de Grado en Ingeniería Informática titulado ``Interfaz gráfica para la gestión de chatbots en la plataforma DialogFlow``. 
 
 \noindent Y que dicho trabajo ha sido realizado por el alumno bajo la dirección del que suscribe, en virtud de lo cual se autoriza su presentación y defensa.
 
@@ -389,45 +389,49 @@ En Burgos, {\large \today}
 \vfill\vfill\vfill
 
 % Author and supervisor
-\begin{minipage}{0.45\textwidth}
-\begin{flushleft} %\large
-Vº. Bº. del Tutor:\\[2cm]
-D. nombre tutor
-\end{flushleft}
-\end{minipage}
-\hfill
-\begin{minipage}{0.45\textwidth}
-\begin{flushleft} %\large
-Vº. Bº. del co-tutor:\\[2cm]
-D. nombre co-tutor
-\end{flushleft}
-\end{minipage}
-\hfill
+%\begin{minipage}{0.45\textwidth}
+%\begin{flushleft} %\large
+%Vº. Bº. del Tutor:\\[2cm]
+%D. nombre tutor
+%\end{flushleft}
+%\end{minipage}
+%\hfill
+%\begin{minipage}{0.45\textwidth}
+%\begin{flushleft} %\large
+%Vº. Bº. del co-tutor:\\[2cm]
+%D. nombre co-tutor
+%\end{flushleft}
+%\end{minipage}
+%\hfill
 
-\vfill
+%\vfill
 
 % para casos con solo un tutor comentar lo anterior
 % y descomentar lo siguiente
-%Vº. Bº. del Tutor:\\[2cm]
-%D. nombre tutor
-
+Vº. Bº. del Tutor:\\[2cm]
+D. Raúl Marticorena Sánchez
 
 \newpage\null\thispagestyle{empty}\newpage
-
-
-
 
 \frontmatter
 
 % Abstract en castellano
 \renewcommand*\abstractname{Resumen}
 \begin{abstract}
-En este primer apartado se hace una \textbf{breve} presentación del tema que se aborda en el proyecto.
+	
+	La interfaz web para creación, mantenimiento y seguimiento de las interacciones con los chatbots creados con DialogFlow en su versión básica está muy limitada.
+	
+	Es por esto, que en este trabajo se propone desarrollar una interfaz gráfica para la mejora de las anteriores interacciones ofrecidas. 
+	
+	Aprovechando la API REST junto con las posibilidades de interacción tipo web scraping para extraer el máximo de información y permitir actualizaciones de datos en modo interactivo o batch.
+	
 \end{abstract}
 
 \renewcommand*\abstractname{Descriptores}
 \begin{abstract}
-Palabras separadas por comas que identifiquen el contenido del proyecto Ej: servidor web, buscador de vuelos, android \ldots
+
+	DialogFlow, gestión de chatbots, API REST, Google Cloud.
+	
 \end{abstract}
 
 \clearpage
@@ -435,12 +439,20 @@ Palabras separadas por comas que identifiquen el contenido del proyecto Ej: serv
 % Abstract en inglés
 \renewcommand*\abstractname{Abstract}
 \begin{abstract}
-A \textbf{brief} presentation of the topic addressed in the project.
+	
+	The web interface for creation, maintenance and monitoring of interactions with chatbots created with DialogFlow in its basic version is very limited.
+
+	That is why, in this work we propose to develop a graphical interface to improve the previous interactions offered. 
+
+	Taking advantage of the REST API along with the possibilities of web scraping type interaction to extract the maximum of information and allow data updates in interactive or batch mode.
+
 \end{abstract}
 
 \renewcommand*\abstractname{Keywords}
 \begin{abstract}
-keywords separated by commas.
+	
+	DialogFlow, chatbots management, API REST, Google Cloud.
+	
 \end{abstract}
 
 \clearpage

@@ -1,19 +1,26 @@
 import requests
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes:batchDelete'
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+# url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes:batchDelete'
+
+url = obtenerURL(4)+':batchDelete'
+token = obtenerToken()
+
 headers = {
-    'Authorization': 'Bearer {api_key}',
+    'Authorization': 'Bearer ' + token,
     'Content-Type': 'application/json'
 }
+
 data = {
     'entityTypeNames': [
-        'projects/{project_id}/agent/entityTypes/{entity_type_id1}',
-        'projects/{project_id}/agent/entityTypes/{entity_type_id2}',
-        'projects/{project_id}/agent/entityTypes/{entity_type_id3}'
+        'projects/tfg-dialogflow-clv/agent/entityTypes/{entity_type_id1}',
+        'projects/tfg-dialogflow-clv/agent/entityTypes/{entity_type_id2}',
+        'projects/tfg-dialogflow-clv/agent/entityTypes/{entity_type_id3}'
     ]
 }
 
-response = requests.post(url.format(project_id='{project_id}'), headers=headers, json=data)
+response = requests.post(url, headers=headers, json=data)
 
 if response.ok:
     print('Tipos de entidad eliminados exitosamente')

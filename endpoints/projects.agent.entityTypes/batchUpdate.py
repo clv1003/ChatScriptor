@@ -1,15 +1,22 @@
 import requests
 
-url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes:batchUpdate'
+from endpoints.datosGoogle import obtenerToken, obtenerURL
+
+#url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes:batchUpdate'
+
+url = obtenerURL(4)+':batchUpdate'
+token = obtenerToken()
+
 headers = {
-    'Authorization': 'Bearer {api_key}',
+    'Authorization': 'Bearer ' + token,
     'Content-Type': 'application/json'
 }
+
 data = {
     'entityTypeBatchInline': {
         'entityTypes': [
             {
-                'name': 'projects/{project_id}/agent/entityTypes/{entity_type_id1}',
+                'name': 'projects/tfg-dialogflow-clv/agent/entityTypes/{entity_type_id1}',
                 'displayName': 'Nuevo nombre tipo entidad 1',
                 'entities': [
                     {
@@ -23,7 +30,7 @@ data = {
                 ]
             },
             {
-                'name': 'projects/{project_id}/agent/entityTypes/{entity_type_id2}',
+                'name': 'projects/tfg-dialogflow-clv/agent/entityTypes/{entity_type_id2}',
                 'displayName': 'Nuevo nombre tipo entidad 2',
                 'entities': [
                     {
@@ -37,7 +44,7 @@ data = {
                 ]
             },
             {
-                'name': 'projects/{project_id}/agent/entityTypes/{entity_type_id3}',
+                'name': 'projects/tfg-dialogflow-clv/agent/entityTypes/{entity_type_id3}',
                 'displayName': 'Nuevo nombre tipo entidad 3',
                 'entities': [
                     {
@@ -54,7 +61,7 @@ data = {
     }
 }
 
-response = requests.post(url.format(project_id='{project_id}'), headers=headers, json=data)
+response = requests.post(url, headers=headers, json=data)
 
 if response.ok:
     print('Tipos de entidad actualizados exitosamente')
