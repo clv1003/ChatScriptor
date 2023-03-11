@@ -22,6 +22,9 @@ def obtenerURL(tipo):
     if tipo == 4:  # entity types
         return urlGeneral + '/entityTypes'
 
+    if tipo == 5:  # enviroments
+        return urlGeneral + '/enviroments'
+
     return None
 
 

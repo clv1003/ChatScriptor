@@ -15,12 +15,10 @@ headers = {
 response = requests.get(url, headers=headers)
 
 if response.ok:
-    response_json = response.json()
-
-    print('Nombre del agente: ', response_json.get('displayName', ''))
+    print('Nombre del agente: ', response.json().get('displayName', ''))
     # es opcional para todos los agentes asique no se como gestionarlo de momento
-    print('Descripción del agente: ', response_json.get('description', ''))
-    print('Lenguaje predeterminado del agente: ', response_json.get('defaultLanguageCode', ''))
-    print('Zona horaria del agente: ', response_json.get('timeZone', ''))
+    print('Descripción del agente: ', response.json().get('description', ''))
+    print('Lenguaje predeterminado del agente: ', response.json().get('defaultLanguageCode', ''))
+    print('Zona horaria del agente: ', response.json().get('timeZone', ''))
 else:
     print('La solicitud falló con código de estado', response.status_code)
