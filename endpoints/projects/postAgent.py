@@ -23,8 +23,7 @@ data = {
 response = requests.post(url, data=json.dumps(data), headers=headers)
 
 if response.ok:
-    response_json = response.json()
-    print('Nombre del agente: ', response_json.get('displayName', ''))
-    print('ID del agente: ', response_json.get('name', ''))
+    print('Nombre del agente: ', response.json().get('displayName', ''))
+    print('ID del agente: ', response.json().get('name', ''))
 else:
     print('La solicitud falló con código de estado', response.status_code)
