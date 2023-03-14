@@ -6,7 +6,7 @@ app = Flask(__name__)
 #pagina inicial de la pagina
 @app.route('/', methods=["GET"])
 def home():
-    return render_template("home.html")
+    return render_template('home.html')
 
 
 #pagina de inicio
