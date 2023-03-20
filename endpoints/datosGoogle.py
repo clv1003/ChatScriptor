@@ -31,7 +31,6 @@ def obtenerURL(tipo):
 # -----------------------------------------------------------------------------------------------------
 # Obtener el token de autenticacion para poder acceder y hacer peticiones
 
-
 def obtenerToken():
     # Cargar las credenciales de la cuenta de servicio
     credenciales = service_account.Credentials.from_service_account_file('json/client_secret.json')
