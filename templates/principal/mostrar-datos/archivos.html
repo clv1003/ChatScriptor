@@ -18,20 +18,23 @@
 {% include 'principal/navbar.html' %}
 {% include 'principal/subnavbar.html' %}
 
-<div class="container mt-5 mb-5 ">
-    <dl class="list-group list-group-flush">
-        {% for root, directorios in arbol.items() %}
-        <dt class="list-group-item bg-success bg-opacity-50 text-dark">{{ root }}</dt>
-        <dl class="list-group list-group-flush mt-2">
-            {% if directorios != None %}
-            {% for d in directorios.keys() %}
-            <dd class="list-group-item  bg-success bg-opacity-10 text-dark ms-5">{{ d }}</dd>
-            {% endfor %}
-            {% endif %}
-        </dl>
-        {% endfor %}
-    </dl>
+<div class="container mt-5 mb-5">
+    {% for root, directorios in arbol.items() %}
+    <div class="row">
+        <div class="col">
+            <div class="card border-success mb-3">
+                <div class="card-header border-success bg-success text-dark bg-opacity-50">{{ root }}</div>
+                <div class="card-body">
+                    {% if directorios != None %}
+                    {% for d in directorios.keys() %}
+                    <h6 class="card-text">> {{ d }}</h6>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
-
 </body>
 </html>

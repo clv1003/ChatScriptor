@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for, redirect, request
 from endpoints.datos import ProcesamientoDatosEndpoints
 
 app = Flask(__name__)
@@ -16,6 +16,13 @@ def login():
     return render_template("session/login.html")
 
 
+# página con la información de creacion
+@app.route('/about', methods=["GET"])
+def about():
+    return render_template("principal/about.html")
+
+
+# --------------------------------------------------------------------------------------------------------
 # página principal
 @app.route('/inicio-sesion', methods=["GET"])
 def paginaprincipalsesion():
@@ -25,13 +32,7 @@ def paginaprincipalsesion():
 # página principal
 @app.route('/inicio-no-sesion', methods=["GET"])
 def paginaprincipalnosesion():
-    return render_template("principal/inicioNoSesion.html")
-
-
-# página con la información de creacion
-@app.route('/about', methods=["GET"])
-def about():
-    return render_template("principal/about.html")
+    return render_template("principal/inicioNoSesion.html", datos=ProcesamientoDatosEndpoints.get_disponible('./unzip'))
 
 
 # --------------------------------------------------------------------------------------------------------
@@ -39,31 +40,45 @@ def about():
 @app.route('/subir_archivo', methods=["POST"])
 def procesar_archivo():
     ProcesamientoDatosEndpoints.descomprimir_archivo()
-    return redirect(url_for('archivos'))
+    return redirect(url_for('paginaprincipalnosesion'))
+
+
+@app.route('/remove_unzip', methods=["GET"])
+def remove_unzip():
+    ProcesamientoDatosEndpoints.remove_unzip()
+    return redirect(url_for('login'))
 
 
 @app.route('/archivos')
-def archivos():
+def get_archivos():
+    chat = request.args.get('chat')
     return render_template('principal/mostrar-datos/archivos.html',
-                           arbol=ProcesamientoDatosEndpoints.get_arbol('./unzip'))
+                           arbol=ProcesamientoDatosEndpoints.get_arbol('./unzip/' + chat),
+                           chat=chat)
 
 
 @app.route('/agente')
-def agente():
+def get_agente():
+    chat = request.args.get('chat')
     return render_template("principal/mostrar-datos/agente.html",
-                           agente=ProcesamientoDatosEndpoints.get_agente('./unzip'))
+                           agente=ProcesamientoDatosEndpoints.get_agente('./unzip/' + chat),
+                           chat=chat)
 
 
 @app.route('/entidades')
-def entidades():
+def get_entidades():
+    chat = request.args.get('chat')
     return render_template("principal/mostrar-datos/entidades.html",
-                           entidades=ProcesamientoDatosEndpoints.get_entidades('./unzip'))
+                           entidades=ProcesamientoDatosEndpoints.get_entidades('./unzip/' + chat),
+                           chat=chat)
 
 
 @app.route('/intents')
-def intents():
+def get_intents():
+    chat = request.args.get('chat')
     return render_template("principal/mostrar-datos/intents.html",
-                           intents=ProcesamientoDatosEndpoints.get_intents('./unzip'))
+                           intents=ProcesamientoDatosEndpoints.get_intents('./unzip/' + chat),
+                           chat=chat)
 
 
 # --------------------------------------------------------------------------------------------------------

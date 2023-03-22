@@ -19,12 +19,8 @@
 {% include 'principal/subnavbar.html' %}
 
 <div class="container mt-5 mb-5">
-    <dl class="list-group list-group-flush">
-        {% for key, value in agente.items() %}
-        <dt class="list-group-item bg-success bg-opacity-50 text-dark">{{ key }}</dt>
-        <dd class="list-group-item  bg-success bg-opacity-10 text-dark ms-5">{{ value }}</dd>
-        {% endfor %}
-    </dl>
+    {{agente}}
+
 </div>
 </body>
 </html>

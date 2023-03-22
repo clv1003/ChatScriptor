@@ -31,5 +31,22 @@
     </form>
 </div>
 
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Archivos disponibles</h1>
+
+    <div class="list-group">
+        {% for dir in datos %}
+        <a class="btn btn-outline-secondary btn-block list-group-item list-group-item-action"
+           href="{{ url_for('get_archivos', chat=dir) }}">{{ dir }}
+        </a>
+        {% endfor %}
+    </div>
+
+</div>
+
+<div class="container mt-5">
+    <a class="btn btn-danger" href="/remove_unzip">Salir</a>
+</div>
+
 </body>
 </html>
