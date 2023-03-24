@@ -1,8 +1,28 @@
-import google.auth
 # https://googleapis.dev/python/google-auth/1.7.0/reference/google.auth.transport.requests.html
-import google.auth.transport.requests
-from google.oauth2 import service_account
+from google.auth.credentials import Credentials
+from google.oauth2 import id_token
+from google.auth.transport import requests
+from endpoints.datos import ProcesamientoDatosEndpoints
 
+
+def googleLogin(token, client_id, project_id):
+    try:
+        info = id_token.verify_oauth2_token(token, requests.Request(), client_id)
+
+        # google_id = info['sub']
+        # google_email = info['email']
+        # google_name = info['name']
+
+        credenciales = Credentials.from_authorized_user_info(info)
+
+        chatbots = ProcesamientoDatosEndpoints.get_chatbots(project_id, credenciales)
+        return chatbots
+
+    except ValueError:
+        return "Invalid token"
+
+
+'''
 # -----------------------------------------------------------------------------------------------------
 # Obtener la url para cada request
 
@@ -41,3 +61,4 @@ def obtenerToken():
     token_acceso = credenciales.token
 
     return token_acceso
+'''

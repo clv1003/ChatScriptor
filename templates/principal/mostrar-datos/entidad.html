@@ -19,18 +19,7 @@
 {% include 'principal/subnavbar.html' %}
 
 <div class="container mt-5 mb-5">
-    <h1 class="text-center mb-4">Entidades disponibles</h1>
-    <div class="list-group">
-        {% if entidades != None %}
-            {% for e in entidades %}
-            <a class="mb-1 btn btn-outline-secondary btn-block list-group-item list-group-item-action"
-               href="{{ url_for('get_entidad', entidad=e) }}">{{ e.replace(".json", "") }}
-            </a>
-            {% endfor%}
-        {% else %}
-            <h6>No existen entidades</h6>
-        {% endif %}
-    </div>
+    {{ entidad }}
 </div>
 </body>
 </html>
