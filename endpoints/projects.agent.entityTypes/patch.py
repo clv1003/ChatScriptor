@@ -1,7 +1,7 @@
 import requests
 import json
 
-from endpoints.datosGoogle import obtenerToken, obtenerURL
+from endpoints.DatosGoogle import obtenerToken, obtenerURL
 
 #url = 'https://dialogflow.googleapis.com/v2/projects/{project_id}/agent/entityTypes/{entity_type_id}'
 

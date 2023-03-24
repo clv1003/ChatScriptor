@@ -18,9 +18,19 @@
 {% include 'principal/navbar.html' %}
 {% include 'principal/subnavbar.html' %}
 
-<div class="container mt-5 mb-5">
-    {{agente}}
-
+<div class="container mt-4 mb-4">
+    {% for k, v in agente.items() %}
+    <div class="row">
+        <div class="col">
+            <div class="card border-success mb-3">
+                <div class="card-header border-success bg-success text-dark bg-opacity-50">{{ k }}</div>
+                <div class="card-body">
+                    <h6 class="card-text">{{ v | default('') | replace('\n', '<br>') | safe }} </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 </body>
 </html>

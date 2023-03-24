@@ -1,6 +1,6 @@
 import requests
 
-from endpoints.datosGoogle import obtenerToken, obtenerURL
+from endpoints.DatosGoogle import obtenerToken, obtenerURL
 
 # PARA ELIMINAR UN AGENTE
 

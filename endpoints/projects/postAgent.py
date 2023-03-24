@@ -1,7 +1,7 @@
 import requests
 import json
 
-from endpoints.datosGoogle import obtenerToken, obtenerURL
+from endpoints.DatosGoogle import obtenerToken, obtenerURL
 
 # PARA CREAR EL AGENTE
 

@@ -36,7 +36,7 @@
 
     <div class="list-group">
         {% for dir in datos %}
-        <a class="btn btn-outline-secondary btn-block list-group-item list-group-item-action"
+        <a class="mb-1 btn btn-outline-secondary btn-block list-group-item list-group-item-action"
            href="{{ url_for('get_archivos', chat=dir) }}">{{ dir }}
         </a>
         {% endfor %}

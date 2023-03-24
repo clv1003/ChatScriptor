@@ -19,7 +19,18 @@
 {% include 'principal/subnavbar.html' %}
 
 <div class="container mt-5 mb-5">
-
+    <h1 class="text-center mb-4">Intents disponibles</h1>
+    <div class="list-group">
+        {% if intents != None %}
+            {% for i in intents %}
+            <a class="mb-1 btn btn-outline-secondary btn-block list-group-item list-group-item-action"
+               href="{{ url_for('get_intent', intent=i) }}">{{ i }}
+            </a>
+            {% endfor%}
+        {% else %}
+            <h6>No existen intents</h6>
+        {% endif %}
+    </div>
 </div>
 </body>
 </html>
