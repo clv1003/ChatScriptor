@@ -11,7 +11,7 @@
 
     <meta charset="UTF-8">
 
-    <title> DialogFlow </title>
+    <title> DialogFlow Manager </title>
 </head>
 <body>
 
@@ -19,6 +19,16 @@
 {% include 'principal/subnavbar.html' %}
 
 <div class="container mt-4 mb-4">
+
+    <div class="row">
+        <div class="col">
+            <h1 class="ms-4 mb-4">Datos del agente</h1>
+        </div>
+        <div class="col-auto justify-content-md-end">
+            <a class="btn btn-outline-danger" href="{{ url_for('editar_agente', chat=chat) }}">Modificar</a>
+        </div>
+    </div>
+
     {% for k, v in agente.items() %}
     <div class="row">
         <div class="col">
@@ -31,6 +41,7 @@
         </div>
     </div>
     {% endfor %}
+
 </div>
 </body>
 </html>

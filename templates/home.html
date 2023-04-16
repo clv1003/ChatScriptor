@@ -8,30 +8,26 @@
 
     <meta charset="UTF-8">
 
-    <title> DialogFlow </title>
+    <title> DialogFlow Manager </title>
 </head>
 
 <body>
 
 <div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="spinner-border text-primary" role="status">
+    <div class="spinner-border text-primary me-2" role="status" aria-hidden="true">
         <span class="visually-hidden">Cargando...</span>
     </div>
     <div class="ms-3">
-        <p class="text-muted mb-1">Iniciando DialogFlow...</p>
-        <p class="visually-hidden"><span id="counter"></span> segundos</p>
+        <p class="text-muted mb-1">Iniciando DialogFlow Manager...</p>
     </div>
 </div>
 
 <script>
-    let counter = 5;
-    let interval = setInterval(function () {
-        counter--;
-        if (counter === 0) {
-            clearInterval(interval);
-            window.location.href = '/login';
-        }
-    }, 1000);
+
+    setTimeout(function() {
+        window.location.href = '/login';
+    }, 2000)
+
 </script>
 
 </body>

@@ -21,27 +21,29 @@
 <div class="container mt-4 mb-4">
     <div class="row">
         <div class="col">
-            <h3 class="ms-4 mb-4">Datos del intent: {{ intent.replace(".json", "") }}</h3>
-        </div>
-        <div class="col-auto justify-content-md-end">
-            <a class="btn btn-outline-danger" href="#">Modificar</a>
+            <h1 class="ms-4 mb-4">Editar datos del agente</h1>
         </div>
     </div>
 
-    {% for k, v in inte.items() %}
+    {% for clave, valor in agente.items() %}
     <div class="row">
         <div class="col">
             <div class="card border-success mb-3">
-                <div class="card-header border-success bg-success text-dark bg-opacity-50">{{ k }}</div>
+                <div class="card-header border-success bg-success text-dark bg-opacity-50">{{ clave }}</div>
+
                 <div class="card-body">
-                    {% if v is sequence and not v is string %}
-                        {% for r in v %}
-                        <p>{{ r }}</p>
-                        {% endfor %}
-                    {% else %}
-                    <h6 class="card-text">{{ v | default('') | replace('\n', '<br>') | safe }} </h6>
-                    {% endif %}
+                    <p class="card-text">{{ valor | default('') | replace('\n', '<br>') | safe }} </p>
                 </div>
+
+                <form class="card-body" id="form_editar"
+                      action="{{ url_for('actualizar_json', chat=chat, clave=clave) }}" method="post">
+                    <div class="mb-2">
+                        <label for="{{ clave }}" class="form-label"></label>
+                        <input type="text" class="form-control" id="{{ clave }}" name="{{ clave }}">
+                    </div>
+                    <a type="button" href="{{ url_for('actualizar_json', chat=chat, clave=clave) }}"
+                            class="btn btn-success">Guardar</a>
+                </form>
             </div>
         </div>
     </div>
