@@ -11,24 +11,37 @@
 
     <meta charset="UTF-8">
 
-    <title> DialogFlow </title>
+    <title> DialogFlow Manager </title>
 </head>
 <body>
 
 {% include 'principal/navbar.html' %}
 {% include 'principal/subnavbar.html' %}
 
-<div class="container mt-5 mb-5">
-    <h1 class="text-center mb-4">Entidades disponibles</h1>
+<div class="container mt-4 mb-4">
+    <h1 class="ms-4 mb-4">Entidades disponibles</h1>
     <div class="list-group">
         {% if entidades != None %}
+        <div class="row">
             {% for e in entidades %}
-            <a class="mb-1 btn btn-outline-secondary btn-block list-group-item list-group-item-action"
-               href="{{ url_for('get_entidad', entidad=e) }}">{{ e.replace(".json", "") }}
-            </a>
-            {% endfor%}
+            {% if not '_entries_' in e %}
+            <div class="col-md-6">
+                <a class="mb-2 btn btn-outline-success list-group-item"
+                   href="{{ url_for('get_entidad', chat=chat, entidad=e) }}">{{ e.replace(".json", "") }}
+                </a>
+            </div>
+            {% endif %}
+            {% if '_entries_' in e %}
+            <div class="col-md-6">
+                <a class="mb-2 btn btn-outline-success list-group-item"
+                   href="{{ url_for('get_entidad_entries', chat=chat, entidad=e) }}">{{ e.replace(".json", "") }}
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
         {% else %}
-            <h6>No existen entidades</h6>
+        <h5>No existen entidades</h5>
         {% endif %}
     </div>
 </div>

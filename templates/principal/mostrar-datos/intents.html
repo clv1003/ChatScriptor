@@ -11,24 +11,37 @@
 
     <meta charset="UTF-8">
 
-    <title> DialogFlow </title>
+    <title> DialogFlow Manager </title>
 </head>
 <body>
 
 {% include 'principal/navbar.html' %}
 {% include 'principal/subnavbar.html' %}
 
-<div class="container mt-5 mb-5">
-    <h1 class="text-center mb-4">Intents disponibles</h1>
+<div class="container mt-4 mb-4">
+    <h1 class="ms-4 mb-4">Intents disponibles</h1>
     <div class="list-group">
         {% if intents != None %}
+        <div class="row">
             {% for i in intents %}
-            <a class="mb-1 btn btn-outline-secondary btn-block list-group-item list-group-item-action"
-               href="{{ url_for('get_intent', intent=i) }}">{{ i }}
-            </a>
-            {% endfor%}
+            {% if not '_usersays_' in e %}
+            <div class="col-md-6">
+                <a class="mb-2 btn btn-outline-success list-group-item"
+                   href="{{ url_for('get_intent', chat=chat, intent=i) }}">{{ i.replace(".json", "") }}
+                </a>
+            </div>
+            {% endif %}
+            {% if '_usersays_' in i %}
+            <div class="col-md-6">
+                <a class="mb-2 btn btn-outline-success list-group-item"
+                   href="{{ url_for('get_intent_usersays', chat=chat, intent=i) }}">{{ i.replace(".json", "") }}
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
         {% else %}
-            <h6>No existen intents</h6>
+        <h5>No existen intents</h5>
         {% endif %}
     </div>
 </div>

@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
         function onApiLoad() {
@@ -29,61 +29,35 @@
         }
     </script>
 
-    <title> DialogFlow </title>
+    <title> DialogFlow Manager</title>
 </head>
 
-<body onload="onApiLoad()">
+<body>
 
 <div class="container">
 
-    <h1 class="text-center my-5">¡Bienvenid@ a DialogFlow!</h1>
+    <h1 class="text-center my-5">¡Bienvenid@ a DialogFlow Manager!</h1>
 
-    <div class="row justify-content-center">
-        <div class="col-lg-5 col-md-8 col-sm-10">
-            <div class="card">
+    <div class="row justify-content-center ">
+        <div class="col-lg-5 col-md-8 col-sm-10 ">
+            <div class="card border border-dark">
                 <div class="card-body">
                     <form>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" required>
+                        <p class="text-center"> Inicie sesión con</p>
+                        <div class="d-gridgap-2mb-3">
+                            <a type="button" class="btnbtn-outline-successbtn-block"
+                               href="{{url_for('google_login')}}">
+                                <i class="bibi-google"></i>Google</a>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" required>
-                        </div>
-
-                        <div class="d-grid gap-2 mb-3 text-center">
-                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-                        </div>
-
-                        <hr>
-                        <p class="text-center"> o inicie sesión con</p>
-                        <div class="d-grid gap-2 mb-3">
-                            <a type="button" class="btn btn-outline-dark btn-block"
-                               href="{{ url_for('auth') }}">Google</a>
-                        </div>
-
                         <hr>
                         <div class="d-grid gap-2 mb-3">
-                            <button type="button" class="btn btn-outline-secondary btn-block"
+                            <button type="button" class="btn btn-outline-warning btn-block"
                                     onclick="paginaprincipal()">
                                 Página
                                 Principal
                             </button>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row justify-content-center">
-        <div class="col-lg-5 col-md-8 col-sm-10">
-            <div class="card">
-                <div class="card-body">
-                    Si desea acceder importando un archivo .zip
-                    pulsar directamente a través del acceso "Página Principal"
                 </div>
             </div>
         </div>
