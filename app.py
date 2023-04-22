@@ -1,78 +1,7 @@
-import os
-import requests
 from flask import Flask, render_template, url_for, redirect, request
-# from oauthlib.oauth2 import BackendApplicationClient
-# from requests_oauthlib import OAuth2Session
-
 from endpoints.datos import ProcesamientoDatosEndpoints
-# from endpoints import DatosGoogle
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
-
-# Datos de la aplicacion de Google Cloud
-CLIENT_ID = '203629964308-r0d5li2dpeo90u4ov51vdqrhvh1cvh1r.apps.googleusercontent.com'
-CLIENT_SECRET = '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'
-REDIRECT_URI = 'http://localhost:5000/google_login_callback'
-TOKEN_URL = 'https://oauth2.googleapis.com/token'
-# Datos del proyecto de Dialogflow
-PROJECT_ID = 'tfg-dialogflow-clv'
-SCOPES = ['https://www.googleapis.com/auth/dialogflow']
-
-
-# cliente = BackendApplicationClient(client_id=CLIENT_ID)
-# oauth = OAuth2Session(client=cliente, redirect_uri=REDIRECT_URI)
-
-
-# --------------------------------------------------------------------------------------------------------
-
-@app.route('/google_login')
-def google_login():
-    auth_url = f'https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&response_type=code&client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope={"".join(SCOPES)}'
-    return redirect(auth_url)
-
-
-@app.route('/google_login_callback')
-def google_login_callback():
-    '''
-    code = request.args.get('code')
-    token = oauth.fetch_token(token_url=TOKEN_URL,
-                              client_id=CLIENT_ID,
-                              client_secret=CLIENT_SECRET,
-                              code=code,
-                              grant_type='authorization_code',
-                              scopes=SCOPES)
-
-    if not isinstance(token, dict):
-        return 'Error: Token no válido'
-
-    access_token = token['access_token']
-
-    chatbots = ProcesamientoDatosEndpoints.get_chatbots(access_token, PROJECT_ID)
-    user_info = DatosGoogle.get_user_info(access_token, CLIENT_ID)
-    '''
-
-    code = request.args.get('code')
-    data = {
-        'code': code,
-        'client_id': CLIENT_ID,
-        'client_secret': CLIENT_SECRET,
-        'redirect_uri': REDIRECT_URI,
-        'grant_type': 'authorization_code',
-        'scopes': SCOPES
-    }
-    response = requests.post(TOKEN_URL, data=data)
-    token = response.json()
-
-    if not isinstance(token, dict):
-        return 'Error: Token no valido'
-
-    access_token = token['access_token']
-
-    chatbots = ProcesamientoDatosEndpoints.get_chatbots(access_token, PROJECT_ID)
-    # user_info = DatosGoogle.get_user_info(access_token)
-
-    return render_template("principal/inicioSesion.html", chatbots=chatbots)  # , user_info=user_info)
 
 
 # --------------------------------------------------------------------------------------------------------
@@ -81,13 +10,7 @@ def google_login_callback():
 # página con la pantalla de carga
 @app.route('/', methods=["GET"])
 def home():
-    return render_template('home.html')
-
-
-# página de inicio de sesion
-@app.route('/login', methods=["GET"])
-def login():
-    return render_template("session/login.html")
+    return render_template('paginacarga.html')
 
 
 # página con la información de creacion
@@ -96,23 +19,10 @@ def about():
     return render_template("principal/about.html")
 
 
-# página principal inicio de sesion con Google (aun no funciona)
-'''
-@app.route('/inicio-sesion')
-def paginaprincipalsesion():
-    if 'credentials' in session:
-        user_info = DatosGoogle.get_user_info()
-        chatbots = ProcesamientoDatosEndpoints.get_chatbots(PROJECT_ID)
-        return render_template("principal/inicioSesion.html", chatbots=chatbots, user_info=user_info)
-
-    return redirect(url_for('login'))
-'''
-
-
 # página principal no sesion
-@app.route('/inicio-no-sesion', methods=["GET"])
-def paginaprincipalnosesion():
-    return render_template("principal/inicioNoSesion.html",
+@app.route('/home', methods=["GET"])
+def paginaprincipal():
+    return render_template("principal/home.html",
                            datos=ProcesamientoDatosEndpoints.get_disponible('./unzip'))
 
 
@@ -224,7 +134,9 @@ def editar_agente(chat):
 
 
 @app.route('/actualizar_json', methods=["POST"])
-def actualizar_json(chat, clave):
+def actualizar_json():
+    chat = request.args.get('chat')
+    clave = request.args.get('clave')
     ProcesamientoDatosEndpoints.set_agente('./unzip/' + chat, clave)
     return redirect(url_for('get_agente', chat=chat))
 

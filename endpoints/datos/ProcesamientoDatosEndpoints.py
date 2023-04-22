@@ -5,7 +5,6 @@ import zipfile
 
 import requests
 from flask import request
-from google.cloud import dialogflow_v2 as dialogflow
 
 
 # --------------------------------------------------------------------------------------------------------
