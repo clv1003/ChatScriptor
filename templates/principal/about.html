@@ -3,51 +3,58 @@
 <head>
     <link rel="shortcut icon" href="https://www.point-star.com/wp-content/uploads/2021/10/pngegg.png"/>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
             crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
 
-    <title> DialogFlow </title>
+    <title> DialogFlow Manager </title>
 </head>
 <body>
 
 <! –– Navbar superior igual que en la página principal ––>
-{% include 'principal/navbar.html' %}
+<div class="sticky-top">
+    {% include 'principal/navbar.html' %}
+</div>
 
 <! –– Contenido de la página ––>
-<div class="container">
+<div class="container mt-5">
 
-    <h1>DialogFlow</h1>
-    <h3>Interfaz gráfica para la gestión de chatbots</h3>
-
-
-    <h5>Plataforma inteligente perteneciente al conjunto Google Cloud Platform que reconoce el lenguaje natural
-        para dar una respuesta instantánea al cliente</h5>
-    <h5>Permite gestionar los asistentes virtuales</h5>
-
-
-    <h1>Participantes y Colaboradores</h1>
-    <h5>Trabajo Fin de Grado en Ingeniería Informática de la Universidad de Burgos</h5>
-    <h5>
-        <li>Alumna: Claudia Landeira Viñuela</li>
-        <li>Tutor: Raúl Marticorena Sánchez</li>
-    </h5>
+    <div class="container mt-5">
+        <h1>DialogFlow Manager</h1>
+        <p>Trabajo de Fin de Grado - Ingeniería Informática</p>
+        <p>
+            Interfaz web dedicada a la gestión de los chatbots de DialogFlow
+        </p>
+    </div>
 
 
-    <h1>Contactos y sugerencias</h1>
-    <h5>Si se desea realizar alguna consulta u aportación, enviar un correo electrónico a las siguientes
-        direcciones:
-        <li><a href="mailto:clv1003@alu.ubu.es?Subject=Sugerencia para el proyecto Dialogflow">Claudia
-            Landeira
-            Viñuela</a></li>
-    </h5>
+    <div class="container mt-5">
+        <h1>Participantes y Colaboradores</h1>
+        <p>
+            <li>Alumna: Claudia Landeira Viñuela</li>
+            <li>Tutor: Raúl Marticorena Sánchez</li>
+        </p>
+    </div>
+
+
+    <div class="container mt-5">
+        <h1>Contactos y sugerencias</h1>
+        <p>Si se desea realizar alguna consulta u aportación, enviar un correo electrónico a las siguientes
+            direcciones:</p>
+        <a class="btn btn-outline-warning"
+           href="mailto:clv1003@alu.ubu.es?Subject=Sugerencia para el proyecto Dialogflow">
+            Claudia Landeira Viñuela</a>
+
+    </div>
 
 
 </div>
 
+{% include 'principal/footer.html' %}
 </body>
 </html>

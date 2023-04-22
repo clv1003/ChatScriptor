@@ -15,11 +15,13 @@
 </head>
 <body>
 
-{% include 'principal/navbar.html' %}
-{% include 'principal/subnavbar.html' %}
+<div class="sticky-top">
+    {% include 'principal/navbar.html' %}
+    {% include 'principal/subnavbar.html' %}
+</div>
 
 <div class="container mt-4 mb-4">
-    <h1 class="ms-4 mb-4">Contenido</h1>
+    <h1 class="mb-4">Contenido</h1>
 
     {% for root, directorios in arbol.items() %}
     <div class="row">
@@ -38,5 +40,7 @@
     </div>
     {% endfor %}
 </div>
+
+{% include 'principal/footer.html' %}
 </body>
 </html>
