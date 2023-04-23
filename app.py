@@ -38,7 +38,7 @@ def importacionexportacion():
 @app.route('/subir_archivo', methods=["POST"])
 def procesar_archivo():
     ProcesamientoDatosEndpoints.descomprimir_archivo()
-    return redirect(url_for('paginaprincipalnosesion'))
+    return redirect(url_for('importacionexportacion'))
 
 
 @app.route('/bajar_archivo', methods=["GET"])
