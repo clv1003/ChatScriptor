@@ -16,21 +16,21 @@
 
     <div class="row">
         <div class="col">
-            <h1 class="text-left mb-3"><i class="bi bi-person"></i> Datos del agente</h1>
+            <h1 class="text-left mb-4"><i class="bi bi-person"></i> Datos del agente</h1>
         </div>
         <div class="col-auto justify-content-md-end mx-5">
-            <a class="btn btn-dark" href="{{ url_for('editar_agente', chat=chat) }}"><i class="bi bi-gear"></i></a>
+            <a class="btn btn-dark rounded-circle" href="{{ url_for('editar_agente', chat=chat) }}"><i class="bi bi-gear"></i></a>
         </div>
     </div>
 
     {% for k, v in agente.items() %}
     <div class="row mx-5">
         <div class="col mx-5">
-            <div class="card border-warning mb-1 w-75 rounded-1 shadow">
+            <div class="card border-warning mb-2 w-75 rounded-1 shadow">
                 <div class="card-header border-warning bg-warning-subtle text-dark bg-opacity-50">{{ k }}</div>
                 {% if v != None %}
                 <div class="card-body">
-                    <h6 class="card-text">{{ v | default('') | replace('\n', '<br>') | safe }} </h6>
+                    <p class="card-text">{{ v | default('') | replace('\n', '<br>') | safe }} </p>
                 </div>
                 {% endif %}
             </div>

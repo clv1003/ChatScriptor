@@ -21,7 +21,7 @@
     <div class="list-group mt-3 mx-5">
         {% for e in entidades %}
         <a class="mb-1 mx-5 btn btn-outline-warning btn-block list-group-item shadow w-75 rounded-2"
-           href="#">{{ e.replace(".json", "") }}
+           href="{{ url_for('get_entidad', chat=chat, entidad=e) }}">@{{ e[0].replace(".json", "") }}
         </a>
         {% endfor %}
     </div>

@@ -23,7 +23,8 @@
                         <label for="archivo_zip" class="form-label">Selecciona un arhivo .zip:</label>
                         <input type="file" class="form-control shadow" id="archivo_zip" name="archivo_zip" required>
                     </div>
-                    <button type="submit" class="btn btn-outline-warning text-black shadow"><i class="bi bi-arrow-bar-up"></i> Importar</button>
+                    <button type="submit" class="btn btn-outline-warning text-black shadow">
+                        <i class="bi bi-arrow-bar-up"></i> Importar</button>
                 </form>
             </div>
         </div>
@@ -34,8 +35,9 @@
                 <div class="list-group mt-5">
                     {% for dir in datos %}
                     <a class="mb-1 btn btn-outline-warning btn-block list-group-item shadow"
-                       onclick="alert('Se ha realizado la descarga (Directorio de descargas local)')"
-                       href="{{ url_for('obtener_zip', chat=dir) }}">{{ dir }}
+                       href="{{ url_for('obtener_zip', chat=dir) }}"
+                       onclick="alert('Pulsa en Aceptar para completar la descarga en: Directorio de descargas local')">
+                        {{ dir }}
                     </a>
                     {% endfor %}
                 </div>

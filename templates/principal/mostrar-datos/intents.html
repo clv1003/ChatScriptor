@@ -16,11 +16,10 @@
     <h1 class="text-left mb-3"><i class="bi bi-chat-dots"></i> Intents</h1>
 
     {% if intents != None %}
-
     <div class="list-group mt-3 mx-5">
         {% for i in intents %}
         <a class="mb-1 mx-5 btn btn-outline-warning btn-block list-group-item shadow w-75 rounded-2"
-           href="#">{{ i.replace(".json", "") }}
+           href="{{ url_for('get_intent', chat=chat, intent=i) }}">{{ i[0].replace(".json", "") }}
         </a>
         {% endfor %}
     </div>
