@@ -12,10 +12,10 @@
     {% include 'comunes/subnavbar.html' %}
 </div>
 
-<div class="container mt-4 mb-4">
+<div class="container mt-5">
     <div class="row">
         <div class="col">
-            <h3 class="ms-4 mb-4">Datos del intent: {{ intent.replace(".json", "") }}</h3>
+            <h1 class="text-left mb-4"><i class="bi bi-chat-dots"></i> {{ intent.replace(".json", "") }}</h1>
         </div>
         <div class="col-auto justify-content-md-end mx-5">
             <a class="btn btn-dark rounded-circle" href="#"><i class="bi bi-gear"></i></a>
@@ -23,10 +23,34 @@
     </div>
 
     {% for k, v in inte.items() %}
-    <div class="row">
-        <div class="col">
-            <div class="card border-success mb-3">
-                {{ inte }}
+    <div class="row mx-5">
+        <div class="col mx-5">
+            <div class="card border-warning mb-2 w-75 rounded-1 shadow">
+                <div class="card-header border-warning bg-warning-subtle text-dark bg-opacity-50"> {{ k }}</div>
+                {% if not (v is iterable and v is not string) %}
+
+                <div class="card-body">
+                    <p class="card-text"> {{ v }}</p>
+                </div>
+
+                {% else %}
+
+                <div class="card-body">
+                    <table class="table">
+                        {% for i in v %}
+                        {% for key, val in i.items() %}
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{ key }}</th>
+                                <td>{{ val }}</td>
+                            </tr>
+                        </tbody>
+
+                        {% endfor %}
+                        {% endfor %}
+                    </table>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

@@ -33,7 +33,6 @@ def get_intent(dir_int_parte1, dir_int_parte2):
                 # Parte del fichero 1
                 'name': intentP1['name'],
                 'responses': intentP1['responses'],
-                'priority': intentP1['priority'],
                 # Parte del fichero 2
                 'usersays': intentP2
             }
