@@ -1,5 +1,10 @@
 from flask import Flask, render_template, url_for, redirect, request
-from endpoints.datos import ProcesamientoDatosEndpoints
+
+import ProcesamientoAgente
+import ProcesamientoArchivos
+import ProcesamientoEntidades
+import ProcesamientoIntents
+import ProcesamientoZip
 
 app = Flask(__name__)
 
@@ -22,35 +27,36 @@ def about():
 # página principal no sesion
 @app.route('/home', methods=["GET"])
 def paginaprincipal():
+    ProcesamientoZip.existeUnzip()
     return render_template("principal/home.html",
-                           datos=ProcesamientoDatosEndpoints.get_disponible('./unzip'))
+                           datos=ProcesamientoArchivos.get_disponible('./unzip'))
 
 
 # para importar y exportar los archivos
 @app.route('/importar-exportar', methods=['GET'])
 def importacionexportacion():
     return render_template('principal/importar-exportar.html',
-                           datos=ProcesamientoDatosEndpoints.get_disponible('./unzip'))
+                           datos=ProcesamientoArchivos.get_disponible('./unzip'))
 
 
 # --------------------------------------------------------------------------------------------------------
 # ZONA DE PROCESAMIENTO DE DATOS AL IMPORTAR EL CHATBOT CON EL .ZIP
 @app.route('/subir_archivo', methods=["POST"])
 def procesar_archivo():
-    ProcesamientoDatosEndpoints.descomprimir_archivo()
-    return redirect(url_for('paginaprincipalnosesion'))
+    ProcesamientoZip.descomprimir_archivo()
+    return redirect(url_for('importacionexportacion'))
 
 
 @app.route('/bajar_archivo', methods=["GET"])
 def obtener_zip():
     chat = request.args.get('chat')
-    ProcesamientoDatosEndpoints.exportar_archivos('./unzip/', chat)  # ./unzip/Weather
+    ProcesamientoZip.exportar_archivos('./unzip/', chat)  # ./unzip/Weather
     return redirect(url_for('importacionexportacion'))
 
 
 @app.route('/remove_unzip', methods=["POST"])
 def remove_unzip():
-    ProcesamientoDatosEndpoints.remove_unzip()
+    ProcesamientoZip.remove_unzip()
     return redirect(url_for('login'))
 
 
@@ -60,7 +66,7 @@ def remove_unzip():
 @app.route('/archivos/<string:chat>', methods=["GET"])
 def get_archivos(chat):
     return render_template('principal/mostrar-datos/archivos.html',
-                           arbol=ProcesamientoDatosEndpoints.get_arbol('./unzip/' + chat),
+                           arbol=ProcesamientoArchivos.get_arbol('./unzip/' + chat),
                            chat=chat)
 
 
@@ -69,7 +75,7 @@ def get_archivos(chat):
 @app.route('/agente/<string:chat>', methods=["GET"])
 def get_agente(chat):
     return render_template("principal/mostrar-datos/agente.html",
-                           agente=ProcesamientoDatosEndpoints.get_agente('./unzip/' + chat),
+                           agente=ProcesamientoAgente.get_agente('./unzip/' + chat),
                            chat=chat)
 
 
@@ -79,24 +85,17 @@ def get_agente(chat):
 @app.route('/entidades/<string:chat>', methods=["GET"])
 def get_entidades(chat):
     return render_template("principal/mostrar-datos/entidades.html",
-                           entidades=ProcesamientoDatosEndpoints.get_entidades('./unzip/' + chat),
+                           entidades=ProcesamientoEntidades.get_entidades('./unzip/' + chat),
                            chat=chat)
 
 
 @app.route('/entidades/<string:chat>/entidad/<string:entidad>', methods=["GET"])
 def get_entidad(chat, entidad):
+    entidad = ProcesamientoArchivos.relistado(entidad)
     return render_template("principal/mostrar-datos/entidad.html",
-                           ent=ProcesamientoDatosEndpoints.get_entidad(
-                               './unzip/' + chat + '/entities/' + entidad),
-                           chat=chat, entidad=entidad)
-
-
-@app.route('/entidades/<string:chat>/entidade/<string:entidad>', methods=["GET"])
-def get_entidad_entries(chat, entidad):
-    return render_template("principal/mostrar-datos/entidad.html",
-                           ent=ProcesamientoDatosEndpoints.get_entidad_entries(
-                               './unzip/' + chat + '/entities/' + entidad),
-                           chat=chat, entidad=entidad)
+                           ent=ProcesamientoEntidades.get_entidad('./unzip/' + chat + '/entities/' + entidad[0],
+                                                                  './unzip/' + chat + '/entities/' + entidad[1]),
+                           chat=chat, entidad=entidad[0])
 
 
 # ------------------------
@@ -104,23 +103,17 @@ def get_entidad_entries(chat, entidad):
 @app.route('/intents/<string:chat>', methods=["GET"])
 def get_intents(chat):
     return render_template("principal/mostrar-datos/intents.html",
-                           intents=ProcesamientoDatosEndpoints.get_intents('./unzip/' + chat),
+                           intents=ProcesamientoIntents.get_intents('./unzip/' + chat),
                            chat=chat)
 
 
 @app.route('/intents/<string:chat>/intent/<string:intent>', methods=["GET"])
 def get_intent(chat, intent):
+    intent = ProcesamientoArchivos.relistado(intent)
     return render_template("principal/mostrar-datos/intent.html",
-                           inte=ProcesamientoDatosEndpoints.get_intent('./unzip/' + chat + '/intents/' + intent),
-                           chat=chat, intent=intent)
-
-
-@app.route('/intents/<string:chat>/intentu/<string:intent>', methods=["GET"])
-def get_intent_usersays(chat, intent):
-    return render_template("principal/mostrar-datos/intent.html",
-                           inte=ProcesamientoDatosEndpoints.get_intent_usersays(
-                               './unzip/' + chat + '/intents/' + intent),
-                           chat=chat, intent=intent)
+                           inte=ProcesamientoIntents.get_intent('./unzip/' + chat + '/intents/' + intent[0],
+                                                                './unzip/' + chat + '/intents/' + intent[1]),
+                           chat=chat, intent=intent[0])
 
 
 # --------------------------------------------------------------------------------------------------------
@@ -129,7 +122,7 @@ def get_intent_usersays(chat, intent):
 @app.route('/agente/editar/<string:chat>')
 def editar_agente(chat):
     return render_template("principal/modificar-datos/agente.html",
-                           agente=ProcesamientoDatosEndpoints.get_agente('./unzip/' + chat),
+                           agente=ProcesamientoAgente.get_agente('./unzip/' + chat),
                            chat=chat)
 
 
@@ -137,7 +130,7 @@ def editar_agente(chat):
 def actualizar_json():
     chat = request.args.get('chat')
     clave = request.args.get('clave')
-    ProcesamientoDatosEndpoints.set_agente('./unzip/' + chat, clave)
+    ProcesamientoAgente.set_agente('./unzip/' + chat, clave)
     return redirect(url_for('get_agente', chat=chat))
 
 

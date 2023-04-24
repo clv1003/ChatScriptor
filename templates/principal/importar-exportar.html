@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="shortcut icon" href="https://www.point-star.com/wp-content/uploads/2021/10/pngegg.png"/>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
+    {% include 'comunes/bootstrap.html' %}
     <meta charset="UTF-8">
 
     <title> DialogFlow Manager </title>
@@ -16,7 +9,7 @@
 <body>
 
 <div class="sticky-top">
-    {% include 'principal/navbar.html' %}
+    {% include 'comunes/navbar.html' %}
 </div>
 <!-- Contenido de la página de inicio -->
 <div class="container mt-5">
@@ -30,7 +23,8 @@
                         <label for="archivo_zip" class="form-label">Selecciona un arhivo .zip:</label>
                         <input type="file" class="form-control shadow" id="archivo_zip" name="archivo_zip" required>
                     </div>
-                    <button type="submit" class="btn btn-outline-warning text-black shadow">Importar</button>
+                    <button type="submit" class="btn btn-outline-warning text-black shadow">
+                        <i class="bi bi-arrow-bar-up"></i> Importar</button>
                 </form>
             </div>
         </div>
@@ -41,8 +35,9 @@
                 <div class="list-group mt-5">
                     {% for dir in datos %}
                     <a class="mb-1 btn btn-outline-warning btn-block list-group-item shadow"
-                       onclick="alert('Se ha realizado la descarga (Directorio de descargas local)')"
-                       href="{{ url_for('obtener_zip', chat=dir) }}">{{ dir }}
+                       href="{{ url_for('obtener_zip', chat=dir) }}"
+                       onclick="alert('Pulsa en Aceptar para completar la descarga en: Directorio de descargas local')">
+                        {{ dir }}
                     </a>
                     {% endfor %}
                 </div>
@@ -52,7 +47,9 @@
     </div>
 </div>
 
-{% include 'principal/footer.html' %}
+<div class="container mt-5">
+    {% include 'comunes/footer.html' %}
+</div>
 
 </body>
 </html>
