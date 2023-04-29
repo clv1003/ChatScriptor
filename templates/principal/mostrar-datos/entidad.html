@@ -23,37 +23,41 @@
         </div>
     </div>
 
-    {% for k, v in ent.items() %}
+    {% for k, v in ent[0].items() %}
+    {% if k == 'name' or  k == 'isOverridable' or k == 'isEnum' or k == 'automatedExpansion' %}
     <div class="row mx-5">
         <div class="col mx-5">
             <div class="card border-warning mb-2 w-75 rounded-1 shadow">
                 <div class="card-header border-warning bg-warning-subtle text-dark bg-opacity-50"> {{ k }} </div>
-                {% if not (v is iterable and v is not string) %}
                 <div class="card-body">
                     <p class="card-text"> {{ v }}</p>
                 </div>
-                {% else %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
 
+    {% for e in ent[1] %}
+    <div class="row mx-5">
+        <div class="col mx-5">
+            <div class="card border-warning mb-2 w-75 rounded-1 shadow">
                 <div class="card-body">
-                    <table class="table">
-                        {% for i in v %}
+                    <table class="table table-bordered">
+                        {% for k, v in e.items() %}
                         <tbody>
                             <tr>
-                                {% for val in i.values() %}
-                                <td>{{ val | default('') | replace("[", '') | replace("]", '') | safe }}</td>
-                                {% endfor %}
+                                <th scope="row">{{ k }}</th>
+                                <td class="text-left">{{ v | default('') | replace("[", '') | replace("]", '') | safe }}</td>
                             </tr>
                         </tbody>
                         {% endfor %}
                     </table>
                 </div>
-
-                {% endif %}
             </div>
         </div>
     </div>
     {% endfor %}
-
 </div>
 
 <div class="container mt-5">

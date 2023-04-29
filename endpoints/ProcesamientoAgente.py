@@ -10,18 +10,13 @@ def get_agente(rootdir):
         with open(rootdir + '/agent.json', 'r', encoding='utf-8') as a:
             agente = json.load(a)
 
-            diccionario = {'displayName': agente['displayName'],
-                           'shortDescription': agente['shortDescription'],
-                           'description': agente['description'],
-                           'language': agente['language'],
-                           'examples': agente['examples']}
-
-            return diccionario
+            return agente
 
     else:
         return None
 
 
+# OBTENCIÓN DEL IDIOMA DEL AGENTE
 def get_agente_language(rootdir, language='language'):
     agente = get_agente(rootdir)
     if language in agente:
@@ -30,11 +25,12 @@ def get_agente_language(rootdir, language='language'):
         return None
 
 
-def set_agente(rootdir, clave):
-    valor = request.json['atributo']
+# --------------------------------------------------------------------------------------------------
+# MODIFICACIÓN DE LOS DATOS DEL AGENTE
+def set_agente(rootdir, clave, atributo):
 
     diccionario = get_agente(rootdir)
-    diccionario[clave] = valor
+    diccionario[clave] = atributo
 
-    with open(rootdir + '/agent.json', 'w', encoding='utf-8') as a:
+    with open(rootdir + '/agent.json', 'w') as a:
         json.dump(diccionario, a)
