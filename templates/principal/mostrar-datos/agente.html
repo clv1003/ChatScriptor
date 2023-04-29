@@ -19,11 +19,13 @@
             <h1 class="text-left mb-4"><i class="bi bi-person"></i> Agente</h1>
         </div>
         <div class="col-auto justify-content-md-end mx-5">
-            <a class="btn btn-dark rounded-circle" href="{{ url_for('editar_agente', chat=chat) }}"><i class="bi bi-gear"></i></a>
+            <a class="btn btn-dark rounded-circle" href="{{ url_for('editar_agente', chat=chat) }}"><i
+                    class="bi bi-gear"></i></a>
         </div>
     </div>
 
     {% for k, v in agente.items() %}
+    {% if k == 'displayName' or k == 'shortDescription' or k == 'description' or k == 'language' or k == 'examples' %}
     <div class="row mx-5">
         <div class="col mx-5">
             <div class="card border-warning mb-2 w-75 rounded-1 shadow">
@@ -33,9 +35,11 @@
                     <p class="card-text">{{ v | default('') | replace('\n', '<br>') | safe }} </p>
                 </div>
                 {% endif %}
+
             </div>
         </div>
     </div>
+    {% endif %}
     {% endfor %}
 
 </div>

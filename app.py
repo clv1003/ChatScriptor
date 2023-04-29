@@ -2,8 +2,7 @@ from flask import Flask, render_template, url_for, redirect, request
 
 import ProcesamientoAgente
 import ProcesamientoArchivos
-import ProcesamientoEntidades
-import ProcesamientoIntents
+import ProcesamientoEntidadesIntents
 import ProcesamientoZip
 
 app = Flask(__name__)
@@ -22,6 +21,18 @@ def home():
 @app.route('/about', methods=["GET"])
 def about():
     return render_template("principal/about.html")
+
+
+# página login
+@app.route('/login', methods=["GET"])
+def login():
+    return render_template("login.html")
+
+
+# página de registro
+@app.route('/register', methods=["GET"])
+def register():
+    return render_template("register.html")
 
 
 # página principal no sesion
@@ -85,7 +96,7 @@ def get_agente(chat):
 @app.route('/entidades/<string:chat>', methods=["GET"])
 def get_entidades(chat):
     return render_template("principal/mostrar-datos/entidades.html",
-                           entidades=ProcesamientoEntidades.get_entidades('./unzip/' + chat),
+                           entidades=ProcesamientoEntidadesIntents.get_entidades('./unzip/' + chat),
                            chat=chat)
 
 
@@ -93,8 +104,8 @@ def get_entidades(chat):
 def get_entidad(chat, entidad):
     entidad = ProcesamientoArchivos.relistado(entidad)
     return render_template("principal/mostrar-datos/entidad.html",
-                           ent=ProcesamientoEntidades.get_entidad('./unzip/' + chat + '/entities/' + entidad[0],
-                                                                  './unzip/' + chat + '/entities/' + entidad[1]),
+                           ent=ProcesamientoEntidadesIntents.get_json('./unzip/' + chat + '/entities/' + entidad[0],
+                                                                      './unzip/' + chat + '/entities/' + entidad[1]),
                            chat=chat, entidad=entidad[0])
 
 
@@ -103,7 +114,7 @@ def get_entidad(chat, entidad):
 @app.route('/intents/<string:chat>', methods=["GET"])
 def get_intents(chat):
     return render_template("principal/mostrar-datos/intents.html",
-                           intents=ProcesamientoIntents.get_intents('./unzip/' + chat),
+                           intents=ProcesamientoEntidadesIntents.get_intents('./unzip/' + chat),
                            chat=chat)
 
 
@@ -111,8 +122,8 @@ def get_intents(chat):
 def get_intent(chat, intent):
     intent = ProcesamientoArchivos.relistado(intent)
     return render_template("principal/mostrar-datos/intent.html",
-                           inte=ProcesamientoIntents.get_intent('./unzip/' + chat + '/intents/' + intent[0],
-                                                                './unzip/' + chat + '/intents/' + intent[1]),
+                           inte=ProcesamientoEntidadesIntents.get_json('./unzip/' + chat + '/intents/' + intent[0],
+                                                                       './unzip/' + chat + '/intents/' + intent[1]),
                            chat=chat, intent=intent[0])
 
 
@@ -130,7 +141,8 @@ def editar_agente(chat):
 def actualizar_json():
     chat = request.args.get('chat')
     clave = request.args.get('clave')
-    ProcesamientoAgente.set_agente('./unzip/' + chat, clave)
+    atributo = request.form['atributo']
+    ProcesamientoAgente.set_agente('./unzip/' + chat, clave, atributo)
     return redirect(url_for('get_agente', chat=chat))
 
 

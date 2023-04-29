@@ -26,3 +26,5 @@ def get_arbol(rootdir):
 def relistado(cadena):
     valores = re.findall(r"'(.*?)'", cadena)
     return [valores[0], valores[1]]
+
+
