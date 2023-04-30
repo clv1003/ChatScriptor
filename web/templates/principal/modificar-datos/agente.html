@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% include 'comunes/bootstrap.html' %}
+    <meta charset="UTF-8">
+    <title> DialogFlow Manager </title>
+</head>
+<body>
+
+<div class="sticky-top">
+    {% include 'comunes/navbar.html' %}
+    {% include 'comunes/subnavbar.html' %}
+</div>
+
+<div class="container mx-5">
+    <h3 class="text-left mt-5"> <i class="bi bi-person"></i> {{ usuario }} </h3>
+</div>
+
+<div class="container mt-5">
+
+    <div class="row">
+        <div class="col">
+            <h1 class="text-left mb-4"><i class="bi bi-gear"></i> Editar agente</h1>
+        </div>
+    </div>
+
+    {% for clave, valor in agente.items() %}
+    {% if clave == 'displayName' or clave == 'shortDescription' or clave == 'description' or clave == 'language' or clave == 'examples' %}
+    <div class="row mx-5">
+        <div class="col mx-5">
+            <div class="card border-info mb-2 w-75 rounded-1 shadow">
+                <div class="card-header border-info bg-info-subtle text-dark bg-opacity-50">{{ clave }}</div>
+
+                <div class="card-body">
+                    <p class="card-text">ACTUAL:</p>
+                    <p class="card-text">{{ valor | default('') | replace('\n', '<br>') | safe }} </p>
+                </div>
+                <hr>
+                <form class="card-body" enctype="multipart/form-data" method="post"
+                      action="{{ url_for('actualizar_json', chat=chat, clave=clave) }}">
+
+                    <div class="mb-2">
+                        <label for="atributo" class="form-label">Cambiar {{ clave }}:</label>
+                        <input type="text" class="form-control shadow" id="atributo" name="atributo">
+                    </div>
+
+                    <a type="button" class="btn btn-warning shadow">
+                        <i class="bi bi-check-lg"></i> Guardar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+
+<div class="container mt-5">
+    {% include 'comunes/footer.html' %}
+</div>
+</body>
+</html>
