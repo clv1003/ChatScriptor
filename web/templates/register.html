@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'comunes/bootstrap.html' %}
+    <meta charset="UTF-8">
+
+    <title> DialogFlow Manager </title>
+</head>
+<body>
+
+<div class="bg-light d-flex justify-content-center align-items-center vh-100">
+    <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem">
+        <div class="text-center fs-1 fw-bold">
+            <i class="bi bi-person"></i> Register
+        </div>
+
+        <form method="POST" action="/register">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+
+        <div class="d-flex gap-1 justify-content-center mt-1">
+            <div>¿Ya tienes cuenta?</div>
+            <a href="/login" class="text-decoration-none text-warning fw-semibold">Login</a>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
