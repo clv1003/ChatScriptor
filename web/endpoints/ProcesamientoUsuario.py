@@ -20,26 +20,26 @@ def registrar_usuario(nombre, email, password):
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames, delimiter=';')
         writer.writerow({'nombre': nombre, 'email': email, 'password': hashed_password.decode('utf-8')})
 
-    if os.path.exists('usuarios/'):
+    if os.path.exists('./usuarios/'):
         # Crear el directorio para el usuario
-        os.mkdir('usuarios/' + email)
+        os.mkdir('./usuarios/' + email)
     else:
-        os.mkdir('usuarios/')
-        os.mkdir('usuarios/' + email)
+        os.mkdir('./usuarios/')
+        os.mkdir('./usuarios/' + email)
 
     return True
 
 
 def verificar_usuario(email, password):
-    # Buscar el usuario en el archivo CSV
     with open('database.csv', mode='r') as csv_file:
         reader = csv.reader(csv_file, delimiter=';')
         for row in reader:
             if row[1] == email:
-                # Verificar la contraseña
                 if bcrypt.checkpw(password.encode('utf-8'), row[2].encode('utf-8')):
-                    # Retornar la ruta del directorio del usuario
-                    return 'usuarios/' + email
+                    if administracion_usuarios(email):
+                        return './usuarios/'
+                    else:
+                        return './usuarios/' + email
                 else:
                     return False
 
@@ -55,3 +55,12 @@ def get_usuario(email):
                 return line[1]
 
     return None
+
+
+def administracion_usuarios(email):
+    correo = 'administrador@administrador.com'
+
+    if email == correo:
+        return True
+
+    return False

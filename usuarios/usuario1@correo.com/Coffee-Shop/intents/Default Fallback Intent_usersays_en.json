@@ -1,0 +1,106 @@
+[
+  {
+    "id": "34e2b79b-c408-4546-a554-0d4c22630ef4",
+    "data": [
+      {
+        "text": "can I get three bedroom apartments please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "3d74fbf9-b405-4796-8d67-c786232f518c",
+    "data": [
+      {
+        "text": "I don\u0027t want to order the same",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "175c12ab-1d45-46d6-a363-801726f1904b",
+    "data": [
+      {
+        "text": "I want to order a flight to New York",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "988bb7fa-2291-4608-a078-242d23c51866",
+    "data": [
+      {
+        "text": "I want to be able to make a good cappuccino",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "3192b33a-cda9-4b17-aded-fedc3ebfe916",
+    "data": [
+      {
+        "text": "I don\u0027t like cappuccino",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "a0d27f6e-4a02-4d84-af71-7114744f1047",
+    "data": [
+      {
+        "text": "I\u0027d love to get a bag of almonds please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "8c643efa-97c1-48c0-bec7-48614ede2121",
+    "data": [
+      {
+        "text": "I want to order a credit card",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f64e4f23-c396-42cf-9687-05fcab399386",
+    "data": [
+      {
+        "text": "I don\u0027t want to order a gift cards",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

@@ -1,0 +1,166 @@
+{
+  "id": "420f9b81-450c-46d7-85d0-a23f5c4d9443",
+  "name": "order.drink",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.drink",
+      "affectedContexts": [
+        {
+          "name": "orderdrink-followup",
+          "lifespan": 2,
+          "parameters": {}
+        }
+      ],
+      "parameters": [
+        {
+          "id": "e142c0b6-969e-450c-aefb-ca8809417a52",
+          "name": "delivery-pickup",
+          "required": true,
+          "dataType": "@delivery-pickup",
+          "value": "$delivery-pickup",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Would you like a delivery or pick-up?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "35e9de78-fbc3-4866-be1d-6a428cc8bdf8",
+          "name": "drink",
+          "required": true,
+          "dataType": "@drink",
+          "value": "$drink",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What would you like to drink?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "a033bf8f-13c7-4345-94e7-84dd53e65963",
+          "name": "size",
+          "required": true,
+          "dataType": "@size",
+          "value": "$size",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Small, medium or large?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "fe1fab67-db5b-4056-b0ab-f1de2e48ae01",
+          "name": "iced",
+          "required": false,
+          "dataType": "@iced",
+          "value": "$iced",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "87efcedc-c2a9-4224-9d15-8ba34e04290a",
+          "name": "amount",
+          "required": false,
+          "dataType": "@sys.number",
+          "value": "$amount",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "8c2264cf-08f8-4169-a55f-7ca6ead0bca1",
+          "name": "milk-type",
+          "required": false,
+          "dataType": "@milk-type",
+          "value": "$milk-type",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "suggestion_chips",
+          "platform": "google",
+          "title": "",
+          "textToSpeech": "",
+          "suggestions": [
+            {
+              "title": "Yes"
+            },
+            {
+              "title": "No"
+            }
+          ],
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Your order is: $size $drink with $milk-type and you want a $delivery-pickup. Is that right?",
+            "Your order is: $size $drink with $milk-type and you want a $delivery-pickup. Is that right?",
+            "You\u0027ve ordered $size $drink and you want a $delivery-pickup. Correct?",
+            "You want $amount $size $drink with $topping and you want a $delivery-pickup. Is that right?",
+            "You want $amount $size $drink with $milk-type and you want a $delivery-pickup. Is that right?",
+            "You want $amount $size $drink and you want a $delivery-pickup. Is that right?",
+            "You want $amount $size $drink and you want a $delivery-pickup. Is that right?"
+          ],
+          "condition": ""
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

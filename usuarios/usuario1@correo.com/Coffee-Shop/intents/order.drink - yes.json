@@ -1,0 +1,64 @@
+{
+  "id": "eef5d302-8787-45ec-84fc-9db8f300079c",
+  "parentId": "420f9b81-450c-46d7-85d0-a23f5c4d9443",
+  "rootParentId": "420f9b81-450c-46d7-85d0-a23f5c4d9443",
+  "name": "order.drink - yes",
+  "auto": true,
+  "contexts": [
+    "orderdrink-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.drink.confirm",
+      "affectedContexts": [
+        {
+          "name": "orderdrink-yes-followup",
+          "lifespan": 2,
+          "parameters": {}
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "suggestion_chips",
+          "platform": "google",
+          "title": "",
+          "textToSpeech": "",
+          "suggestions": [
+            {
+              "title": "Yes"
+            },
+            {
+              "title": "No"
+            }
+          ],
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Will you use the same card?"
+          ],
+          "condition": ""
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

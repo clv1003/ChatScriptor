@@ -1,0 +1,59 @@
+{
+  "id": "f82a2a8b-703f-4019-a40c-55464e06eef6",
+  "parentId": "eef5d302-8787-45ec-84fc-9db8f300079c",
+  "rootParentId": "420f9b81-450c-46d7-85d0-a23f5c4d9443",
+  "name": "order.drink.different_card",
+  "auto": true,
+  "contexts": [
+    "orderdrink-yes-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.drink.different_card",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "3bad0470-6bb1-42df-9944-0ad54da29196",
+          "name": "card-number",
+          "required": true,
+          "dataType": "@sys.number",
+          "value": "$card-number",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the new card number?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "All set, enjoy!"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

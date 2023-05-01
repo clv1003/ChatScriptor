@@ -36,6 +36,13 @@ def start_app():
 
         return redirect(url_for('login'))
 
+    @app.route('/admin', methods=["GET"])
+    def paginaprincipaladmin():
+        if os.path.exists('./usuarios'):
+            return render_template("principal/admin.html",
+                                   datos=ProcesamientoArchivos.get_disponible('./usuarios'),
+                                   usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+
     # para importar y exportar los archivos
     @app.route('/importar-exportar', methods=['GET'])
     def importacionexportacion():
@@ -128,6 +135,28 @@ def start_app():
                                agente=ProcesamientoAgente.get_agente('./usuarios/' + session['email'] + '/' + chat),
                                chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
 
+    # SET DATOS DEL ENTIDAD
+    @app.route('/entidades/<string:chat>/entidad/editar/<string:entidad>')
+    def editar_entidad(chat, entidad):
+        entidad = ProcesamientoArchivos.relistado(entidad)
+        return render_template("principal/modificar-datos/entidad.html",
+                               ent=ProcesamientoEntidadesIntents.get_json(
+                                   './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[0],
+                                   './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[1]),
+                               chat=chat, entidad=entidad[0],
+                               usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+
+    # SET DATOS DEL INTENT
+    @app.route('/intents/<string:chat>/intent/editar/<string:intent>')
+    def editar_intent(chat, intent):
+        intent = ProcesamientoArchivos.relistado(intent)
+        return render_template("principal/modificar-datos/intent.html",
+                               inte=ProcesamientoEntidadesIntents.get_json(
+                                   './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[0],
+                                   './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[1]),
+                               chat=chat, intent=intent[0],
+                               usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+
     @app.route('/actualizar_json', methods=["POST"])
     def actualizar_json():
         chat = request.args.get('chat')
@@ -135,7 +164,25 @@ def start_app():
         atributo = request.form['atributo']
         ProcesamientoAgente.set_agente('./usuarios/' + session['email'] + '/' + chat, clave, atributo)
         return redirect(url_for('get_agente', chat=chat))
+    '''
+    @app.route('/actualizar_json_ent', methods=["POST"])
+    def actualizar_json_ent(chat, entidad):
+        clave = request.args.get('clave')
+        atributo = request.form['atributo']
+        ProcesamientoEntidadesIntents.set_entidad(
+                './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[0],
+                './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[1], clave, atributo)
+        return redirect(url_for('get_entidad', chat=chat, entidad=entidad))
 
+    @app.route('/actualizar_json_int', methods=["POST"])
+    def actualizar_json_ent(chat, intent):
+        clave = request.args.get('clave')
+        atributo = request.form['atributo']
+        ProcesamientoEntidadesIntents.set_intent(
+            './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[0],
+            './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[1], clave, atributo)
+        return redirect(url_for('get_intent', chat=chat, intent=intent))
+    '''
     # --------------------------------------------------------------------------------------------------------
 
     # página login
@@ -150,7 +197,11 @@ def start_app():
                 rootdir = ProcesamientoUsuario.verificar_usuario(email, password)
                 # Guarda el email en la sesión
                 session['email'] = email
-                return redirect(url_for('paginaprincipal', rootdir=rootdir))
+
+                if rootdir == './usuarios/':
+                    return redirect(url_for('paginaprincipaladmin'))
+
+                return redirect(url_for('paginaprincipal'))
             else:
                 error = 'Usuario o contraseña incorrectos'
                 return render_template('login.html', error=error)

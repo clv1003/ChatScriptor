@@ -1,0 +1,29 @@
+[
+  {
+    "value": "caramel",
+    "synonyms": [
+      "caramel"
+    ]
+  },
+  {
+    "value": "chocolate",
+    "synonyms": [
+      "chocolate",
+      "chocolate drizzle",
+      "chocolate syrup"
+    ]
+  },
+  {
+    "value": "cinnamon",
+    "synonyms": [
+      "cinnamon"
+    ]
+  },
+  {
+    "value": "whipped cream",
+    "synonyms": [
+      "whip",
+      "whipped cream"
+    ]
+  }
+]
