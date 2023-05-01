@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% include 'comunes/bootstrap.html' %}
+    <meta charset="UTF-8">
+    <title> DialogFlow Manager </title>
+</head>
+<body>
+
+<div class="sticky-top">
+    {% include 'comunes/navbar.html' %}
+</div>
+<div class="container mx-5">
+    <h3 class="text-left mt-5"><i class="bi bi-person"></i> {{ usuario }} </h3>
+</div>
+<!-- Contenido de la página de inicio -->
+<div class="container mt-5">
+    <h1 class="text-left mt-5"><i class="bi bi-person-dash-fill"></i> Quitar usuarios </h1>
+
+    <div class="list-group mt-5 mx-5">
+        {% for dir in datos %}
+        {% if dir != "administrador@administrador.com" %}
+        <div class="row mx-5">
+            <div class="col">
+                <div class="card border-warning mb-2 rounded-3 shadow">
+                    <div class="card-header border-warning text-dark">{{ dir }}</div>
+                </div>
+
+            </div>
+            <div class="col">
+                <a class="mb-1 btn btn-outline-danger btn-block shadow"
+                   href="#"> <i class="bi bi-person-dash-fill"></i>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container mt-5">
+    {% include 'comunes/footer.html' %}
+</div>
+
+</body>
+</html>

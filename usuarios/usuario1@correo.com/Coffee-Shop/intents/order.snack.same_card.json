@@ -1,0 +1,39 @@
+{
+  "id": "c4a33636-afa6-4a4e-af38-8f1e1618bef9",
+  "parentId": "cca20492-cf6a-47d7-aa0f-b8e0589a59f9",
+  "rootParentId": "29d6940b-d954-4ec6-bd25-6384c551b30f",
+  "name": "order.snack.same_card",
+  "auto": true,
+  "contexts": [
+    "ordersnack-yes-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.snack.same_card",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Great. Enjoy!"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

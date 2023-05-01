@@ -1,0 +1,9 @@
+{
+  "id": "3683cfe1-8e5e-4214-b342-6d05dae135b1",
+  "name": "delivery-pickup",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}

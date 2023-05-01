@@ -1,0 +1,9 @@
+{
+  "id": "41234fad-cc73-44ba-a31b-7e6371350a3e",
+  "name": "snack",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}
