@@ -1,0 +1,84 @@
+[
+  {
+    "id": "b1b758c5-27a1-42fa-9d1b-af74414a787a",
+    "data": [
+      {
+        "text": "buenos días",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "151c5506-c66f-47e1-9f33-cff1162f6a9b",
+    "data": [
+      {
+        "text": "hola buenos días",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "57729fb2-3af9-4a05-8622-94be26d9eef1",
+    "data": [
+      {
+        "text": "muy buenos días",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b606d539-46d6-4a40-9114-7accdd64c387",
+    "data": [
+      {
+        "text": "hey buenos días",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f76830f5-3e8c-4010-a035-46f7af2d4fd3",
+    "data": [
+      {
+        "text": "que tengas un buen día",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "13fc8d6e-719e-4b90-9d23-1c033a240343",
+    "data": [
+      {
+        "text": "te deseo que tengas un",
+        "userDefined": false
+      },
+      {
+        "text": " buen día",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "2dc7d576-3e18-4531-af42-e575ef5d988a",
+    "data": [
+      {
+        "text": "quién es tu jefe",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "db71e9c3-ddd1-4f69-a164-e8918cd3e921",
+    "data": [
+      {
+        "text": "sabes quién es tu jefe",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "6fb3f6a1-467a-4974-912d-3efd92c8e4c5",
+    "data": [
+      {
+        "text": "dime quién es tu jefe",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "3441d7a6-c91f-478a-8e06-fd0bd0611a87",
+    "data": [
+      {
+        "text": "preséntame a tu jefe",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "dd093fc7-e432-4007-90e4-1a012a4b52e8",
+    "data": [
+      {
+        "text": "quisiera conocer a tu jefe",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "6e2f6bb2-9069-4234-a31b-3fdac150cc27",
+    "data": [
+      {
+        "text": "cómo se llama a tu jefe",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "708c8d3c-cd6e-44d1-b9ff-85901710e891",
+    "data": [
+      {
+        "text": "conoces a tu jefe",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

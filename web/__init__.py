@@ -1,5 +1,4 @@
 import os
-
 from flask import Flask, render_template, url_for, redirect, request, session
 
 import ProcesamientoAgente
@@ -149,7 +148,7 @@ def start_app():
     # SET DATOS DEL INTENT
     @app.route('/intents/<string:chat>/intent/editar/<string:intent>')
     def editar_intent(chat, intent):
-        intent = ProcesamientoArchivos.relistado(intent)
+        #intent = ProcesamientoArchivos.relistado(intent)
         return render_template("principal/modificar-datos/intent.html",
                                inte=ProcesamientoEntidadesIntents.get_json(
                                    './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[0],
@@ -157,32 +156,42 @@ def start_app():
                                chat=chat, intent=intent[0],
                                usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
 
+    # ACTUALIZAR EL JSON DEL AGENTE
     @app.route('/actualizar_json', methods=["POST"])
     def actualizar_json():
         chat = request.args.get('chat')
         clave = request.args.get('clave')
         atributo = request.form['atributo']
+
         ProcesamientoAgente.set_agente('./usuarios/' + session['email'] + '/' + chat, clave, atributo)
         return redirect(url_for('get_agente', chat=chat))
-    '''
+
+    # ACTUALIZAR EL JSON DE LAS ENTIDADES
     @app.route('/actualizar_json_ent', methods=["POST"])
-    def actualizar_json_ent(chat, entidad):
+    def actualizar_json_ent():
+        chat = request.args.get('chat')
+        entidad = request.args.get('entidad')
         clave = request.args.get('clave')
         atributo = request.form['atributo']
-        ProcesamientoEntidadesIntents.set_entidad(
-                './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[0],
-                './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[1], clave, atributo)
+
+        ProcesamientoEntidadesIntents.set_json(
+            './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[0],
+            './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[1], clave, atributo)
         return redirect(url_for('get_entidad', chat=chat, entidad=entidad))
 
+    # ACTUALIZAR EL JSON DE LOS INTENTS
     @app.route('/actualizar_json_int', methods=["POST"])
-    def actualizar_json_ent(chat, intent):
+    def actualizar_json_int():
+        chat = request.args.get('chat')
+        intent = request.args.get('intent')
         clave = request.args.get('clave')
         atributo = request.form['atributo']
-        ProcesamientoEntidadesIntents.set_intent(
+
+        ProcesamientoEntidadesIntents.set_json(
             './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[0],
             './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[1], clave, atributo)
         return redirect(url_for('get_intent', chat=chat, intent=intent))
-    '''
+
     # --------------------------------------------------------------------------------------------------------
 
     # página login
@@ -192,10 +201,8 @@ def start_app():
             email = request.form['email']
             password = request.form['password']
 
-            # Verifica el usuario y la contraseña
             if ProcesamientoUsuario.verificar_usuario(email, password):
                 rootdir = ProcesamientoUsuario.verificar_usuario(email, password)
-                # Guarda el email en la sesión
                 session['email'] = email
 
                 if rootdir == './usuarios/':
@@ -227,7 +234,6 @@ def start_app():
 
     @app.route('/logout')
     def logout():
-        # Elimina el email de la sesión
         session.pop('email', None)
         return redirect(url_for('login'))
 

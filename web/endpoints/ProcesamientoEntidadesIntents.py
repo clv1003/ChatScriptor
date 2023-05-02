@@ -44,10 +44,22 @@ def get_intents(rootdir):
 
 def get_json(parte1, parte2):
     if os.path.exists(parte1) and os.path.exists(parte2):
-        with open(parte1, 'r', encoding='utf-8') as iP1, open(parte2, 'r', encoding='utf-8') as iP2:
-            part1 = json.load(iP1)
-            part2 = json.load(iP2)
+        with open(parte1, 'r', encoding='utf-8') as p1, open(parte2, 'r', encoding='utf-8') as p2:
+            part1 = json.load(p1)
+            part2 = json.load(p2)
 
             return [part1, part2]
     else:
         return None
+
+
+def set_json(rootdir1, rootdir2, clave, atributo):
+    lista = get_json(rootdir1, rootdir2)
+
+    dic1 = lista[0]
+
+    if clave in dic1:
+        dic1[clave] = atributo
+
+        with open(rootdir1, 'w') as r1:
+            json.dump(dic1, r1)

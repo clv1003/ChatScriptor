@@ -1,0 +1,119 @@
+[
+  {
+    "id": "53f97cd4-900d-477f-baa4-0afd875c7d54",
+    "data": [
+      {
+        "text": "en que fecha naciste",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "76d17f69-0211-4e99-ab3f-ccb72ea26d00",
+    "data": [
+      {
+        "text": "cuándo es tu cumple",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b8a2258e-5e6f-4d4f-aa3f-d3e2cc6c67d5",
+    "data": [
+      {
+        "text": "tu cumpleaños",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "dc4dc747-fd92-4a8b-af04-80d2817bef00",
+    "data": [
+      {
+        "text": "cuándo es tu cumpleaños",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "8a09696d-9df7-4c84-8d20-094eeeddb9d2",
+    "data": [
+      {
+        "text": "cuándo celebras tu cumple",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7b7057bd-23c4-47ec-a947-040b3de65d91",
+    "data": [
+      {
+        "text": "cuándo naciste",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "8a62c354-8e2a-4169-8d71-a0c9c3cfb58d",
+    "data": [
+      {
+        "text": "cuál es la fecha de tu cumpleaños",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "5aa08e0b-bfe6-4526-b6f7-34ab5d654bbe",
+    "data": [
+      {
+        "text": "cuándo cumples años",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7d843f37-bc07-4468-9d35-15b12b394609",
+    "data": [
+      {
+        "text": "cuándo tienes el cumpleaños",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

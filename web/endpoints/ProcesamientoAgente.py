@@ -1,8 +1,6 @@
 import os
 import json
 
-from flask import request
-
 
 # OBTENCIÓN DE LOS DATOS DEL AGENTE
 def get_agente(rootdir):
