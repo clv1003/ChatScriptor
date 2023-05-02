@@ -1,0 +1,119 @@
+[
+  {
+    "id": "263fc67f-bdea-4899-9d42-4cfa363946f0",
+    "data": [
+      {
+        "text": "terminemos esta conversación ya",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "bdcc9f99-6990-4357-b672-90be0666b2aa",
+    "data": [
+      {
+        "text": "vamos a terminar esta conversación",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "6269aeb3-eef1-4e98-8e4b-de3016fc33b6",
+    "data": [
+      {
+        "text": "no quiero hablar más",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "cabfcb6e-b0b6-401a-98d1-520844f5c2b1",
+    "data": [
+      {
+        "text": "no quiero hablar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "20a8b3ee-8a3b-42cd-abf4-8ef92eba432a",
+    "data": [
+      {
+        "text": "no me apetece hablar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f3feaee0-c47e-4f8f-ab42-9792c3cefd7c",
+    "data": [
+      {
+        "text": "no tengo gamas de hablar contigo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "bf61a415-44c9-4afe-b2b3-d943b0092bb1",
+    "data": [
+      {
+        "text": "perdí las ganas de hablar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1fab1eba-e47d-4fb3-964d-d77397e77cbd",
+    "data": [
+      {
+        "text": "no estoy de humor para hablar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "6d00f496-c26e-4319-9ab8-34407f535e50",
+    "data": [
+      {
+        "text": "no estoy para charlar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

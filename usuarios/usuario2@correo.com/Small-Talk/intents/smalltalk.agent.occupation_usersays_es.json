@@ -1,0 +1,119 @@
+[
+  {
+    "id": "1f1d1dbb-5877-4db7-a0b4-f1f6a2a2718f",
+    "data": [
+      {
+        "text": "cuéntame algo sobre tu trabajo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "353e072f-35c2-4541-8650-b8707f1c3272",
+    "data": [
+      {
+        "text": "cuéntame a que te dedicas",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b41a8aa7-b2b1-461a-8a85-f9f64fbc7b8b",
+    "data": [
+      {
+        "text": "a qué te dedicas",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "163a139a-1afd-46b7-bb0f-ae3c2477d16a",
+    "data": [
+      {
+        "text": "dónde trabajas",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "bf3a4411-ec85-4e33-9d8e-1f37bdad19ef",
+    "data": [
+      {
+        "text": "dónde está tu oficina",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0164714e-3e4a-448c-a3ab-8c4a617921a8",
+    "data": [
+      {
+        "text": "dime dónde trabajas",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "cb3a4861-25fa-48d1-9145-591b4524ae27",
+    "data": [
+      {
+        "text": "quiero saber dónde está tu oficina",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "10c549da-9907-4ef2-af07-0204539f47e4",
+    "data": [
+      {
+        "text": "ubícame tu oficina",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7a27c0b5-69a0-4d7b-8062-b6d223cc8ee3",
+    "data": [
+      {
+        "text": "quiero que me localices el lugar donde trabajas",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

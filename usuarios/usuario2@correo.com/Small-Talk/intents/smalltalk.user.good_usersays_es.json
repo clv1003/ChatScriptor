@@ -1,0 +1,136 @@
+[
+  {
+    "id": "bf141955-64f9-4250-9162-2217c41157f7",
+    "data": [
+      {
+        "text": "de",
+        "userDefined": false
+      },
+      {
+        "text": " fábula",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "9bd585e0-b62a-46e8-84f5-d017154d5d86",
+    "data": [
+      {
+        "text": "estoy genial",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1cedb81b-2467-4d1d-8cd1-361fb3c2df10",
+    "data": [
+      {
+        "text": "todo bien",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7a9f3a3f-e873-425c-b385-2808c46b6604",
+    "data": [
+      {
+        "text": "me encuentro estupendo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "feef38ef-5c45-4d98-b129-93d30779cde8",
+    "data": [
+      {
+        "text": "todo fino",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "363b6f2c-54d7-40a6-80c0-89b55869eaa6",
+    "data": [
+      {
+        "text": "estoy bien",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "cf294b7d-0f7f-469e-abee-411382ab4383",
+    "data": [
+      {
+        "text": "me siento bien",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c485403c-39df-49c0-b748-9383309d7bc6",
+    "data": [
+      {
+        "text": "estoy mejor que nunca",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0ef7fa0e-7077-46b0-aa03-87577f98b416",
+    "data": [
+      {
+        "text": "estoy completamente bien",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "09cab367-7c2b-4e08-8718-884ead6c18fd",
+    "data": [
+      {
+        "text": "me encuentro muy bien",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]
