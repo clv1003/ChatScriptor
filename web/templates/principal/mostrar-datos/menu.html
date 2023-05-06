@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+{% include 'comunes/cabecera.html' %}
+<body>
+
+<div class="sticky-top">
+    {% include 'comunes/navbar.html' %}
+</div>
+
+<div class="container mx-5">
+    <h3 class="text-left mt-5"><i class="bi bi-person"></i> {{ usuario }} </h3>
+</div>
+
+<div class="container mt-5 my-5">
+    <h1 class="text-left mb-3"><i class="bi bi-files"></i> Menu {{ chat }}</h1>
+
+    <div class="card-group my-5">
+        <div class="card border-warning bg-warning-subtle rounded-3 mx-5 shadow" href="{{ url_for('get_agente', chat=chat) }}">
+            <div class="card-body align-content-center">
+                <a class="nav-link me-3 text-center fs-5 fw-semibold"
+                   href="{{ url_for('get_agente', chat=chat) }}"><i class="bi bi-person"></i> Agente
+                </a>
+
+            </div>
+        </div>
+
+        <div class="card border-warning bg-warning-subtle rounded-3 mx-5 shadow" href="{{ url_for('get_entidades', chat=chat) }}">
+            <div class="card-body align-content-center">
+                <a class="nav-link me-3 text-center fs-5 fw-semibold"
+                   href="{{ url_for('get_entidades', chat=chat) }}"><i class="bi bi-at"></i> Entidades
+                </a>
+
+            </div>
+        </div>
+
+        <div class="card border-warning bg-warning-subtle rounded-3 mx-5 shadow" href="{{ url_for('get_intents', chat=chat) }}">
+            <div class="card-body align-content-center">
+                <a class="nav-link me-3 text-center fs-5 fw-semibold"
+                   href="{{ url_for('get_intents', chat=chat) }}"><i class="bi bi-chat-dots"></i> Intents
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    {% include 'comunes/footer.html' %}
+</div>
+
+
+</body>
+</html>

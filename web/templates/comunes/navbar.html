@@ -1,10 +1,8 @@
 <!-- Barra de navegacion -->
-<nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #1A5276">
+<nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #333366">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/home">
-            <!-- src probar con url_for -->
-            <img src="../../imagenes/CSLogo2.png" alt="Logo" class="d-inline-block align-text-top">
-            DialogFlow Manager
+        <a class="navbar-brand mx-2" href="/home">
+            <img src="{{ url_for('static', filename='imagenes/CSLogoM.png') }}" alt="" class="d-inline-block align-text-top">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

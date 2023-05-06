@@ -9,7 +9,7 @@ import ProcesamientoUsuario
 
 
 def start_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='static')
     app.secret_key = 'estoesunaclavesecreta'
 
     # --------------------------------------------------------------------------------------------------------
@@ -92,10 +92,10 @@ def start_app():
     # --------------------------------------------------------------------------------------------------------
     # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (OBTENCION DE INFORMACION)
 
-    @app.route('/archivos/<string:chat>', methods=["GET"])
+    @app.route('/menu/<string:chat>', methods=["GET"])
     def get_archivos(chat):
         if 'email' in session:
-            return render_template('principal/mostrar-datos/archivos.html',
+            return render_template('principal/mostrar-datos/menu.html',
                                    arbol=ProcesamientoArchivos.get_arbol('./usuarios/' + session['email'] + '/' + chat),
                                    chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
