@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    {% include 'comunes/bootstrap.html' %}
-    <meta charset="UTF-8">
-    <title> DialogFlow Manager </title>
-</head>
+{% include 'comunes/cabecera.html' %}
 
 <body>
+<style>
+    .loading-container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-<div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status" aria-hidden="true"></div>
-    <div class="spinner-grow text-secondary" style="width: 3rem; height: 3rem;" role="status" aria-hidden="true"></div>
-    <div class="spinner-grow text-success" style="width: 3rem; height: 3rem;" role="status" aria-hidden="true"></div>
-    <div class="spinner-grow text-danger" style="width: 3rem; height: 3rem;" role="status" aria-hidden="true"></div>
-    <div class="spinner-grow text-warning" style="width: 3rem; height: 3rem;" role="status" aria-hidden="true"></div>
-    <div class="spinner-grow text-info" style="width: 3rem; height: 3rem;" role="status" aria-hidden="true"></div>
-    <div class="spinner-grow text-dark" style="width: 3rem; height: 3rem;" role="status" aria-hidden="true"></div>
+    .loading-image {
+        width: 50vh;
+        animation: scale-fade-in-out 2s ease-in-out infinite;
+    }
+
+    @keyframes scale-fade-in-out {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.2);
+            opacity: 0.5;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+</style>
+
+<div class="loading-container d-flex justify-content-center align-items-center">
+    <img src="{{ url_for('static', filename='imagenes/CSLogo.png') }}" alt="" class="loading-image">
 </div>
 
-<script>
 
+<script>
     setTimeout(function () {
         window.location.href = '/login';
-    }, 4000)
-
+    }, 5000)
 </script>
 
 </body>

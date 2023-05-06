@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    {% include 'comunes/bootstrap.html' %}
-    <meta charset="UTF-8">
-    <title> DialogFlow Manager </title>
-</head>
+{% include 'comunes/cabecera.html' %}
 <body>
 
 <! –– Navbar superior igual que en la página principal ––>
@@ -14,9 +10,11 @@
 
 <! –– Contenido de la página ––>
 <div class="container mt-5">
+    <div class="container m-5">
+        <img src="{{ url_for('static', filename='imagenes/CSLogoCompleto.png') }}" alt="" width="65%">
+    </div>
 
     <div class="container mt-5">
-        <h1>DialogFlow Manager</h1>
         <p>Trabajo de Fin de Grado - Ingeniería Informática</p>
         <p>
             Interfaz web dedicada a la gestión de los chatbots de DialogFlow
