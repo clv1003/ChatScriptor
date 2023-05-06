@@ -1,4 +1,4 @@
-<img src="/imagenes/DMLogoCompleto.png">
+<img src="/web/imagenes/CSLogoCompleto.png" alt="">
 Interfaz gráfica para la gestión de chatbots en la plataforma DialogFlow
 
 [comment]: https://dbdzm869oupei.cloudfront.net/img/sticker/preview/75510.png
