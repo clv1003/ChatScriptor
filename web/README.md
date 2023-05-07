@@ -4,7 +4,6 @@
 
 ### Menu principal
 
-
 ### Agente
 
 1. Terminar de configurar la parte de las modificaciones
@@ -13,23 +12,22 @@
 
 ### Entidades
 
-1. Recolocar la tabla de los values y los synonyms para que aparezcan en columnas en vez de en filas
-2. Terminar de configurar la parte de las modificaciones
-3. Añadir el tema de poder añadir entidades (añadir una copia de una entidad por defecto que tendré que hacer y que se
+1. Terminar de configurar la parte de las modificaciones
+2. Añadir el tema de poder añadir entidades (añadir una copia de una entidad por defecto que tendré que hacer y que se
    modifiquen solo los valores mostrados)
-4. Añadir el tema de porder quitar entidades (eliminación de los dos ficheros)
+3. Añadir el tema de porder quitar entidades (eliminación de los dos ficheros)
 
 ### Intents
 
-1. Terminar la colocación en la interfaz
-2. Terminar de configurar la parte de las modificaciones
-3. Añadir el tema de poder añadir intents (añadir una copia de un intent por defecto que tendré que hacer y que se
+1. Terminar de configurar la parte de las modificaciones
+2. Añadir el tema de poder añadir intents (añadir una copia de un intent por defecto que tendré que hacer y que se
    modifiquen solo los valores mostrados)
-4. Añadir el tema de poder quitar intents (eliminación de los dos ficheros)
+3. Añadir el tema de poder quitar intents (eliminación de los dos ficheros)
 
 ### Admin
 
 1. Eliminación de las cuentas
+    - Está implementado, pero al borrar en la bd sustituye por nulos y al recorrerlos después no funciona
 
 ---------------------------------------------
 

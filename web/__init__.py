@@ -29,7 +29,7 @@ def start_app():
             return redirect(url_for('login'))
 
     # página principal no sesion
-    @app.route('/home/', methods=["GET"])
+    @app.route('/home', methods=["GET"])
     def paginaprincipal():
         if 'email' in session:
             if os.path.exists('./usuarios/' + session['email'] + '/'):
@@ -42,6 +42,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # pagina principal del administrador
     @app.route('/admin', methods=["GET"])
     def paginaprincipaladmin():
         if 'email' in session:
@@ -49,6 +50,16 @@ def start_app():
                 return render_template("principal/admin.html",
                                        datos=ProcesamientoArchivos.get_disponible('./usuarios'),
                                        usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+        else:
+            return redirect(url_for('login'))
+
+    @app.route('/admin/remove')
+    def removeuser():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            if os.path.exists('./usuarios/' + chat):
+                ProcesamientoUsuario.remove_user(chat)
+                return redirect(url_for('paginaprincipaladmin'))
         else:
             return redirect(url_for('login'))
 

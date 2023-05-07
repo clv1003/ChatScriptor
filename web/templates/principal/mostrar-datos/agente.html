@@ -33,23 +33,61 @@
         </div>
     </div>
 
-    {% for k, v in agente.items() %}
-    {% if k == 'displayName' or k == 'shortDescription' or k == 'description' or k == 'language' or k == 'examples' %}
+
     <div class="row mx-5">
         <div class="col mx-5">
             <div class="card border-warning mb-2 rounded-1 shadow">
-                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">{{ k }}</div>
-                {% if v != None %}
+                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">displayName</div>
                 <div class="card-body">
-                    <p class="card-text">{{ v | default('') | replace('\n', '<br>') | safe }} </p>
+                    <p class="card-text">{{ agente['displayName'] }} </p>
                 </div>
-                {% endif %}
-
             </div>
         </div>
     </div>
-    {% endif %}
-    {% endfor %}
+
+    <div class="row mx-5">
+        <div class="col mx-5">
+            <div class="card border-warning mb-2 rounded-1 shadow">
+                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">language</div>
+                <div class="card-body">
+                    <p class="card-text">{{ agente['language'] }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-5">
+        <div class="col mx-5">
+            <div class="card border-warning mb-2 rounded-1 shadow">
+                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">shortDescription</div>
+                <div class="card-body">
+                    <p class="card-text">{{ agente['shortDescription'] }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-5">
+        <div class="col mx-5">
+            <div class="card border-warning mb-2 rounded-1 shadow">
+                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">description</div>
+                <div class="card-body">
+                    <p class="card-text">{{ agente['description'] }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-5">
+        <div class="col mx-5">
+            <div class="card border-warning mb-2 rounded-1 shadow">
+                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">examples</div>
+                <div class="card-body">
+                    <p class="card-text">{{ agente['examples'] | default('') | replace('\n', '<br>') | safe }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 
