@@ -3,15 +3,40 @@
 {% include 'comunes/cabecera.html' %}
 <body>
 
-<div class="sticky-top">
-    {% include 'comunes/navbar.html' %}
+<nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #333366">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-2" href="/admin">
+            <img src="{{ url_for('static', filename='imagenes/CSLogoM.png') }}" alt="" class="d-inline-block align-text-top">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="nav-item ms-3">
+            <a href="/logout" class="btn btn-danger"><i class="bi bi-x-lg"></i></a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }} </h3>
+        </div>
+        <div class="col-auto justify-content-md-end mx-5">
+            <form class="d-flex ms-5" role="search">
+                <input class="form-control me-3" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-dark rounded-circle" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </div>
 </div>
-<div class="container mx-5">
-    <h3 class="text-left mt-5"><i class="bi bi-person"></i> {{ usuario }} </h3>
-</div>
+
 <!-- Contenido de la página de inicio -->
 <div class="container mt-5">
-    <h1 class="text-left mt-5"><i class="bi bi-person-dash-fill"></i> Quitar usuarios </h1>
+    <h1 class="text-left mt-5"><i class="bi bi-person-dash-fill"></i> Eliminar usuarios </h1>
 
     <div class="list-group mt-5 mx-5">
         {% for dir in datos %}
@@ -19,13 +44,13 @@
         <div class="row mx-5">
             <div class="col">
                 <div class="card border-warning mb-2 rounded-3 shadow">
-                    <div class="card-header border-warning text-dark">{{ dir }}</div>
+                    <div class="card-header text-dark text-center">{{ dir }}</div>
                 </div>
 
             </div>
             <div class="col">
                 <a class="mb-1 btn btn-outline-danger btn-block shadow"
-                   href="#"> <i class="bi bi-person-dash-fill"></i>
+                   href="{{ url_for('remove_user', chat=dir) }}"> <i class="bi bi-person-dash-fill"></i>
                 </a>
             </div>
         </div>
