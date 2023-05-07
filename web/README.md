@@ -4,7 +4,6 @@
 
 ### Menu principal
 
-1. Hacer que los botones se vean bonitos
 
 ### Agente
 
@@ -31,9 +30,6 @@
 ### Admin
 
 1. Eliminación de las cuentas
-2. Hacer que en la interfaz del administrador quede inavilitada la barra de navegación superior y que solo se muestren
-   Documentación y Acerca de
-    - El admin no necesita ni importar ni exportar archivos ni ver el inicio, solo eliminar usuarios
 
 ---------------------------------------------
 
