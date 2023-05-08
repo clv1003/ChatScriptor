@@ -1,6 +1,5 @@
 import json
 import os
-
 import ProcesamientoAgente
 
 
@@ -63,3 +62,23 @@ def set_json(rootdir1, rootdir2, clave, atributo):
 
         with open(rootdir1, 'w') as r1:
             json.dump(dic1, r1)
+
+
+def remove_entidad(root, chat, entidad):
+    rootdir = root + chat + '/entities/'
+
+    os.remove(rootdir + entidad)
+
+    ent = entidad.replace('.json', '')
+    enti = ent + '_entries_' + ProcesamientoAgente.get_agente_language(root + chat) + '.json'
+    os.remove(rootdir + enti)
+
+
+def remove_intent(root, chat, intent):
+    rootdir = root + chat + '/intents/'
+
+    os.remove(rootdir + intent)
+
+    int = intent.replace('.json', '')
+    inte = int + '_usersays_' + ProcesamientoAgente.get_agente_language(root + chat) + '.json'
+    os.remove(rootdir + inte)

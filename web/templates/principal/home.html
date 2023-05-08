@@ -23,15 +23,58 @@
 
 <!-- Contenido de la página de inicio -->
 <div class="container mt-5">
-    <h1 class="text-left mt-5"><i class="bi bi-folder2-open"></i> Archivos disponibles</h1>
+
+    <div class="row">
+        <div class="col">
+            <h1 class="text-left mt-5"><i class="bi bi-folder2-open"></i> Archivos disponibles</h1>
+        </div>
+
+        <div class="col-auto mt-5 justify-content-md-end mx-5">
+            <a href="/importar-exportar" class="btn btn-primary"><i class="bi bi-plus-lg"></i></a>
+        </div>
+    </div>
 
     <div class="list-group mt-5 mx-5">
+
         {% for dir in datos %}
-        <a class="mb-1 btn btn-outline-warning btn-block list-group-item shadow"
-           href="{{ url_for('get_archivos', chat=dir) }}">{{ dir }}
-        </a>
+        <div class="row">
+            <div class="col">
+                <a class="mb-1 btn btn-outline-warning btn-block list-group-item rounded-3 shadow"
+                   href="{{ url_for('get_archivos', chat=dir) }}">{{ dir }}
+                </a>
+            </div>
+            <div class="col-auto justify-content-md-end mx-4">
+                <form action="{{ url_for('remove_chatbot', chat=dir) }}" method="post">
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel">¿Estás seguro de que deseas eliminar
+                                        el chatbot?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Esta acción no se puede deshacer.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar
+                                    </button>
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         {% endfor %}
     </div>
+
 </div>
 
 <div class="container mt-5">

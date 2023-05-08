@@ -9,10 +9,10 @@
 </div>
 
 <div class="container mx-5">
-    <h3 class="text-left mt-5"> <i class="bi bi-person"></i> {{ usuario }} </h3>
+    <h3 class="text-left mt-5"><i class="bi bi-person"></i> {{ usuario }} </h3>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-5 ">
 
     <div class="row">
         <div class="col">
@@ -20,34 +20,181 @@
         </div>
     </div>
 
-    {% for clave, valor in agente.items() %}
-    {% if clave == 'displayName' or clave == 'shortDescription' or clave == 'description' or clave == 'language' or clave == 'examples' %}
     <div class="row mx-5">
-        <div class="col mx-5">
-            <div class="card border-info mb-2 rounded-1 shadow">
-                <div class="card-header border-info bg-info-subtle text-dark bg-opacity-50">{{ clave }}</div>
-
-                <div class="card-body">
-                    <p class="card-text">ACTUAL:</p>
-                    <p class="card-text">{{ valor | default('') | replace('\n', '<br>') | safe }} </p>
-                </div>
-                <hr>
-                <form class="card-body" enctype="multipart/form-data" method="post"
-                      action="{{ url_for('actualizar_json', chat=chat, clave=clave) }}">
-
-                    <div class="mb-2">
-                        <label for="atributo" class="form-label">Cambiar {{ clave }}:</label>
-                        <input type="text" class="form-control shadow" id="atributo" name="atributo">
+        <div class="col">
+            <div class="row ms-2">
+                <div class="col ms-2">
+                    <div class="card border-warning mb-2 rounded-1 shadow">
+                        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+                            displayName
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ agente['displayName'] }} </p>
+                        </div>
                     </div>
-
-                    <a type="button" class="btn btn-warning shadow">
-                        <i class="bi bi-check-lg"></i> Guardar</a>
-                </form>
+                </div>
             </div>
         </div>
+
+        <div class="col">
+            <form class="card-body ms-5" enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json', chat=chat, clave='displayName') }}">
+
+                <div class="mb-2">
+                    <div class="row">
+                        <div class="col">
+                            <label for="atributo1" class="form-label">Cambiar displayName:</label>
+                            <input type="text" class="form-control shadow" id="atributo1" name="atributo">
+                        </div>
+                        <div class="col mt-md-4">
+                            <a type="button" class="btn btn-warning shadow"><i class="bi bi-check-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    {% endif %}
-    {% endfor %}
+
+    <div class="row mx-5">
+        <div class="col">
+            <div class="row ms-2">
+                <div class="col ms-2">
+                    <div class="card border-warning mb-2 rounded-1 shadow">
+                        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+                            shortDescription
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ agente['language'] }} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <form class="card-body ms-5" enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json', chat=chat, clave='language') }}">
+
+                <div class="mb-2">
+                    <div class="row">
+                        <div class="col">
+                            <label for="atributo2" class="form-label">Cambiar language:</label>
+                            <input type="text" class="form-control shadow" id="atributo2" name="atributo">
+                        </div>
+                        <div class="col mt-md-4">
+                            <a type="button" class="btn btn-warning shadow"><i class="bi bi-check-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mx-5">
+        <div class="col">
+            <div class="row ms-2">
+                <div class="col ms-2">
+                    <div class="card border-warning mb-2 rounded-1 shadow">
+                        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+                            shortDescription
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ agente['shortDescription'] }} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <form class="card-body ms-5" enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json', chat=chat, clave='shortDescription') }}">
+
+                <div class="mb-2">
+                    <div class="row">
+                        <div class="col">
+                            <label for="atributo3" class="form-label">Cambiar shortDescription:</label>
+                            <input type="text" class="form-control shadow" id="atributo3" name="atributo">
+                        </div>
+                        <div class="col mt-md-4">
+                            <a type="button" class="btn btn-warning shadow"><i class="bi bi-check-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mx-5">
+        <div class="col">
+            <div class="row ms-2">
+                <div class="col ms-2">
+                    <div class="card border-warning mb-2 rounded-1 shadow">
+                        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+                            description
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ agente['description'] }} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <form class="card-body ms-5" enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json', chat=chat, clave='description') }}">
+
+                <div class="mb-2">
+                    <div class="row">
+                        <div class="col">
+                            <label for="atributo4" class="form-label">Cambiar description:</label>
+                            <input type="text" class="form-control shadow" id="atributo4" name="atributo">
+                        </div>
+                        <div class="col mt-md-4">
+                            <a type="button" class="btn btn-warning shadow"><i class="bi bi-check-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mx-5">
+        <div class="col">
+            <div class="row ms-2">
+                <div class="col ms-2">
+                    <div class="card border-warning mb-2 rounded-1 shadow">
+                        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+                            examples
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ agente['examples'] | default('') | replace('\n', '<br>') | safe }} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <form class="card-body ms-5" enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json', chat=chat, clave='examples') }}">
+
+                <div class="mb-2">
+                    <div class="row">
+                        <div class="col">
+                            <label for="atributo5" class="form-label">Cambiar examples:</label>
+                            <input type="text" class="form-control shadow" id="atributo5" name="atributo">
+                        </div>
+                        <div class="col mt-md-4">
+                            <a type="button" class="btn btn-warning shadow"><i class="bi bi-check-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </div>
 
 <div class="container mt-5">
