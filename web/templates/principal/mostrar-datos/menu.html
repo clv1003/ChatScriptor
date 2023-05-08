@@ -6,7 +6,7 @@
 <style>
     .card {
         border: none;
-        background: #FFCA28;
+        background: #E1BEE7;
         align-content: center;
         transition: all 0.3s ease;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -39,29 +39,26 @@
 <div class="container mt-5 my-5">
     <h1 class="text-left mb-3"><i class="bi bi-files"></i> Menu {{ chat }}</h1>
 
-    <div class="container mt-5">
+    <div class="container mt-5 my-5">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 my-5">
                 <a href="{{ url_for('get_agente', chat=chat) }}" class="card ">
-                    <div class="card-body">
-                        <h5 class="text-center"><i class="bi bi-person-vcard"></i> Agente</h5>
-                        <p class="text-center">Acceso a los datos del agente actual</p>
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('static', filename='imagenes/Agente.png') }}" alt="" width="190"/>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 my-5">
                 <a href="{{ url_for('get_entidades', chat=chat) }}" class="card">
-                    <div class="card-body">
-                        <h5 class="text-center"><i class="bi bi-at"></i> Entidades</h5>
-                        <p class="text-center">Acceso a las entidades del chatbot actual</p>
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('static', filename='imagenes/Entidades.png') }}" alt="" width="300"/>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 my-5">
                 <a href="{{ url_for('get_intents', chat=chat) }}" class="card">
-                    <div class="card-body">
-                        <h5 class="text-center"><i class="bi bi-chat-dots"></i> Intents</h5>
-                        <p class="text-center">Acceso a los intents del chatbot actual</p>
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('static', filename='imagenes/Intents.png') }}" alt="" width="220"/>
                     </div>
                 </a>
             </div>

@@ -25,7 +25,8 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <h1 class="text-left mb-4"><i class="bi bi-chat-dots"></i> {{ intent.replace(".json", "") }}</h1>
+            <h1 class="text-left mb-4"><i class="bi bi-chat-dots"></i> Intent actual: {{ intent.replace(".json", "") }}
+            </h1>
         </div>
         <div class="col-auto justify-content-md-end mx-5">
             <a class="btn btn-dark rounded-circle" href="{{ url_for('editar_intent', chat=chat, intent=intent) }}">
@@ -33,78 +34,95 @@
         </div>
     </div>
 
-    {% for k, v in inte[0].items() %}
-    {% if k == 'name' or k == 'responses' %}
     <div class="row mx-5">
         <div class="col mx-5">
             <div class="card border-warning mb-2 rounded-1 shadow">
-                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> {{ k }}</div>
+                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> name</div>
                 <div class="card-body">
-                    {% if k == 'responses' %}
-                    <table class="table">
-                        {% for c, val in v[0].items() %}
-                        {% if c == 'action' or c == 'parameters' or c == 'messages'%}
+                    <p class="card-text">{{ inte[0]['name'] }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-5">
+        <div class="col mx-5">
+            <div class="card border-warning mb-2 rounded-1 shadow">
+                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> response
+                </div>
+                <div class="card-body">
+
+                    <p class="text-left ms-5 fw-semibold"> {{ inte[0]['responses'][0]['action'] }} </p>
+
+                    {% if inte[0]['responses'][0]['parameters'] %}
+                    <table class="table table-auto">
+                        <thead>
+                        <tr>
+                            <th class="text-center">name</th>
+                            <th class="text-center">dataType</th>
+                            <th class="text-center">value</th>
+                        </tr>
+                        </thead>
                         <tbody>
                         <tr>
-                            <th class="text-left"> {{ c }}</th>
-                            <td class="text-left">{{ val }}</td>
+                            <td class="text-center"> {{ inte[0]['responses'][0]['parameters'][0]['name'] }}</td>
+                            <td class="text-center"> {{ inte[0]['responses'][0]['parameters'][0]['dataType'] }}</td>
+                            <td class="text-center"> {{ inte[0]['responses'][0]['parameters'][0]['value'] }}</td>
                         </tr>
                         </tbody>
-                        {% endif %}
-                        {% endfor %}
                     </table>
                     {% else %}
-                    <p class="card-text"> {{ v }}</p>
+                    <p class="text-left ms-5"> No existen parametros </p>
                     {% endif %}
                 </div>
             </div>
         </div>
     </div>
-    {% endif %}
-    {% endfor %}
 
-    {% for i in inte[1] %}
+
+
     <div class="row mx-5">
         <div class="col mx-5">
             <div class="card border-warning mb-2 rounded-1 shadow">
+                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> data
+                </div>
                 <div class="card-body">
-                    {% for k, v in i.items() %}
-                    {% if k == 'data' %}
-
-                    <div class="card border-warning mb-2 rounded-1">
-                        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
-                            {{ k }}
-                        </div>
-                        {% if v is iterable and v is not string %}
-                        {% for c in v %}
+                    {% for i in inte[1] %}
+                    <div class="card border-warning mb-3 mx-2 rounded-1">
+                        {% for j in i['data'] %}
                         <div class="card-body">
-                            {%for kc, vc in c.items() %}
-                            <table class="table d-flex">
-                                <tbody>
-                                <tr>
-                                    <th class="text-left">{{ kc }}</th>
-                                    <td class="text-left">{{ vc }}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            {% endfor %}
+                            {% if j|length == 2 %}
+                                <p class="text-left ms-5"> {{ j['text'] }} </p>
+                            {% else %}
+                                {% if j['meta'] %}
+                                <table class="table table-auto">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">text</th>
+                                        <th class="text-center">meta</th>
+                                        <th class="text-center">alias</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-center"> {{ j['text'] }}</td>
+                                        <td class="text-center"> {{ j['meta'] }}</td>
+                                        <td class="text-center"> {{ j['alias'] }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                {% endif %}
+                            {% endif %}
                         </div>
                         {% endfor %}
-                        {% else %}
-                        <div class="card-body">
-                            <p class="card-text"> {{ v }}</p>
-                        </div>
-                        {% endif %}
                     </div>
-                    {% endif %}
                     {% endfor %}
-
                 </div>
             </div>
         </div>
     </div>
 
-    {% endfor %}
+
 </div>
 
 <div class="container mt-5">

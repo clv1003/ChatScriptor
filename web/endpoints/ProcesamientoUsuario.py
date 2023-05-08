@@ -1,12 +1,14 @@
 import csv
 import os
+import shutil
 import bcrypt
+import pandas as pd
 
 
 def registrar_usuario(nombre, email, password):
     # Verificar si el email ya está en uso
-    with open('database.csv', mode='r') as csv_file:
-        reader = csv.reader(csv_file, delimiter=';')
+    with open('database.csv', mode='r') as db:
+        reader = csv.reader(db, delimiter=';')
         for row in reader:
             if row[1] == email:
                 return False
@@ -15,9 +17,9 @@ def registrar_usuario(nombre, email, password):
     hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
     # Agregar el usuario al archivo CSV
-    with open('database.csv', mode='a', newline='') as csv_file:
+    with open('database.csv', mode='a', newline='') as db:
         fieldnames = ['nombre', 'email', 'password']
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames, delimiter=';')
+        writer = csv.DictWriter(db, fieldnames=fieldnames, delimiter=';')
         writer.writerow({'nombre': nombre, 'email': email, 'password': hashed_password.decode('utf-8')})
 
     if os.path.exists('./usuarios/'):
@@ -31,8 +33,8 @@ def registrar_usuario(nombre, email, password):
 
 
 def verificar_usuario(email, password):
-    with open('database.csv', mode='r') as csv_file:
-        reader = csv.reader(csv_file, delimiter=';')
+    with open('database.csv', mode='r') as db:
+        reader = csv.reader(db, delimiter=';')
         for row in reader:
             if row[1] == email:
                 if bcrypt.checkpw(password.encode('utf-8'), row[2].encode('utf-8')):
@@ -64,3 +66,20 @@ def administracion_usuarios(email):
         return True
 
     return False
+
+
+def remove_user(email):
+    filas = []
+    file = 'database.csv'
+    with open(file, 'r') as db:
+        reader = csv.reader(db, delimiter=';')
+
+        for row in reader:
+            if row[1] != email:
+                filas.append(row)
+
+    with open(file, 'w') as db:
+        writer = csv.writer(db, delimiter=';')
+        writer.writerows(filas)
+
+        shutil.rmtree('./usuarios/' + email)
