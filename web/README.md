@@ -6,8 +6,7 @@
 
 ### Agente
 
-1. Terminar de configurar la parte de las modificaciones
-2. Añadir el tema de que se actualice el nombre del fichero para que al actualizar el nombre se actulice también en la
+1. Añadir el tema de que se actualice el nombre del fichero para que al actualizar el nombre se actulice también en la
    página
 
 ### Entidades

@@ -23,16 +23,57 @@
 </div>
 
 <div class="container mt-5">
-    <h1 class="text-left mb-3"><i class="bi bi-at"></i> Entidades</h1>
+    <div class="row">
+        <div class="col">
+            <h1 class="text-left mb-3"><i class="bi bi-at"></i> Entidades</h1>
+        </div>
+
+        <div class="col-auto justify-content-md-end mx-4">
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-lg"></i></a>
+        </div>
+    </div>
+
 
     {% if entidades != None %}
 
-
     <div class="list-group mt-3 mx-5">
         {% for e in entidades %}
-        <a class="mb-1 mx-5 btn btn-outline-warning btn-block list-group-item shadow rounded-2"
-           href="{{ url_for('get_entidad', chat=chat, entidad=e) }}">@{{ e[0].replace(".json", "") }}
-        </a>
+        <div class="row">
+            <div class="col">
+                <a class="mb-1 mx-5 btn btn-outline-warning btn-block list-group-item shadow rounded-2"
+                   href="{{ url_for('get_entidad', chat=chat, entidad=e) }}">@{{ e[0].replace(".json", "") }}
+                </a>
+            </div>
+            <div class="col-auto justify-content-md-end mx-4">
+                <form action="{{ url_for('remove_entidad', chat=chat, entidad=e) }}" method="post">
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel">¿Estás seguro de que deseas eliminar
+                                        la entidad?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Esta acción no se puede deshacer.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar
+                                    </button>
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         {% endfor %}
     </div>
 

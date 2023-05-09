@@ -1,5 +1,6 @@
 import os
 import re
+import shutil
 
 
 def get_disponible(rootdir):
@@ -32,3 +33,8 @@ def get_arbol(rootdir):
 def relistado(cadena):
     valores = re.findall(r"'(.*?)'", cadena)
     return [valores[0], valores[1]]
+
+
+def remove_chatbot(rootdir, chat):
+    shutil.rmtree(rootdir+chat)
+

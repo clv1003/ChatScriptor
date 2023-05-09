@@ -260,7 +260,51 @@ def start_app():
             return redirect(url_for('login'))
 
     # --------------------------------------------------------------------------------------------------------
+    # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (MODIFICACION DE INFORMACION)
+    # ELIMINAR CHATBOT
+    @app.route('/remove_chatbot', methods=["POST"])
+    def remove_chatbot():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            if os.path.exists('./usuarios/' + session['email']):
+                ProcesamientoArchivos.remove_chatbot('./usuarios/' + session['email'] + '/', chat)
+                return redirect(url_for('paginaprincipal'))
+            else:
+                return redirect(url_for('paginaprincipal'))
+        else:
+            return redirect(url_for('login'))
 
+    # ELIMINAR ENTIDAD
+    @app.route('/remove_entidad', methods=["POST"])
+    def remove_entidad():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            entidad = request.args.get('entidad')
+
+            if os.path.exists('./usuarios/' + session['email']):
+                ProcesamientoEntidadesIntents.remove_entidad('./usuarios/' + session['email'] + '/', chat, entidad)
+                return redirect(url_for('get_entidades', chat=chat))
+            else:
+                return redirect(url_for('get_entidades', chat=chat))
+        else:
+            return redirect(url_for('login'))
+
+    # ELIMINAR ENTIDAD
+    @app.route('/remove_intent', methods=["POST"])
+    def remove_intent():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            intent = request.args.get('intent')
+
+            if os.path.exists('./usuarios/' + session['email']):
+                ProcesamientoEntidadesIntents.remove_intent('./usuarios/' + session['email'] + '/', chat, intent)
+                return redirect(url_for('get_intents', chat=chat))
+            else:
+                return redirect(url_for('get_intents', chat=chat))
+        else:
+            return redirect(url_for('login'))
+
+    # --------------------------------------------------------------------------------------------------------
     # página login
     @app.route('/login', methods=["GET", "POST"])
     def login():
