@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+{% include 'comunes/cabecera.html' %}
+<body>
+
+<div class="sticky-top">
+    {% include 'comunes/navbar.html' %}
+    {% include 'comunes/subnavbar.html' %}
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }} </h3>
+        </div>
+        <div class="col-auto justify-content-md-end mx-5">
+            <form class="d-flex ms-5" role="search">
+                <input class="form-control me-3" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-dark rounded-circle" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-left mb-4"><i class="bi bi-person-vcard"></i> Agente</h1>
+        </div>
+    </div>
+
+
+    <div class="card mx-5 border-warning mb-2 rounded-1 shadow">
+        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+            displayName
+        </div>
+        <div class="card-body">
+            <form enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json', chat=chat, clave='displayName') }}">
+                <input type="text" class="form-control" value="{{ agente['displayName'] }}" name="atributo">
+            </form>
+        </div>
+    </div>
+
+
+    <div class="card mx-5 border-warning mb-2 rounded-1 shadow">
+        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+            language
+        </div>
+        <div class="card-body">
+            <form enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json', chat=chat, clave='language') }}">
+                <input type="text" class="form-control" value="{{ agente['language'] }}" name="atributo">
+            </form>
+        </div>
+    </div>
+
+
+    <div class="card mx-5 border-warning mb-2 rounded-1 shadow">
+        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+            shortDescription
+        </div>
+        <div class="card-body">
+            <form enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json', chat=chat, clave='shortDescription') }}">
+                <input type="text" class="form-control" value="{{ agente['shortDescription'] }}" name="atributo">
+            </form>
+        </div>
+    </div>
+
+
+    <div class="card mx-5 border-warning mb-2 rounded-1 shadow">
+        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+            description
+        </div>
+        <div class="card-body">
+            <form enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json', chat=chat, clave='description') }}">
+                <input type="text" class="form-control" value="{{ agente['description'] }}"
+                       name="atributo">
+            </form>
+            <p class="card-text mt-3">{{ agente['description'] }} </p>
+        </div>
+    </div>
+
+
+    <div class="card mx-5 border-warning mb-2 rounded-1 shadow">
+        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+            examples
+        </div>
+        <div class="card-body">
+            <form enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json', chat=chat, clave='examples') }}">
+                <input type="text" class="form-control" value="{{ agente['examples'] }}"
+                       name="atributo">
+            </form>
+            <p class="card-text mt-3">{{ agente['examples'] | default('') | replace('\n', '<br>') | safe }} </p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    {% include 'comunes/footer.html' %}
+</div>
+
+</body>
+</html>

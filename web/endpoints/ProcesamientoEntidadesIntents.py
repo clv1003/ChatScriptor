@@ -42,26 +42,28 @@ def get_intents(rootdir):
 
 
 def get_json(parte1, parte2):
-    if os.path.exists(parte1) and os.path.exists(parte2):
-        with open(parte1, 'r', encoding='utf-8') as p1, open(parte2, 'r', encoding='utf-8') as p2:
-            part1 = json.load(p1)
-            part2 = json.load(p2)
+    part1 = get_parte(parte1)
+    part2 = get_parte(parte2)
 
-            return [part1, part2]
+    return [part1, part2]
+
+
+def get_parte(parte):
+    if os.path.exists(parte):
+        with open(parte, 'r', encoding='utf-8') as p:
+            p = json.load(p)
+
+            return p
     else:
         return None
 
 
-def set_json(rootdir1, rootdir2, clave, atributo):
-    lista = get_json(rootdir1, rootdir2)
+def editar_nombre(root, clave, atributo):
+    diccionario = get_parte(root)
+    diccionario[clave] = atributo
 
-    dic1 = lista[0]
-
-    if clave in dic1:
-        dic1[clave] = atributo
-
-        with open(rootdir1, 'w') as r1:
-            json.dump(dic1, r1)
+    with open(root, 'w') as e:
+        json.dump(diccionario, e)
 
 
 def remove_entidad(root, chat, entidad):
@@ -69,8 +71,8 @@ def remove_entidad(root, chat, entidad):
 
     os.remove(rootdir + entidad)
 
-    ent = entidad.replace('.json', '')
-    enti = ent + '_entries_' + ProcesamientoAgente.get_agente_language(root + chat) + '.json'
+    e = entidad.replace('.json', '')
+    enti = e + '_entries_' + ProcesamientoAgente.get_agente_language(root + chat) + '.json'
     os.remove(rootdir + enti)
 
 
@@ -79,6 +81,68 @@ def remove_intent(root, chat, intent):
 
     os.remove(rootdir + intent)
 
-    int = intent.replace('.json', '')
-    inte = int + '_usersays_' + ProcesamientoAgente.get_agente_language(root + chat) + '.json'
+    i = intent.replace('.json', '')
+    inte = i + '_usersays_' + ProcesamientoAgente.get_agente_language(root + chat) + '.json'
     os.remove(rootdir + inte)
+
+
+def editar_v_ent(root, value, entidad, atributo):
+    if entidad.endswith('.json'):
+        language = ProcesamientoAgente.get_agente_language(root)
+        entidad = entidad.replace('.json', '')
+        entries = entidad + '_entries_' + language + '.json'
+
+        diccionario = get_parte(root + '/entities/' + entries)
+
+        for d in diccionario:
+            if d["value"] == value:
+                d["value"] = atributo
+
+        with open(root + '/entities/' + entries, 'w') as e:
+            json.dump(diccionario, e)
+
+
+def editar_s_ent(root, value, entidad, atributo):
+    if entidad.endswith('.json'):
+        language = ProcesamientoAgente.get_agente_language(root)
+        entidad = entidad.replace('.json', '')
+        entries = entidad + '_entries_' + language + '.json'
+
+        diccionario = get_parte(root + '/entities/' + entries)
+
+        for d in diccionario:
+            if d["value"] == value:
+                d["synonyms"] = atributo
+
+        with open(root + '/entities/' + entries, 'w') as e:
+            json.dump(diccionario, e)
+
+
+def add_entry(root, entidad, value, synonyms):
+    if entidad.endswith('.json'):
+        language = ProcesamientoAgente.get_agente_language(root)
+        entidad = entidad.replace('.json', '')
+        entries = entidad + '_entries_' + language + '.json'
+
+        diccionario = get_parte(root + '/entities/' + entries)
+        aux = {"value": value, "synonyms": synonyms}
+
+        diccionario.append(aux)
+
+        with open(root + '/entities/' + entries, 'w') as e:
+            json.dump(diccionario, e)
+
+
+def remove_entry(root, entidad, value, synonyms):
+    if entidad.endswith('.json'):
+        language = ProcesamientoAgente.get_agente_language(root)
+        entidad = entidad.replace('.json', '')
+        entries = entidad + '_entries_' + language + '.json'
+
+        diccionario = get_parte(root + '/entities/' + entries)
+        for d in diccionario:
+            if d["value"] == value and d["synonyms"] == synonyms:
+                diccionario.remove(d)
+
+        with open(root + '/entities/' + entries, 'w') as e:
+            json.dump(diccionario, e)

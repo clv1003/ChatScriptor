@@ -24,11 +24,16 @@ def get_agente_language(rootdir, language='language'):
 
 
 # --------------------------------------------------------------------------------------------------
-# MODIFICACIÓN DE LOS DATOS DEL AGENTE
-def set_agente(rootdir, clave, atributo):
+# MODIFICACIÓN DE LOS DATOS DEL AGENTE ./usuarios/usuario1@correo.com/Weather
+def set_agente(rootdir, chat, clave, atributo):
+    #if clave == 'displayName':
+    #    n_nombre = rootdir + atributo
+    #else:
+    #    n_nombre = rootdir + chat
 
-    diccionario = get_agente(rootdir)
+    diccionario = get_agente(rootdir + chat)
     diccionario[clave] = atributo
 
-    with open(rootdir + '/agent.json', 'w') as a:
+    with open(rootdir + chat + '/agent.json', 'w') as a:
         json.dump(diccionario, a)
+    #    os.rename(rootdir + chat, n_nombre)

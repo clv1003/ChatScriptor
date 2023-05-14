@@ -1,8 +1,8 @@
 import csv
 import os
 import shutil
+
 import bcrypt
-import pandas as pd
 
 
 def registrar_usuario(nombre, email, password):
@@ -69,17 +69,17 @@ def administracion_usuarios(email):
 
 
 def remove_user(email):
-    filas = []
-    file = 'database.csv'
-    with open(file, 'r') as db:
+    with open('database.csv', newline='') as db:
         reader = csv.reader(db, delimiter=';')
+        data = [fila for fila in reader]
 
-        for row in reader:
-            if row[1] != email:
-                filas.append(row)
+    for fila in data:
+        if email in fila:
+            data.remove(fila)
 
-    with open(file, 'w') as db:
+    with open('database.csv', 'w', newline='') as db:
         writer = csv.writer(db, delimiter=';')
-        writer.writerows(filas)
+        writer.writerows(data)
 
+    if get_usuario(email) is None:
         shutil.rmtree('./usuarios/' + email)

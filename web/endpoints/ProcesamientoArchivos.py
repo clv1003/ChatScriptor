@@ -37,4 +37,3 @@ def relistado(cadena):
 
 def remove_chatbot(rootdir, chat):
     shutil.rmtree(rootdir+chat)
-

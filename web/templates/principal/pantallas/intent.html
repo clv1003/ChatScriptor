@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+{% include 'comunes/cabecera.html' %}
+<body>
+
+<div class="sticky-top">
+    {% include 'comunes/navbar.html' %}
+    {% include 'comunes/subnavbar.html' %}
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }} </h3>
+        </div>
+        <div class="col-auto justify-content-md-end mx-5">
+            <form class="d-flex ms-5" role="search">
+                <input class="form-control me-3" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-dark rounded-circle" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-left mb-4"><i class="bi bi-chat-dots"></i>
+                Intent actual: {{ intent.replace(".json", "") }}
+            </h1>
+        </div>
+    </div>
+
+
+    <div class="card mx-5 mb-3 border-warning mb-2 rounded-1 shadow">
+        <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> name</div>
+        <div class="card-body">
+            <form enctype="multipart/form-data" method="post"
+                  action="{{ url_for('actualizar_json_int', chat=chat, intent=intent, clave='name' ) }}">
+                <input type="text" class="form-control" value="{{ inte[0]['name'] }}" name="atributo">
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row mx-5">
+        <div class="col mx-5">
+            <div class="card border-warning mb-2 rounded-1 shadow">
+                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> response
+                </div>
+                <div class="card-body">
+                    <form enctype="multipart/form-data" method="post"
+                          action="#">
+                        <input type="text" class="form-control" value="{{ inte[0]['responses'][0]['action'] }}"
+                               name="atributo">
+                    </form>
+
+                    {% if inte[0]['responses'][0]['parameters'] %}
+                    <table class="table table-auto">
+                        <thead>
+                        <tr>
+                            <th class="text-center">name</th>
+                            <th class="text-center">dataType</th>
+                            <th class="text-center">value</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <form enctype="multipart/form-data" method="post"
+                                      action="#">
+                                    <input type="text" class="form-control"
+                                           value="{{ inte[0]['responses'][0]['parameters'][0]['name'] }}"
+                                           name="atributo">
+                                </form>
+                            </td>
+                            <td class="text-center">
+                                <form enctype="multipart/form-data" method="post"
+                                      action="#">
+                                    <input type="text" class="form-control"
+                                           value="{{ inte[0]['responses'][0]['parameters'][0]['dataType'] }}"
+                                           name="atributo">
+                                </form>
+                            </td>
+                            <td class="text-center">
+                                <form enctype="multipart/form-data" method="post"
+                                      action="#">
+                                    <input type="text" class="form-control"
+                                           value="{{ inte[0]['responses'][0]['parameters'][0]['value'] }}"
+                                           name="atributo">
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p class="text-left ms-5 mt-2"> No existen parametros </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mx-5">
+        <div class="col mx-5">
+            <div class="card border-warning mb-2 rounded-1 shadow">
+                <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> data
+                </div>
+                <div class="card-body">
+                    {% for i in inte[1] %}
+                    <div class="card border-warning mb-3 mx-2 rounded-1">
+                        {% for j in i['data'] %}
+                        <div class="card-body">
+                            {% if j|length == 2 %}
+                            <form enctype="multipart/form-data" method="post"
+                                  action="#">
+                                <input type="text" class="form-control"
+                                       value="{{ j['text'] }}"
+                                       name="atributo">
+                            </form>
+                            {% else %}
+                            {% if j['meta'] %}
+                            <table class="table table-auto">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">text</th>
+                                    <th class="text-center">meta</th>
+                                    <th class="text-center">alias</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center">
+                                        <form enctype="multipart/form-data" method="post"
+                                              action="#">
+                                            <input type="text" class="form-control"
+                                                   value="{{ j['text'] }}"
+                                                   name="atributo">
+                                        </form>
+                                    </td>
+                                    <td class="text-center">
+                                        <form enctype="multipart/form-data" method="post"
+                                              action="#">
+                                            <input type="text" class="form-control"
+                                                   value="{{ j['meta'] }}"
+                                                   name="atributo">
+                                        </form>
+                                    </td>
+                                    <td class="text-center">
+                                        <form enctype="multipart/form-data" method="post"
+                                              action="#">
+                                            <input type="text" class="form-control"
+                                                   value="{{ j['alias'] }}"
+                                                   name="atributo">
+                                        </form>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="container mt-5">
+    {% include 'comunes/footer.html' %}
+</div>
+
+</body>
+</html>
