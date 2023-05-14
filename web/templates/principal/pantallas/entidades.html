@@ -5,6 +5,7 @@
 
 <div class="sticky-top">
     {% include 'comunes/navbar.html' %}
+    {% include 'comunes/subnavbar.html' %}
 </div>
 
 <div class="container mt-5">
@@ -21,40 +22,44 @@
     </div>
 </div>
 
-<!-- Contenido de la página de inicio -->
 <div class="container mt-5">
-
     <div class="row">
         <div class="col">
-            <h1 class="text-left mt-5"><i class="bi bi-folder2-open"></i> Archivos disponibles</h1>
+            <h1 class="text-left mb-3"><i class="bi bi-at"></i> Entidades</h1>
         </div>
 
-        <div class="col-auto mt-5 justify-content-md-end mx-5">
-            <a href="/importar-exportar" class="btn btn-primary"><i class="bi bi-plus-lg"></i></a>
+        <div class="col-auto justify-content-md-end mx-4">
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-lg"></i></a>
         </div>
     </div>
 
-    <div class="list-group mt-5 mx-5">
 
-        {% for dir in datos %}
+    {% if entidades != None %}
+
+    <div class="list-group mt-3 mx-5">
+        {% for e in entidades %}
         <div class="row">
             <div class="col">
-                <a class="mb-1 btn btn-outline-warning btn-block list-group-item rounded-3 shadow"
-                   href="{{ url_for('get_archivos', chat=dir) }}">{{ dir }}
+                <a class="mb-1 ms-5 btn btn-outline-warning btn-block list-group-item shadow rounded-2"
+                   href="{{ url_for('get_entidad', chat=chat, entidad=e) }}">@{{ e[0].replace(".json", "") }}
                 </a>
             </div>
-
             <div class="col-auto justify-content-md-end mx-4">
-                <form action="{{ url_for('remove_chatbot', chat=dir) }}" method="post">
-                    <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar</button>
-                </form>
+                <div class="col-auto justify-content-md-end mx-4">
+                    <form action="{{ url_for('remove_entidad', chat=chat, entidad=e) }}" method="post">
+                        <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar
+                        </button>
+                    </form>
+                </div>
             </div>
-
-
         </div>
         {% endfor %}
     </div>
 
+
+    {% else %}
+    <p>No existen entidades</p>
+    {% endif %}
 </div>
 
 <div class="container mt-5">

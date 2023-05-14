@@ -53,7 +53,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    @app.route('/admin/remove')
+    @app.route('/admin/remove', methods=["POST"])
     def removeuser():
         if 'email' in session:
             chat = request.args.get('chat')
@@ -106,7 +106,7 @@ def start_app():
     @app.route('/menu/<string:chat>', methods=["GET"])
     def get_archivos(chat):
         if 'email' in session:
-            return render_template('principal/mostrar-datos/menu.html',
+            return render_template('principal/pantallas/menu.html',
                                    arbol=ProcesamientoArchivos.get_arbol('./usuarios/' + session['email'] + '/' + chat),
                                    chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
@@ -117,7 +117,7 @@ def start_app():
     @app.route('/agente/<string:chat>', methods=["GET"])
     def get_agente(chat):
         if 'email' in session:
-            return render_template("principal/mostrar-datos/agente.html",
+            return render_template("principal/pantallas/agente.html",
                                    agente=ProcesamientoAgente.get_agente('./usuarios/' + session['email'] + '/' + chat),
                                    chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
@@ -125,11 +125,10 @@ def start_app():
 
     # ------------------------
     # GET DATOS DEL ENTIDADES
-
     @app.route('/entidades/<string:chat>', methods=["GET"])
     def get_entidades(chat):
         if 'email' in session:
-            return render_template("principal/mostrar-datos/entidades.html",
+            return render_template("principal/pantallas/entidades.html",
                                    entidades=ProcesamientoEntidadesIntents.get_entidades(
                                        './usuarios/' + session['email'] + '/' + chat),
                                    chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
@@ -140,7 +139,7 @@ def start_app():
     def get_entidad(chat, entidad):
         if 'email' in session:
             entidad = ProcesamientoArchivos.relistado(entidad)
-            return render_template("principal/mostrar-datos/entidad.html",
+            return render_template("principal/pantallas/entidad.html",
                                    ent=ProcesamientoEntidadesIntents.get_json(
                                        './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[0],
                                        './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[1]),
@@ -154,7 +153,7 @@ def start_app():
     @app.route('/intents/<string:chat>', methods=["GET"])
     def get_intents(chat):
         if 'email' in session:
-            return render_template("principal/mostrar-datos/intents.html",
+            return render_template("principal/pantallas/intents.html",
                                    intents=ProcesamientoEntidadesIntents.get_intents(
                                        './usuarios/' + session['email'] + '/' + chat),
                                    chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
@@ -165,7 +164,7 @@ def start_app():
     def get_intent(chat, intent):
         if 'email' in session:
             intent = ProcesamientoArchivos.relistado(intent)
-            return render_template("principal/mostrar-datos/intent.html",
+            return render_template("principal/pantallas/intent.html",
                                    inte=ProcesamientoEntidadesIntents.get_json(
                                        './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[0],
                                        './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[1]),
@@ -176,44 +175,6 @@ def start_app():
 
     # --------------------------------------------------------------------------------------------------------
     # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (MODIFICACION DE INFORMACION)
-    # SET DATOS DEL AGENTE
-    @app.route('/agente/editar/<string:chat>')
-    def editar_agente(chat):
-        if 'email' in session:
-            return render_template("principal/modificar-datos/agente.html",
-                                   agente=ProcesamientoAgente.get_agente('./usuarios/' + session['email'] + '/' + chat),
-                                   chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
-        else:
-            return redirect(url_for('login'))
-
-    # SET DATOS DEL ENTIDAD
-    @app.route('/entidades/<string:chat>/entidad/editar/<string:entidad>')
-    def editar_entidad(chat, entidad):
-        if 'email' in session:
-            entidad = ProcesamientoArchivos.relistado(entidad)
-            return render_template("principal/modificar-datos/entidad.html",
-                                   ent=ProcesamientoEntidadesIntents.get_json(
-                                       './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[0],
-                                       './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[1]),
-                                   chat=chat, entidad=entidad[0],
-                                   usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
-        else:
-            return redirect(url_for('login'))
-
-    # SET DATOS DEL INTENT
-    @app.route('/intents/<string:chat>/intent/editar/<string:intent>')
-    def editar_intent(chat, intent):
-        if 'email' in session:
-            # intent = ProcesamientoArchivos.relistado(intent)
-            return render_template("principal/modificar-datos/intent.html",
-                                   inte=ProcesamientoEntidadesIntents.get_json(
-                                       './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[0],
-                                       './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[1]),
-                                   chat=chat, intent=intent[0],
-                                   usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
-        else:
-            return redirect(url_for('login'))
-
     # ACTUALIZAR EL JSON DEL AGENTE
     @app.route('/actualizar_json', methods=["POST"])
     def actualizar_json():
@@ -222,11 +183,12 @@ def start_app():
             clave = request.args.get('clave')
             atributo = request.form['atributo']
 
-            ProcesamientoAgente.set_agente('./usuarios/' + session['email'] + '/' + chat, clave, atributo)
+            ProcesamientoAgente.set_agente('./usuarios/' + session['email'] + '/', chat, clave, atributo)
             return redirect(url_for('get_agente', chat=chat))
         else:
             return redirect(url_for('login'))
 
+    # =======================================================================
     # ACTUALIZAR EL JSON DE LAS ENTIDADES
     @app.route('/actualizar_json_ent', methods=["POST"])
     def actualizar_json_ent():
@@ -236,13 +198,50 @@ def start_app():
             clave = request.args.get('clave')
             atributo = request.form['atributo']
 
-            ProcesamientoEntidadesIntents.set_json(
-                './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[0],
-                './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[1], clave, atributo)
-            return redirect(url_for('get_entidad', chat=chat, entidad=entidad))
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                if clave == 'name':
+                    ProcesamientoEntidadesIntents.editar_nombre(
+                        './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad,
+                        clave=clave, atributo=atributo)
+                    return redirect(url_for('get_entidades', chat=chat))
         else:
             return redirect(url_for('login'))
 
+    @app.route('/actualizar_v_ent', methods=["POST"])
+    def actualizar_v_ent():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            entidad = request.args.get('entidad')
+            value = request.args.get('value')
+            atributo = request.form['atributo']
+
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                ProcesamientoEntidadesIntents.editar_v_ent(
+                    './usuarios/' + session['email'] + '/' + chat,
+                    value=value, entidad=entidad, atributo=atributo)
+                return redirect(url_for('get_entidades', chat=chat))
+
+        else:
+            return redirect(url_for('login'))
+
+    @app.route('/actualizar_s_ent', methods=["POST"])
+    def actualizar_s_ent():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            entidad = request.args.get('entidad')
+            value = request.args.get('value')
+            atributo = request.form['atributo']
+
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                ProcesamientoEntidadesIntents.editar_s_ent(
+                    './usuarios/' + session['email'] + '/' + chat,
+                    value=value, entidad=entidad, atributo=atributo)
+                return redirect(url_for('get_entidades', chat=chat))
+
+        else:
+            return redirect(url_for('login'))
+
+    # =======================================================================
     # ACTUALIZAR EL JSON DE LOS INTENTS
     @app.route('/actualizar_json_int', methods=["POST"])
     def actualizar_json_int():
@@ -252,15 +251,36 @@ def start_app():
             clave = request.args.get('clave')
             atributo = request.form['atributo']
 
-            ProcesamientoEntidadesIntents.set_json(
-                './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[0],
-                './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[1], clave, atributo)
-            return redirect(url_for('get_intent', chat=chat, intent=intent))
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                if clave == 'name':
+                    ProcesamientoEntidadesIntents.editar_nombre(
+                        './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent,
+                        clave=clave, atributo=atributo)
+                    return redirect(url_for('get_intents', chat=chat))
         else:
             return redirect(url_for('login'))
 
     # --------------------------------------------------------------------------------------------------------
-    # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (MODIFICACION DE INFORMACION)
+    # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (AÑADIR)
+    # AÑADIR ENTRY
+    @app.route('/add_entry', methods=["POST"])
+    def add_entry():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            entidad = request.args.get('entidad')
+            value = request.form['value']
+            synonyms = request.form['synonyms']
+
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                ProcesamientoEntidadesIntents.add_entry(
+                    './usuarios/' + session['email'] + '/' + chat,
+                    entidad=entidad, value=value, synonyms=synonyms)
+                return redirect(url_for('get_entidades', chat=chat))
+        else:
+            return redirect(url_for('login'))
+
+    # --------------------------------------------------------------------------------------------------------
+    # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (ELIMINAR)
     # ELIMINAR CHATBOT
     @app.route('/remove_chatbot', methods=["POST"])
     def remove_chatbot():
@@ -289,7 +309,23 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # ELIMINAR ENTIDAD
+    @app.route('/remove_entry', methods=["POST"])
+    def remove_entry():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            entidad = request.args.get('entidad')
+            value = request.args.get('value')
+            synonyms = request.args.get('synonyms')
+
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                ProcesamientoEntidadesIntents.remove_entry(
+                    './usuarios/' + session['email'] + '/' + chat,
+                    entidad=entidad, value=value, synonyms=synonyms)
+                return redirect(url_for('get_entidades', chat=chat))
+        else:
+            return redirect(url_for('login'))
+
+    # ELIMINAR INTENT
     @app.route('/remove_intent', methods=["POST"])
     def remove_intent():
         if 'email' in session:

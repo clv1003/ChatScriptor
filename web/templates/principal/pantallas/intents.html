@@ -45,33 +45,12 @@
                 </a>
             </div>
             <div class="col-auto justify-content-md-end mx-4">
-                <form action="{{ url_for('remove_intent', chat=chat, intent=i) }}" method="post">
-                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                            data-bs-target="#deleteModal">
-                        <i class="bi bi-x-lg"></i>
-                    </button>
-                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="deleteModalLabel">¿Estás seguro de que deseas eliminar
-                                        el intent?</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    Esta acción no se puede deshacer.
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar
-                                    </button>
-                                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <div class="col-auto justify-content-md-end mx-4">
+                    <form action="{{ url_for('remove_intent', chat=chat, intent=i) }}" method="post">
+                        <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
         {% endfor %}

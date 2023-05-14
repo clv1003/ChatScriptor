@@ -42,23 +42,23 @@
     <div class="container mt-5 my-5">
         <div class="row">
             <div class="col-md-4 my-5">
-                <a href="{{ url_for('get_agente', chat=chat) }}" class="card ">
+                <a href="{{ url_for('get_agente', chat=chat) }}" class="card" style="text-decoration:none;">
                     <div class="card-body text-center">
-                        <img src="{{ url_for('static', filename='imagenes/Agente.png') }}" alt="" width="190"/>
+                        <h1><i class="bi bi-person-vcard"></i> Agente</h1>
                     </div>
                 </a>
             </div>
             <div class="col-md-4 my-5">
-                <a href="{{ url_for('get_entidades', chat=chat) }}" class="card">
+                <a href="{{ url_for('get_entidades', chat=chat) }}" class="card" style="text-decoration:none;">
                     <div class="card-body text-center">
-                        <img src="{{ url_for('static', filename='imagenes/Entidades.png') }}" alt="" width="300"/>
+                        <h1><i class="bi bi-at"></i> Entidades</h1>
                     </div>
                 </a>
             </div>
             <div class="col-md-4 my-5">
-                <a href="{{ url_for('get_intents', chat=chat) }}" class="card">
+                <a href="{{ url_for('get_intents', chat=chat) }}" class="card" style="text-decoration:none;">
                     <div class="card-body text-center">
-                        <img src="{{ url_for('static', filename='imagenes/Intents.png') }}" alt="" width="220"/>
+                        <h1><i class="bi bi-chat-dots"></i> Intents</h1>
                     </div>
                 </a>
             </div>
