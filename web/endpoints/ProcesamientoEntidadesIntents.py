@@ -41,6 +41,8 @@ def get_intents(rootdir):
         return None
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# AGRUPAR LOS DOS TIPOS DE JSON
 def get_json(parte1, parte2):
     part1 = get_parte(parte1)
     part2 = get_parte(parte2)
@@ -48,6 +50,7 @@ def get_json(parte1, parte2):
     return [part1, part2]
 
 
+# OBTENER LOS DATOS DE LOS JSON
 def get_parte(parte):
     if os.path.exists(parte):
         with open(parte, 'r', encoding='utf-8') as p:
@@ -58,6 +61,8 @@ def get_parte(parte):
         return None
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# EDITAR EL NOMBRE DE ENTIDAD E INTENT
 def editar_nombre(root, clave, atributo):
     diccionario = get_parte(root)
     diccionario[clave] = atributo
@@ -66,6 +71,8 @@ def editar_nombre(root, clave, atributo):
         json.dump(diccionario, e)
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# ELIMINAR ENTIDAD
 def remove_entidad(root, chat, entidad):
     rootdir = root + chat + '/entities/'
 
@@ -76,6 +83,7 @@ def remove_entidad(root, chat, entidad):
     os.remove(rootdir + enti)
 
 
+# ELIMINAR INTENT
 def remove_intent(root, chat, intent):
     rootdir = root + chat + '/intents/'
 
@@ -86,6 +94,8 @@ def remove_intent(root, chat, intent):
     os.remove(rootdir + inte)
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# EDITAR VALUE DE LAS ENTIDADES
 def editar_v_ent(root, value, entidad, atributo):
     if entidad.endswith('.json'):
         language = ProcesamientoAgente.get_agente_language(root)
@@ -102,6 +112,7 @@ def editar_v_ent(root, value, entidad, atributo):
             json.dump(diccionario, e)
 
 
+# EDITAR SYNONYMS DE LAS ENTIDADES
 def editar_s_ent(root, value, entidad, atributo):
     if entidad.endswith('.json'):
         language = ProcesamientoAgente.get_agente_language(root)
@@ -118,6 +129,7 @@ def editar_s_ent(root, value, entidad, atributo):
             json.dump(diccionario, e)
 
 
+# AÑADIR UNA NUEVA ENTRADA DE ENTIDAD
 def add_entry(root, entidad, value, synonyms):
     if entidad.endswith('.json'):
         language = ProcesamientoAgente.get_agente_language(root)
@@ -133,6 +145,7 @@ def add_entry(root, entidad, value, synonyms):
             json.dump(diccionario, e)
 
 
+# ELIMINAR ENTRADA DE ENTIDAD
 def remove_entry(root, entidad, value, synonyms):
     if entidad.endswith('.json'):
         language = ProcesamientoAgente.get_agente_language(root)
@@ -146,3 +159,85 @@ def remove_entry(root, entidad, value, synonyms):
 
         with open(root + '/entities/' + entries, 'w') as e:
             json.dump(diccionario, e)
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# EDITAR RESPONSES DE INTENTS
+def editar_responses(root, subclave, atributo):
+    diccionario = get_parte(root)
+    for i in diccionario["responses"][0]["parameters"]:
+        if subclave in i:
+            i[subclave] = atributo
+
+    with open(root, 'w') as i:
+        json.dump(diccionario, i)
+
+
+# AÑADIR RESPONSES DE INTENTS
+def add_responses(root, name, dataType, value):
+    pass
+
+
+# ELIMINAR RESPONSES DE INTENTS
+def remove_responses(root, idR):
+    diccionario = get_parte(root)
+
+    for i in diccionario["responses"][0]["parameters"]:
+        if i["id"] == idR:
+            diccionario["responses"][0]["parameters"].remove(i)
+            break
+
+    with open(root, 'w') as i:
+        json.dump(diccionario, i)
+
+
+# EDITAR DATA DE INTENTS
+def editar_data(root, intent, old, tipo, atributo):
+    if intent.endswith('.json'):
+        stopflag = False
+        language = ProcesamientoAgente.get_agente_language(root)
+        intent = intent.replace('.json', '')
+        data = intent + '_usersays_' + language + '.json'
+
+        diccionario = get_parte(root + '/intents/' + data)
+
+        for dt in diccionario:
+            for d in dt["data"]:
+                if len(d) == 2 and tipo == "text":
+                    print(f'text')
+                    if d[tipo] == old:
+                        d[tipo] = atributo
+                        stopflag = True
+                        break
+                elif len(d) != 2 and (tipo == 'meta' or tipo == 'alias'):
+                    print(f'meta o alias')
+                    if d[tipo] == old:
+                        d[tipo] = atributo
+                        stopflag = True
+                        break
+
+            if stopflag:
+                break
+
+        with open(root + '/intents/' + data, 'w') as i:
+            json.dump(diccionario, i)
+
+
+# ELIMINAR DATA DE INTENTS
+def remove_data(root, intent, idD):
+    if intent.endswith('.json'):
+        print(f'id -> {idD}')
+        language = ProcesamientoAgente.get_agente_language(root)
+        intent = intent.replace('.json', '')
+        data = intent + '_usersays_' + language + '.json'
+
+        diccionario = get_parte(root + '/intents/' + data)
+
+        for i in diccionario:
+            print(f'{i["id"]} == {idD} -- {i["id"] == idD}')
+            if i["id"] == idD:
+                diccionario.remove(i)
+                break
+
+        with open(root + '/intents/' + data, 'w') as i:
+            json.dump(diccionario, i)

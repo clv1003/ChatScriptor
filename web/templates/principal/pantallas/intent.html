@@ -64,38 +64,75 @@
                             <th class="text-center">value</th>
                         </tr>
                         </thead>
+                        {% for i in inte[0]['responses'][0]['parameters'] %}
                         <tbody>
                         <tr>
                             <td class="text-center">
                                 <form enctype="multipart/form-data" method="post"
-                                      action="#">
+                                      action="{{ url_for('actualizar_responses', chat=chat, intent=intent, subclave='name') }}">
                                     <input type="text" class="form-control"
-                                           value="{{ inte[0]['responses'][0]['parameters'][0]['name'] }}"
+                                           value="{{ i['name'] }}"
                                            name="atributo">
                                 </form>
                             </td>
                             <td class="text-center">
                                 <form enctype="multipart/form-data" method="post"
-                                      action="#">
+                                      action="{{ url_for('actualizar_responses', chat=chat, intent=intent, subclave='dataType') }}">
                                     <input type="text" class="form-control"
-                                           value="{{ inte[0]['responses'][0]['parameters'][0]['dataType'] }}"
+                                           value="{{ i['dataType'] }}"
                                            name="atributo">
                                 </form>
                             </td>
                             <td class="text-center">
                                 <form enctype="multipart/form-data" method="post"
-                                      action="#">
+                                      action="{{ url_for('actualizar_responses', chat=chat, intent=intent, subclave='value') }}">
                                     <input type="text" class="form-control"
-                                           value="{{ inte[0]['responses'][0]['parameters'][0]['value'] }}"
+                                           value="{{ i['value'] }}"
                                            name="atributo">
+                                </form>
+                            </td>
+                            <td class="text-center col-1">
+                                <form action="{{ url_for('remove_responses', chat=chat, intent=intent, id=i['id']) }}"
+                                      method="post">
+                                    <button type="submit" class="btn btn-outline-danger"><i
+                                            class="bi bi-x-lg"></i>
+                                    </button>
                                 </form>
                             </td>
                         </tr>
                         </tbody>
+                        {% endfor %}
                     </table>
                     {% else %}
                     <p class="text-left ms-5 mt-2"> No existen parametros </p>
                     {% endif %}
+
+                    <!--
+                    <div>
+                        <p class="text-left mb-2"><i class="bi bi-plus-circle"></i> Añadir entry</p>
+                        <div class="row">
+                            <div class="col">
+                                <form class="card-body" enctype="multipart/form-data" method="post"
+                                      action="{{ url_for('add_responses', chat=chat, intent=intent, responses='responses', parameters='parameters') }}">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="name" class="form-label">Name:</label>
+                                            <input type="text" class="form-control" id="name" name="name">
+                                        </div>
+                                        <div class="col">
+                                            <label for="dataType" class="form-label">Data Type:</label>
+                                            <input type="text" class="form-control" id="dataType" name="dataType">
+                                        </div>
+                                        <div class="col">
+                                            <label for="value" class="form-label">Value:</label>
+                                            <input type="text" class="form-control" id="value" name="value">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    -->
                 </div>
             </div>
         </div>
@@ -113,12 +150,24 @@
                         {% for j in i['data'] %}
                         <div class="card-body">
                             {% if j|length == 2 %}
-                            <form enctype="multipart/form-data" method="post"
-                                  action="#">
-                                <input type="text" class="form-control"
-                                       value="{{ j['text'] }}"
-                                       name="atributo">
-                            </form>
+                            <div class="row">
+                                <div class="col">
+                                    <form enctype="multipart/form-data" method="post"
+                                          action="{{ url_for('actualizar_data', chat=chat, intent=intent, old=j['text'], tipo='text') }}">
+                                        <input type="text" class="form-control"
+                                               value="{{ j['text'] }}"
+                                               name="atributo">
+                                    </form>
+                                </div>
+                                <div class="col-1">
+                                    <form action="{{ url_for('remove_data', chat=chat, intent=intent, id=i['id']) }}" method="post">
+                                        <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i>
+                                        </button>
+                                    </form>
+                                </div>
+
+                            </div>
+
                             {% else %}
                             {% if j['meta'] %}
                             <table class="table table-auto">
@@ -133,7 +182,7 @@
                                 <tr>
                                     <td class="text-center">
                                         <form enctype="multipart/form-data" method="post"
-                                              action="#">
+                                              action="{{ url_for('actualizar_data', chat=chat, intent=intent, old=j['text'], tipo='text') }}">
                                             <input type="text" class="form-control"
                                                    value="{{ j['text'] }}"
                                                    name="atributo">
@@ -141,7 +190,7 @@
                                     </td>
                                     <td class="text-center">
                                         <form enctype="multipart/form-data" method="post"
-                                              action="#">
+                                              action="{{ url_for('actualizar_data', chat=chat, intent=intent, old=j['meta'], tipo='meta') }}">
                                             <input type="text" class="form-control"
                                                    value="{{ j['meta'] }}"
                                                    name="atributo">
@@ -149,12 +198,13 @@
                                     </td>
                                     <td class="text-center">
                                         <form enctype="multipart/form-data" method="post"
-                                              action="#">
+                                              action="{{ url_for('actualizar_data', chat=chat, intent=intent, old=j['alias'], tipo='alias') }}">
                                             <input type="text" class="form-control"
                                                    value="{{ j['alias'] }}"
                                                    name="atributo">
                                         </form>
                                     </td>
+
                                 </tr>
                                 </tbody>
                             </table>
