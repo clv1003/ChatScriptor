@@ -6,30 +6,42 @@ import bcrypt
 
 
 def registrar_usuario(nombre, email, password):
-    # Verificar si el email ya está en uso
-    with open('database.csv', mode='r') as db:
-        reader = csv.reader(db, delimiter=';')
-        for row in reader:
-            if row[1] == email:
-                return False
+    if os.path.exists('database.csv'):
+        # Verificar si el email ya está en uso
+        with open('database.csv', mode='r') as db:
+            reader = csv.reader(db, delimiter=';')
+            for row in reader:
+                if row[1] == email:
+                    return False
 
-    # Encriptar la contraseña
-    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+        # Encriptar la contraseña
+        hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
-    # Agregar el usuario al archivo CSV
-    with open('database.csv', mode='a', newline='') as db:
-        fieldnames = ['nombre', 'email', 'password']
-        writer = csv.DictWriter(db, fieldnames=fieldnames, delimiter=';')
-        writer.writerow({'nombre': nombre, 'email': email, 'password': hashed_password.decode('utf-8')})
+        # Agregar el usuario al archivo CSV
+        with open('database.csv', mode='a', newline='') as db:
+            fieldnames = ['nombre', 'email', 'password']
+            writer = csv.DictWriter(db, fieldnames=fieldnames, delimiter=';')
+            writer.writerow({'nombre': nombre, 'email': email, 'password': hashed_password.decode('utf-8')})
 
-    if os.path.exists('./usuarios/'):
-        # Crear el directorio para el usuario
-        os.mkdir('./usuarios/' + email)
+        if os.path.exists('./usuarios/'):
+            # Crear el directorio para el usuario
+            os.mkdir('./usuarios/' + email)
+
+            readme = open('./usuarios/' + email + '/readme.md', 'w')
+            readme.write(nombre + ': ' + email)
+            readme.close()
+        else:
+            os.mkdir('./usuarios/')
+            os.mkdir('./usuarios/' + email)
+
+            readme = open('./usuarios/' + email + '/readme.md', 'w')
+            readme.write(nombre + ': ' + email)
+            readme.close()
+        return True
     else:
-        os.mkdir('./usuarios/')
-        os.mkdir('./usuarios/' + email)
-
-    return True
+        archivo = open('database.csv', 'w')
+        archivo.close()
+        registrar_usuario(nombre, email, password)
 
 
 def verificar_usuario(email, password):

@@ -1,0 +1,109 @@
+[
+  {
+    "id": "dddfabe0-c638-4ca8-a2ed-5bb08e9e244f",
+    "data": [
+      {
+        "text": "guantes",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": " también",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "6e780e8d-9d6f-45ed-860a-708642761242",
+    "data": [
+      {
+        "text": "y mi ",
+        "userDefined": false
+      },
+      {
+        "text": "paraguas",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "31fee20b-81ae-4ddc-9b28-3b14eafc9b74",
+    "data": [
+      {
+        "text": "y el ",
+        "userDefined": false
+      },
+      {
+        "text": "impermeable",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "85b21417-353e-4ebc-aa56-c05fba0bfb12",
+    "data": [
+      {
+        "text": "pero ",
+        "userDefined": false
+      },
+      {
+        "text": "una",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "chaqueta",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b319973c-7f08-48a8-a425-9f582efc0e6a",
+    "data": [
+      {
+        "text": "y unas",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "gafas de sol",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

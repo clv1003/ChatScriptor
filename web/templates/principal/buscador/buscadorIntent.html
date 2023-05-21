@@ -13,12 +13,8 @@
         <div class="col">
             <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }} </h3>
         </div>
-        <div class="col-auto justify-content-md-end mx-5">
-            <form class="d-flex ms-5" enctype="multipart/form-data" method="get"
-                  action="{{ url_for('buscar_intent', chat=chat, intent=intent) }}">
-                <input class="form-control me-3" type="text" name="busqueda" placeholder="Buscar">
-                <button class="btn btn-outline-dark rounded-circle" type="submit"><i class="bi bi-search"></i></button>
-            </form>
+        <div class="col">
+            <h3 class="text-end mx-5"><i class="bi bi-search"></i> Resultados de: {{ busqueda }}</h3>
         </div>
     </div>
 </div>
@@ -32,7 +28,7 @@
         </div>
     </div>
 
-
+    {% if 'name' in resultados[0] %}
     <div class="card mx-5 mb-3 border-warning mb-2 rounded-1 shadow">
         <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> name</div>
         <div class="card-body">
@@ -42,6 +38,7 @@
             </form>
         </div>
     </div>
+    {% endif %}
 
 
     <div class="row mx-5">
@@ -50,6 +47,7 @@
                 <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> response
                 </div>
                 <div class="card-body">
+                    {% if 'responses' in resultados[0] %}
                     <div class="row">
                         <div class="col-1 text-dark text-center fw-bold">action</div>
                         <form class="col" enctype="multipart/form-data" method="post"
@@ -58,8 +56,10 @@
                                    name="atributo">
                         </form>
                     </div>
-
+                    {% endif %}
                     {% if inte[0]['responses'][0]['parameters'] %}
+                    {% for item in resultados[0] %}
+                    {% if item is mapping %}
                     <table class="table table-auto">
                         <thead>
                         <tr>
@@ -69,6 +69,7 @@
                         </tr>
                         </thead>
                         {% for i in inte[0]['responses'][0]['parameters'] %}
+                        {% if i['id'] == item['responses'][0]['parameters'] %}
                         <tbody>
                         <tr>
                             <td class="text-center">
@@ -105,51 +106,27 @@
                             </td>
                         </tr>
                         </tbody>
+                        {% endif %}
                         {% endfor %}
                     </table>
-                    {% else %}
-                    <p class="text-left ms-5 mt-2"> No existen parametros </p>
                     {% endif %}
-
-                    <!--
-                    <div>
-                        <p class="text-left mb-2"><i class="bi bi-plus-circle"></i> Añadir entry</p>
-                        <div class="row">
-                            <div class="col">
-                                <form class="card-body" enctype="multipart/form-data" method="post"
-                                      action="{{ url_for('add_responses', chat=chat, intent=intent, responses='responses', parameters='parameters') }}">
-                                    <div class="row">
-                                        <div class="col">
-                                            <label for="name" class="form-label">Name:</label>
-                                            <input type="text" class="form-control" id="name" name="name">
-                                        </div>
-                                        <div class="col">
-                                            <label for="dataType" class="form-label">Data Type:</label>
-                                            <input type="text" class="form-control" id="dataType" name="dataType">
-                                        </div>
-                                        <div class="col">
-                                            <label for="value" class="form-label">Value:</label>
-                                            <input type="text" class="form-control" id="value" name="value">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    -->
+                    {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
 
-
+    {% if resultados[1] %}
     <div class="row mx-5">
         <div class="col mx-5">
             <div class="card border-warning mb-2 rounded-1 shadow">
                 <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> data
                 </div>
                 <div class="card-body">
+                    {% for id in resultados[1] %}
                     {% for i in inte[1] %}
+                    {% if id == i['id'] %}
                     <div class="card border-warning mb-3 mx-2 rounded-1">
                         {% for j in i['data'] %}
                         <div class="card-body">
@@ -164,7 +141,8 @@
                                     </form>
                                 </div>
                                 <div class="col-1">
-                                    <form action="{{ url_for('remove_data', chat=chat, intent=intent, id=i['id']) }}" method="post">
+                                    <form action="{{ url_for('remove_data', chat=chat, intent=intent, id=i['id']) }}"
+                                          method="post">
                                         <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i>
                                         </button>
                                     </form>
@@ -217,13 +195,14 @@
                         </div>
                         {% endfor %}
                     </div>
+                    {% endif %}
+                    {% endfor %}
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-
-
+    {% endif %}
 </div>
 
 <div class="container mt-5">

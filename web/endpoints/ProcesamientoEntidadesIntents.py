@@ -62,6 +62,30 @@ def get_parte(parte):
 
 
 # ---------------------------------------------------------------------------------------------------------------------
+# OBTENER LOS DIRECTORIOS DE LOS ARCHIVOS
+def directoriosEntidad(root, entidad):
+    if entidad.endswith('.json'):
+        entries1 = entidad
+        language = ProcesamientoAgente.get_agente_language(root)
+        entidad = entidad.replace('.json', '')
+        entries2 = entidad + '_entries_' + language + '.json'
+
+        ent = [root + '/entities/' + entries1, root + '/entities/' + entries2]
+        return ent
+
+
+def directoriosIntent(root, intent):
+    if intent.endswith('.json'):
+        intent1 = intent
+        language = ProcesamientoAgente.get_agente_language(root)
+        intent = intent.replace('.json', '')
+        intent2 = intent + '_usersays_' + language + '.json'
+
+        inte = [root + '/intents/' + intent1, root + '/intents/' + intent2]
+        return inte
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # EDITAR EL NOMBRE DE ENTIDAD E INTENT
 def editar_nombre(root, clave, atributo):
     diccionario = get_parte(root)
@@ -204,13 +228,11 @@ def editar_data(root, intent, old, tipo, atributo):
         for dt in diccionario:
             for d in dt["data"]:
                 if len(d) == 2 and tipo == "text":
-                    print(f'text')
                     if d[tipo] == old:
                         d[tipo] = atributo
                         stopflag = True
                         break
                 elif len(d) != 2 and (tipo == 'meta' or tipo == 'alias'):
-                    print(f'meta o alias')
                     if d[tipo] == old:
                         d[tipo] = atributo
                         stopflag = True

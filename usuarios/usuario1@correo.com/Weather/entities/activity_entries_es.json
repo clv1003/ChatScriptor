@@ -1,0 +1,116 @@
+[
+  {
+    "value": "running",
+    "synonyms": [
+      "correr"
+    ]
+  },
+  {
+    "value": "skating",
+    "synonyms": [
+      "patinar"
+    ]
+  },
+  {
+    "value": "jogging",
+    "synonyms": [
+      "caminar",
+      "caminata",
+      "trotar",
+      "dar una vuelta"
+    ]
+  },
+  {
+    "value": "climbing",
+    "synonyms": [
+      "escalar",
+      "subida a la montaña",
+      "ir a la montaña",
+      "escalar a la montaña",
+      "escalar la montaña"
+    ]
+  },
+  {
+    "value": "workout",
+    "synonyms": [
+      "entrenamiento",
+      "workout"
+    ]
+  },
+  {
+    "value": "marathon",
+    "synonyms": [
+      "maratón"
+    ]
+  },
+  {
+    "value": "weight training",
+    "synonyms": [
+      "entrenamiento de pesas"
+    ]
+  },
+  {
+    "value": "swimming",
+    "synonyms": [
+      "nadar",
+      "natación"
+    ]
+  },
+  {
+    "value": "cycling",
+    "synonyms": [
+      "vuelta en bici",
+      "paseo en bici",
+      "bici",
+      "carrera en bici"
+    ]
+  },
+  {
+    "value": "crossfit",
+    "synonyms": [
+      "entrenamiento de crossfit"
+    ]
+  },
+  {
+    "value": "yoga",
+    "synonyms": [
+      "yoga"
+    ]
+  },
+  {
+    "value": "camping",
+    "synonyms": [
+      "acampar"
+    ]
+  },
+  {
+    "value": "skiing",
+    "synonyms": [
+      "esquiar"
+    ]
+  },
+  {
+    "value": "surfing",
+    "synonyms": [
+      "surfear"
+    ]
+  },
+  {
+    "value": "go to the beach",
+    "synonyms": [
+      "ir a la playa"
+    ]
+  },
+  {
+    "value": "hiking",
+    "synonyms": [
+      "senderismo"
+    ]
+  },
+  {
+    "value": "frisbee",
+    "synonyms": [
+      "jugar a frisbee"
+    ]
+  }
+]
