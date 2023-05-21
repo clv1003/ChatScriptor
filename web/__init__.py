@@ -6,6 +6,7 @@ import ProcesamientoArchivos
 import ProcesamientoEntidadesIntents
 import ProcesamientoZip
 import ProcesamientoUsuario
+import ProcesamientoBuscador
 
 
 def start_app():
@@ -418,6 +419,57 @@ def start_app():
                 ProcesamientoEntidadesIntents.remove_data(
                     './usuarios/' + session['email'] + '/' + chat, intent=intent, idD=idD)
                 return redirect(url_for('get_intents', chat=chat))
+        else:
+            return redirect(url_for('login'))
+
+    # --------------------------------------------------------------------------------------------------------
+    @app.route('/buscar_agente/<string:chat>', methods=["GET"])
+    def buscar_agente(chat):
+        if 'email' in session:
+            busqueda = request.args.get('busqueda')
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                return render_template("principal/buscador/buscadorAgente.html",
+                                       resultados=ProcesamientoBuscador.buscar_agente(
+                                           './usuarios/' + session['email'] + '/' + chat,
+                                           busqueda=busqueda), chat=chat, busqueda=busqueda,
+                                       agente=ProcesamientoAgente.get_agente(
+                                           './usuarios/' + session['email'] + '/' + chat),
+                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+
+        else:
+            return redirect(url_for('login'))
+
+    @app.route('/buscar_entidad/<string:chat>/<string:entidad>', methods=["GET"])
+    def buscar_entidad(chat, entidad):
+        if 'email' in session:
+            busqueda = request.args.get('busqueda')
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                enti = ProcesamientoEntidadesIntents.directoriosEntidad(
+                    './usuarios/' + session['email'] + '/' + chat, entidad)
+                return render_template("principal/buscador/buscadorEntidad.html",
+                                       resultados=ProcesamientoBuscador.buscar_ent_int(enti[0], enti[1],
+                                                                                       busqueda=busqueda),
+                                       chat=chat, busqueda=busqueda, entidad=entidad,
+                                       ent=ProcesamientoEntidadesIntents.get_json(enti[0], enti[1]),
+                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+
+        else:
+            return redirect(url_for('login'))
+
+    @app.route('/buscar_intent/<string:chat>/<string:intent>', methods=["GET"])
+    def buscar_intent(chat, intent):
+        if 'email' in session:
+            busqueda = request.args.get('busqueda')
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                inten = ProcesamientoEntidadesIntents.directoriosIntent(
+                    './usuarios/' + session['email'] + '/' + chat, intent)
+                return render_template("principal/buscador/buscadorIntent.html",
+                                       resultados=ProcesamientoBuscador.buscar_ent_int(inten[0], inten[1],
+                                                                                       busqueda=busqueda),
+                                       chat=chat, busqueda=busqueda, intent=intent,
+                                       inte=ProcesamientoEntidadesIntents.get_json(inten[0], inten[1]),
+                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+
         else:
             return redirect(url_for('login'))
 

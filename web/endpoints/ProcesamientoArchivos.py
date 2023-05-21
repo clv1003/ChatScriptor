@@ -8,7 +8,8 @@ def get_disponible(rootdir):
 
     if os.path.exists(rootdir):
         for file in os.listdir(rootdir):
-            chatbots.append(file)
+            if file != 'readme.md':
+                chatbots.append(file)
 
     return chatbots
 
