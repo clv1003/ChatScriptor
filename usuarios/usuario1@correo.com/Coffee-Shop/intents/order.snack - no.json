@@ -1,0 +1,39 @@
+{
+  "id": "a3460a3a-8712-447d-8960-41d0e9205d60",
+  "parentId": "29d6940b-d954-4ec6-bd25-6384c551b30f",
+  "rootParentId": "29d6940b-d954-4ec6-bd25-6384c551b30f",
+  "name": "order.snack - no",
+  "auto": true,
+  "contexts": [
+    "ordersnack-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.snack.decline",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Sorry for misunderstanding! Please tell me once again, what would you like to eat?"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

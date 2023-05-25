@@ -1,0 +1,39 @@
+{
+  "id": "3002c677-eae1-44f1-ac78-828ba3d36dcc",
+  "parentId": "9b5938e4-d166-4b9b-bb99-14df80eb531e",
+  "rootParentId": "9b5938e4-d166-4b9b-bb99-14df80eb531e",
+  "name": "order.last.same_card",
+  "auto": true,
+  "contexts": [
+    "orderlast-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.last.same_card",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Okay. All set!"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

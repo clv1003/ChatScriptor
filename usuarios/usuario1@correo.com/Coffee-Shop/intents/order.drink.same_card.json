@@ -1,0 +1,39 @@
+{
+  "id": "131466e3-9e88-4c48-89af-705192e1b770",
+  "parentId": "eef5d302-8787-45ec-84fc-9db8f300079c",
+  "rootParentId": "420f9b81-450c-46d7-85d0-a23f5c4d9443",
+  "name": "order.drink.same_card",
+  "auto": true,
+  "contexts": [
+    "orderdrink-yes-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.drink.same_card",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "All set, enjoy!"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

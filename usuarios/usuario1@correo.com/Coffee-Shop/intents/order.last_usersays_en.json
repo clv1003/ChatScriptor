@@ -1,0 +1,109 @@
+[
+  {
+    "id": "2123654d-74b2-4843-91ba-13940b2ed1d3",
+    "data": [
+      {
+        "text": "I want to have what I always have",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "62f6a66f-cd40-4b98-8991-ba1d025827cd",
+    "data": [
+      {
+        "text": "can I have usual",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "3e8096e5-3230-4c1f-aeaf-8f6c1ac851f8",
+    "data": [
+      {
+        "text": "can I ",
+        "userDefined": false
+      },
+      {
+        "text": "pick up",
+        "meta": "@delivery-pickup",
+        "alias": "delivery-pickup",
+        "userDefined": false
+      },
+      {
+        "text": " my last order",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "30d90f7b-0da7-4e22-90da-a382d4999c53",
+    "data": [
+      {
+        "text": "I want to order the same",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "3079369f-cf5a-43f5-8827-09f4be3bf7c0",
+    "data": [
+      {
+        "text": "deliver",
+        "meta": "@delivery-pickup",
+        "alias": "delivery-pickup",
+        "userDefined": false
+      },
+      {
+        "text": " me my usual",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "2e1e164d-f5cd-47d4-ab68-0c9661bd896a",
+    "data": [
+      {
+        "text": "as usual please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "35376702-ad28-4841-8550-3ab59fcb0846",
+    "data": [
+      {
+        "text": "repeat my last order",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

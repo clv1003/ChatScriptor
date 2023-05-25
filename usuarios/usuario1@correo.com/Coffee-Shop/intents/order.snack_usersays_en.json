@@ -1,0 +1,429 @@
+[
+  {
+    "id": "19c884b5-49a3-4d15-a37d-94da39ff5298",
+    "data": [
+      {
+        "text": "3",
+        "meta": "@sys.number",
+        "alias": "amount",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "bagels",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": false
+      },
+      {
+        "text": " please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "5d796a0c-18e7-4234-af6b-933c11d4a85b",
+    "data": [
+      {
+        "text": "salad",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "a5670fe9-14fd-40fa-880f-fdb37b45154b",
+    "data": [
+      {
+        "text": "strudel",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": false
+      },
+      {
+        "text": " with ",
+        "userDefined": false
+      },
+      {
+        "text": "cheese",
+        "meta": "@flavor",
+        "alias": "flavor",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "97c4cec5-cba5-4eb6-8a65-dcfad0ba18f3",
+    "data": [
+      {
+        "text": "get me a dessert",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "3ac590eb-c02b-4cf0-a392-e8e211745130",
+    "data": [
+      {
+        "text": "bring me",
+        "meta": "@delivery-pickup",
+        "alias": "delivery-pickup",
+        "userDefined": true
+      },
+      {
+        "text": " a ",
+        "userDefined": false
+      },
+      {
+        "text": "bagel",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "609fce97-ffc2-427c-82c3-ced1b27c01bf",
+    "data": [
+      {
+        "text": "something to eat",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f62cc7eb-9cfb-49d0-8e21-1c5f6cb8f358",
+    "data": [
+      {
+        "text": "strawberry",
+        "meta": "@flavor",
+        "alias": "flavor",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "cupcake",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": false
+      },
+      {
+        "text": " please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "379d650d-249a-47f5-9ed1-e3e7d4271191",
+    "data": [
+      {
+        "text": "do you have ",
+        "userDefined": false
+      },
+      {
+        "text": "croissants",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "2144925e-cc1c-4038-85e3-2003636c9496",
+    "data": [
+      {
+        "text": "I\u0027m hungry",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "60ae3d5f-6f0d-498a-b22c-946c9a4b9bfd",
+    "data": [
+      {
+        "text": "I\u0027d love to get a ",
+        "userDefined": false
+      },
+      {
+        "text": "danish",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": true
+      },
+      {
+        "text": " with ",
+        "userDefined": false
+      },
+      {
+        "text": "almond paste",
+        "meta": "@flavor",
+        "alias": "flavor",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "8f90ba5c-facb-42d3-aa11-427916d8f686",
+    "data": [
+      {
+        "text": "how about a ",
+        "userDefined": false
+      },
+      {
+        "text": "small",
+        "meta": "@size",
+        "alias": "size",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "bagel",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "214350ba-2dea-4df5-b8eb-defd25bdbb64",
+    "data": [
+      {
+        "text": "I want a ",
+        "userDefined": false
+      },
+      {
+        "text": "muffin",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "fe4797b4-7e00-403e-9a65-4e8db1022405",
+    "data": [
+      {
+        "text": "I\u0027d love to get a ",
+        "userDefined": false
+      },
+      {
+        "text": "bagel",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": false
+      },
+      {
+        "text": " with ",
+        "userDefined": false
+      },
+      {
+        "text": "cream cheese",
+        "meta": "@flavor",
+        "alias": "flavor",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "5f2ff3f4-b061-44dd-a755-e8fd10898de4",
+    "data": [
+      {
+        "text": "can I get ",
+        "userDefined": false
+      },
+      {
+        "text": "three",
+        "meta": "@sys.number",
+        "alias": "amount",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "doughnuts",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": false
+      },
+      {
+        "text": " please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f3e069ea-3b4e-41ea-8c75-e7238af4f1a6",
+    "data": [
+      {
+        "text": "bagel",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "1234a8be-0451-4c17-bc78-c1e24db727b8",
+    "data": [
+      {
+        "text": "I want a ",
+        "userDefined": false
+      },
+      {
+        "text": "6",
+        "meta": "@sys.number",
+        "alias": "amount",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "huge",
+        "meta": "@size",
+        "alias": "size",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "chocolate",
+        "meta": "@topping",
+        "alias": "topping",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "doughnuts",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": false
+      },
+      {
+        "text": " please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "5a5775d7-318e-4da0-a456-7728a58f0788",
+    "data": [
+      {
+        "text": "I want a ",
+        "userDefined": false
+      },
+      {
+        "text": "huge",
+        "meta": "@size",
+        "alias": "size",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "chocolate",
+        "meta": "@topping",
+        "alias": "topping",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "doughnut",
+        "meta": "@snack",
+        "alias": "snack",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

@@ -13,29 +13,24 @@
         <div class="col">
             <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }} </h3>
         </div>
-        <div class="col-auto justify-content-md-end mx-5">
-            <form class="d-flex ms-5" role="search">
-                <input class="form-control me-3" type="search" placeholder="Buscar" aria-label="Search">
+         <div class="col-auto justify-content-md-end mx-5">
+            <form class="d-flex ms-5" enctype="multipart/form-data" method="get"
+                  action="{{ url_for('buscar_entidades', chat=chat) }}">
+                <input class="form-control me-3" type="text" name="busqueda" placeholder="Buscar">
                 <button class="btn btn-outline-dark rounded-circle" type="submit"><i class="bi bi-search"></i></button>
             </form>
         </div>
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-4">
     <div class="row">
         <div class="col">
             <h1 class="text-left mb-3"><i class="bi bi-at"></i> Entidades</h1>
         </div>
-
-        <div class="col-auto justify-content-md-end mx-4">
-            <a href="#" class="btn btn-primary"><i class="bi bi-plus-lg"></i></a>
-        </div>
     </div>
 
-
     {% if entidades != None %}
-
     <div class="list-group mt-3 mx-5">
         {% for e in entidades %}
         <div class="row">

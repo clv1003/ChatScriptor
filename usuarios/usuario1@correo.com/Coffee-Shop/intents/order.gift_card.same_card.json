@@ -1,0 +1,39 @@
+{
+  "id": "2b009006-554d-4504-b6fe-628ee0f0d48f",
+  "parentId": "a82d96aa-474e-450c-b847-9bbb47bf7ab3",
+  "rootParentId": "a82d96aa-474e-450c-b847-9bbb47bf7ab3",
+  "name": "order.gift_card.same_card",
+  "auto": true,
+  "contexts": [
+    "ordergift_card-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.gift_card.same_card",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Okay. All set."
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
