@@ -1,0 +1,64 @@
+{
+  "id": "cca20492-cf6a-47d7-aa0f-b8e0589a59f9",
+  "parentId": "29d6940b-d954-4ec6-bd25-6384c551b30f",
+  "rootParentId": "29d6940b-d954-4ec6-bd25-6384c551b30f",
+  "name": "order.snack - yes",
+  "auto": true,
+  "contexts": [
+    "ordersnack-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.snack.confirm",
+      "affectedContexts": [
+        {
+          "name": "ordersnack-yes-followup",
+          "lifespan": 2,
+          "parameters": {}
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "suggestion_chips",
+          "platform": "google",
+          "title": "",
+          "textToSpeech": "",
+          "suggestions": [
+            {
+              "title": "Yes"
+            },
+            {
+              "title": "No"
+            }
+          ],
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Are you using the same card for payment?"
+          ],
+          "condition": ""
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

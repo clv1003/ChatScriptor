@@ -1,4 +1,6 @@
 import os
+from asyncio import ProactorEventLoop
+
 from flask import Flask, render_template, url_for, redirect, request, session
 
 import ProcesamientoAgente
@@ -470,6 +472,73 @@ def start_app():
                                        inte=ProcesamientoEntidadesIntents.get_json(inten[0], inten[1]),
                                        usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
 
+        else:
+            return redirect(url_for('login'))
+
+    @app.route('/buscar_entidades/<string:chat>', methods=["GET"])
+    def buscar_entidades(chat):
+        if 'email' in session:
+            busqueda = request.args.get('busqueda')
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                return render_template("principal/buscador/buscadorEntidades.html",
+                                       resultados=ProcesamientoBuscador.buscar_entidades(
+                                           './usuarios/' + session['email'] + '/' + chat, busqueda=busqueda),
+                                       chat=chat, busqueda=busqueda,
+                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+        else:
+            return redirect(url_for('login'))
+
+    @app.route('/buscar_intents/<string:chat>', methods=["GET"])
+    def buscar_intents(chat):
+        if 'email' in session:
+            busqueda = request.args.get('busqueda')
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                return render_template("principal/buscador/buscardorIntents.html",
+                                       resultados=ProcesamientoBuscador.buscar_intents(
+                                           './usuarios/' + session['email'] + '/' + chat, busqueda=busqueda),
+                                       chat=chat, busqueda=busqueda,
+                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+        else:
+            return redirect(url_for('login'))
+
+    @app.route('/buscar_chatbot/<string:chat>', methods=["GET"])
+    def buscar_chatbot(chat):
+        if 'email' in session:
+            busqueda = request.args.get('busqueda')
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                return render_template("principal/buscador/buscadorChatbot.html",
+                                       resultados=ProcesamientoBuscador.buscar_chatbot(
+                                           './usuarios/' + session['email'] + '/' + chat,
+                                           busqueda=busqueda),
+                                       chat=chat, busqueda=busqueda,
+                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+        else:
+            return redirect(url_for('login'))
+
+    @app.route('/buscar_chatbots/', methods=["GET"])
+    def buscar_chatbots():
+        if 'email' in session:
+            busqueda = request.args.get('busqueda')
+            if os.path.exists('./usuarios/' + session['email']):
+                return render_template("principal/buscador/buscadorChatbots.html",
+                                       resultados=ProcesamientoBuscador.buscar_chatbots(
+                                           './usuarios/' + session['email'], busqueda=busqueda), busqueda=busqueda,
+                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+        else:
+            return redirect(url_for('login'))
+
+    # ------------------------
+    # REPORTE CON EL RESUMEN DE TODA LA INFORMACION RELEVANTE
+    @app.route('/reporte/<string:chat>', methods=["GET"])
+    def report(chat):
+        if 'email' in session:
+            intent = request.args.get('intent')
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                inten = ProcesamientoEntidadesIntents.directoriosIntent(
+                    './usuarios/' + session['email'] + '/' + chat, intent)
+                return render_template("principal/pantallas/reporte.html", chat=chat, intent=intent,
+                                       inte=ProcesamientoEntidadesIntents.get_json(inten[0], inten[1]),
+                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 

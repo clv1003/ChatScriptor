@@ -1,0 +1,54 @@
+{
+  "id": "82c49b1a-e47d-4646-a9b8-5a9304ba84c9",
+  "parentId": "9b5938e4-d166-4b9b-bb99-14df80eb531e",
+  "rootParentId": "9b5938e4-d166-4b9b-bb99-14df80eb531e",
+  "name": "order.last.different_card",
+  "auto": true,
+  "contexts": [
+    "orderlast-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.last.different_card",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "30e689fc-1e11-40a7-b939-fa2e35d310b3",
+          "name": "card-number",
+          "required": false,
+          "dataType": "@sys.number",
+          "value": "$card-number",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "All set! Enjoy!"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

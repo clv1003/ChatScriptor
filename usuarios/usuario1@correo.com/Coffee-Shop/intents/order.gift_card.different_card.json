@@ -1,0 +1,59 @@
+{
+  "id": "a1ee2f73-b91a-472f-9287-a7a920c388f0",
+  "parentId": "a82d96aa-474e-450c-b847-9bbb47bf7ab3",
+  "rootParentId": "a82d96aa-474e-450c-b847-9bbb47bf7ab3",
+  "name": "order.gift_card.different_card",
+  "auto": true,
+  "contexts": [
+    "ordergift_card-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.gift_card.different_card",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "5fca367f-e3ba-4447-b409-3130087bbd6d",
+          "name": "card-number",
+          "required": true,
+          "dataType": "@sys.number",
+          "value": "$card-number",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Tell me the card number please."
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Okay. All set."
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

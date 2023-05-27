@@ -1,0 +1,87 @@
+[
+  {
+    "value": "Bagel",
+    "synonyms": [
+      "Bagel"
+    ]
+  },
+  {
+    "value": "Caesar Salad",
+    "synonyms": [
+      "Caesar Salad"
+    ]
+  },
+  {
+    "value": "Carrot Cake",
+    "synonyms": [
+      "Carrot Cake"
+    ]
+  },
+  {
+    "value": "Croissant",
+    "synonyms": [
+      "Croissant"
+    ]
+  },
+  {
+    "value": "Cupcake",
+    "synonyms": [
+      "Cupcake"
+    ]
+  },
+  {
+    "value": "Danish",
+    "synonyms": [
+      "Danish"
+    ]
+  },
+  {
+    "value": "Deep Dish Cake",
+    "synonyms": [
+      "Deep Dish Cake"
+    ]
+  },
+  {
+    "value": "Doughnut",
+    "synonyms": [
+      "Doughnut",
+      "donut"
+    ]
+  },
+  {
+    "value": "Greek Salad",
+    "synonyms": [
+      "Greek Salad"
+    ]
+  },
+  {
+    "value": "Mediterranean Salad",
+    "synonyms": [
+      "Mediterranean Salad"
+    ]
+  },
+  {
+    "value": "Muffin",
+    "synonyms": [
+      "Muffin"
+    ]
+  },
+  {
+    "value": "Plum Cake",
+    "synonyms": [
+      "Plum Cake"
+    ]
+  },
+  {
+    "value": "Salad",
+    "synonyms": [
+      "Salad"
+    ]
+  },
+  {
+    "value": "Strudel",
+    "synonyms": [
+      "Strudel"
+    ]
+  }
+]

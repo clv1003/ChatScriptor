@@ -1,0 +1,41 @@
+[
+  {
+    "value": "almond milk",
+    "synonyms": [
+      "almond"
+    ]
+  },
+  {
+    "value": "cream",
+    "synonyms": [
+      "cream",
+      "half and half",
+      "half-and-half"
+    ]
+  },
+  {
+    "value": "non fat milk",
+    "synonyms": [
+      "non fat",
+      "non-fat",
+      "skinny"
+    ]
+  },
+  {
+    "value": "regular milk",
+    "synonyms": [
+      "low fat",
+      "low-fat",
+      "lowfat",
+      "normal",
+      "regular",
+      "two percent"
+    ]
+  },
+  {
+    "value": "soy milk",
+    "synonyms": [
+      "soy"
+    ]
+  }
+]

@@ -1,4 +1,5 @@
 import ProcesamientoAgente
+import ProcesamientoArchivos
 import ProcesamientoEntidadesIntents
 
 
@@ -91,3 +92,51 @@ def buscar_ent_int(rootP1, rootP2, busqueda):
                     resultados2.append(j['id'])
 
         return [resultados1, resultados2]
+
+
+def buscar_entidades(dir_ents, busqueda):
+    entidades = ProcesamientoEntidadesIntents.get_entidades(dir_ents)
+    resultados = []
+
+    for ent in entidades:
+        root1 = dir_ents + '/entities/' + ent[0]
+        root2 = dir_ents + '/entities/' + ent[1]
+
+        resultados.append(buscar_ent_int(root1, root2, busqueda))
+    return resultados
+
+
+def buscar_intents(dir_ints, busqueda):
+    intents = ProcesamientoEntidadesIntents.get_intents(dir_ints)
+    resultados = []
+
+    for inte in intents:
+        root1 = dir_ints + '/intents/' + inte[0]
+        root2 = dir_ints + '/intents/' + inte[1]
+
+        resultados.append(buscar_ent_int(root1, root2, busqueda))
+    return resultados
+
+
+def buscar_chatbot(directorio, busqueda):
+    resultados = {'agente': None, 'entidades': None, 'intents': None}
+
+    agente = buscar_agente(directorio, busqueda)
+    intents = buscar_intents(directorio, busqueda)
+    entidades = buscar_entidades(directorio, busqueda)
+
+    resultados['agente'] = agente
+    resultados['intents'] = intents
+    resultados['entidades'] = entidades
+
+    return resultados
+
+
+def buscar_chatbots(directorio, busqueda):
+    chatbots = ProcesamientoArchivos.get_disponible(directorio)
+    resultados = []
+
+    for cb in chatbots:
+        resultados.append(buscar_chatbot(directorio + '/' + cb, busqueda))
+
+    return resultados

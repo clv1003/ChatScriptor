@@ -1,0 +1,70 @@
+[
+  {
+    "value": "almond",
+    "synonyms": [
+      "almond",
+      "almond paste"
+    ]
+  },
+  {
+    "value": "blueberry",
+    "synonyms": [
+      "blueberry"
+    ]
+  },
+  {
+    "value": "caramel",
+    "synonyms": [
+      "caramel"
+    ]
+  },
+  {
+    "value": "cheese",
+    "synonyms": [
+      "cheese"
+    ]
+  },
+  {
+    "value": "cream cheese",
+    "synonyms": [
+      "cream cheese"
+    ]
+  },
+  {
+    "value": "hazelnut",
+    "synonyms": [
+      "hazelnut"
+    ]
+  },
+  {
+    "value": "peppermint",
+    "synonyms": [
+      "peppermint"
+    ]
+  },
+  {
+    "value": "raspberry",
+    "synonyms": [
+      "raspberry"
+    ]
+  },
+  {
+    "value": "strawberry",
+    "synonyms": [
+      "strawberry"
+    ]
+  },
+  {
+    "value": "sugar-free vanilla",
+    "synonyms": [
+      "sugar free vanilla",
+      "sugar-free vanilla"
+    ]
+  },
+  {
+    "value": "vanilla",
+    "synonyms": [
+      "vanilla"
+    ]
+  }
+]

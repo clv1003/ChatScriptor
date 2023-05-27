@@ -1,0 +1,39 @@
+{
+  "id": "18ee2df7-6f59-4dd8-8f2e-a29485ccfbd4",
+  "parentId": "420f9b81-450c-46d7-85d0-a23f5c4d9443",
+  "rootParentId": "420f9b81-450c-46d7-85d0-a23f5c4d9443",
+  "name": "order.drink - no",
+  "auto": true,
+  "contexts": [
+    "orderdrink-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "order.drink.decline",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Sorry for misunderstanding. Please tell me once again, what would you like to drink?"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
