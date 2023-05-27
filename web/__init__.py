@@ -520,9 +520,12 @@ def start_app():
         if 'email' in session:
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email']):
+                chatbots = ProcesamientoArchivos.get_disponible('./usuarios/' + session['email'])
+                datosA, datosE, datosI = ProcesamientoArchivos.obtener_datos('./usuarios/' + session['email'], chatbots)
                 return render_template("principal/buscador/buscadorChatbots.html",
                                        resultados=ProcesamientoBuscador.buscar_chatbots(
                                            './usuarios/' + session['email'], busqueda=busqueda), busqueda=busqueda,
+                                       datosA=datosA, datosE=datosE, datosI=datosI,
                                        usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
@@ -533,6 +536,7 @@ def start_app():
     def report(chat):
         if 'email' in session:
             intent = request.args.get('intent')
+
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 inten = ProcesamientoEntidadesIntents.directoriosIntent(
                     './usuarios/' + session['email'] + '/' + chat, intent)

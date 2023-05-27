@@ -1,0 +1,41 @@
+[
+  {
+    "id": "21499373-3b5e-4ba6-8975-6a881a8a2e39",
+    "data": [
+      {
+        "text": "buenas tardes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "4496ca58-1ab4-436e-bc64-0267ee08c89b",
+    "data": [
+      {
+        "text": "hola buenas tardes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "316979de-02fe-4964-89ce-02d3a0c7cdd5",
+    "data": [
+      {
+        "text": "muy buenas tardes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

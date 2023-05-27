@@ -5,12 +5,174 @@
 
 <div class="sticky-top">
     {% include 'comunes/navbar.html' %}
-    {% include 'comunes/subnavbar.html' %}
 </div>
 
-<p>{{usuario}}</p>
-<p>{{busqueda}}</p>
-<p>{{resultados}}</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }}</h3>
+        </div>
+        <div class="col">
+            <h3 class="text-end mx-5"><i class="bi bi-search"></i> Resultados de: {{ busqueda }}</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    {% for rk, rv in resultados.items() %}
+    {% set dA = datosA[rk] %}
+    {% set dE = datosE[rk] %}
+    {% set dI = datosI[rk] %}
+
+    <div class="card mx-5 border-warning mb-2 rounded-1 shadow">
+        <h3 class="text-left mb-4 mx-5 mt-5"><i class="bi bi-person-vcard"></i> Agente - {{rk}}</h3>
+
+        {% if rv['agente'] %}
+        {% if 'displayName' in rv['agente'] %}
+        <div class="card mx-5 border-warning mb-2 rounded-1">
+            <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+                displayName
+            </div>
+            <div class="card-body">
+                <form enctype="multipart/form-data" method="post"
+                      action="{{ url_for('actualizar_json', chat=rk, clave='displayName') }}">
+                    <input type="text" class="form-control" value="{{ dA['displayName'] }}"
+                           name="atributo">
+                </form>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if 'language' in rv['agente'] %}
+        <div class="card mx-5 border-warning mb-2 rounded-1">
+            <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+                language
+            </div>
+            <div class="card-body">
+                <form enctype="multipart/form-data" method="post"
+                      action="{{ url_for('actualizar_json', chat=rk, clave='language') }}">
+                    <input type="text" class="form-control" value="{{ dA['language'] }}"
+                           name="atributo">
+                </form>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if 'shortDescription' in rv['agente'] %}
+        <div class="card mx-5 border-warning mb-2 rounded-1">
+            <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+                shortDescription
+            </div>
+            <div class="card-body">
+                <form enctype="multipart/form-data" method="post"
+                      action="{{ url_for('actualizar_json', chat=rk, clave='shortDescription') }}">
+                    <input type="text" class="form-control" value="{{ dA['shortDescription'] }}"
+                           name="atributo">
+                </form>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if 'description' in rv['agente'] %}
+        <div class="card mx-5 border-warning mb-2 rounded-1">
+            <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+                description
+            </div>
+            <div class="card-body">
+                <form enctype="multipart/form-data" method="post"
+                      action="{{ url_for('actualizar_json', chat=rk, clave='description') }}">
+                    <input type="text" class="form-control" value="{{ dA['description'] }}"
+                           name="atributo">
+                </form>
+                <p class="card-text mt-3">{{ dA['description'] }} </p>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if 'examples' in rv['agente'] %}
+        <div class="card mx-5 border-warning mb-2 rounded-1">
+            <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
+                examples
+            </div>
+            <div class="card-body">
+                <form enctype="multipart/form-data" method="post"
+                      action="{{ url_for('actualizar_json', chat=rk, clave='examples') }}">
+                    <input type="text" class="form-control" value="{{ dA['examples'] }}"
+                           name="atributo">
+                </form>
+                <p class="card-text mt-3">{{ dA['examples'] | default('') | replace('\n', '<br>') |
+                    safe }} </p>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        <hr class="mx-5 mt-5">
+
+        <div class="container mt-5">
+            <h3 class="text-left mx-5 mb-3">@ Entidades - {{rk}}</h3>
+
+            {% if dE %}
+            {% for entidades in dE %}
+            <div class="list-group mx-5">
+                {% for ek, ev in rv['entidades'].items() %}
+                {% if (ek + '.json') in entidades[0] and (ev[0] | length > 0 or ev[1] | length > 0) %}
+                <div class="row">
+                    <div class="col">
+                        <a class="mb-1 ms-5 btn btn-outline-warning btn-block list-group-item shadow rounded-2"
+                           href="{{ url_for('get_entidad', chat=rk, entidad=entidades) }}">@{{ ek }}
+                        </a>
+                    </div>
+                    <div class="col-auto justify-content-md-end mx-4">
+                        <div class="col-auto justify-content-md-end mx-4">
+                            <form action="{{ url_for('remove_entidad', chat=rk, entidad=entidades) }}" method="post">
+                                <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+
+        <hr class="mx-5 mt-5">
+
+        <div class="container mt-5 mb-5">
+            <h3 class="text-left mb-4 mx-5">@ Intents - {{rk}}</h3>
+
+            {% for intents in dI %}
+            <div class="list-group mx-5">
+                {% for ik, iv in rv['intents'].items() %}
+                {% if (ik + '.json') in intents[0] and (iv[0] | length > 0 or iv[1] | length > 0) %}
+                <div class="row">
+                    <div class="col">
+                        <a class="mb-1 ms-5 btn btn-outline-warning btn-block list-group-item shadow rounded-2"
+                           href="{{ url_for('get_intent', chat=rk, intent=intents) }}">{{ ik }}
+                        </a>
+                    </div>
+                    <div class="col-auto justify-content-md-end mx-4">
+                        <div class="col-auto justify-content-md-end mx-4">
+                            <form action="{{ url_for('remove_intent', chat=rk, intent=intents) }}" method="post">
+                                <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 
 <div class="container mt-5">
     {% include 'comunes/footer.html' %}

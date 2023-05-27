@@ -1,0 +1,210 @@
+[
+  {
+    "id": "b1ad3985-c6eb-4af6-ba0b-2d955c3c3985",
+    "data": [
+      {
+        "text": "en un rato hablamos",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "21e8f6b5-f113-4d73-9807-20812be67d80",
+    "data": [
+      {
+        "text": "adiós",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "ede7ce71-7c0e-4787-90ae-21cb3f041a6d",
+    "data": [
+      {
+        "text": "hasta luego",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "3c14e5e7-e2cb-4750-8716-df93c316e921",
+    "data": [
+      {
+        "text": "hasta pronto",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "bd1d6e01-2c1c-4061-9e23-9ec2f4d98395",
+    "data": [
+      {
+        "text": "nos vemos",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "a8f49f9d-4a1d-45e1-a9da-bf7c69f7711a",
+    "data": [
+      {
+        "text": "hasta la próxima",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "db780ff3-2c6e-4307-bac0-cb655eafa606",
+    "data": [
+      {
+        "text": "ya hablamos",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d9eb9038-beb3-4fb5-96f9-6a13fe50feec",
+    "data": [
+      {
+        "text": "hasta la vista",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "bedd82e3-57c9-4d72-8b18-9e3b4d3d3818",
+    "data": [
+      {
+        "text": "chao",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f730de0d-ecf8-4e5f-b242-9f9f68789765",
+    "data": [
+      {
+        "text": "adiós amigo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "af59d569-2b41-43b8-a578-f5d68ebd20de",
+    "data": [
+      {
+        "text": "hasta mañana",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "55d802d1-0249-42c7-ba3f-0c6e5badd79f",
+    "data": [
+      {
+        "text": "hasta después",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "8323da3c-c634-4412-af22-842bba3a65ad",
+    "data": [
+      {
+        "text": "me despido",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "6c1a6b1d-3646-40ae-b197-7713a51129f9",
+    "data": [
+      {
+        "text": "me retiro",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "a45414c8-d5e1-4038-9b78-974daf1da6a4",
+    "data": [
+      {
+        "text": "me tengo que ir",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d64a67bd-3045-47ca-a711-53188291d6f3",
+    "data": [
+      {
+        "text": "por ahora me voy",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

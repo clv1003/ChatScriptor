@@ -1,0 +1,188 @@
+[
+  {
+    "id": "88b88d7f-1c64-4a47-9a59-000a8942b2d0",
+    "data": [
+      {
+        "text": "super",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f7a1eff5-04af-4062-92f4-a3400e3cd841",
+    "data": [
+      {
+        "text": "fantástico",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7a451aa5-9134-469d-bfc7-6834c9461d33",
+    "data": [
+      {
+        "text": "maravilloso",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "771cfc37-4bf7-4927-83d6-7279fc89ce61",
+    "data": [
+      {
+        "text": "genial",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "164b908c-b444-40bc-8c72-bcc18f2d6f51",
+    "data": [
+      {
+        "text": "bien",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "07d23949-bf06-440b-9aa6-ab5ab76851d1",
+    "data": [
+      {
+        "text": "muy bien",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "cec1cc98-8b9b-4544-8c2b-60e2a3dc5aae",
+    "data": [
+      {
+        "text": "me parece bien",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 2,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "8a36750e-52a3-4257-89e5-1679ef1db2f8",
+    "data": [
+      {
+        "text": "está bien",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "75607b95-af5b-4eee-9278-c2d4c11eee17",
+    "data": [
+      {
+        "text": "no está",
+        "userDefined": true
+      },
+      {
+        "text": " nada mal",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "833c6b82-d8a3-42df-bd88-5f9a0afb296c",
+    "data": [
+      {
+        "text": "buenísimo",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1a824e86-04b0-4227-9633-b1472c191e7a",
+    "data": [
+      {
+        "text": "nada mal",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d37f6abc-3501-434d-8e6c-774bf5649b35",
+    "data": [
+      {
+        "text": "no está mal",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "75ae4751-bb88-409c-aa98-33c69e62bb38",
+    "data": [
+      {
+        "text": "bueno",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0f65e301-ddf9-4aaa-8a71-63c74979394a",
+    "data": [
+      {
+        "text": "bastante bien",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

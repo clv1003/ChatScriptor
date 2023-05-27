@@ -1,0 +1,119 @@
+[
+  {
+    "id": "a8d6d0d3-3ce1-4fcb-9306-5ac53df71ca8",
+    "data": [
+      {
+        "text": "necesito un consejo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "d0ecbaa9-c4e8-4aa5-9004-2dd1283b85c4",
+    "data": [
+      {
+        "text": "me puedes dar un consejo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "011c768c-e4df-43bd-9b4d-af110be2e66c",
+    "data": [
+      {
+        "text": "necesito un consejo tuyo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c4d37a0a-a358-44d1-b2a3-64e101cab322",
+    "data": [
+      {
+        "text": "aconséjame por favor",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "68dee70f-8845-407b-822c-7b7c57384d2f",
+    "data": [
+      {
+        "text": "dame un consejo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "9d586f4a-5069-41f5-b61f-63e9ddba997b",
+    "data": [
+      {
+        "text": "me das un consejo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "a36e988a-229e-4ec1-b2e4-bf6d20de7968",
+    "data": [
+      {
+        "text": "quiero que me des un consejo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "1080b3a9-cd11-4639-8d42-79bcecb39e0f",
+    "data": [
+      {
+        "text": "necesito un buen consejo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e08ad089-8c0b-49b5-9f5f-9e1c515d4402",
+    "data": [
+      {
+        "text": "what should I do about it",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

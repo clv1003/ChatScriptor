@@ -1,0 +1,58 @@
+[
+  {
+    "id": "32a9b906-5de8-4270-baf6-2337ffc113ab",
+    "data": [
+      {
+        "text": "de nada",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "050aff02-9aca-4097-8a68-806bb42abb61",
+    "data": [
+      {
+        "text": "de",
+        "userDefined": false
+      },
+      {
+        "text": " nada de verdad",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "fa9a9147-542d-4248-a99f-788e847f2365",
+    "data": [
+      {
+        "text": "bienvenido",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "ad29eb86-484b-4a45-b34d-d635ee0202cc",
+    "data": [
+      {
+        "text": "ha sido un placer",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

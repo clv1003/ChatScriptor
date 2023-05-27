@@ -2,6 +2,9 @@ import os
 import re
 import shutil
 
+import ProcesamientoAgente
+import ProcesamientoEntidadesIntents
+
 
 def get_disponible(rootdir):
     chatbots = []
@@ -37,4 +40,17 @@ def relistado(cadena):
 
 
 def remove_chatbot(rootdir, chat):
-    shutil.rmtree(rootdir+chat)
+    shutil.rmtree(rootdir + chat)
+
+
+def obtener_datos(rootdir, chatbots):
+    diccionarioAgentes = {}
+    diccionarioEntidades = {}
+    diccionarioIntents = {}
+
+    for c in chatbots:
+        diccionarioAgentes[c] = ProcesamientoAgente.get_agente(rootdir + '/' + c)
+        diccionarioEntidades[c] = ProcesamientoEntidadesIntents.get_entidades(rootdir + '/' + c)
+        diccionarioIntents[c] = ProcesamientoEntidadesIntents.get_intents(rootdir + '/' + c)
+
+    return diccionarioAgentes, diccionarioEntidades, diccionarioIntents
