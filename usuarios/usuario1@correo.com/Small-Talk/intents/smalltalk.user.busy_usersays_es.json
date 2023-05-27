@@ -1,0 +1,123 @@
+[
+  {
+    "id": "e6de4e48-7bca-4e44-b963-fd1595bd1721",
+    "data": [
+      {
+        "text": "no tengo tiempo para ",
+        "userDefined": false
+      },
+      {
+        "text": "nada",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "73b14a8d-0b51-4ad6-8263-6c4d6b0faa7e",
+    "data": [
+      {
+        "text": "disculpa estoy muy ocupada",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "08f6429b-43ab-4ce7-9b18-bc49fc3b431e",
+    "data": [
+      {
+        "text": "estoy ocupado",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "6b714078-5360-4674-884b-5e3962ecb929",
+    "data": [
+      {
+        "text": "tengo un montón de cosas que hacer",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "da62d360-bdcf-4b8b-aaa9-4de728c06f9f",
+    "data": [
+      {
+        "text": "estoy muy liado",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b90160de-ffd4-47dc-8a24-ba7ac4709928",
+    "data": [
+      {
+        "text": "tengo mucho lio",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c4e7e2e5-2958-4396-840f-e9454c3424d1",
+    "data": [
+      {
+        "text": "tengo mucho trabajo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e130e379-bfb7-4d29-a414-ca47629916fe",
+    "data": [
+      {
+        "text": "tengo muchas cosas que hacer",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "18eb7253-dcd4-4654-b73a-5c7c851f2a32",
+    "data": [
+      {
+        "text": "no tengo tiempo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

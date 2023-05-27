@@ -1,0 +1,119 @@
+[
+  {
+    "id": "7cf794cf-7aae-47d3-9b5b-c808261c0734",
+    "data": [
+      {
+        "text": "habla",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "0d9e8a9f-9788-4542-b71c-1dac6324b345",
+    "data": [
+      {
+        "text": "háblame",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7b7064f2-4700-4b56-a362-485cb3a862bd",
+    "data": [
+      {
+        "text": "podemos hablar",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "17d2dc0f-e098-47fc-9d0d-af7507718978",
+    "data": [
+      {
+        "text": "quiero que hables conmigo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "ddc0553a-1497-414d-9733-42f70fad59f6",
+    "data": [
+      {
+        "text": "podrías hablar conmigo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "481b1e2a-5b31-4ad2-aedd-fb25fa201afa",
+    "data": [
+      {
+        "text": "vamos a hablar de algo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "a4614679-10ea-4553-b7b4-04956585806a",
+    "data": [
+      {
+        "text": "hablemos de algo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "3d041f1a-1f56-4900-95a2-c9e2556b0e37",
+    "data": [
+      {
+        "text": "hablemos por favor",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "65c52a5a-cb2d-4640-9ed1-d7b7ae71b71f",
+    "data": [
+      {
+        "text": "podemos hablar un momento",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

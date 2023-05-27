@@ -1,0 +1,80 @@
+[
+  {
+    "id": "d8cac91c-f8ca-4e5c-85a3-599905b4f418",
+    "data": [
+      {
+        "text": "tienes que estudiar más",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "b009472b-7250-484f-90d6-f6c7c8581452",
+    "data": [
+      {
+        "text": "quiero que seas más lista",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "a3e14e8e-107a-4c53-a5d3-b6418c575cd6",
+    "data": [
+      {
+        "text": "que seas más listo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e10c9e58-9ed0-47c8-afce-4e599b89e620",
+    "data": [
+      {
+        "text": "estudia mejor",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "55ad238c-9bc6-4875-afd7-ba766d2efb89",
+    "data": [
+      {
+        "text": "puedes ser más inteligente",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "06a439fe-3b91-46bd-86bf-5c1bc33ab6cf",
+    "data": [
+      {
+        "text": "quiero que seas más inteligente",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

@@ -96,25 +96,35 @@ def buscar_ent_int(rootP1, rootP2, busqueda):
 
 def buscar_entidades(dir_ents, busqueda):
     entidades = ProcesamientoEntidadesIntents.get_entidades(dir_ents)
-    resultados = []
+    resultados = {}
 
-    for ent in entidades:
-        root1 = dir_ents + '/entities/' + ent[0]
-        root2 = dir_ents + '/entities/' + ent[1]
+    if not (entidades is None):
+        for ent in entidades:
+            root1 = dir_ents + '/entities/' + ent[0]
+            root2 = dir_ents + '/entities/' + ent[1]
 
-        resultados.append(buscar_ent_int(root1, root2, busqueda))
+            if ent[0].endswith('.json'):
+                e = ent[0].replace('.json', '')
+
+            entity = buscar_ent_int(root1, root2, busqueda)
+            resultados[e] = entity
     return resultados
 
 
 def buscar_intents(dir_ints, busqueda):
     intents = ProcesamientoEntidadesIntents.get_intents(dir_ints)
-    resultados = []
+    resultados = {}
 
-    for inte in intents:
-        root1 = dir_ints + '/intents/' + inte[0]
-        root2 = dir_ints + '/intents/' + inte[1]
+    if not (intents is None):
+        for inte in intents:
+            root1 = dir_ints + '/intents/' + inte[0]
+            root2 = dir_ints + '/intents/' + inte[1]
 
-        resultados.append(buscar_ent_int(root1, root2, busqueda))
+            if inte[0].endswith('.json'):
+                i = inte[0].replace('.json', '')
+
+            intent = buscar_ent_int(root1, root2, busqueda)
+            resultados[i] = intent
     return resultados
 
 
@@ -134,9 +144,9 @@ def buscar_chatbot(directorio, busqueda):
 
 def buscar_chatbots(directorio, busqueda):
     chatbots = ProcesamientoArchivos.get_disponible(directorio)
-    resultados = []
+    resultados = {}
 
     for cb in chatbots:
-        resultados.append(buscar_chatbot(directorio + '/' + cb, busqueda))
+        resultados[cb] = buscar_chatbot(directorio + '/' + cb, busqueda)
 
     return resultados
