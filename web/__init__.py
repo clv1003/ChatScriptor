@@ -504,12 +504,15 @@ def start_app():
     @app.route('/buscar_chatbot/<string:chat>', methods=["GET"])
     def buscar_chatbot(chat):
         if 'email' in session:
+            chatbot = []
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                chatbot.append(chat)
+                datosA, datosE, datosI = ProcesamientoArchivos.obtener_datos('./usuarios/' + session['email'], chatbot)
                 return render_template("principal/buscador/buscadorChatbot.html",
                                        resultados=ProcesamientoBuscador.buscar_chatbot(
                                            './usuarios/' + session['email'] + '/' + chat,
-                                           busqueda=busqueda),
+                                           busqueda=busqueda), datosA=datosA, datosE=datosE, datosI=datosI,
                                        chat=chat, busqueda=busqueda,
                                        usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:

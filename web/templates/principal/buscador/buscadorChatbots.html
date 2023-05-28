@@ -124,13 +124,12 @@
                         </a>
                     </div>
                     <div class="col-auto justify-content-md-end mx-4">
-                        <div class="col-auto justify-content-md-end mx-4">
-                            <form action="{{ url_for('remove_entidad', chat=rk, entidad=entidades) }}" method="post">
-                                <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar
-                                </button>
-                            </form>
-                        </div>
+                        <form action="{{ url_for('remove_entidad', chat=rk, entidad=entidades) }}" method="post">
+                            <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar
+                            </button>
+                        </form>
                     </div>
+
                 </div>
                 {% endif %}
                 {% endfor %}
@@ -143,7 +142,7 @@
         <hr class="mx-5 mt-5">
 
         <div class="container mt-5 mb-5">
-            <h3 class="text-left mb-4 mx-5">@ Intents - {{rk}}</h3>
+            <h3 class="text-left mb-4 mx-5"><i class="bi bi-chat-dots"></i> Intents - {{rk}}</h3>
 
             {% for intents in dI %}
             <div class="list-group mx-5">
@@ -156,13 +155,12 @@
                         </a>
                     </div>
                     <div class="col-auto justify-content-md-end mx-4">
-                        <div class="col-auto justify-content-md-end mx-4">
-                            <form action="{{ url_for('remove_intent', chat=rk, intent=intents) }}" method="post">
-                                <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar
-                                </button>
-                            </form>
-                        </div>
+                        <form action="{{ url_for('remove_intent', chat=rk, intent=intents) }}" method="post">
+                            <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar
+                            </button>
+                        </form>
                     </div>
+
                 </div>
                 {% endif %}
                 {% endfor %}
