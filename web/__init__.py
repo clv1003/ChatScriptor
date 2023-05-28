@@ -478,12 +478,15 @@ def start_app():
     @app.route('/buscar_entidades/<string:chat>', methods=["GET"])
     def buscar_entidades(chat):
         if 'email' in session:
+            chatbot = []
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                chatbot.append(chat)
+                _, datosE, _ = ProcesamientoArchivos.obtener_datos('./usuarios/' + session['email'], chatbot)
                 return render_template("principal/buscador/buscadorEntidades.html",
                                        resultados=ProcesamientoBuscador.buscar_entidades(
                                            './usuarios/' + session['email'] + '/' + chat, busqueda=busqueda),
-                                       chat=chat, busqueda=busqueda,
+                                       chat=chat, busqueda=busqueda, datosE=datosE,
                                        usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
@@ -491,12 +494,15 @@ def start_app():
     @app.route('/buscar_intents/<string:chat>', methods=["GET"])
     def buscar_intents(chat):
         if 'email' in session:
+            chatbot = []
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                chatbot.append(chat)
+                _, _, datosI = ProcesamientoArchivos.obtener_datos('./usuarios/' + session['email'], chatbot)
                 return render_template("principal/buscador/buscardorIntents.html",
                                        resultados=ProcesamientoBuscador.buscar_intents(
                                            './usuarios/' + session['email'] + '/' + chat, busqueda=busqueda),
-                                       chat=chat, busqueda=busqueda,
+                                       chat=chat, busqueda=busqueda, datosI=datosI,
                                        usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
@@ -504,12 +510,15 @@ def start_app():
     @app.route('/buscar_chatbot/<string:chat>', methods=["GET"])
     def buscar_chatbot(chat):
         if 'email' in session:
+            chatbot = []
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                chatbot.append(chat)
+                datosA, datosE, datosI = ProcesamientoArchivos.obtener_datos('./usuarios/' + session['email'], chatbot)
                 return render_template("principal/buscador/buscadorChatbot.html",
                                        resultados=ProcesamientoBuscador.buscar_chatbot(
                                            './usuarios/' + session['email'] + '/' + chat,
-                                           busqueda=busqueda),
+                                           busqueda=busqueda), datosA=datosA, datosE=datosE, datosI=datosI,
                                        chat=chat, busqueda=busqueda,
                                        usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:

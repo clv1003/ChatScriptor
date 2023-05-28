@@ -8,10 +8,52 @@
     {% include 'comunes/subnavbar.html' %}
 </div>
 
-<p>{{usuario}}</p>
-<p>{{chat}}</p>
-<p>{{busqueda}}</p>
-<p>{{resultados}}</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }}</h3>
+        </div>
+        <div class="col">
+            <h3 class="text-end mx-5"><i class="bi bi-search"></i> Resultados de: {{ busqueda }}</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    {% set dI = datosI[chat] %}
+
+    <div class="card mx-5 border-warning mb-2 rounded-1 shadow">
+        <div class="container mt-5 mb-5">
+            <h3 class="text-left mx-5 mb-3"><i class="bi bi-chat-dots"></i> Intents</h3>
+
+            {% if dI %}
+            {% for intents in dI %}
+            <div class="list-group mx-5">
+                {% for ik, iv in resultados.items() %}
+                {% if (ik + '.json') in intents[0] and (iv[0] | length > 0 or iv[1] | length > 0) %}
+                <div class="row">
+                    <div class="col">
+                        <a class="mb-1 ms-5 btn btn-outline-warning btn-block list-group-item shadow rounded-2"
+                           href="{{ url_for('get_intent', chat=chat, intent=intents) }}">{{ ik }}
+                        </a>
+                    </div>
+                    <div class="col-auto justify-content-md-end mx-4">
+                        <form action="{{ url_for('remove_intent', chat=chat, intent=intents) }}" method="post">
+                            <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+</div>
 
 <div class="container mt-5">
     {% include 'comunes/footer.html' %}
