@@ -541,16 +541,19 @@ def start_app():
 
     # ------------------------
     # REPORTE CON EL RESUMEN DE TODA LA INFORMACION RELEVANTE
-    @app.route('/reporte/<string:chat>', methods=["GET"])
-    def report(chat):
+    @app.route('/informe/<string:chat>', methods=["GET"])
+    def informe(chat):
+        datos = []
         if 'email' in session:
-            intent = request.args.get('intent')
-
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                inten = ProcesamientoEntidadesIntents.directoriosIntent(
-                    './usuarios/' + session['email'] + '/' + chat, intent)
-                return render_template("principal/pantallas/reporte.html", chat=chat, intent=intent,
-                                       inte=ProcesamientoEntidadesIntents.get_json(inten[0], inten[1]),
+                intents = ProcesamientoEntidadesIntents.get_intents('./usuarios/' + session['email'] + '/' + chat)
+
+                for i in intents:
+                    inte = ProcesamientoEntidadesIntents.directoriosIntent(
+                        './usuarios/' + session['email'] + '/' + chat, i[0])
+                    intent = ProcesamientoEntidadesIntents.get_json(inte[0], inte[1])
+                    datos.append(intent)
+                return render_template("principal/pantallas/informe.html", chat=chat, datos=datos,
                                        usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
