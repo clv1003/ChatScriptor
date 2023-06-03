@@ -24,18 +24,7 @@
 </div>
 
 <div class="container mt-4">
-    <div class="row">
-        <div class="col">
-            <h3 class="text-left mb-4"><i class="bi bi-chat-dots"></i>
-                Intent actual: {{ intent.replace(".json", "") }}
-            </h3>
-        </div>
-        <div class="col text-end mx-5">
-            <a href="{{ url_for('report', chat=chat, intent=intent) }}" class="btn btn-primary">
-                <i class="bi bi-card-text"></i> Reporte</a>
-        </div>
-    </div>
-
+    <h3 class="text-left mb-4"><i class="bi bi-chat-dots"></i>Intent actual: {{ intent.replace(".json", "") }}</h3>
 
     <div class="card mx-5 mb-3 border-warning mb-2 rounded-1 shadow">
         <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50"> name</div>
@@ -114,33 +103,6 @@
                     {% else %}
                     <p class="text-left ms-5 mt-2"> No existen parametros </p>
                     {% endif %}
-
-                    <!--
-                    <div>
-                        <p class="text-left mb-2"><i class="bi bi-plus-circle"></i> Añadir entry</p>
-                        <div class="row">
-                            <div class="col">
-                                <form class="card-body" enctype="multipart/form-data" method="post"
-                                      action="{{ url_for('add_responses', chat=chat, intent=intent, responses='responses', parameters='parameters') }}">
-                                    <div class="row">
-                                        <div class="col">
-                                            <label for="name" class="form-label">Name:</label>
-                                            <input type="text" class="form-control" id="name" name="name">
-                                        </div>
-                                        <div class="col">
-                                            <label for="dataType" class="form-label">Data Type:</label>
-                                            <input type="text" class="form-control" id="dataType" name="dataType">
-                                        </div>
-                                        <div class="col">
-                                            <label for="value" class="form-label">Value:</label>
-                                            <input type="text" class="form-control" id="value" name="value">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>

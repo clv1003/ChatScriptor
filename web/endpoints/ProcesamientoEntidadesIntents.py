@@ -197,11 +197,6 @@ def editar_responses(root, subclave, atributo):
         json.dump(diccionario, i)
 
 
-# AÑADIR RESPONSES DE INTENTS
-def add_responses(root, name, dataType, value):
-    pass
-
-
 # ELIMINAR RESPONSES DE INTENTS
 def remove_responses(root, idR):
     diccionario = get_parte(root)
