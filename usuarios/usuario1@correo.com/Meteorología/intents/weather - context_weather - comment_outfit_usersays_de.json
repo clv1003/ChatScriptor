@@ -1,0 +1,182 @@
+[
+  {
+    "id": "cdc5b42e-1f67-45aa-850b-087b3012198e",
+    "data": [
+      {
+        "text": "und eine ",
+        "userDefined": false
+      },
+      {
+        "text": "Jacke",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "b95aeef0-4e61-43bb-aceb-fd7db511b688",
+    "data": [
+      {
+        "text": "muss ich eine ",
+        "userDefined": false
+      },
+      {
+        "text": "Sonnenbrille",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      },
+      {
+        "text": " aufsetzen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "fb5167de-2cb5-4009-8c92-3656de262c48",
+    "data": [
+      {
+        "text": "sollte ich einen ",
+        "userDefined": false
+      },
+      {
+        "text": "Regenschirm",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      },
+      {
+        "text": " einpacken",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "f0fdf501-60d1-4316-8c4c-ee4c5f4803a7",
+    "data": [
+      {
+        "text": "und was ",
+        "userDefined": false
+      },
+      {
+        "text": "ist",
+        "userDefined": false
+      },
+      {
+        "text": " mit einer ",
+        "userDefined": false
+      },
+      {
+        "text": "Sonnenbrille",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "c698ca3a-5646-43bd-80df-71f24be7415e",
+    "data": [
+      {
+        "text": "brauche ich auch einen ",
+        "userDefined": false
+      },
+      {
+        "text": "Mantel",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "861ff1e6-00b2-4145-aa34-51eac1feaacf",
+    "data": [
+      {
+        "text": "und einen ",
+        "userDefined": false
+      },
+      {
+        "text": "Regenschirm",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "7db34409-efb9-470a-9a15-648627f6da22",
+    "data": [
+      {
+        "text": "sollte ",
+        "userDefined": false
+      },
+      {
+        "text": "man",
+        "userDefined": false
+      },
+      {
+        "text": " einen ",
+        "userDefined": false
+      },
+      {
+        "text": "Schirm",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": " mitnehmen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "950ae1b9-b43f-4c79-9a44-e5f801beff64",
+    "data": [
+      {
+        "text": "brauche ich einen ",
+        "userDefined": false
+      },
+      {
+        "text": "Schirm",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  }
+]

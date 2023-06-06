@@ -1,0 +1,237 @@
+[
+  {
+    "id": "1f870f49-1a20-4fd0-bc40-342f05d8a651",
+    "data": [
+      {
+        "text": "andare a ",
+        "userDefined": false
+      },
+      {
+        "text": "sciare",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "domani",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " a ",
+        "userDefined": false
+      },
+      {
+        "text": "Napoli",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "b25f3151-97ad-4491-a7a1-5536ea663927",
+    "data": [
+      {
+        "text": "il tempo è abbastanza buono per ",
+        "userDefined": false
+      },
+      {
+        "text": "giocare a frisbee",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " fuori",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "b7021370-5688-4cb1-bbc9-c3811c39b7c4",
+    "data": [
+      {
+        "text": "posso andare a ",
+        "userDefined": false
+      },
+      {
+        "text": "sciare",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "72639cdc-1364-41d7-8708-a0072708059a",
+    "data": [
+      {
+        "text": "posso ",
+        "userDefined": false
+      },
+      {
+        "text": "nuotare",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "ee55e2a5-b618-491a-8da0-4bcb13c19d2f",
+    "data": [
+      {
+        "text": "è una buona idea ",
+        "userDefined": false
+      },
+      {
+        "text": "fare un\u0027escursione",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "domani",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "9b58f664-27e7-4e86-8134-a45e638a3983",
+    "data": [
+      {
+        "text": "la temperatura è buona per ",
+        "userDefined": false
+      },
+      {
+        "text": "andare in bici",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "7160b4cd-4788-4b21-bb92-fa632d94791a",
+    "data": [
+      {
+        "text": "il tempo è buono per ",
+        "userDefined": false
+      },
+      {
+        "text": "sciare",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "ee32bdc2-5f4e-4f9a-93a6-5b8f4bca331e",
+    "data": [
+      {
+        "text": "posso ",
+        "userDefined": false
+      },
+      {
+        "text": "nuotare",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "oggi",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "a92d0853-4641-4178-b5b8-27d79f0cf192",
+    "data": [
+      {
+        "text": "posso ",
+        "userDefined": false
+      },
+      {
+        "text": "nuotare",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "oggi",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " a ",
+        "userDefined": false
+      },
+      {
+        "text": "Londra",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  }
+]

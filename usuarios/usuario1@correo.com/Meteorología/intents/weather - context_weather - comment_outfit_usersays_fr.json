@@ -1,0 +1,106 @@
+[
+  {
+    "id": "481795e5-1acc-4a79-9d5b-19c62da91cee",
+    "data": [
+      {
+        "text": "ma",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "veste",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "310cdcbe-19e5-4cb8-96a2-97989c8b56a4",
+    "data": [
+      {
+        "text": "et ",
+        "userDefined": false
+      },
+      {
+        "text": "ma",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "robe",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "f0fa6d62-2985-48ae-9d7f-5ef3add44266",
+    "data": [
+      {
+        "text": "et",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "des",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "lunettes de soleil",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "941d2763-0f70-43b5-93ad-056ee93632b6",
+    "data": [
+      {
+        "text": "mes ",
+        "userDefined": false
+      },
+      {
+        "text": "gants",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      },
+      {
+        "text": " aussi",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  }
+]

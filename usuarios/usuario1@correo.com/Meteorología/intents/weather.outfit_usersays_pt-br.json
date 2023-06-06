@@ -1,0 +1,339 @@
+[
+  {
+    "id": "44baa711-897d-4771-b361-cf1327afc19b",
+    "data": [
+      {
+        "text": "devo usar ",
+        "userDefined": false
+      },
+      {
+        "text": "óculos de sol",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "7f9fef93-c9ad-4661-95bb-91c08d80a92a",
+    "data": [
+      {
+        "text": "vamos precisar de um ",
+        "userDefined": false
+      },
+      {
+        "text": "casaco",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "amanhã",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "54c04246-d7cf-49d8-b926-44e3e2399757",
+    "data": [
+      {
+        "text": "vou precisar de um ",
+        "userDefined": false
+      },
+      {
+        "text": "guarda-chuva",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "neste fim de semana",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "e42b04ca-dae2-41ba-882b-9dcb1a3d3b64",
+    "data": [
+      {
+        "text": "devo usar meu ",
+        "userDefined": false
+      },
+      {
+        "text": "casaco",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "c12b68ec-bcf9-409b-98cd-68dc3e522679",
+    "data": [
+      {
+        "text": "eu preciso de um ",
+        "userDefined": false
+      },
+      {
+        "text": "guarda-chuva",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": " em ",
+        "userDefined": false
+      },
+      {
+        "text": "Tóquio",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "d44cef26-13a5-411d-8e37-894fa0f996d0",
+    "data": [
+      {
+        "text": "devo pegar um ",
+        "userDefined": false
+      },
+      {
+        "text": "casaco",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "eb4ce241-099b-4fd0-96f0-62a9a5fa48ce",
+    "data": [
+      {
+        "text": "devo vestir um ",
+        "userDefined": false
+      },
+      {
+        "text": "casaco",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "hoje",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "b51c5083-07db-4139-a15b-50bc3f218590",
+    "data": [
+      {
+        "text": "vou precisar de um ",
+        "userDefined": false
+      },
+      {
+        "text": "guarda-chuva",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "4fe01390-3f51-4571-a688-51728dfcd95a",
+    "data": [
+      {
+        "text": "eu vou precisar de um ",
+        "userDefined": false
+      },
+      {
+        "text": "guarda-chuva",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": " na ",
+        "userDefined": false
+      },
+      {
+        "text": "próxima sexta-feira",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " em ",
+        "userDefined": false
+      },
+      {
+        "text": "Paris",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "eae1a456-967b-4d29-b6ff-7f3b4e4b8f27",
+    "data": [
+      {
+        "text": "devo usar ",
+        "userDefined": false
+      },
+      {
+        "text": "óculos de sol",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "amanhã",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "dc8cb9cb-a800-45ee-844c-8035a38440ba",
+    "data": [
+      {
+        "text": "devo usar minhas ",
+        "userDefined": false
+      },
+      {
+        "text": "luvas",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": " em ",
+        "userDefined": false
+      },
+      {
+        "text": "Aspen",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "5497187b-9241-413a-bc27-0ce7df194a6e",
+    "data": [
+      {
+        "text": "preciso levar ",
+        "userDefined": false
+      },
+      {
+        "text": "óculos de sol",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "amanhã",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  },
+  {
+    "id": "84c08822-67f7-4539-9da0-6cbfc4f9dc84",
+    "data": [
+      {
+        "text": "preciso de ",
+        "userDefined": false
+      },
+      {
+        "text": "óculos de sol",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt-br",
+    "updated": 0
+  }
+]

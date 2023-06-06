@@ -1,0 +1,208 @@
+[
+  {
+    "id": "cb239b3a-c182-49ff-ad54-c2705a3ad8f6",
+    "data": [
+      {
+        "text": "gibt es dort ",
+        "userDefined": false
+      },
+      {
+        "text": "Sonnenschein",
+        "meta": "@weather-condition",
+        "alias": "condition",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "e0a54b45-2011-45b9-8fbe-b85c182ff429",
+    "data": [
+      {
+        "text": "muss ich mit ",
+        "userDefined": false
+      },
+      {
+        "text": "Regen",
+        "meta": "@weather-condition",
+        "alias": "condition",
+        "userDefined": false
+      },
+      {
+        "text": " rechnen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "1e347158-2a09-4cb3-ace6-5c23de25b2d4",
+    "data": [
+      {
+        "text": "wie sieht es mit ",
+        "userDefined": false
+      },
+      {
+        "text": "Regen",
+        "meta": "@weather-condition",
+        "alias": "condition",
+        "userDefined": true
+      },
+      {
+        "text": " aus",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "7cd110fa-0fa5-41e3-ad2d-81e401187e7f",
+    "data": [
+      {
+        "text": "wird es dort ",
+        "userDefined": false
+      },
+      {
+        "text": "regnen",
+        "meta": "@weather-condition",
+        "alias": "condition",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "fbbedbba-cf82-4d01-a244-4d63b567d00b",
+    "data": [
+      {
+        "text": "wird es dort auch ",
+        "userDefined": false
+      },
+      {
+        "text": "schneien",
+        "meta": "@weather-condition",
+        "alias": "condition",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "e90f272c-569a-400a-a9a7-70051c2b6820",
+    "data": [
+      {
+        "text": "wird es dort ",
+        "userDefined": false
+      },
+      {
+        "text": "Regen",
+        "meta": "@weather-condition",
+        "alias": "condition",
+        "userDefined": false
+      },
+      {
+        "text": " geben",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "d9274cf2-b4b4-4d36-93b0-b1300071d5ff",
+    "data": [
+      {
+        "text": "wird dort die ",
+        "userDefined": false
+      },
+      {
+        "text": "Sonne",
+        "meta": "@weather-condition",
+        "alias": "condition",
+        "userDefined": false
+      },
+      {
+        "text": " scheinen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "0aafe920-f951-41b0-8bce-ee352ceb14a2",
+    "data": [
+      {
+        "text": "regnet",
+        "meta": "@weather-condition",
+        "alias": "condition",
+        "userDefined": false
+      },
+      {
+        "text": " es dort",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "7b305b11-2afb-4b9d-83f8-9cb5e9d0cf34",
+    "data": [
+      {
+        "text": "und ",
+        "userDefined": false
+      },
+      {
+        "text": "Schnee",
+        "meta": "@weather-condition",
+        "alias": "condition",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "4b98ae4c-664d-4b98-a961-ba603ab39d52",
+    "data": [
+      {
+        "text": "wird es dort ",
+        "userDefined": false
+      },
+      {
+        "text": "sonnig",
+        "meta": "@weather-condition",
+        "alias": "condition",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "id": "dee584f1-189d-41e7-95db-71387bd5274e",
+    "data": [
+      {
+        "text": "e un ",
+        "userDefined": false
+      },
+      {
+        "text": "ombrello",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "ffa7e2d9-e57a-46ed-87d5-4732d07a916d",
+    "data": [
+      {
+        "text": "anche il ",
+        "userDefined": false
+      },
+      {
+        "text": "giubbotto",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "38079caa-e265-42b9-968d-82281ba3e90c",
+    "data": [
+      {
+        "text": "e i ",
+        "userDefined": false
+      },
+      {
+        "text": "guanti",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "c0ac0e75-1610-4311-ab62-6dabe0f6da93",
+    "data": [
+      {
+        "text": "e l\u0027",
+        "userDefined": false
+      },
+      {
+        "text": "ombrello",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "ca5b3d51-7934-4782-9354-051ae55be4cd",
+    "data": [
+      {
+        "text": "anche un ",
+        "userDefined": false
+      },
+      {
+        "text": "giubbotto",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  }
+]

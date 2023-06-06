@@ -1,0 +1,196 @@
+[
+  {
+    "id": "3e58ac7c-c29f-4935-af1a-4e2c7d9d3591",
+    "data": [
+      {
+        "text": "還要",
+        "userDefined": false
+      },
+      {
+        "text": "滑雪",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-hk",
+    "updated": 0
+  },
+  {
+    "id": "29aa6d0a-2de7-456f-bd6f-1331c52f57ad",
+    "data": [
+      {
+        "text": "還能不能",
+        "userDefined": false
+      },
+      {
+        "text": "打雪仗",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-hk",
+    "updated": 0
+  },
+  {
+    "id": "7c5e8550-1979-4044-ae72-50e8e78251b2",
+    "data": [
+      {
+        "text": "現在",
+        "userDefined": false
+      },
+      {
+        "text": "沖浪",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-hk",
+    "updated": 0
+  },
+  {
+    "id": "602ebe73-8cf0-470a-a6e3-46ad6fb707fb",
+    "data": [
+      {
+        "text": "關",
+        "userDefined": false
+      },
+      {
+        "text": "于",
+        "userDefined": false
+      },
+      {
+        "text": "步行",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-hk",
+    "updated": 0
+  },
+  {
+    "id": "d62a0a7d-0326-43ed-abc5-f143d53595ea",
+    "data": [
+      {
+        "text": "我還很想",
+        "userDefined": false
+      },
+      {
+        "text": "跑步",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-hk",
+    "updated": 0
+  },
+  {
+    "id": "3bbc4308-08a5-4ba3-8210-9b81097f34c4",
+    "data": [
+      {
+        "text": "會不會",
+        "userDefined": false
+      },
+      {
+        "text": "遊泳",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-hk",
+    "updated": 0
+  },
+  {
+    "id": "745ef348-80f1-49c9-86a6-7830053755b3",
+    "data": [
+      {
+        "text": "怎麽能",
+        "userDefined": false
+      },
+      {
+        "text": "滑翔傘",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-hk",
+    "updated": 0
+  },
+  {
+    "id": "b75aace6-4425-4914-b8a0-a8e3009c79ca",
+    "data": [
+      {
+        "text": "還需要",
+        "userDefined": false
+      },
+      {
+        "text": "自行車",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-hk",
+    "updated": 0
+  },
+  {
+    "id": "e3f3215e-6a09-4528-8296-ef90e19f4812",
+    "data": [
+      {
+        "text": "能不能",
+        "userDefined": false
+      },
+      {
+        "text": "攀登",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-hk",
+    "updated": 0
+  },
+  {
+    "id": "c515522a-0445-4dda-a796-421767b03e36",
+    "data": [
+      {
+        "text": "我還要",
+        "userDefined": false
+      },
+      {
+        "text": "單板滑雪",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-hk",
+    "updated": 0
+  }
+]

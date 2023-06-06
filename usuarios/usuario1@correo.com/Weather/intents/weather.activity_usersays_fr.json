@@ -1,0 +1,550 @@
+[
+  {
+    "id": "3d4032b1-3979-4f21-aac7-8d57193f3292",
+    "data": [
+      {
+        "text": "le temps est-il assez bon pour faire ",
+        "userDefined": false
+      },
+      {
+        "text": "de",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "la",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "marche",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "b9c3347e-3659-44dc-a3ff-80074e74f3f7",
+    "data": [
+      {
+        "text": "fait-il assez beau à ",
+        "userDefined": false
+      },
+      {
+        "text": "Nantes",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": " pour faire du ",
+        "userDefined": false
+      },
+      {
+        "text": "jogging",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "fa3738b3-f2b5-48e3-9e61-816ff79c0bbb",
+    "data": [
+      {
+        "text": "fait-il bon pour faire du ",
+        "userDefined": false
+      },
+      {
+        "text": "sport",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " déhors ",
+        "userDefined": false
+      },
+      {
+        "text": "aujourd\u0027hui",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "cb2d881b-c020-4fec-a2ab-92e2a0c4551a",
+    "data": [
+      {
+        "text": "est-ce une bonne idée de partir en ",
+        "userDefined": false
+      },
+      {
+        "text": "randonnée",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " maintenant",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "58f76821-b146-49fe-94d4-16062c3bd43c",
+    "data": [
+      {
+        "text": "est-ce qu\u0027",
+        "userDefined": false
+      },
+      {
+        "text": "il",
+        "userDefined": false
+      },
+      {
+        "text": " fera assez ",
+        "userDefined": false
+      },
+      {
+        "text": "froid",
+        "userDefined": false
+      },
+      {
+        "text": " pour ",
+        "userDefined": false
+      },
+      {
+        "text": "faire du snowboard",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "6c31bf9b-aef1-453d-86fe-cf0c4b9fb7a9",
+    "data": [
+      {
+        "text": "est-ce que ",
+        "userDefined": false
+      },
+      {
+        "text": "c",
+        "userDefined": false
+      },
+      {
+        "text": "\u0027est le bon temps pour ",
+        "userDefined": false
+      },
+      {
+        "text": "faire du vélo",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": " maintenant",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "0edd9fbc-234c-49ac-bb37-3c3911d05e90",
+    "data": [
+      {
+        "text": "sera-t-il assez chaud pour aller ",
+        "userDefined": false
+      },
+      {
+        "text": "nager",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "demain",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "c37b34c7-27b7-4957-a391-c4212231d4e7",
+    "data": [
+      {
+        "text": "fait-il assez beau pour aller ",
+        "userDefined": false
+      },
+      {
+        "text": "faire de la luge",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "aujourd\u0027hui",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "8f28ed0f-a0a8-4ee3-a5df-1c98859984e1",
+    "data": [
+      {
+        "text": "fait-il assez bon pour faire du sport dehors ",
+        "userDefined": false
+      },
+      {
+        "text": "aujourd\u0027hui",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "17241df1-ba81-43bd-9d75-86c3e4e0eac3",
+    "data": [
+      {
+        "text": "est-ce qu\u0027il fera froid pour faire du ",
+        "userDefined": false
+      },
+      {
+        "text": "snowboard",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "b4c72359-efba-46c3-b1eb-7eb627610b82",
+    "data": [
+      {
+        "text": "le temps est-il bon pour faire de la ",
+        "userDefined": false
+      },
+      {
+        "text": "marche",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "70dac6e2-eb42-4fe5-8f2b-50b112614b75",
+    "data": [
+      {
+        "text": "est-ce qu\u0027il fait beau pour faire du ",
+        "userDefined": false
+      },
+      {
+        "text": "yoga",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " dehors",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "cf2dce2e-a3e8-400c-a131-840c29797d60",
+    "data": [
+      {
+        "text": "fait-il assez beau pour jouer au ",
+        "userDefined": false
+      },
+      {
+        "text": "frisbee",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": " dehors",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "0ed448e9-38b6-4892-a17b-7177a1be93eb",
+    "data": [
+      {
+        "text": "fait-il beau pour aller ",
+        "userDefined": false
+      },
+      {
+        "text": "faire de la luge",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "aujourd\u0027hui",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "60592d1f-cc3b-4954-b2db-62cd62b398fe",
+    "data": [
+      {
+        "text": "dois-je aller faire de la ",
+        "userDefined": false
+      },
+      {
+        "text": "marche",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "ede9a454-4481-4a2e-8926-223eeeb07c64",
+    "data": [
+      {
+        "text": "puis-je sortir pour faire du ",
+        "userDefined": false
+      },
+      {
+        "text": "jogging",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "aujourd\u0027hui",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " à ",
+        "userDefined": false
+      },
+      {
+        "text": "Paris",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "6935be3d-78ae-4f25-a84a-f825063e1177",
+    "data": [
+      {
+        "text": "est-ce qu\u0027",
+        "userDefined": false
+      },
+      {
+        "text": "il",
+        "userDefined": false
+      },
+      {
+        "text": " fait assez beau pour faire du ",
+        "userDefined": false
+      },
+      {
+        "text": "yoga",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": " dehors",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "74591346-b952-4d21-8d4f-5663ae45ff68",
+    "data": [
+      {
+        "text": "pourrai-je ",
+        "userDefined": false
+      },
+      {
+        "text": "faire du vélo",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "aujourd\u0027hui",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "08ccb408-c508-4de1-91fd-2fbeffbfe93b",
+    "data": [
+      {
+        "text": "fera-t-il assez chaud pour aller ",
+        "userDefined": false
+      },
+      {
+        "text": "nager",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "demain",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  },
+  {
+    "id": "1e8a043b-0560-4491-9019-f7261870d7e0",
+    "data": [
+      {
+        "text": "fait-il beau à ",
+        "userDefined": false
+      },
+      {
+        "text": "Nantes",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": " pour faire du ",
+        "userDefined": false
+      },
+      {
+        "text": "jogging",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "fr",
+    "updated": 0
+  }
+]

@@ -1,5 +1,4 @@
 import os
-from asyncio import ProactorEventLoop
 
 from flask import Flask, render_template, url_for, redirect, request, session
 
@@ -9,6 +8,7 @@ import ProcesamientoEntidadesIntents
 import ProcesamientoZip
 import ProcesamientoUsuario
 import ProcesamientoBuscador
+from traductor import Traductor
 
 
 def start_app():
@@ -280,6 +280,20 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    @app.route('/actualizar_action', methods=["POST"])
+    def actualizar_action():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            intent = request.args.get('intent')
+            atributo = request.form['atributo']
+
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                ProcesamientoEntidadesIntents.editar_action(
+                    './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent, atributo=atributo)
+                return redirect(url_for('get_intents', chat=chat))
+        else:
+            return redirect(url_for('login'))
+
     @app.route('/actualizar_data', methods=["POST"])
     def actualizar_data():
         if 'email' in session:
@@ -314,24 +328,6 @@ def start_app():
                     './usuarios/' + session['email'] + '/' + chat,
                     entidad=entidad, value=value, synonyms=synonyms)
                 return redirect(url_for('get_entidades', chat=chat))
-        else:
-            return redirect(url_for('login'))
-
-    # AÑADIR RESPONSES
-    @app.route('/add_responses', methods=["POST"])
-    def add_responses():
-        if 'email' in session:
-            chat = request.args.get('chat')
-            intent = request.args.get('intent')
-            name = request.form['name']
-            dataType = request.form['dataType']
-            value = request.form['value']
-
-            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.add_responses(
-                    './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent,
-                    name=name, dataType=dataType, value=value)
-                return redirect(url_for('get_intents', chat=chat))
         else:
             return redirect(url_for('login'))
 
@@ -602,6 +598,22 @@ def start_app():
         if 'email' in session:
             session.pop('email', None)
             return redirect(url_for('login'))
+        else:
+            return redirect(url_for('login'))
+
+    # --------------------------------------------------------------------------------------------------------
+    # Traduccion
+    @app.route('/traductor/<string:chat>/<string:idioma>', methods=["GET"])
+    def traductor(chat, idioma):
+        #idioma = request.args.get('idioma')
+        if 'email' in session:
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                chatbot = Traductor.traducir('./usuarios/' + session['email'] + '/', idioma, chat)
+
+                if os.path.exists('./usuarios/' + session['email'] + '/' + chatbot):
+                    return redirect(url_for('paginaprincipal'))
+                else:
+                    return None
         else:
             return redirect(url_for('login'))
 

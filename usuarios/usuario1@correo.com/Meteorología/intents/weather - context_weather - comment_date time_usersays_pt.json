@@ -1,0 +1,173 @@
+[
+  {
+    "id": "1384508c-d8fe-46a7-89ae-68075108182b",
+    "data": [
+      {
+        "text": "e ",
+        "userDefined": false
+      },
+      {
+        "text": "hoje",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "0783231e-ff2e-442f-b288-d0fd4040361d",
+    "data": [
+      {
+        "text": "e ",
+        "userDefined": false
+      },
+      {
+        "text": "amanhã",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 2,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "58b23186-175b-403b-9953-a8e68f0dec7a",
+    "data": [
+      {
+        "text": "e durante a ",
+        "userDefined": false
+      },
+      {
+        "text": "próxima a semana",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "73984106-4f4b-419e-aa3c-d378e7f47b2b",
+    "data": [
+      {
+        "text": "e ",
+        "userDefined": false
+      },
+      {
+        "text": "neste fim de semana",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "4f405122-b4cf-4e28-bfa8-1e1077179a91",
+    "data": [
+      {
+        "text": "na ",
+        "userDefined": false
+      },
+      {
+        "text": "quarta-feira",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "4d199fd6-987c-4d47-a90b-b4dff6e6f6c5",
+    "data": [
+      {
+        "text": "verificar para a ",
+        "userDefined": false
+      },
+      {
+        "text": "próxima segunda-feira",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "a731951b-b95f-4bd9-b68e-09ce93a9e73c",
+    "data": [
+      {
+        "text": "e no ",
+        "userDefined": false
+      },
+      {
+        "text": "sábado",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "55e2e9ce-4e87-4893-b353-6e6cdef35361",
+    "data": [
+      {
+        "text": "verificar para a ",
+        "userDefined": false
+      },
+      {
+        "text": "próxima semana",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "21fe980b-799e-4920-b670-941d6fde369b",
+    "data": [
+      {
+        "text": "vai mudar às ",
+        "userDefined": false
+      },
+      {
+        "text": "17:00",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  }
+]

@@ -197,6 +197,15 @@ def editar_responses(root, subclave, atributo):
         json.dump(diccionario, i)
 
 
+def editar_action(root, atributo):
+    diccionario = get_parte(root)
+    if diccionario["responses"][0]["action"]:
+        diccionario["responses"][0]["action"] = atributo
+
+        with open(root, 'w') as i:
+            json.dump(diccionario, i)
+
+
 # ELIMINAR RESPONSES DE INTENTS
 def remove_responses(root, idR):
     diccionario = get_parte(root)

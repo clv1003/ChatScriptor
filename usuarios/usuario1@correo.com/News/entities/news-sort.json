@@ -1,0 +1,9 @@
+{
+  "id": "57988f67-01d3-4b8e-9808-9c0d0f11e567",
+  "name": "news-sort",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}
