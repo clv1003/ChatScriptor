@@ -186,8 +186,18 @@ def remove_entry(root, entidad, value, synonyms):
 
 
 # ---------------------------------------------------------------------------------------------------------------------
+# AÑADIR MESSAGES A INTENTS
+def add_messages(root, speach):
+    diccionario = get_parte(root)
+
+    diccionario["responses"][0]["messages"][0]["speech"].append(speach)
+
+    with open(root, 'w') as i:
+        json.dump(diccionario, i)
+
+
 # EDITAR RESPONSES DE INTENTS
-def editar_responses(root, subclave, atributo):
+def editar_parameters(root, subclave, atributo):
     diccionario = get_parte(root)
     for i in diccionario["responses"][0]["parameters"]:
         if subclave in i:
@@ -206,14 +216,44 @@ def editar_action(root, atributo):
             json.dump(diccionario, i)
 
 
+def editar_messages(root, speachOrg, speachNew):
+    diccionario = get_parte(root)
+    if diccionario["responses"][0]["messages"]:
+        lista = []
+        for j in diccionario["responses"][0]["messages"][0]["speech"]:
+            if j == speachOrg:
+                lista.append(speachNew)
+            else:
+                lista.append(j)
+
+        diccionario["responses"][0]["messages"][0]["speech"] = lista
+
+        with open(root, 'w') as i:
+            json.dump(diccionario, i)
+
+
 # ELIMINAR RESPONSES DE INTENTS
-def remove_responses(root, idR):
+def remove_parameters(root, idR):
     diccionario = get_parte(root)
 
     for i in diccionario["responses"][0]["parameters"]:
         if i["id"] == idR:
             diccionario["responses"][0]["parameters"].remove(i)
             break
+
+    with open(root, 'w') as i:
+        json.dump(diccionario, i)
+
+
+def remove_messages(root, speech):
+    diccionario = get_parte(root)
+    lista = []
+
+    for j in diccionario["responses"][0]["messages"][0]["speech"]:
+        if j != speech:
+            lista.append(j)
+
+    diccionario["responses"][0]["messages"][0]["speech"] = lista
 
     with open(root, 'w') as i:
         json.dump(diccionario, i)
@@ -252,7 +292,6 @@ def editar_data(root, intent, old, tipo, atributo):
 # ELIMINAR DATA DE INTENTS
 def remove_data(root, intent, idD):
     if intent.endswith('.json'):
-        print(f'id -> {idD}')
         language = ProcesamientoAgente.get_agente_language(root)
         intent = intent.replace('.json', '')
         data = intent + '_usersays_' + language + '.json'
@@ -260,7 +299,6 @@ def remove_data(root, intent, idD):
         diccionario = get_parte(root + '/intents/' + data)
 
         for i in diccionario:
-            print(f'{i["id"]} == {idD} -- {i["id"] == idD}')
             if i["id"] == idD:
                 diccionario.remove(i)
                 break

@@ -263,8 +263,8 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    @app.route('/actualizar_responses', methods=["POST"])
-    def actualizar_responses():
+    @app.route('/actualizar_parameters', methods=["POST"])
+    def actualizar_parameters():
         if 'email' in session:
             chat = request.args.get('chat')
             intent = request.args.get('intent')
@@ -272,11 +272,27 @@ def start_app():
             atributo = request.form['atributo']
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.editar_responses(
+                ProcesamientoEntidadesIntents.editar_parameters(
                     './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent,
                     subclave=subclave, atributo=atributo)
                 return redirect(url_for('get_intents', chat=chat))
 
+        else:
+            return redirect(url_for('login'))
+
+    @app.route('/actualizar_messages', methods=["POST"])
+    def actualizar_messages():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            intent = request.args.get('intent')
+            speachOrg = request.args.get('speachOrg')
+            speachNew = request.form['atributo']
+
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                ProcesamientoEntidadesIntents.editar_messages(
+                    './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent,
+                    speachOrg=speachOrg, speachNew=speachNew)
+                return redirect(url_for('get_intents', chat=chat))
         else:
             return redirect(url_for('login'))
 
@@ -314,7 +330,7 @@ def start_app():
 
     # --------------------------------------------------------------------------------------------------------
     # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (AÑADIR)
-    # AÑADIR ENTRY
+    # AÑADIR ENTRY (ENTIDADES)
     @app.route('/add_entry', methods=["POST"])
     def add_entry():
         if 'email' in session:
@@ -328,6 +344,21 @@ def start_app():
                     './usuarios/' + session['email'] + '/' + chat,
                     entidad=entidad, value=value, synonyms=synonyms)
                 return redirect(url_for('get_entidades', chat=chat))
+        else:
+            return redirect(url_for('login'))
+
+    # AÑADIR MESSAGES (INTENTS)
+    @app.route('/add_messages', methods=["POST"])
+    def add_messages():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            intent = request.args.get('intent')
+            speach = request.form['speach']
+
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                ProcesamientoEntidadesIntents.add_messages(
+                    './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent, speach=speach)
+                return redirect(url_for('get_intents', chat=chat))
         else:
             return redirect(url_for('login'))
 
@@ -392,16 +423,30 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    @app.route('/remove_responses', methods=["POST"])
-    def remove_responses():
+    @app.route('/remove_parameters', methods=["POST"])
+    def remove_parameters():
         if 'email' in session:
             chat = request.args.get('chat')
             intent = request.args.get('intent')
             idR = request.args.get('id')
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.remove_responses(
+                ProcesamientoEntidadesIntents.remove_parameters(
                     './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent, idR=idR)
+                return redirect(url_for('get_intents', chat=chat))
+        else:
+            return redirect(url_for('login'))
+
+    @app.route('/remove_messages', methods=["POST"])
+    def remove_messages():
+        if 'email' in session:
+            chat = request.args.get('chat')
+            intent = request.args.get('intent')
+            speach = request.args.get('speach')
+
+            if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
+                ProcesamientoEntidadesIntents.remove_messages(
+                    './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent, speech=speach)
                 return redirect(url_for('get_intents', chat=chat))
         else:
             return redirect(url_for('login'))
