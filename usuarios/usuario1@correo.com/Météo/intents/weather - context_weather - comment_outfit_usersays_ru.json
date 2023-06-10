@@ -1,0 +1,150 @@
+[
+  {
+    "id": "c0b8f204-6720-4c06-9f20-2afd7d132806",
+    "data": [
+      {
+        "text": "и ",
+        "userDefined": false
+      },
+      {
+        "text": "зонтик",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "ru",
+    "updated": 0
+  },
+  {
+    "id": "139113a8-7fd2-49a8-aa07-7161f3f14cb3",
+    "data": [
+      {
+        "text": "пальто",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  },
+  {
+    "id": "c6308476-411f-4777-85a9-40a830491f6d",
+    "data": [
+      {
+        "text": "а что скажешь про ",
+        "userDefined": false
+      },
+      {
+        "text": "солнечные очки",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  },
+  {
+    "id": "3a8bee27-82f8-41c9-8baf-3a4b5fd7e965",
+    "data": [
+      {
+        "text": "как насчёт ",
+        "userDefined": false
+      },
+      {
+        "text": "зонта",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  },
+  {
+    "id": "6d6ce3a2-1643-4d10-9404-0aa069e3c3a1",
+    "data": [
+      {
+        "text": "и брать ли ",
+        "userDefined": false
+      },
+      {
+        "text": "зонт",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  },
+  {
+    "id": "904f9495-b8ed-4f8d-b7b9-a3cc082ef843",
+    "data": [
+      {
+        "text": "и ",
+        "userDefined": false
+      },
+      {
+        "text": "плащ",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  },
+  {
+    "id": "f5abe632-07ff-4de9-a4ad-3a2d3ebc3db3",
+    "data": [
+      {
+        "text": "мой ",
+        "userDefined": false
+      },
+      {
+        "text": "плащ",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  },
+  {
+    "id": "f5520545-5c3b-4ba7-8bc2-45ecc6ad61ca",
+    "data": [
+      {
+        "text": "что насчёт ",
+        "userDefined": false
+      },
+      {
+        "text": "очков",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  }
+]

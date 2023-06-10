@@ -1,0 +1,67 @@
+[
+  {
+    "id": "3936412c-4427-44dc-ba24-b4be705c28f2",
+    "data": [
+      {
+        "text": "y a ",
+        "userDefined": false
+      },
+      {
+        "text": "patinar",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "858153ea-8cf6-4a15-b73e-ee8e1d62bc4e",
+    "data": [
+      {
+        "text": "y en cuanto a ",
+        "userDefined": false
+      },
+      {
+        "text": "esquiar",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "93e1a33f-9d7c-495d-900e-d418c137b776",
+    "data": [
+      {
+        "text": "y ",
+        "userDefined": false
+      },
+      {
+        "text": "para",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "acampar",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

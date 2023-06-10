@@ -1,0 +1,832 @@
+[
+  {
+    "id": "edeca34b-0ae1-4f63-9985-5d6d2e4111b1",
+    "data": [
+      {
+        "text": "will it be warm enough for ",
+        "userDefined": false
+      },
+      {
+        "text": "mushroom hunting",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " on ",
+        "userDefined": false
+      },
+      {
+        "text": "Friday",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Ottawa",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "2e64f698-7533-45b0-9f2b-4da6ad61f872",
+    "data": [
+      {
+        "text": "ok do",
+        "userDefined": false
+      },
+      {
+        "text": " you think it\u0027s the ",
+        "userDefined": false
+      },
+      {
+        "text": "good",
+        "userDefined": false
+      },
+      {
+        "text": " weather for ",
+        "userDefined": false
+      },
+      {
+        "text": "cycling",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "right now",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "20a54456-4aa5-4fb1-bea6-e92803fdc0b9",
+    "data": [
+      {
+        "text": "I plan to ",
+        "userDefined": false
+      },
+      {
+        "text": "ski",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "today",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " is it possible",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "abe24000-d912-4656-949b-15457ea5e6d8",
+    "data": [
+      {
+        "text": "is the",
+        "userDefined": false
+      },
+      {
+        "text": " weather ",
+        "userDefined": false
+      },
+      {
+        "text": "good",
+        "userDefined": false
+      },
+      {
+        "text": " for ",
+        "userDefined": false
+      },
+      {
+        "text": "snowball fights",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "30f6c4d7-2552-4817-b644-a6309747dfc4",
+    "data": [
+      {
+        "text": "is the weather good enough to go ",
+        "userDefined": false
+      },
+      {
+        "text": "climbing",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " to ",
+        "userDefined": false
+      },
+      {
+        "text": "Malaga",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "18d9a9f7-666d-4792-af99-423f40bfaa6c",
+    "data": [
+      {
+        "text": "can I go ",
+        "userDefined": false
+      },
+      {
+        "text": "tree climbing",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Chicago",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": " on the ",
+        "userDefined": false
+      },
+      {
+        "text": "weekend",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "d6a863b0-c769-47c0-80fa-8a4935f92475",
+    "data": [
+      {
+        "text": "should I go ",
+        "userDefined": false
+      },
+      {
+        "text": "jogging",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "this evening",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "63dec71e-2b24-455a-926e-82ee80a2bf20",
+    "data": [
+      {
+        "text": "will it be cold enough for ",
+        "userDefined": false
+      },
+      {
+        "text": "snowball fighting",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " on ",
+        "userDefined": false
+      },
+      {
+        "text": "Friday",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "46a1b643-2e92-4465-b451-053d6126e4c1",
+    "data": [
+      {
+        "text": "can I go ",
+        "userDefined": false
+      },
+      {
+        "text": "skiing",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Vienna",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "32e8ea07-bf4a-48a2-a2df-ddb857ef1231",
+    "data": [
+      {
+        "text": "can I go ",
+        "userDefined": false
+      },
+      {
+        "text": "climbing",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " mount ",
+        "userDefined": false
+      },
+      {
+        "text": "Fuji",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "0dde9c64-5746-44c2-bf3c-53177fd7d3e7",
+    "data": [
+      {
+        "text": "is the",
+        "userDefined": false
+      },
+      {
+        "text": " weather good for ",
+        "userDefined": false
+      },
+      {
+        "text": "walking",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f09502a0-a7fe-42c8-a213-223fc9d54418",
+    "data": [
+      {
+        "text": "do you ",
+        "userDefined": false
+      },
+      {
+        "text": "think the weather is",
+        "userDefined": false
+      },
+      {
+        "text": " bad for ",
+        "userDefined": false
+      },
+      {
+        "text": "frisbee",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "a1bec07d-8758-4a16-91b5-ec4894131bee",
+    "data": [
+      {
+        "text": "can I go ",
+        "userDefined": false
+      },
+      {
+        "text": "surfing",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "3f94ea39-cb0a-4e4b-8417-c7faf554cd9f",
+    "data": [
+      {
+        "text": "is it the perfect weather for ",
+        "userDefined": false
+      },
+      {
+        "text": "windsurfing",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Phuket",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "378e7399-6fd7-4731-9f63-8bcf4342a392",
+    "data": [
+      {
+        "text": "can I go ",
+        "userDefined": false
+      },
+      {
+        "text": "snowboarding",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " on the ",
+        "userDefined": false
+      },
+      {
+        "text": "weekend",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "97966584-57f7-4262-bb13-bc6768b30483",
+    "data": [
+      {
+        "text": "is it the perfect weather for ",
+        "userDefined": false
+      },
+      {
+        "text": "mountain biking",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Bansko",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "tonight",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "01be6150-249d-4877-afc6-666798587701",
+    "data": [
+      {
+        "text": "should I go ",
+        "userDefined": false
+      },
+      {
+        "text": "cycling",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Moscow",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "cc3eb922-f4f8-4bc4-99c9-f5cd37a6ca69",
+    "data": [
+      {
+        "text": "do you think it\u0027s the ",
+        "userDefined": false
+      },
+      {
+        "text": "good",
+        "userDefined": false
+      },
+      {
+        "text": " weather for ",
+        "userDefined": false
+      },
+      {
+        "text": "cycling",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "9d0fa5fb-089e-4bf2-a067-77301318e72f",
+    "data": [
+      {
+        "text": "is the",
+        "userDefined": false
+      },
+      {
+        "text": " weather ",
+        "userDefined": false
+      },
+      {
+        "text": "good",
+        "userDefined": false
+      },
+      {
+        "text": " enough to play ",
+        "userDefined": false
+      },
+      {
+        "text": "frisbee",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " outside",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "2bffc6f8-997b-475c-8885-87bbc5ff91d8",
+    "data": [
+      {
+        "text": "is it the perfect weather for ",
+        "userDefined": false
+      },
+      {
+        "text": "elephant safari",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "tonight",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "35dc1762-3658-4e1a-b92f-b6ebf08e8036",
+    "data": [
+      {
+        "text": "is it the perfect weather for ",
+        "userDefined": false
+      },
+      {
+        "text": "camping",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "ff38331f-c49d-4c1e-a201-162276a75e5b",
+    "data": [
+      {
+        "text": "should I go ",
+        "userDefined": false
+      },
+      {
+        "text": "kayaking",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Miami",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "this evening",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "5b6ad7f3-2498-4875-918a-42b52454b958",
+    "data": [
+      {
+        "text": "is the weather nice enough to go ",
+        "userDefined": false
+      },
+      {
+        "text": "birdwatching",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Norfolk",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "today",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "6117dc09-5d53-47fb-9b84-72ab32c47d4a",
+    "data": [
+      {
+        "text": "is the weather nice enough to go ",
+        "userDefined": false
+      },
+      {
+        "text": "sightseeing",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "today",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "7c938ac6-9c3c-46ed-8287-1e344d411d3e",
+    "data": [
+      {
+        "text": "is the weather nice enough to go ",
+        "userDefined": false
+      },
+      {
+        "text": "surfing",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "79d2ae8b-f36f-40d3-aa7f-8cc679180748",
+    "data": [
+      {
+        "text": "should I go for a ",
+        "userDefined": false
+      },
+      {
+        "text": "run",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "7ba84a84-adc5-4dc6-bd20-98ac8886d9ae",
+    "data": [
+      {
+        "text": "is it hot enough to go ",
+        "userDefined": false
+      },
+      {
+        "text": "swimming",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "77ab11a7-2d5d-46f8-a132-f354147c6e97",
+    "data": [
+      {
+        "text": "is ",
+        "userDefined": false
+      },
+      {
+        "text": "hiking",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": " a ",
+        "userDefined": false
+      },
+      {
+        "text": "good",
+        "userDefined": false
+      },
+      {
+        "text": " idea ",
+        "userDefined": false
+      },
+      {
+        "text": "right now",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

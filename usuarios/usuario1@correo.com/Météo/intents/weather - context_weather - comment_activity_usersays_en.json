@@ -1,0 +1,55 @@
+[
+  {
+    "id": "cc1b6756-87e4-420c-a45d-b01ea9ad134a",
+    "data": [
+      {
+        "text": "skiing",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "943e1a4a-bb1f-48a8-a1a8-cc95aa100169",
+    "data": [
+      {
+        "text": "what about ",
+        "userDefined": false
+      },
+      {
+        "text": "swimming",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f43213bd-c009-4e52-8667-76ef4e8b58fd",
+    "data": [
+      {
+        "text": "and for ",
+        "userDefined": false
+      },
+      {
+        "text": "skating",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

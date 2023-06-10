@@ -1,0 +1,185 @@
+[
+  {
+    "id": "3d8270a8-deb7-4b87-9ed5-3042bcc78ef1",
+    "data": [
+      {
+        "text": "dije ",
+        "userDefined": false
+      },
+      {
+        "text": "mañana",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "7055f893-d915-4c26-aa8c-20dd953493f3",
+    "data": [
+      {
+        "text": "y ",
+        "userDefined": false
+      },
+      {
+        "text": "mañana",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " qué tal",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "dcf71d31-a5b1-4c9d-92fe-5368a660d63c",
+    "data": [
+      {
+        "text": "y ",
+        "userDefined": false
+      },
+      {
+        "text": "hoy",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "e6e13dcb-40d4-45a5-9c20-2e2474d302af",
+    "data": [
+      {
+        "text": "y el ",
+        "userDefined": false
+      },
+      {
+        "text": "sábado",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c81d675c-1c70-4d93-8736-5d435f98a8d6",
+    "data": [
+      {
+        "text": "y a las ",
+        "userDefined": false
+      },
+      {
+        "text": "9 de la tarde",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "f5dc3145-cfaa-41ad-aba8-f602252d30c5",
+    "data": [
+      {
+        "text": "cómo",
+        "userDefined": true
+      },
+      {
+        "text": " estará ",
+        "userDefined": false
+      },
+      {
+        "text": "este martes",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "72be1b63-2049-4549-bc4d-805e65dbe040",
+    "data": [
+      {
+        "text": "y por la ",
+        "userDefined": false
+      },
+      {
+        "text": "mañana",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " cómo estará",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "9549e0bb-b000-41ac-909c-fd6abfbcefb4",
+    "data": [
+      {
+        "text": "y ",
+        "userDefined": false
+      },
+      {
+        "text": "el 19 de septiembre",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "588c6d62-7070-4718-965f-e9a0fdc4268d",
+    "data": [
+      {
+        "text": "y para ",
+        "userDefined": false
+      },
+      {
+        "text": "este finde",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

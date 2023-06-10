@@ -1,0 +1,93 @@
+[
+  {
+    "id": "f120fde1-8282-4518-b894-b5d760ba1c35",
+    "data": [
+      {
+        "text": "I want to listen to baby it\u0027s cold outside",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "272ca39c-4b7d-429b-ac01-469f60c65532",
+    "data": [
+      {
+        "text": "I\u0027m have a meeting tomorrow",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "31a6204c-dfc1-49a8-9b8d-154102e90e06",
+    "data": [
+      {
+        "text": "what a beautiful morning",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "fcce7571-c5f3-4662-a749-4440c9d6605e",
+    "data": [
+      {
+        "text": "I love hicking",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "aead3ad1-daec-4b6e-95c9-5a9d97504002",
+    "data": [
+      {
+        "text": "play don\u0027t rain on my parade",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "5357c166-ab90-448b-a5e7-912ebed2d0a9",
+    "data": [
+      {
+        "text": "don\u0027t show me the weather",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "2c05ee3d-6a67-4e50-bf3b-63d889b0fad1",
+    "data": [
+      {
+        "text": "no weather please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]
