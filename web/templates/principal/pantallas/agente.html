@@ -49,10 +49,40 @@
             language
         </div>
         <div class="card-body">
-            <form enctype="multipart/form-data" method="post"
-                  action="{{ url_for('actualizar_json', chat=chat, clave='language') }}">
-                <input type="text" class="form-control" value="{{ agente['language'] }}" name="atributo">
-            </form>
+            <div class="row mx-5">
+                <div class="col">
+                    <p>{{ agente['language'] }}</p>
+                </div>
+                <div class="col-3 btn-group">
+                    <button class="btn btn-dark dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        Traducir
+                    </button>
+                    <ul class="dropdown-menu">
+                        {% if agente['language'] == 'en' %}
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='es') }}">Español</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='fr') }}">Francés</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='de') }}">Alemán</a></li>
+
+                        {% elif agente['language'] == 'es' %}
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='en') }}">Inglés</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='fr') }}">Francés</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='de') }}">Alemán</a></li>
+
+                        {% elif agente['language'] == 'fr' %}
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='es') }}">Español</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='en') }}">Inglés</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='de') }}">Alemán</a></li>
+
+                        {% elif agente['language'] == 'de' %}
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='es') }}">Español</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='en') }}">Inglés</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='fr') }}">Francés</a></li>
+
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 

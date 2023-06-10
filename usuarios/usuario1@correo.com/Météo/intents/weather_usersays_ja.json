@@ -1,0 +1,370 @@
+[
+  {
+    "id": "7a979a01-81b8-4b0f-9eae-beb13fb04c47",
+    "data": [
+      {
+        "text": "天気はなんですか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 2,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "c7a80e1a-2c34-44e9-a047-16302e711e8e",
+    "data": [
+      {
+        "text": "香港",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の天気予報を教えてください",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "4fc83492-4532-4aa7-8e21-52e308db637d",
+    "data": [
+      {
+        "text": "お天気はどう",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "1dedeca8-0159-4071-939e-216944a384e2",
+    "data": [
+      {
+        "text": "今週末",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "の天気",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "ab6ddfab-9ee6-4620-8788-98676f136e79",
+    "data": [
+      {
+        "text": "天気予報",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "4f88fd44-862b-4dfc-91a7-59fc3119df12",
+    "data": [
+      {
+        "text": "今日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "の天気を教えて",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "1513ca90-29bb-4be2-8ac2-8ea3ad0c740e",
+    "data": [
+      {
+        "text": "横浜",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の天気は",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "cb2de3dc-6c11-46e1-abbf-703a62d12d44",
+    "data": [
+      {
+        "text": "東京",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の天気を",
+        "userDefined": false
+      },
+      {
+        "text": "摂氏",
+        "meta": "@unit-temperature",
+        "alias": "unit",
+        "userDefined": true
+      },
+      {
+        "text": "で",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "d88d9af5-2927-4cdb-a467-c65d8947efc9",
+    "data": [
+      {
+        "text": "明日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "の",
+        "userDefined": false
+      },
+      {
+        "text": "福岡市",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の天気は",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "07fc56d3-ade6-4a58-a416-3ccba4feeeb8",
+    "data": [
+      {
+        "text": "ハワイ",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の天気",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "4f7b61d7-bd33-4b40-8b34-fe500aeec621",
+    "data": [
+      {
+        "text": "大阪",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の天気は",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "37ae25bc-c675-4508-bb92-7816c36232c4",
+    "data": [
+      {
+        "text": "天気、",
+        "userDefined": false
+      },
+      {
+        "text": "神戸",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "d1235b23-0578-43bc-a574-dc388ecf232c",
+    "data": [
+      {
+        "text": "明日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "の天気はどうなりますか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "3492f488-dcc7-49af-93f3-545541f15681",
+    "data": [
+      {
+        "text": "天気を教えて",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "7424c221-7c69-4c65-8c58-87977d3e1a9f",
+    "data": [
+      {
+        "text": "今晩",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "の",
+        "userDefined": false
+      },
+      {
+        "text": "ロンドン",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "お天気は何になるの",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "a18afb3a-e809-4ecd-8731-7a3464773fcd",
+    "data": [
+      {
+        "text": "仙台市",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "の天気は何ですか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "27aa1e38-0560-4801-b4fd-67f0c2d5a19b",
+    "data": [
+      {
+        "text": "明日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "の",
+        "userDefined": false
+      },
+      {
+        "text": "ニューヨーク",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の天気は",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "f6f1d652-9336-45bd-8df8-dd85584d16f3",
+    "data": [
+      {
+        "text": "5日後",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "の",
+        "userDefined": false
+      },
+      {
+        "text": "ロンドン",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の天気",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "ja",
+    "updated": 0
+  }
+]

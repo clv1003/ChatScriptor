@@ -1,0 +1,89 @@
+[
+  {
+    "id": "2b917a56-3944-49b1-b9ef-f0b2e2f43ca4",
+    "data": [
+      {
+        "text": "e invece a ",
+        "userDefined": false
+      },
+      {
+        "text": "Palermo",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "oggi",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "13f4575c-e40d-47fb-a6d5-111753991c3b",
+    "data": [
+      {
+        "text": "mostra per ",
+        "userDefined": false
+      },
+      {
+        "text": "oggi",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " a ",
+        "userDefined": false
+      },
+      {
+        "text": "Mosca",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "1472e751-c60d-45b2-b026-87fe776e86ad",
+    "data": [
+      {
+        "text": "e a ",
+        "userDefined": false
+      },
+      {
+        "text": "Napoli",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "domani",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  }
+]

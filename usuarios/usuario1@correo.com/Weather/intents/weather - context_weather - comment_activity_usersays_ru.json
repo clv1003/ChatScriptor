@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1f5698fd-33a4-4ad0-a6b8-964dfe0a07c3",
+    "data": [
+      {
+        "text": "что насчёт ",
+        "userDefined": false
+      },
+      {
+        "text": "плавания",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  },
+  {
+    "id": "26557567-bc63-488c-94e4-cfe5c38db863",
+    "data": [
+      {
+        "text": "лыжи",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  },
+  {
+    "id": "f0655691-10c7-4e9d-bda3-45bb6f24c682",
+    "data": [
+      {
+        "text": "и для катания на ",
+        "userDefined": false
+      },
+      {
+        "text": "коньках",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  },
+  {
+    "id": "9f1a0ab2-05c3-486f-9958-113d5e476cc6",
+    "data": [
+      {
+        "text": "а для ",
+        "userDefined": false
+      },
+      {
+        "text": "пробежки",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ru",
+    "updated": 0
+  }
+]

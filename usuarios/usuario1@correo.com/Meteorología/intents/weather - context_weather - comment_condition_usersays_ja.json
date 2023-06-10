@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1b326bdd-b265-4269-be99-30bf84571bb2",
+    "data": [
+      {
+        "text": "じゃあ",
+        "userDefined": false
+      },
+      {
+        "text": "雨",
+        "meta": "@weather-condition",
+        "alias": "weather-condition",
+        "userDefined": true
+      },
+      {
+        "text": "は",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "97a45c1d-fb5b-4e2f-8b23-7c65715c56f1",
+    "data": [
+      {
+        "text": "雪",
+        "meta": "@weather-condition",
+        "alias": "weather-condition",
+        "userDefined": true
+      },
+      {
+        "text": "はどう",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  }
+]

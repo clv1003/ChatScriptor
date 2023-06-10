@@ -1,0 +1,55 @@
+[
+  {
+    "id": "37533dd9-c1d2-4b7a-9b8b-e5e9e23105c9",
+    "data": [
+      {
+        "text": "e para ",
+        "userDefined": false
+      },
+      {
+        "text": "andar de skate",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "44d509ff-d486-4116-8a16-2008896df3c1",
+    "data": [
+      {
+        "text": "e para ",
+        "userDefined": false
+      },
+      {
+        "text": "praticar natação",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "5c76f681-efc0-4080-a355-26b90d5baa13",
+    "data": [
+      {
+        "text": "esquiar",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  }
+]

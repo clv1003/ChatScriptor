@@ -1,0 +1,59 @@
+[
+  {
+    "id": "ef853ed2-f92d-4e29-8ab0-ff72014c3162",
+    "data": [
+      {
+        "text": "e per ",
+        "userDefined": false
+      },
+      {
+        "text": "sciare",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "0c71bad3-0205-4d60-94cf-85878054e253",
+    "data": [
+      {
+        "text": "e ",
+        "userDefined": false
+      },
+      {
+        "text": "nuotare",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  },
+  {
+    "id": "5d439691-e096-45ed-8ee0-eea6994c3355",
+    "data": [
+      {
+        "text": "anche ",
+        "userDefined": false
+      },
+      {
+        "text": "nuotare",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "it",
+    "updated": 0
+  }
+]

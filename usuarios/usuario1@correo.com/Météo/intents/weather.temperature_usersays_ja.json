@@ -1,0 +1,314 @@
+[
+  {
+    "id": "de183bd2-f8da-48bc-8c4b-cf64522f8d5f",
+    "data": [
+      {
+        "text": "明日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "の",
+        "userDefined": false
+      },
+      {
+        "text": "横浜",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の気温は何ですか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "ed85061a-dfd3-4deb-a2d6-df08aa7e97c9",
+    "data": [
+      {
+        "text": "明日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "の気温は何度ですか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "eec3b8c4-8b38-4cc2-a906-023adecb3d07",
+    "data": [
+      {
+        "text": "今週の日曜日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "、",
+        "userDefined": false
+      },
+      {
+        "text": "札幌",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "はどのくらい",
+        "userDefined": false
+      },
+      {
+        "text": "寒く",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": "なる予報",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "54a93712-37cf-428d-a852-14ab8f23b17d",
+    "data": [
+      {
+        "text": "ニューヨーク",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "は",
+        "userDefined": false
+      },
+      {
+        "text": "寒い",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": "ですか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "79f574e7-8c5c-4531-b978-a658c5a4b69c",
+    "data": [
+      {
+        "text": "明日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "の",
+        "userDefined": false
+      },
+      {
+        "text": "川崎市",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の気温は",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "6e5eb6e3-a836-4b3e-a397-204f76112dc0",
+    "data": [
+      {
+        "text": "バンコク",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の気温",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "0d1e9190-b9c5-48ff-a13a-8a74b96ee987",
+    "data": [
+      {
+        "text": "今日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "は",
+        "userDefined": false
+      },
+      {
+        "text": "暑い",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": "ですか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "88b86a1b-ecce-4cc8-b0fb-33570027afc4",
+    "data": [
+      {
+        "text": "今、外が",
+        "userDefined": false
+      },
+      {
+        "text": "寒い",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": "かどうかわかる",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "97d7f792-1fc0-4542-aa8c-28dd742e1318",
+    "data": [
+      {
+        "text": "沖縄",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "は",
+        "userDefined": false
+      },
+      {
+        "text": "暑い",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "02f413da-0523-4956-81e0-90c25c9e8811",
+    "data": [
+      {
+        "text": "パリ",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "は",
+        "userDefined": false
+      },
+      {
+        "text": "暖かい",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": "の",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "fa182118-1ad8-4487-a8df-f327c6f8eb8e",
+    "data": [
+      {
+        "text": "温度",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "aad3630c-6313-4119-82c2-bfa63696f5a7",
+    "data": [
+      {
+        "text": "千葉市",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "の気温を",
+        "userDefined": false
+      },
+      {
+        "text": "華氏",
+        "meta": "@unit-temperature",
+        "alias": "unit",
+        "userDefined": true
+      },
+      {
+        "text": "で教えてください",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  }
+]

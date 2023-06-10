@@ -54,3 +54,13 @@ def obtener_datos(rootdir, chatbots):
         diccionarioIntents[c] = ProcesamientoEntidadesIntents.get_intents(rootdir + '/' + c)
 
     return diccionarioAgentes, diccionarioEntidades, diccionarioIntents
+
+
+def copiarDir(rootdir, chat, nombre):
+    try:
+        shutil.copytree(rootdir + chat, './' + nombre)
+        shutil.move('./' + nombre, rootdir)
+    except shutil.Error as e:
+        print(f'Error al copiar directorio: {e}')
+    except OSError as e:
+        print(f'Error de sistema al copiar el directorio: {e}')

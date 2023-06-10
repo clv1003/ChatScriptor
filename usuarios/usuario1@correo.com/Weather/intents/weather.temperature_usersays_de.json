@@ -1,0 +1,1563 @@
+[
+  {
+    "id": "1857e9ed-4f8c-4812-83f5-d2dacfe32ef2",
+    "data": [
+      {
+        "text": "ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Dresden",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "8c1707f2-72b0-44d9-a28e-a9465c6d817e",
+    "data": [
+      {
+        "text": "Temperaturen ",
+        "userDefined": false
+      },
+      {
+        "text": "in",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Grad Celsius",
+        "meta": "@unit-temperature",
+        "alias": "unit",
+        "userDefined": false
+      },
+      {
+        "text": " anzeigen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "68371da7-0d75-4a70-a0ff-ff4ea5b32bee",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "morgen",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Wuppertal",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "7dc3b39a-de69-46e6-8828-86cd451b8231",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "b30a8847-a636-4812-b95b-237b1db7df64",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es draußen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "e0fad1b5-7a6c-423c-8ab3-931fa049cd61",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es jetzt draußen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "1a42c46d-2d4b-475f-b8bf-d18c1e1aa5d6",
+    "data": [
+      {
+        "text": "ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "66b38d68-0e15-4b18-aa0b-a1fd3965bc2a",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " draußen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "89148266-edd5-4987-91ea-e5d442fd3454",
+    "data": [
+      {
+        "text": "ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Preetz",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "3b872fa5-9518-495b-8bce-6ebd427fb2f7",
+    "data": [
+      {
+        "text": "wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "morgen",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "419767ba-14e7-4f0e-a33d-73aa076fe603",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es draußen in ",
+        "userDefined": false
+      },
+      {
+        "text": "Bremerhaven",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "b0c2d45c-beb2-4ba2-b4de-86a5ef0c2c59",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "3383783d-6533-4d5b-9fa3-1ea231aae01f",
+    "data": [
+      {
+        "text": "ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " draussen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "57629802-ea91-4df1-b91c-605f6311e571",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es in ",
+        "userDefined": false
+      },
+      {
+        "text": "Kassel",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "c16fd6c2-5910-410a-8fc0-7e1ff397b50f",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "morgen",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "8509b411-fe9a-4c18-9310-fda56515da4f",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "morgen",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Sachsen",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "10031e06-2ac5-4a8b-89d9-d735e4a7543b",
+    "data": [
+      {
+        "text": "ist es in ",
+        "userDefined": false
+      },
+      {
+        "text": "Dresden",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": " kalt",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "e6698c76-fa50-4171-9f89-715fecf1b079",
+    "data": [
+      {
+        "text": "wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "heiß",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "4fe65ca4-5ac1-4f27-9db3-3619be083984",
+    "data": [
+      {
+        "text": "Temperatur in ",
+        "userDefined": false
+      },
+      {
+        "text": "Berlin",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "503392ed-4742-42fc-8b7d-28cc48923ef1",
+    "data": [
+      {
+        "text": "wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute Abend",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "215bafaf-176c-4c9e-ac5a-834a0de607b6",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "149ce26a-2b27-4fd3-996c-73e7c3349c09",
+    "data": [
+      {
+        "text": "und wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "morgen",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "ad3b33bc-8c2e-430f-9193-a09026367126",
+    "data": [
+      {
+        "text": "Temperatur ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Deutschland",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "057ce5ec-fd36-4494-8160-bdaeff4f9440",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "morgen",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "609fe532-5b5c-48dd-99cd-1597283d3440",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " wird es in ",
+        "userDefined": false
+      },
+      {
+        "text": "Hameln",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "ec2e2550-a246-48f6-954f-99c6dce8740e",
+    "data": [
+      {
+        "text": "ist das ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " draußen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "2ca67ac0-131c-42c4-831d-b90c5af8ca4c",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es in ",
+        "userDefined": false
+      },
+      {
+        "text": "Aurich",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "61be433c-6ca4-48fa-b0ac-fe68fbf3fa85",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " im ",
+        "userDefined": false
+      },
+      {
+        "text": "Wuppertal",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "de0e4567-002b-49dd-b024-c47c447ec895",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "d27db4a0-f3d3-40fb-8fd2-093cd2f8138f",
+    "data": [
+      {
+        "text": "ist es draußen ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "a3cb814b-d8c3-4469-b5ac-046568b5e8a5",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es in ",
+        "userDefined": false
+      },
+      {
+        "text": "Cuxhaven",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "74664305-a510-4bd4-9df4-aecab9ce694d",
+    "data": [
+      {
+        "text": "ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " im ",
+        "userDefined": false
+      },
+      {
+        "text": "Koblenz",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "dca2bfa7-5e5c-4b06-b004-8fec3ca60ec6",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Wuppertal",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "fb0e02a7-e397-4b05-b822-66a742a233d8",
+    "data": [
+      {
+        "text": "ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "736df19a-4382-41f9-9e38-34088b73d891",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " draußen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "1f250e88-c6d4-4dbe-afa3-1fd0b99aaf7b",
+    "data": [
+      {
+        "text": "wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "morgen",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "41bbc908-fe3f-498d-b177-041dc8592837",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "morgen",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "087d5461-41e2-4012-823b-16df217f0893",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "heiß",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es jetzt",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "3d1a06cd-8a47-4d6c-83b5-88abf1627e70",
+    "data": [
+      {
+        "text": "Temperatur",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "b739f147-1853-4ed3-ad55-ca6024c49503",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es in ",
+        "userDefined": false
+      },
+      {
+        "text": "Nienburg Weser",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "7d025d0c-5a7a-4931-a352-e343bb88ecef",
+    "data": [
+      {
+        "text": "ist draußen ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "5a68a535-dd06-495b-9e20-0cdf6c34bc2e",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "morgen",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "d0bd58eb-0ad5-4805-8398-e325fe193498",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es in ",
+        "userDefined": false
+      },
+      {
+        "text": "Koblenz",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "e293b042-a954-4a58-bbfb-47eb1ff9051f",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute Abend",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "b9677fbf-5c57-474b-bea7-5fe56e02a361",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es gerade in ",
+        "userDefined": false
+      },
+      {
+        "text": "Olbernhau",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "9ed6b00c-3c99-4811-8ac3-9e8a8368f644",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es jetzt",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "82885447-f51d-496b-b569-66577a71c30d",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es in ",
+        "userDefined": false
+      },
+      {
+        "text": "Moskau",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "fc393d30-f413-47aa-a79e-6582cae12d94",
+    "data": [
+      {
+        "text": "ist es ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " draußen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "150c23e1-5bdf-4c8d-b627-657a8aa87f54",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es draußen",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "b8bdba20-8137-47ea-80f8-36519c5ee247",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "67b509fe-0526-4539-84e8-95d53843c285",
+    "data": [
+      {
+        "text": "heutige",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " Temperatur in ",
+        "userDefined": false
+      },
+      {
+        "text": "Berlin",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "64b9fe07-e448-4a8f-8310-794bfcad5c68",
+    "data": [
+      {
+        "text": "heutige",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " Temperatur",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "a67d2cc4-633b-4a37-8ce8-676a48196152",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es momentan",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "1faa5fe4-4d00-4473-9753-68a99014795c",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "3011936e-c6a5-4711-8b4b-45fbb17ca422",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "warm",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " wird es ",
+        "userDefined": false
+      },
+      {
+        "text": "heute",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Rhede",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "b7b0fd7a-fe46-4132-9d39-4a4b0c637b14",
+    "data": [
+      {
+        "text": "wie ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      },
+      {
+        "text": " ist es",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "de",
+    "updated": 0
+  },
+  {
+    "id": "3a3c51a1-51c2-4a50-a944-3ae4fe55c6b8",
+    "data": [
+      {
+        "text": "es ist draußen ",
+        "userDefined": false
+      },
+      {
+        "text": "kalt",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "de",
+    "updated": 0
+  }
+]

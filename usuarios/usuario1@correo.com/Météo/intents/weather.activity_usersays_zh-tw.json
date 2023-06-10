@@ -1,0 +1,705 @@
+[
+  {
+    "id": "b37bb13a-65f8-498d-88d8-346ccb036896",
+    "data": [
+      {
+        "text": "明天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "上海",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "會",
+        "userDefined": false
+      },
+      {
+        "text": "步行",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "f7be0a54-a57d-4de4-a94e-c23efb5e94bb",
+    "data": [
+      {
+        "text": "下星期日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "在",
+        "userDefined": false
+      },
+      {
+        "text": "新加坡",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "可以不可以",
+        "userDefined": false
+      },
+      {
+        "text": "打雪仗",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "050c7b3d-ed91-40a9-bdbd-b2598fcf46eb",
+    "data": [
+      {
+        "text": "明天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "會",
+        "userDefined": false
+      },
+      {
+        "text": "遊泳",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "871f9d7d-1c51-49f5-b52a-3fa2e92c69b4",
+    "data": [
+      {
+        "text": "現在適合出去",
+        "userDefined": false
+      },
+      {
+        "text": "徒步旅行",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "95b8cc46-614e-4228-a2b2-68d3181e9374",
+    "data": [
+      {
+        "text": "在",
+        "userDefined": false
+      },
+      {
+        "text": "杭州",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "會不會去",
+        "userDefined": false
+      },
+      {
+        "text": "雪橇",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "5c419a1e-9e48-4cef-9764-1054c8151f05",
+    "data": [
+      {
+        "text": "兩天後",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "會不會",
+        "userDefined": false
+      },
+      {
+        "text": "滑翔傘",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "0afab225-798b-45b2-ba58-da9f09085d26",
+    "data": [
+      {
+        "text": "兩個星期後",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "在",
+        "userDefined": false
+      },
+      {
+        "text": "武漢",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "可能去",
+        "userDefined": false
+      },
+      {
+        "text": "皮劃艇",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "446a435c-931a-4dd6-8895-c6901886c76e",
+    "data": [
+      {
+        "text": "三月三號",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "會不會",
+        "userDefined": false
+      },
+      {
+        "text": "沖浪",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "0b819390-ccde-40e3-bd66-5454d80bb79a",
+    "data": [
+      {
+        "text": "明天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "我跟我的朋友一起想去",
+        "userDefined": false
+      },
+      {
+        "text": "沖浪",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "可以嗎嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "c8e45671-d16d-4ee9-9537-aebf231e3176",
+    "data": [
+      {
+        "text": "明天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "可以去",
+        "userDefined": false
+      },
+      {
+        "text": "露營",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "14f33351-8f73-4e6d-9ef9-cd1ec8959963",
+    "data": [
+      {
+        "text": "明天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "在",
+        "userDefined": false
+      },
+      {
+        "text": "深圳",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "會不會去",
+        "userDefined": false
+      },
+      {
+        "text": "風筝沖浪",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "0d4ed80c-86e1-422c-89af-05524e91383b",
+    "data": [
+      {
+        "text": "今天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "在",
+        "userDefined": false
+      },
+      {
+        "text": "台北",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "我會",
+        "userDefined": false
+      },
+      {
+        "text": "風筝",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "68cd513d-033b-4cb0-a666-f176fcb8a0fa",
+    "data": [
+      {
+        "text": "現在的天氣適合在戶外玩",
+        "userDefined": false
+      },
+      {
+        "text": "飛盤",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "e37cd938-5545-40c8-bc8d-6377b881f9d7",
+    "data": [
+      {
+        "text": "明天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "我們會不會去",
+        "userDefined": false
+      },
+      {
+        "text": "打雪仗",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "1fb7ced1-6bb2-4e60-b674-bb853bcee0dd",
+    "data": [
+      {
+        "text": "新加坡",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "會不會",
+        "userDefined": false
+      },
+      {
+        "text": "滑板",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "d92cd72c-6ca2-4e56-b6ac-b3911f3899fa",
+    "data": [
+      {
+        "text": "北京",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "裏面會不會去",
+        "userDefined": false
+      },
+      {
+        "text": "滑雪",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "0cd688b1-9622-40ca-be14-717073f8ebee",
+    "data": [
+      {
+        "text": "今天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "要去",
+        "userDefined": false
+      },
+      {
+        "text": "沖浪",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "a626ec4b-e034-43cc-8ed4-1f2c62f383e0",
+    "data": [
+      {
+        "text": "今天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "會不會",
+        "userDefined": false
+      },
+      {
+        "text": "單板滑雪",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "a0b60221-3acd-4a2a-a530-cbc2217cd24d",
+    "data": [
+      {
+        "text": "後天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "我行去",
+        "userDefined": false
+      },
+      {
+        "text": "沖浪",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "cef028bd-823a-462c-8822-a71b842d1810",
+    "data": [
+      {
+        "text": "明天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "在",
+        "userDefined": false
+      },
+      {
+        "text": "廣州",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "可以",
+        "userDefined": false
+      },
+      {
+        "text": "攀登",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "d6f414ea-2a90-4dbe-b509-a69b0d715a0e",
+    "data": [
+      {
+        "text": "五天前",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "在",
+        "userDefined": false
+      },
+      {
+        "text": "青島",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "裏面可能去",
+        "userDefined": false
+      },
+      {
+        "text": "風筝",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "ab356721-8ee0-4bf3-862a-db552c7e5166",
+    "data": [
+      {
+        "text": "明天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "在",
+        "userDefined": false
+      },
+      {
+        "text": "深圳",
+        "meta": "@sys.address",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "我很想去",
+        "userDefined": false
+      },
+      {
+        "text": "跑步",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  },
+  {
+    "id": "aec9c0bf-cfe4-4969-857a-c1f46a768c02",
+    "data": [
+      {
+        "text": "明天",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "會不會去",
+        "userDefined": false
+      },
+      {
+        "text": "徒步旅行",
+        "meta": "@activity",
+        "alias": "activity",
+        "userDefined": false
+      },
+      {
+        "text": "嗎",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "zh-tw",
+    "updated": 0
+  }
+]

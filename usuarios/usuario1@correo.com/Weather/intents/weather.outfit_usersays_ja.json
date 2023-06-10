@@ -1,0 +1,283 @@
+[
+  {
+    "id": "2d91e31f-c2f3-4e70-8456-db8c6384cec0",
+    "data": [
+      {
+        "text": "東京",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "で",
+        "userDefined": false
+      },
+      {
+        "text": "傘",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": "は必要なの",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "5214459a-39f7-4345-960d-c36da7402760",
+    "data": [
+      {
+        "text": "今日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "は",
+        "userDefined": false
+      },
+      {
+        "text": "上着",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": "を着たほうがいい",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "1157cd93-f46d-4b07-b9a8-f0ff951c880d",
+    "data": [
+      {
+        "text": "明日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "は",
+        "userDefined": false
+      },
+      {
+        "text": "サングラス",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": "があったほうがいい",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "a2289a97-0d60-4512-8345-78711b82e81e",
+    "data": [
+      {
+        "text": "今週末",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "は",
+        "userDefined": false
+      },
+      {
+        "text": "傘",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": "が必要になりますか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "5b3b8465-48c0-49f6-bb8f-a6f4c3226efb",
+    "data": [
+      {
+        "text": "来週の金曜日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": false
+      },
+      {
+        "text": "札幌",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": false
+      },
+      {
+        "text": "で",
+        "userDefined": false
+      },
+      {
+        "text": "傘",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": false
+      },
+      {
+        "text": "は必要になる",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "81d4ea0d-1b12-49a3-bc6d-98cd5e218b10",
+    "data": [
+      {
+        "text": "明日",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": "コート",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": "は必要になりますか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "c4c0430c-b07b-47d9-8eae-4df4757f8f02",
+    "data": [
+      {
+        "text": "傘",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": "は必要になるの",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "0a015468-06ad-423a-bd21-a2ce4de95a73",
+    "data": [
+      {
+        "text": "サングラス",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": "は必要ですか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "93a22b9f-87c7-4286-b62e-29ecf648d17f",
+    "data": [
+      {
+        "text": "サングラス",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": "をかけたほうがいい",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "40c2be4f-63eb-415f-aa9d-ea518f0c062d",
+    "data": [
+      {
+        "text": "旭川市",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": "で",
+        "userDefined": false
+      },
+      {
+        "text": "手袋",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": "はしたほうがいいですか",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  },
+  {
+    "id": "0b125021-e76e-43f8-b8f7-bea8809498a6",
+    "data": [
+      {
+        "text": "上着",
+        "meta": "@outfit",
+        "alias": "outfit",
+        "userDefined": true
+      },
+      {
+        "text": "があったほうがいいかなあ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ja",
+    "updated": 0
+  }
+]

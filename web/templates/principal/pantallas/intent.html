@@ -46,7 +46,7 @@
                     <div class="row">
                         <div class="col-1 text-dark text-center fw-bold">action</div>
                         <form class="col" enctype="multipart/form-data" method="post"
-                              action="#">
+                              action="{{ url_for('actualizar_action', chat=chat, intent=intent) }}">
                             <input type="text" class="form-control" value="{{ inte[0]['responses'][0]['action'] }}"
                                    name="atributo">
                         </form>

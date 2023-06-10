@@ -1,0 +1,289 @@
+[
+  {
+    "id": "8cbf0752-714b-4d08-bac6-fa68a883a971",
+    "data": [
+      {
+        "text": "hoje está um dia ",
+        "userDefined": false
+      },
+      {
+        "text": "quente",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "2da03f42-83f9-42a2-b23e-f7be7f52d87b",
+    "data": [
+      {
+        "text": "está ",
+        "userDefined": false
+      },
+      {
+        "text": "frio",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": " em ",
+        "userDefined": false
+      },
+      {
+        "text": "Nova Iorque",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "8420faac-958d-4f32-ad21-2218c5daf6a8",
+    "data": [
+      {
+        "text": "temperatura em ",
+        "userDefined": false
+      },
+      {
+        "text": "Banguecoque",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "e465b596-0c8d-416d-aa0b-8f523870e083",
+    "data": [
+      {
+        "text": "qual é a temperatura para ",
+        "userDefined": false
+      },
+      {
+        "text": "amanhã",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " em ",
+        "userDefined": false
+      },
+      {
+        "text": "Camberra",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "dfaa0f09-b4c1-42a6-b99b-ea6713d6e445",
+    "data": [
+      {
+        "text": "qual é a temperatura para ",
+        "userDefined": false
+      },
+      {
+        "text": "amanhã",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " em ",
+        "userDefined": false
+      },
+      {
+        "text": "Campbell",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "57886e9c-89b2-47f6-912c-762404a93691",
+    "data": [
+      {
+        "text": "está ",
+        "userDefined": false
+      },
+      {
+        "text": "ameno",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": " em ",
+        "userDefined": false
+      },
+      {
+        "text": "Nova Iorque",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "0ab345f9-6737-4706-a0a4-d281cfafe7b6",
+    "data": [
+      {
+        "text": "mostrar-me a temperatura em ",
+        "userDefined": false
+      },
+      {
+        "text": "Paris",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      },
+      {
+        "text": " em ",
+        "userDefined": false
+      },
+      {
+        "text": "Fahrenheit",
+        "meta": "@unit-temperature",
+        "alias": "unit",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "92a119e7-ba7a-4baa-a710-60c5dcd157db",
+    "data": [
+      {
+        "text": "está ",
+        "userDefined": false
+      },
+      {
+        "text": "quente",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": " em ",
+        "userDefined": false
+      },
+      {
+        "text": "Nova Iorque",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "8e86001c-944e-416b-84b6-7e61d4eaf55c",
+    "data": [
+      {
+        "text": "temperatura",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "ec8d591b-ef1a-4665-8ecd-88b24b004cbb",
+    "data": [
+      {
+        "text": "sabe se está ",
+        "userDefined": false
+      },
+      {
+        "text": "frio",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": " lá fora agora",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  },
+  {
+    "id": "2ffda12c-64d0-4bdb-b4af-24b63a734ca7",
+    "data": [
+      {
+        "text": "quão ",
+        "userDefined": false
+      },
+      {
+        "text": "frio",
+        "meta": "@temperature",
+        "alias": "temperature",
+        "userDefined": true
+      },
+      {
+        "text": " vai estar ",
+        "userDefined": false
+      },
+      {
+        "text": "neste domingo",
+        "meta": "@sys.date-time",
+        "alias": "date-time",
+        "userDefined": true
+      },
+      {
+        "text": " em ",
+        "userDefined": false
+      },
+      {
+        "text": "Mountain View",
+        "meta": "@sys.location",
+        "alias": "address",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "pt",
+    "updated": 0
+  }
+]
