@@ -190,7 +190,11 @@ def remove_entry(root, entidad, value, synonyms):
 def add_messages(root, speach):
     diccionario = get_parte(root)
 
-    diccionario["responses"][0]["messages"][0]["speech"].append(speach)
+    if 'speech' in diccionario["responses"][0]["messages"][0]:
+        diccionario["responses"][0]["messages"][0]["speech"].append(speach)
+    else:
+        diccionario["responses"][0]["messages"][0]["speech"] = []
+        diccionario["responses"][0]["messages"][0]["speech"].append(speach)
 
     with open(root, 'w') as i:
         json.dump(diccionario, i)
