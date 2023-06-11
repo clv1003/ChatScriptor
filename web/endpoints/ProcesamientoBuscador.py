@@ -1,6 +1,7 @@
 import ProcesamientoAgente
 import ProcesamientoArchivos
 import ProcesamientoEntidadesIntents
+import ProcesamientoUsuario
 
 
 # OBTENCION DEL VALOR BUSCADO EN EL AGENTE
@@ -160,5 +161,16 @@ def buscar_chatbots(directorio, busqueda):
 
     for cb in chatbots:
         resultados[cb] = buscar_chatbot(directorio + '/' + cb, busqueda)
+
+    return resultados
+
+
+def buscar_usuarios(busqueda):
+    usuarios = ProcesamientoUsuario.get_usuarios()
+    resultados = []
+
+    for u in usuarios:
+        if busqueda.lower() in u.lower():
+            resultados.append(u)
 
     return resultados
