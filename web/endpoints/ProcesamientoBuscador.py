@@ -64,6 +64,7 @@ def buscar_ent_int(rootP1, rootP2, busqueda):
         name = parte1['name'].lower()
         action = parte1['responses'][0]['action'].lower()
         parameters = parte1['responses'][0]['parameters']
+        messages = parte1['responses'][0]['messages'][0]
 
         if busqueda.lower() in name:
             resultados1.append('name')
@@ -76,6 +77,17 @@ def buscar_ent_int(rootP1, rootP2, busqueda):
                     busqueda.lower() in i['dataType'].lower() or \
                     busqueda.lower() in i['value'].lower():
                 resultados1.append({'responses': [{'parameters': i['id']}]})
+
+        print(messages)
+        if 'speech' in messages:
+            lista = []
+            print(messages["speech"])
+            for i in messages["speech"]:
+                print(f'{i} in {busqueda.lower()}')
+                if busqueda.lower() in i.lower():
+                    lista.append(i)
+            print(lista)
+            resultados1.append({'speech': lista})
 
         # segundo archivo de intent
         for j in parte2:
