@@ -60,6 +60,17 @@ def verificar_usuario(email, password):
     return False
 
 
+def get_usuarios():
+    usuarios = []
+
+    if os.path.exists('./usuarios/'):
+        for u in os.listdir('./usuarios/'):
+            if u != 'administrador@administrador.com':
+                usuarios.append(u)
+
+    return usuarios
+
+
 def get_usuario(email):
     with open('database.csv', 'r') as db:
         reader = csv.reader(db, delimiter=';')

@@ -23,15 +23,11 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }} </h3>
-        </div>
-        <div class="col-auto justify-content-md-end mx-5">
-            <form class="d-flex ms-5" enctype="multipart/form-data" method="get"
-                action="{{ url_for('buscar_usuarios') }}">
-                <input class="form-control me-3" type="text" name="busqueda" placeholder="Buscar">
-                <button class="btn btn-outline-dark rounded-circle" type="submit"><i class="bi bi-search"></i></button>
-            </form>
-        </div>
+                <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }}</h3>
+            </div>
+            <div class="col">
+                <h3 class="text-end mx-5"><i class="bi bi-search"></i> Resultados de: {{ busqueda }}</h3>
+            </div>
     </div>
 </div>
 
@@ -40,19 +36,17 @@
     <h1 class="text-left mt-5"><i class="bi bi-person-dash-fill"></i> Eliminar usuarios </h1>
 
     <div class="list-group mt-5 mx-5">
-        {% for dir in datos %}
-        {% if dir != "administrador@administrador.com" %}
+        {% for usuario in resultados %}
         <div class="row mx-5">
             <div class="col card border-warning mb-2 rounded-3 shadow">
-                <div class="card-header text-dark text-center">{{ dir }}</div>
+                <div class="card-header text-dark text-center">{{ usuario }}</div>
             </div>
             <div class="col-auto justify-content-md-end mx-4">
-                <form action="{{ url_for('removeuser', chat=dir) }}" method="post">
+                <form action="{{ url_for('removeuser', chat=usuario) }}" method="post">
                     <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar</button>
                 </form>
             </div>
         </div>
-        {% endif %}
         {% endfor %}
     </div>
 </div>

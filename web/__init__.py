@@ -580,6 +580,19 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    @app.route('/buscar_usuarios/', methods=["GET"])
+    def buscar_usuarios():
+        if 'email' in session:
+            busqueda = request.args.get('busqueda')
+            if os.path.exists('./usuarios/'):
+                return render_template("principal/buscador/buscadorUsuariosAdmin.html",
+                                       resultados=ProcesamientoBuscador.buscar_usuarios(busqueda=busqueda),
+                                       busqueda=busqueda,
+                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+
+        else:
+            return redirect(url_for('login'))
+
     # ------------------------
     # REPORTE CON EL RESUMEN DE TODA LA INFORMACION RELEVANTE
     @app.route('/informe/<string:chat>', methods=["GET"])
