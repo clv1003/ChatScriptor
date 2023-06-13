@@ -4,9 +4,11 @@ import ProcesamientoAgente
 
 
 # OBTENCIÓN DE LAS ENTIDADES DEL CHATBOT
-def get_entidades(rootdir):
+def get_entidades(rootdir, language=None):
     if os.path.exists(rootdir + '/entities'):
-        language = ProcesamientoAgente.get_agente_language(rootdir)
+        if language is None:
+            language = ProcesamientoAgente.get_agente_language(rootdir)
+
         archivos = os.listdir(rootdir + '/entities')
         agrupados = []
 
@@ -16,16 +18,17 @@ def get_entidades(rootdir):
                 entries = entity + '_entries_' + language + '.json'
                 if entries in archivos:
                     agrupados.append([archivo, entries])
-
         return agrupados
     else:
         return None
 
 
 # OBTENCIÓN DE LOS INTENTS DEL CHATBOT
-def get_intents(rootdir):
+def get_intents(rootdir, language=None):
     if os.path.exists(rootdir + '/intents'):
-        language = ProcesamientoAgente.get_agente_language(rootdir)
+        if language is None:
+            language = ProcesamientoAgente.get_agente_language(rootdir)
+
         archivos = os.listdir(rootdir + '/intents')
         agrupados = []
 
@@ -63,10 +66,11 @@ def get_parte(parte):
 
 # ---------------------------------------------------------------------------------------------------------------------
 # OBTENER LOS DIRECTORIOS DE LOS ARCHIVOS
-def directoriosEntidad(root, entidad):
+def directoriosEntidad(root, entidad, language=None):
     if entidad.endswith('.json'):
         entries1 = entidad
-        language = ProcesamientoAgente.get_agente_language(root)
+        if language is None:
+            language = ProcesamientoAgente.get_agente_language(root)
         entidad = entidad.replace('.json', '')
         entries2 = entidad + '_entries_' + language + '.json'
 
@@ -74,10 +78,11 @@ def directoriosEntidad(root, entidad):
         return ent
 
 
-def directoriosIntent(root, intent):
+def directoriosIntent(root, intent, language=None):
     if intent.endswith('.json'):
         intent1 = intent
-        language = ProcesamientoAgente.get_agente_language(root)
+        if language is None:
+            language = ProcesamientoAgente.get_agente_language(root)
         intent = intent.replace('.json', '')
         intent2 = intent + '_usersays_' + language + '.json'
 
@@ -97,32 +102,40 @@ def editar_nombre(root, clave, atributo):
 
 # ---------------------------------------------------------------------------------------------------------------------
 # ELIMINAR ENTIDAD
-def remove_entidad(root, chat, entidad):
+def remove_entidad(root, chat, entidad, language=None):
     rootdir = root + chat + '/entities/'
 
     os.remove(rootdir + entidad)
 
+    if language is None:
+        language = ProcesamientoAgente.get_agente_language(root + chat)
+
     e = entidad.replace('.json', '')
-    enti = e + '_entries_' + ProcesamientoAgente.get_agente_language(root + chat) + '.json'
+    enti = e + '_entries_' + language + '.json'
     os.remove(rootdir + enti)
 
 
 # ELIMINAR INTENT
-def remove_intent(root, chat, intent):
+def remove_intent(root, chat, intent, language=None):
     rootdir = root + chat + '/intents/'
 
     os.remove(rootdir + intent)
 
+    if language is None:
+        language = ProcesamientoAgente.get_agente_language(root + chat)
+
     i = intent.replace('.json', '')
-    inte = i + '_usersays_' + ProcesamientoAgente.get_agente_language(root + chat) + '.json'
+    inte = i + '_usersays_' + language + '.json'
     os.remove(rootdir + inte)
 
 
 # ---------------------------------------------------------------------------------------------------------------------
 # EDITAR VALUE DE LAS ENTIDADES
-def editar_v_ent(root, value, entidad, atributo):
+def editar_v_ent(root, value, entidad, atributo, language=None):
     if entidad.endswith('.json'):
-        language = ProcesamientoAgente.get_agente_language(root)
+        if language is None:
+            language = ProcesamientoAgente.get_agente_language(root)
+
         entidad = entidad.replace('.json', '')
         entries = entidad + '_entries_' + language + '.json'
 
@@ -137,9 +150,11 @@ def editar_v_ent(root, value, entidad, atributo):
 
 
 # EDITAR SYNONYMS DE LAS ENTIDADES
-def editar_s_ent(root, value, entidad, atributo):
+def editar_s_ent(root, value, entidad, atributo, language=None):
     if entidad.endswith('.json'):
-        language = ProcesamientoAgente.get_agente_language(root)
+        if language is None:
+            language = ProcesamientoAgente.get_agente_language(root)
+
         entidad = entidad.replace('.json', '')
         entries = entidad + '_entries_' + language + '.json'
 
@@ -154,9 +169,11 @@ def editar_s_ent(root, value, entidad, atributo):
 
 
 # AÑADIR UNA NUEVA ENTRADA DE ENTIDAD
-def add_entry(root, entidad, value, synonyms):
+def add_entry(root, entidad, value, synonyms, language=None):
     if entidad.endswith('.json'):
-        language = ProcesamientoAgente.get_agente_language(root)
+        if language is None:
+            language = ProcesamientoAgente.get_agente_language(root)
+
         entidad = entidad.replace('.json', '')
         entries = entidad + '_entries_' + language + '.json'
 
@@ -170,9 +187,11 @@ def add_entry(root, entidad, value, synonyms):
 
 
 # ELIMINAR ENTRADA DE ENTIDAD
-def remove_entry(root, entidad, value, synonyms):
+def remove_entry(root, entidad, value, synonyms, language=None):
     if entidad.endswith('.json'):
-        language = ProcesamientoAgente.get_agente_language(root)
+        if language is None:
+            language = ProcesamientoAgente.get_agente_language(root)
+
         entidad = entidad.replace('.json', '')
         entries = entidad + '_entries_' + language + '.json'
 
@@ -264,10 +283,11 @@ def remove_messages(root, speech):
 
 
 # EDITAR DATA DE INTENTS
-def editar_data(root, intent, old, tipo, atributo):
+def editar_data(root, intent, old, tipo, atributo, language=None):
     if intent.endswith('.json'):
         stopflag = False
-        language = ProcesamientoAgente.get_agente_language(root)
+        if language is None:
+            language = ProcesamientoAgente.get_agente_language(root)
         intent = intent.replace('.json', '')
         data = intent + '_usersays_' + language + '.json'
 
@@ -294,9 +314,10 @@ def editar_data(root, intent, old, tipo, atributo):
 
 
 # ELIMINAR DATA DE INTENTS
-def remove_data(root, intent, idD):
+def remove_data(root, intent, idD, language=None):
     if intent.endswith('.json'):
-        language = ProcesamientoAgente.get_agente_language(root)
+        if language is None:
+            language = ProcesamientoAgente.get_agente_language(root)
         intent = intent.replace('.json', '')
         data = intent + '_usersays_' + language + '.json'
 
