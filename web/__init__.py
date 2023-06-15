@@ -8,7 +8,7 @@ import ProcesamientoEntidadesIntents
 import ProcesamientoZip
 import ProcesamientoUsuario
 import ProcesamientoBuscador
-from traductor import Traductor
+from traductor import Traducir
 
 
 def start_app():
@@ -666,7 +666,7 @@ def start_app():
         #idioma = request.args.get('idioma')
         if 'email' in session:
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                chatbot = Traductor.traducir('./usuarios/' + session['email'] + '/', idioma, chat)
+                chatbot = Traducir.traducir('./usuarios/' + session['email'] + '/', chat, idioma)
 
                 if os.path.exists('./usuarios/' + session['email'] + '/' + chatbot):
                     return redirect(url_for('paginaprincipal'))
