@@ -19,42 +19,48 @@
 <div class="container mt-4">
     {% for d in datos %}
     <div class="card mx-5 mb-3 border-warning mb-2 rounded-1 shadow">
-        <div class="m-5">
-            <h5 class="text-left fw-bold mb-4">{{ d[0]['name'] }}</h5>
+        <div class="m-5 row">
+            <div class="col mx-5">
+                <h4 class="text-left fw-bold mb-4">{{ d[0]['name'] }}</h4>
+                {% for text in d[1] %}
+                {% set frase = [] %}
+                {% for t in text['data'] %}
+                {% set _ = frase.append(t['text']) %}
+                {% endfor %}
+
+                <table class="table table-auto mx-5">
+                    <tbody class="mx-5">
+                    <tr>
+                        <i class="bi bi-quote"></i> {{ frase | join(' ') }}
+                    </tr>
+                    </tbody>
+                </table>
+
+                {% endfor %}
+            </div>
+
             {% if 'speech' in d[0]["responses"][0]["messages"][0] %}
             {% set speech = d[0]["responses"][0]["messages"][0]['speech'] %}
-            {% endif %}
-
-            {% for text in d[1] %}
-            {% set frase = [] %}
-            {% for t in text['data'] %}
-            {% set _ = frase.append(t['text']) %}
-            {% endfor %}
-
-            <table class="table table-auto">
-                <tbody class="mx-5">
-                {% if speech %}
-                {% set tam = speech | length %}
-                <tr>
-                    <td rowspan="{{tam+1}}"><i class="bi bi-quote"></i> {{ frase | join(' ') }}</td>
-                </tr>
+            <div class="col mx-5">
+                <h5 class="text-left fw-bold fst-italic mb-4">Respuestas</h5>
                 {% for s in speech %}
-                <tr class="col-6">
-                    <td><i class="bi bi-quote"></i> {{ s }}</td>
-                </tr>
+                <table class="table table-auto">
+                    <tbody class="mx-5">
+                    <tr>
+                        <i class="bi bi-quote"></i> {{ s }}
+                    </tr>
+                    </tbody>
+                </table>
                 {% endfor %}
-                {% else %}
-                <tr>
-                    <i class="bi bi-quote"></i> {{ frase | join(' ') }}
-                </tr>
-                {% endif %}
-                </tbody>
-            </table>
-
-            {% endfor %}
+            </div>
+            {% endif %}
         </div>
     </div>
     {% endfor %}
+</div>
+
+<div class="container mt-5">
+    {% include 'comunes/footer.html' %}
 </div>
 
 </body>
