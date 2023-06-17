@@ -7,6 +7,13 @@
     {% include 'comunes/navbar.html' %}
 </div>
 
+{% if alerta %}
+<div class="alert alert-primary" role="alert">
+    <h4 class="alert-heading mx-5">El archivo se ha descargado</h4>
+    <p class="mx-5">Lo podrás encontrar en tu carpeta de <em>Descargas</em> local</p>
+</div>
+{% endif %}
+
 <div class="container mt-5">
     <div class="row">
         <div class="col">
@@ -37,7 +44,8 @@
                     </div>
 
                     <button type="submit" class="btn btn-outline-warning text-black shadow">
-                        <i class="bi bi-arrow-bar-up"></i> Importar</button>
+                        <i class="bi bi-arrow-bar-up"></i> Importar
+                    </button>
 
                 </form>
             </div>
@@ -49,15 +57,11 @@
                 <div class="list-group mt-5">
                     {% for dir in datos %}
                     <a class="mb-1 btn btn-outline-warning btn-block list-group-item shadow"
-                       href="{{ url_for('obtener_zip', chat=dir) }}"
-                       onclick="alert('Pulsa en Aceptar para completar la descarga en: Directorio de descargas local')">
-                        {{ dir }}
-                    </a>
+                       href="{{ url_for('obtener_zip', chat=dir) }}"> {{ dir }} </a>
                     {% endfor %}
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 

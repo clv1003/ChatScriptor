@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, url_for, redirect, request, session
+from flask import Flask, render_template, url_for, redirect, request, session, send_from_directory
 
 import ProcesamientoAgente
 import ProcesamientoArchivos
@@ -33,10 +33,10 @@ def start_app():
 
     # página principal no sesion
     @app.route('/home', methods=["GET"])
-    def paginaprincipal():
+    def paginaprincipal(alerta=False):
         if 'email' in session:
             if os.path.exists('./usuarios/' + session['email'] + '/'):
-                return render_template("principal/home.html",
+                return render_template("principal/home.html", alerta=alerta,
                                        datos=ProcesamientoArchivos.get_disponible(
                                            './usuarios/' + session['email'] + '/'),
                                        usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
@@ -68,9 +68,9 @@ def start_app():
 
     # para importar y exportar los archivos
     @app.route('/importar-exportar', methods=['GET'])
-    def importacionexportacion():
+    def importacionexportacion(alerta=False):
         if 'email' in session:
-            return render_template('principal/importar-exportar.html',
+            return render_template('principal/importar-exportar.html', alerta=alerta,
                                    datos=ProcesamientoArchivos.get_disponible('./usuarios/' + session['email'] + '/'),
                                    usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
@@ -90,9 +90,9 @@ def start_app():
     def obtener_zip():
         if 'email' in session:
             chat = request.args.get('chat')
-            ProcesamientoZip.exportar_archivos('./usuarios/' + session['email'] + '/',
-                                               chat)  # ./usuarios/{email}/Weather
-            return redirect(url_for('importacionexportacion'))
+            ProcesamientoZip.exportar_archivos('./usuarios/' + session['email'] + '/', chat)
+
+            return importacionexportacion(alerta=True)
         else:
             return redirect(url_for('login'))
 
@@ -629,10 +629,9 @@ def start_app():
 
                 return redirect(url_for('paginaprincipal'))
             else:
-                error = 'Usuario o contraseña incorrectos'
-                return render_template('login.html', error=error)
+                return render_template('login.html', alerta=True)
         else:
-            return render_template('login.html')
+            return render_template('login.html', alerta=False)
 
     # página de registro
     @app.route('/register', methods=["GET", "POST"])
@@ -646,10 +645,9 @@ def start_app():
             if ProcesamientoUsuario.registrar_usuario(nombre, email, password):
                 return redirect(url_for('login'))
             else:
-                error = 'El correo electrónico ya está en uso'
-                return render_template('register.html', error=error)
+                return render_template('register.html', alerta=True)
         else:
-            return render_template('register.html')
+            return render_template('register.html', alerta=False)
 
     @app.route('/logout')
     def logout():
@@ -669,7 +667,7 @@ def start_app():
                 chatbot = Traducir.traducir('./usuarios/' + session['email'] + '/', chat, idioma)
 
                 if os.path.exists('./usuarios/' + session['email'] + '/' + chatbot):
-                    return redirect(url_for('paginaprincipal'))
+                    return paginaprincipal(alerta=True)
                 else:
                     return None
         else:

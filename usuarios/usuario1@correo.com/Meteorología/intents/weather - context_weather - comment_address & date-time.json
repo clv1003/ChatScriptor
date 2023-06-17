@@ -1,1 +1,146 @@
-{"id": "9c17c01c-68a6-4b2b-b461-a0e04cd9bb08", "name": "fecha-hora", "auto": true, "contexts": ["weather"], "responses": [{"resetContexts": false, "action": "#weather.intent_action", "affectedContexts": [{"name": "weather", "lifespan": 2, "parameters": {}}], "parameters": [{"id": "b7acc65f-61d5-4ab5-bae5-6cb1affac0b3", "name": "address", "required": false, "dataType": "@sys.location", "value": "$address", "defaultValue": "", "isList": false, "prompts": [], "promptMessages": [], "noMatchPromptMessages": [], "noInputPromptMessages": [], "outputDialogContexts": []}, {"id": "614c96b4-50e2-4d39-b021-24426e056714", "name": "date-time", "required": false, "dataType": "@sys.date-time", "value": "$date-time", "defaultValue": "", "isList": false, "prompts": [], "promptMessages": [], "noMatchPromptMessages": [], "noInputPromptMessages": [], "outputDialogContexts": []}], "messages": [{"type": "0", "title": "", "textToSpeech": "", "lang": "es", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "zh-cn", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "fr", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "it", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "en", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "ja", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "pt-br", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "zh-tw", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "zh-hk", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "pt", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "ru", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "de", "condition": ""}], "speech": []}], "priority": 500000, "webhookUsed": false, "webhookForSlotFilling": false, "fallbackIntent": false, "events": [], "conditionalResponses": [], "condition": "", "conditionalFollowupEvents": [], "dataType": "@sys.date-time", "value": "$fecha-hora"}
+{
+  "id": "9c17c01c-68a6-4b2b-b461-a0e04cd9bb08",
+  "name": "weather - context:weather - comment:address \u0026 date-time",
+  "auto": true,
+  "contexts": [
+    "weather"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "#weather.intent_action",
+      "affectedContexts": [
+        {
+          "name": "weather",
+          "lifespan": 2,
+          "parameters": {}
+        }
+      ],
+      "parameters": [
+        {
+          "id": "b7acc65f-61d5-4ab5-bae5-6cb1affac0b3",
+          "name": "address",
+          "required": false,
+          "dataType": "@sys.location",
+          "value": "$address",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "614c96b4-50e2-4d39-b021-24426e056714",
+          "name": "date-time",
+          "required": false,
+          "dataType": "@sys.date-time",
+          "value": "$date-time",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "zh-cn",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "fr",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "it",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "ja",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "pt-br",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "zh-tw",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "zh-hk",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "pt",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "ru",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "de",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
