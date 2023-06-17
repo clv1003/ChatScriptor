@@ -61,12 +61,12 @@
                     <ul class="dropdown-menu">
                         {% if agente['language'] == 'en' %}
                         <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='es') }}">Español</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='fr') }}">Francés</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='de') }}">Alemán</a></li>
+                        <!--<li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='fr') }}">Francés</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='de') }}">Alemán</a></li> -->
 
                         {% elif agente['language'] == 'es' %}
                         <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='en') }}">Inglés</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='fr') }}">Francés</a></li>
+                        <!--<li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='fr') }}">Francés</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='de') }}">Alemán</a></li>
 
                         {% elif agente['language'] == 'fr' %}
@@ -77,7 +77,7 @@
                         {% elif agente['language'] == 'de' %}
                         <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='es') }}">Español</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='en') }}">Inglés</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='fr') }}">Francés</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('traductor', chat=chat, idioma='fr') }}">Francés</a></li>-->
 
                         {% endif %}
                     </ul>

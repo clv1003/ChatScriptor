@@ -7,6 +7,13 @@
     {% include 'comunes/navbar.html' %}
 </div>
 
+{% if alerta %}
+<div class="alert alert-primary" role="alert">
+    <h4 class="alert-heading mx-5">El archivo se ha traducido</h4>
+    <p class="mx-5">Lo podrás encontrar en los <em>Archivos disponibles</em></p>
+</div>
+{% endif %}
+
 <div class="container mt-5">
     <div class="row">
         <div class="col">

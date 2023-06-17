@@ -1,10 +1,11 @@
-transformers
-flask
-bcrypt
+transformers~=4.30.1
+flask~=2.3.2
+bcrypt~=4.0.1
 torch
 torchvision
 sentencepiece
 sacremoses
+Unidecode~=1.3.6
 
 # Dependencias externas (no se instalan con pip)
 # Asegúrate de incluir estos archivos manualmente en tu proyecto.
@@ -15,3 +16,4 @@ sacremoses
 # Accede al siguiente directorio: /Chat-Scriptor/web/templates/comunes/cabecera.html
 # Aparecerá señalado el contenido de las etiquetas <link> y <script>
 # Pycharm te indicará que no están instalados y que si los quieres instalar
+

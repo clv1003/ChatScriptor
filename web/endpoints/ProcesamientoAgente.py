@@ -30,7 +30,6 @@ def set_agente(rootdir, chat, clave, atributo):
     #    n_nombre = rootdir + atributo
     #else:
     #    n_nombre = rootdir + chat
-
     diccionario = get_agente(rootdir + chat)
     diccionario[clave] = atributo
 

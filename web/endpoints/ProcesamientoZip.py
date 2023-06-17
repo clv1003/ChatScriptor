@@ -1,4 +1,5 @@
 import os
+import platform
 import shutil
 import zipfile
 from flask import request
@@ -24,19 +25,19 @@ def exportar_archivos(rootdir, name):  # rootdir = ./unzip/ ; name = Weather
 
         if os.path.exists(downloads_dir + '/' + name + '.zip'):
             num = 1
-            while os.path.exists(downloads_dir + '/' + name + '.zip') or os.path.exists(
-                    downloads_dir + '/' + name + str(num) + '.zip'):
-                fnombre = name + ' (' + str(num) + ')'
+            while os.path.exists(downloads_dir + '/' + name + '(' + str(num) + ')' + '.zip'):
                 num += 1
 
-                zip_dir = shutil.make_archive(fnombre, format='zip', root_dir=rootdir + name)
+            fnombre = name + '(' + str(num) + ')'
+            zip_dir = shutil.make_archive(fnombre, format='zip', root_dir=rootdir + name)
 
-                if not os.path.exists(downloads_dir + '/' + fnombre + '.zip'):
-                    shutil.move(zip_dir, downloads_dir)
-                    break
+            shutil.move(zip_dir, downloads_dir)
+            print(f'\033[34mEl chatbot se ha descargado\033[0m')
+
         else:
             zip_dir = shutil.make_archive(name, format='zip', root_dir=rootdir + name)
             shutil.move(zip_dir, downloads_dir)
+            print(f'\033[34mEl chatbot se ha descargado\033[0m')
 
 
 # ELIMINAR EL CONTENIDO DEL DIRECTORIO UNZIP

@@ -1,7 +1,7 @@
-from transformers import pipeline
+from transformers import pipeline, MarianMTModel, MarianTokenizer
 import os.path
 
-
+'''
 class Traductor:
     def traductor(self, text):
         pass
@@ -35,4 +35,56 @@ def traducirArchivo(rootdir, chat, original1, original2, archivo1, archivo2, tip
         elif tipo == 'intent':
             rutaOr1 = rootdir + chat + '/intents/' + original1
             os.rename(rutaOr1, archivo1)
+
+'''
+
+
+class Traductor:
+    def __init__(self, original, idioma):
+        modelos = {
+            'en-es': {
+                'model_name': 'Helsinki-NLP/opus-mt-en-es',
+                'tokenizer_name': 'Helsinki-NLP/opus-mt-en-es'
+            },
+            'es-en': {
+                'model_name': 'Helsinki-NLP/opus-mt-es-en',
+                'tokenizer_name': 'Helsinki-NLP/opus-mt-es-en'
+            }
+        }
+
+        model_name = modelos[f'{original}-{idioma}']['model_name']
+        tokenizer_name = modelos[f'{original}-{idioma}']['tokenizer_name']
+
+        self.modelo = MarianMTModel.from_pretrained(model_name)
+        self.token = MarianTokenizer.from_pretrained(tokenizer_name)
+
+        self.original = original
+        self.idioma = idioma
+
+    def getOriginal(self):
+        return self.original
+
+    def getIdioma(self):
+        return self.idioma
+
+    def traducirFrase(self, frase, max_length=512):
+        input = self.token(frase, return_tensors='pt')
+        input_ids = input['input_ids']
+        attention_mask = input['attention_mask']
+
+        tr_model = self.modelo.generate(input_ids=input_ids,
+                                        attention_mask=attention_mask,
+                                        max_length=max_length)
+        tr_token = self.token.decode(tr_model[0], skip_special_tokens=True)
+
+        return tr_token
+
+    def traducirDiccionario(self, diccionario):
+        tr_diccionario = {}
+
+        for clave, frase in diccionario.items():
+            tr_frase = self.traducirFrase(frase)
+            tr_diccionario[clave] = tr_frase
+
+        return tr_diccionario
 

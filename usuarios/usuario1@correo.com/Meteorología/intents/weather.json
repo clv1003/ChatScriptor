@@ -1,1 +1,163 @@
-{"id": "f1b75ecb-a35f-4a26-88fb-5a8049b92b02", "name": "unidad", "auto": true, "contexts": [], "responses": [{"resetContexts": false, "action": "tiempo", "affectedContexts": [{"name": "weather", "lifespan": 2, "parameters": {}}, {"name": "weather-followup", "lifespan": 2, "parameters": {}}], "parameters": [{"id": "e3b958c8-611c-4b52-aa5f-9a42ad6f7a41", "name": "date-time", "required": false, "dataType": "@sys.date-time", "value": "$date-time", "defaultValue": "", "isList": false, "prompts": [], "promptMessages": [], "noMatchPromptMessages": [], "noInputPromptMessages": [], "outputDialogContexts": []}, {"id": "29e52969-93e3-483a-b73d-2718e9672fc9", "name": "address", "required": false, "dataType": "@sys.location", "value": "$address", "defaultValue": "", "isList": false, "prompts": [], "promptMessages": [], "noMatchPromptMessages": [], "noInputPromptMessages": [], "outputDialogContexts": []}, {"id": "53ff1a67-aa16-4529-9911-e517b3f42e19", "name": "unit", "required": false, "dataType": "@unit-temperature", "value": "$unit", "defaultValue": "", "isList": false, "prompts": [], "promptMessages": [], "noMatchPromptMessages": [], "noInputPromptMessages": [], "outputDialogContexts": []}], "messages": [{"type": "0", "title": "", "textToSpeech": "", "lang": "es", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "zh-cn", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "fr", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "it", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "en", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "ja", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "pt-br", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "zh-tw", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "zh-hk", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "pt", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "ru", "condition": ""}, {"type": "0", "title": "", "textToSpeech": "", "lang": "de", "condition": ""}], "speech": []}], "priority": 500000, "webhookUsed": false, "webhookForSlotFilling": false, "fallbackIntent": false, "events": [], "conditionalResponses": [], "condition": "", "conditionalFollowupEvents": [], "dataType": "@unit-temperature", "value": "$unit"}
+{
+  "id": "f1b75ecb-a35f-4a26-88fb-5a8049b92b02",
+  "name": "weather",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "weather",
+      "affectedContexts": [
+        {
+          "name": "weather",
+          "lifespan": 2,
+          "parameters": {}
+        },
+        {
+          "name": "weather-followup",
+          "lifespan": 2,
+          "parameters": {}
+        }
+      ],
+      "parameters": [
+        {
+          "id": "e3b958c8-611c-4b52-aa5f-9a42ad6f7a41",
+          "name": "date-time",
+          "required": false,
+          "dataType": "@sys.date-time",
+          "value": "$date-time",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "29e52969-93e3-483a-b73d-2718e9672fc9",
+          "name": "address",
+          "required": false,
+          "dataType": "@sys.location",
+          "value": "$address",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "53ff1a67-aa16-4529-9911-e517b3f42e19",
+          "name": "unit",
+          "required": false,
+          "dataType": "@unit-temperature",
+          "value": "$unit",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "zh-cn",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "fr",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "it",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "ja",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "pt-br",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "zh-tw",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "zh-hk",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "pt",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "ru",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "de",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
