@@ -1,8 +1,5 @@
 
 import os.path
-
-from unidecode import unidecode
-
 import ProcesamientoAgente
 
 '''
@@ -56,7 +53,7 @@ def traducirAgente(traductor, rootdir, chat):
 
         tr_diccionario = traductor.traducirDiccionario(diccionario)
 
-        ProcesamientoAgente.set_agente(rootdir, chat, 'displayName', unidecode(tr_diccionario['displayName']))
+        ProcesamientoAgente.set_agente(rootdir, chat, 'displayName', tr_diccionario['displayName'])
         print("\033[92m -> OK! - Modificado displayName \033[0m")
         ProcesamientoAgente.set_agente(rootdir, chat, 'shortDescription', tr_diccionario['shortDescription'])
         print("\033[92m -> OK! - Modificado shortDescription \033[0m")
