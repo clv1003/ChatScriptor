@@ -2,7 +2,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #333366">
     <div class="container-fluid">
         <a class="navbar-brand mx-2" href="/home">
-            <img src="{{ url_for('static', filename='imagenes/CSLogoM.png') }}" alt="" class="d-inline-block align-text-top">
+            <img src="{{ url_for('static', filename='imagenes/CSLogoM.png') }}" alt=""
+                 class="d-inline-block align-text-top">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -16,7 +17,8 @@
                     <a class="nav-link me-1" href="/home"><i class="bi bi-house-door"></i> Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-1" href="/importar-exportar"><i class="bi bi-file-earmark-zip"></i> Importar/Exportar</a>
+                    <a class="nav-link me-1" href="/importar-exportar"><i class="bi bi-file-earmark-zip"></i>
+                        Importar/Exportar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mb-1" href="#"><i class="bi bi-book"></i> Documentación</a>
@@ -28,7 +30,16 @@
         </div>
 
         <div class="nav-item ms-3">
-            <a href="/logout" class="btn btn-danger"><i class="bi bi-x-lg"></i></a>
+            <a href="/logout" class="btn btn-danger btn-sm" data-bs-toggle="popover" data-bs-trigger="hover focus"
+               data-bs-content="Cerrar sesión"><i class="bi bi-x-lg"></i></a>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+        });
+    </script>
 </nav>

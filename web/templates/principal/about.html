@@ -4,42 +4,89 @@
 <body>
 
 <! –– Navbar superior igual que en la página principal ––>
-<div class="sticky-top">
+<div class="sticky-top mb-5">
     {% include 'comunes/navbar.html' %}
 </div>
-
+<br class="mb-5">
 <! –– Contenido de la página ––>
-<div class="container mt-5 mx-5">
-    <div class="container mx-5 text-center">
+<div class="container m-5">
+    <div class="container m-5 text-center">
         <img src="{{ url_for('static', filename='imagenes/CSLogoCompleto.png') }}" alt="" width="65%">
     </div>
+</div>
 
-    <div class="container mx-5 mt-5">
-        <p>Trabajo de Fin de Grado - Ingeniería Informática</p>
-        <p>
-            Interfaz web dedicada a la gestión de los chatbots de DialogFlow
-        </p>
+
+<div class="container m-5">
+
+    <div class="container row m-5">
+        <h1 class="col display-1">Acerca de</h1>
+        <div class="col">
+            <p>
+                Dialogflow es una plataforma desarrollada por Google que permite desarrollar y administrar chatbots o
+                asistentes virtuales utilizando técnicas como el procesamiento del lenguaje natural (PNL) que facilitan
+                las interacciones entre aplicación y persona.
+            </p>
+            <p>
+                La interfaz que nos encontramos en su versión básica y gratuita está, actualmente, muy limitada.
+            </p>
+            <p>
+                Es por esto, que este trabajo se propone desarrollar una interfaz gráfica que mejore la interacción con
+                respecto a la oficial de Google, así cómo añadir servicios que permitan optimizar y clarificar la
+                experiencia del usuario.
+            </p>
+            <p>
+                ChatScriptor es la web resultante.
+            </p>
+        </div>
     </div>
 
+    <hr class="m-5">
 
-    <div class="container mx-5 mt-4">
-        <h1>Participantes y Colaboradores</h1>
-        <p class="mx-5">
-            <li>Alumna: Claudia Landeira Viñuela</li>
-            <li>Tutor: Raúl Marticorena Sánchez</li>
-        </p>
+    <div class="container row m-5">
+        <h1 class="col display-1">Participantes</h1>
+
+        <div class="col">
+            <p>
+                Trabajo de Fin de Grado en Ingeniería Informática bajo la Universidad de Burgos
+            </p>
+            <p class="mx-5">
+                Alumna: Claudia Landeira Viñuela
+            </p>
+            <p class="mx-5">
+                Tutor: Raúl Marticorena Sánchez
+            </p>
+        </div>
     </div>
 
+    <hr class="m-5">
 
-    <div class="container mx-5 mt-4">
-        <h1>Contactos y sugerencias</h1>
-        <p>Si se desea realizar alguna consulta u aportación, enviar un correo electrónico a las siguientes
-            direcciones:</p>
-        <a class="btn btn-outline-warning"
-           href="mailto:clv1003@alu.ubu.es?Subject=Sugerencia para el proyecto Dialogflow">
-            Claudia Landeira Viñuela</a>
+    <div class="container row m-5">
+
+        <div class="container col">
+            <h1 class="col display-1">Repositorio</h1>
+
+            <div class="container row">
+                <p>Código disponible en:
+                    <a class="mx-3 btn btn-sm" style="border-bottom-color: #333366"
+                       href="https://github.com/clv1003/ChatScriptor">
+                        <i class="bi bi-github"></i> ChatScriptor</a></p>
+            </div>
+        </div>
+
+        <div class="container col">
+            <h1 class="col display-1">Contacto</h1>
+
+            <div class="container row">
+                <p>Si se desea realizar alguna consulta u aportación:
+            <a class="mx-3 btn btn-sm" style="border-bottom-color: #333366"
+               href="mailto:clv1003@alu.ubu.es?Subject=Sugerencia para el proyecto ChatScriptor">
+                Enviar sugerencias</a></p>
+            </div>
+        </div>
 
     </div>
+
+    <hr class="m-5">
 </div>
 
 <div class="container mt-5">

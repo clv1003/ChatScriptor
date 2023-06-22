@@ -15,7 +15,9 @@
         </button>
 
         <div class="nav-item ms-3">
-            <a href="/logout" class="btn btn-danger"><i class="bi bi-x-lg"></i></a>
+            <a href="/logout" class="btn btn-danger btn-sm"
+               data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Cerrar sesión">
+                <i class="bi bi-x-lg"></i></a>
         </div>
     </div>
 </nav>
@@ -29,7 +31,7 @@
             <form class="d-flex ms-5" enctype="multipart/form-data" method="get"
                 action="{{ url_for('buscar_usuarios') }}">
                 <input class="form-control me-3" type="text" name="busqueda" placeholder="Buscar">
-                <button class="btn btn-outline-dark rounded-circle" type="submit"><i class="bi bi-search"></i></button>
+                <button class="btn btn-sm" type="submit"><i class="bi bi-search"></i></button>
             </form>
         </div>
     </div>
@@ -42,13 +44,15 @@
     <div class="list-group mt-5 mx-5">
         {% for dir in datos %}
         {% if dir != "administrador@administrador.com" %}
-        <div class="row mx-5">
-            <div class="col card border-warning mb-2 rounded-3 shadow">
-                <div class="card-header text-dark text-center">{{ dir }}</div>
+        <div class="row mx-5 align-items-center justify-content-center">
+            <div class="col mb-1 ms-5 border border-warning shadow rounded-2 ">
+                <p class="text-center">{{ dir }}</p>
             </div>
             <div class="col-auto justify-content-md-end mx-4">
                 <form action="{{ url_for('removeuser', chat=dir) }}" method="post">
-                    <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar</button>
+                    <button type="submit" class="btn btn-outline-danger btn-sm"
+                    data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Eliminar" data-bs-content="Esta acción no se puede deshacer">
+                    <i class="bi bi-x-lg"></i></button>
                 </form>
             </div>
         </div>
@@ -60,6 +64,14 @@
 <div class="container mt-5">
     {% include 'comunes/footer.html' %}
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl);
+    });
+</script>
 
 </body>
 </html>

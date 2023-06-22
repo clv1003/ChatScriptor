@@ -607,7 +607,7 @@ def start_app():
                         './usuarios/' + session['email'] + '/' + chat, i[0])
                     intent = ProcesamientoEntidadesIntents.get_json(inte[0], inte[1])
                     datos.append(intent)
-                return render_template("principal/pantallas/informe.html", chat=chat, datos=datos,
+                return render_template("principal/pantallas/informe.html", chat=chat, datos=datos, intents=intents,
                                        usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
