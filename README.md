@@ -1,7 +1,5 @@
 <img src="web/static/imagenes/CSLogoCompleto.png" alt="">
 
-[![Documentation Status](https://readthedocs.org/projects/chatscriptor/badge/?version=latest)](https://chatscriptor.readthedocs.io/en/latest/?badge=latest)
-
 Interfaz gráfica para la gestión de chatbots en la plataforma DialogFlow
 
 -------------------------------
