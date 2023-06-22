@@ -1,6 +1,6 @@
 <img src="web/static/imagenes/CSLogoCompleto.png" alt="">
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=clv1003_Chat-Scriptor&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=clv1003_Chat-Scriptor)
+[![Documentation Status](https://readthedocs.org/projects/chatscriptor/badge/?version=latest)](https://chatscriptor.readthedocs.io/en/latest/?badge=latest)
 
 Interfaz gráfica para la gestión de chatbots en la plataforma DialogFlow
 
