@@ -1,0 +1,28 @@
+[
+  {
+    "id": "8d83f6ba-b3fa-40e2-99f3-6b605b9db50b",
+    "data": [
+      {
+        "text": "hola",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  },
+  {
+    "id": "c0bf097a-6561-4946-b7ef-5a24fd7704be",
+    "data": [
+      {
+        "text": "saludos",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "es",
+    "updated": 0
+  }
+]

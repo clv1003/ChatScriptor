@@ -13,9 +13,15 @@ def descomprimir_archivo(rootdir):
         fnombre = f.filename
         f.save(fnombre)
 
-        with zipfile.ZipFile(fnombre, 'r') as zip_ref:
-            zip_ref.extractall(rootdir + '/' + os.path.splitext(f.filename)[0])
+        if comprobar_estructura(f.filename):
+            with zipfile.ZipFile(fnombre, 'r') as zip_ref:
+                zip_ref.extractall(rootdir + '/' + os.path.splitext(f.filename)[0])
+            os.remove(fnombre)
+            return True
+
         os.remove(fnombre)
+        return False
+    return False
 
 
 # EXPORTAR EL ARCHIVO INDICADO
@@ -43,3 +49,24 @@ def exportar_archivos(rootdir, name):  # rootdir = ./unzip/ ; name = Weather
 # ELIMINAR EL CONTENIDO DEL DIRECTORIO UNZIP
 def remove_unzip():
     shutil.rmtree('./unzip')
+
+
+def comprobar_estructura(archivo_zip):
+    estructura = ['entities', 'intents', 'agent.json', 'package.json']
+
+    with zipfile.ZipFile(archivo_zip, 'r') as zip_ref:
+        estructura_zip = set()
+
+        for nombre in zip_ref.namelist():
+            pr_estructura_zip = os.path.split(nombre)[0]
+            if pr_estructura_zip:
+                estructura_zip.add(pr_estructura_zip)
+
+        for nombre in zip_ref.namelist():
+            if '/' not in nombre:
+                estructura_zip.add(nombre)
+
+        if estructura_zip == set(estructura):
+            return True
+        else:
+            return False
