@@ -14,6 +14,20 @@
 </div>
 {% endif %}
 
+{% if alertaImportacion is false %}
+<div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading mx-5">El archivo no se ha podido importar</h4>
+    <p class="mx-5">El archivo .zip introducido no tiene la estructura adecuada o no es un archivo .zip</p>
+</div>
+{% endif %}
+
+{% if infoImportacion %}
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading mx-5">El archivo se ha importado</h4>
+    <p class="mx-5">El archivo .zip tiene la estructura correcta.</p>
+</div>
+{% endif %}
+
 <div class="container mt-5">
     <div class="row">
         <div class="col">

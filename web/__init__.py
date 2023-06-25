@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, url_for, redirect, request, session, send_from_directory
+from flask import Flask, render_template, url_for, redirect, request, session
 
 import ProcesamientoAgente
 import ProcesamientoArchivos
@@ -68,9 +68,10 @@ def start_app():
 
     # para importar y exportar los archivos
     @app.route('/importar-exportar', methods=['GET'])
-    def importacionexportacion(alerta=False):
+    def importacionexportacion(alerta=False, alertaImportacion=True, infoImportacion=False):
         if 'email' in session:
-            return render_template('principal/importar-exportar.html', alerta=alerta,
+            return render_template('principal/importar-exportar.html',
+                                   alerta=alerta, alertaImportacion=alertaImportacion, infoImportacion=infoImportacion,
                                    datos=ProcesamientoArchivos.get_disponible('./usuarios/' + session['email'] + '/'),
                                    usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
         else:
@@ -81,8 +82,11 @@ def start_app():
     @app.route('/subir_archivo', methods=["POST"])
     def procesar_archivo():
         if 'email' in session:
-            ProcesamientoZip.descomprimir_archivo('./usuarios/' + session['email'] + '/')
-            return redirect(url_for('importacionexportacion', rootdir='./usuarios/' + session['email'] + '/'))
+            imp = ProcesamientoZip.descomprimir_archivo('./usuarios/' + session['email'] + '/')
+            if imp:
+                return importacionexportacion(infoImportacion=imp)
+            else:
+                return importacionexportacion(alertaImportacion=imp)
         else:
             return redirect(url_for('login'))
 
@@ -661,7 +665,7 @@ def start_app():
     # Traduccion
     @app.route('/traductor/<string:chat>/<string:idioma>', methods=["GET"])
     def traductor(chat, idioma):
-        #idioma = request.args.get('idioma')
+        # idioma = request.args.get('idioma')
         if 'email' in session:
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 chatbot = Traducir.traducir('./usuarios/' + session['email'] + '/', chat, idioma)
