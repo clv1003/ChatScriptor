@@ -1,9 +1,1 @@
-{
-  "id": "f171d669-9a91-430b-9e7b-78d868083eb2",
-  "name": "news-source",
-  "isOverridable": true,
-  "isEnum": false,
-  "isRegexp": false,
-  "automatedExpansion": false,
-  "allowFuzzyExtraction": false
-}
+{"id": "f171d669-9a91-430b-9e7b-78d868083eb2", "name": "fuente de noticias", "isOverridable": true, "isEnum": false, "isRegexp": false, "automatedExpansion": false, "allowFuzzyExtraction": false}

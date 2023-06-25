@@ -75,7 +75,11 @@
                             <td class="text-center col-1">
                                 <form action="{{ url_for('remove_entry', chat=chat, entidad=entidad, value=e['value'], synonyms=e['synonyms']) }}"
                                       method="post">
-                                    <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i>
+                                    <button type="submit" class="btn btn-sm btn-outline-danger"
+                                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                            data-bs-title="Eliminar"
+                                            data-bs-content="Esta acción no se puede deshacer"><i
+                                            class="bi bi-x-lg"></i>
                                     </button>
                                 </form>
                             </td>
@@ -93,6 +97,8 @@
 <div class="container mt-5">
     {% include 'comunes/footer.html' %}
 </div>
+
+<script src="{{ url_for('static', filename='js/popover.js') }}"></script>
 
 </body>
 </html>

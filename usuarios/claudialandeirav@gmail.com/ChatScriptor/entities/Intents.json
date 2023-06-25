@@ -1,0 +1,9 @@
+{
+  "id": "febcef77-fb16-48d4-9bdf-14c3cec2c63c",
+  "name": "Intents",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}
