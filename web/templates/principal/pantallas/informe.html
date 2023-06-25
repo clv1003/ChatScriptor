@@ -17,14 +17,13 @@
 </div>
 
 <div class="container mt-4">
-    {% set contador = 0 %}
     {% for d in datos %}
-    {% if contador < intents|length %}
     <div class="card mx-5 mb-3 border-warning mb-2 rounded-1 shadow">
         <div class="m-5 row">
             <div class="col mx-5">
+
                 <a class="btn text-left fw-bold mb-4" style="text-decoration: none; font-size: 22px"
-                   href="{{ url_for('get_intent', chat=chat, intent=intents[contador]) }}">
+                   href="{{ url_for('get_intent', chat=chat, intent=intents[loop.index -1]) }}">
                     <i class="bi bi-link-45deg" style="color: blueviolet"></i> {{ d[0]['name'] }}</a> <br class="mb-4">
 
                 {% for text in d[1] %}
@@ -35,7 +34,7 @@
 
                 <table class="table table-auto mx-5">
                     <tbody class="px-5 mx-5">
-                    <tr >
+                    <tr>
                         <i class="bi bi-quote"></i> {{ frase | join(' ') }}
                     </tr>
                     </tbody>
@@ -61,14 +60,14 @@
             {% endif %}
         </div>
     </div>
-    {% set contador = contador + 1 %}
-    {% endif %}
     {% endfor %}
 </div>
 
 <div class="container mt-5">
     {% include 'comunes/footer.html' %}
 </div>
+
+<script src="{{ url_for('static', filename='js/popover.js') }}"></script>
 
 </body>
 </html>

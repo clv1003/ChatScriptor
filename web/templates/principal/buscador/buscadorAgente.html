@@ -46,11 +46,76 @@
             <div class="card-header border-warning bg-warning-subtle text-dark fw-bold bg-opacity-50">
                 language
             </div>
-            <div class="card-body">
-                <form enctype="multipart/form-data" method="post"
-                      action="{{ url_for('actualizar_json', chat=chat, clave='language') }}">
-                    <input type="text" class="form-control" value="{{ agente['language'] }}" name="atributo">
-                </form>
+            <div class="card-body mx-5">
+                <div class="row">
+                    <div class="col">
+                        <p>{{ agente['language'] }}</p>
+                    </div>
+
+                    <div class="col me-5">
+                        {% if agente['language'] == 'en' %}
+                        <a class="btn btn-outline-secondary rounded-2"
+                           data-bs-toggle="modal" data-bs-target="#traductorModal1">
+                            <i class="bi bi-translate"></i> Español</a>
+
+                        <div class="modal fade" id="traductorModal1" tabindex="-1"
+                             aria-labelledby="traductorModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="traductorModalLabel1"><i
+                                                class="bi bi-info-circle"></i> Info tradutor</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Este proceso puede tardar...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="mb-1 ms-5 btn btn-outline-dark shadow rounded-2"
+                                           href="{{ url_for('traductor', chat=chat, idioma='es') }}"><i
+                                                class="bi bi-translate"></i> Traducir</a>
+                                        <a class="btn btn-outline-secondary" data-bs-dismiss="modal"> Close </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% elif agente['language'] == 'es' %}
+                        <a class="btn btn-outline-secondary rounded-2"
+                           data-bs-toggle="modal" data-bs-target="#traductorModal2">
+                            <i class="bi bi-translate"></i> Inglés</a>
+
+                        <div class="modal fade" id="traductorModal2" tabindex="-1"
+                             aria-labelledby="traductorModalLabel2"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="traductorModalLabel2"><i
+                                                class="bi bi-info-circle"></i> Info tradutor</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Este proceso puede tardar...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="mb-1 ms-5 btn btn-outline-secondary shadow rounded-2"
+                                           href="{{ url_for('traductor', chat=chat, idioma='en') }}"><i
+                                                class="bi bi-translate"></i> Traducir</a>
+                                        <a class="btn btn-outline-secondary" data-bs-dismiss="modal"> Close </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+
+                    </div>
+
+                </div>
             </div>
         </div>
         {% endif %}
@@ -107,5 +172,8 @@
         {% include 'comunes/footer.html' %}
     </div>
 </div>
+
+<script src="{{ url_for('static', filename='js/popover.js') }}"></script>
+
 </body>
 </html>

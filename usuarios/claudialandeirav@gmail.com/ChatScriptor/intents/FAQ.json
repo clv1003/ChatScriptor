@@ -1,0 +1,53 @@
+{
+  "id": "284c7b53-f770-4ebd-8a99-f6b1078715f4",
+  "name": "FAQ",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "7d30d94d-b87e-447b-a3ac-d0c1c0abefcd",
+          "name": "location",
+          "required": false,
+          "dataType": "@sys.location",
+          "value": "$location",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "es",
+          "speech": [
+            "Este proyecto ha sido creado por Claudia Landeira, tutorizada por Raúl Marticorena.",
+            "Se trata de un proyecto para un Trabajo de Fin de Grado.",
+            "Puedes acceder al repositorio a través del \"Acerca de\" de la página.",
+            "La documentación del proyecto está en el repositorio."
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

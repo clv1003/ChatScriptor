@@ -19,16 +19,9 @@
         <div class="col">
             <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }} </h3>
         </div>
-        <div class="col-auto justify-content-md-end mx-5">
-            <form class="d-flex ms-5" role="search">
-                <input class="form-control me-3" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-sm" type="submit"><i class="bi bi-search"></i></button>
-            </form>
-        </div>
     </div>
 </div>
 
-<!-- Contenido de la página de inicio -->
 <div class="container mt-5">
     <div class="row">
 
@@ -68,6 +61,8 @@
 <div class="container mt-5">
     {% include 'comunes/footer.html' %}
 </div>
+
+<script src="{{ url_for('static', filename='js/popover.js') }}"></script>
 
 </body>
 </html>

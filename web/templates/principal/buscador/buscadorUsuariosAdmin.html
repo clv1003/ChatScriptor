@@ -6,7 +6,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #333366">
     <div class="container-fluid">
         <a class="navbar-brand mx-2" href="/admin">
-            <img src="{{ url_for('static', filename='imagenes/CSLogoM.png') }}" alt="" class="d-inline-block align-text-top">
+            <img src="{{ url_for('static', filename='imagenes/CSLogoM.png') }}" alt=""
+                 class="d-inline-block align-text-top">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -23,11 +24,11 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-                <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }}</h3>
-            </div>
-            <div class="col">
-                <h3 class="text-end mx-5"><i class="bi bi-search"></i> Resultados de: {{ busqueda }}</h3>
-            </div>
+            <h3 class="text-left"><i class="bi bi-person"></i> {{ usuario }}</h3>
+        </div>
+        <div class="col">
+            <h3 class="text-end mx-5"><i class="bi bi-search"></i> Resultados de: {{ busqueda }}</h3>
+        </div>
     </div>
 </div>
 
@@ -43,7 +44,10 @@
             </div>
             <div class="col-auto justify-content-md-end mx-4">
                 <form action="{{ url_for('removeuser', chat=usuario) }}" method="post">
-                    <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-lg"></i> Eliminar</button>
+                    <button type="submit" class="btn btn-sm btn-outline-danger"
+                            data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Eliminar"
+                            data-bs-content="Esta acción no se puede deshacer"><i class="bi bi-x-lg"></i>
+                    </button>
                 </form>
             </div>
         </div>
@@ -54,6 +58,8 @@
 <div class="container mt-5">
     {% include 'comunes/footer.html' %}
 </div>
+
+<script src="{{ url_for('static', filename='js/popover.js') }}"></script>
 
 </body>
 </html>
