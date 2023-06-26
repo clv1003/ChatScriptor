@@ -1,7 +1,8 @@
 import json
 import os
-import ProcesamientoAgente
+import re
 
+import ProcesamientoAgente
 
 # OBTENCIÓN DE LAS ENTIDADES DEL CHATBOT
 def get_entidades(rootdir, language=None):
@@ -178,7 +179,7 @@ def add_entry(root, entidad, value, synonyms, language=None):
         entries = entidad + '_entries_' + language + '.json'
 
         diccionario = get_parte(root + '/entities/' + entries)
-        aux = {"value": value, "synonyms": synonyms}
+        aux = {"value": value.split()[0], "synonyms": re.findall(r"'(.*?)'", synonyms)}
 
         diccionario.append(aux)
 
@@ -187,7 +188,7 @@ def add_entry(root, entidad, value, synonyms, language=None):
 
 
 # ELIMINAR ENTRADA DE ENTIDAD
-def remove_entry(root, entidad, value, synonyms, language=None):
+def remove_entry(root, entidad, value, language=None):
     if entidad.endswith('.json'):
         if language is None:
             language = ProcesamientoAgente.get_agente_language(root)
@@ -197,7 +198,7 @@ def remove_entry(root, entidad, value, synonyms, language=None):
 
         diccionario = get_parte(root + '/entities/' + entries)
         for d in diccionario:
-            if d["value"] == value and d["synonyms"] == synonyms:
+            if d["value"] == value.split()[0]:
                 diccionario.remove(d)
 
         with open(root + '/entities/' + entries, 'w') as e:

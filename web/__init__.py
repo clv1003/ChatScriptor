@@ -407,7 +407,7 @@ def start_app():
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 ProcesamientoEntidadesIntents.remove_entry(
                     './usuarios/' + session['email'] + '/' + chat,
-                    entidad=entidad, value=value, synonyms=synonyms)
+                    entidad=entidad, value=value)
                 return redirect(url_for('get_entidades', chat=chat))
         else:
             return redirect(url_for('login'))

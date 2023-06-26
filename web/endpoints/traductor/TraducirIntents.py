@@ -23,13 +23,13 @@ def traducirIntents(traductor, rootdir, chat):
                 for j in i['data']:
                     if len(j) == 2:
                         text = j['text']
-                        if len(text) > 0:
+                        if len(text) > 0 and text != " ":
                             tr_text = traductor.traducirFrase(text)
                             ProcesamientoEntidadesIntents.editar_data(rootdir+chat, intent[0], text, 'text', tr_text
                                                                       , traductor.getOriginal())
                     elif j['meta']:
                         text = j['text']
-                        if len(text) > 0:
+                        if len(text) > 0 and text != " ":
                             tr_text = traductor.traducirFrase(text)
                             ProcesamientoEntidadesIntents.editar_data(rootdir+chat, intent[0], text, 'text', tr_text
                                                                       , traductor.getOriginal())
