@@ -106,7 +106,7 @@
                                 </form>
                             </td>
                             <td class="text-center col-1">
-                                <form action="{{ url_for('remove_entry', chat=chat, entidad=entidad, value=e['value'], synonyms=e['synonyms']) }}"
+                                <form action="{{ url_for('remove_entry', chat=chat, entidad=entidad, value=e['value']) }}"
                                       method="post">
                                     <button type="submit" class="btn btn-outline-danger btn-sm"
                                     data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Eliminar" data-bs-content="Esta acción no se puede deshacer">

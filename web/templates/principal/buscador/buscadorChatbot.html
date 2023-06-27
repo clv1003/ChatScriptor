@@ -177,7 +177,7 @@
             {% for entidades in dE %}
             <div class="list-group mx-5">
                 {% for ek, ev in resultados['entidades'].items() %}
-                {% if (ek + '.json') in entidades[0] and (ev[0] | length > 0 or ev[1] | length > 0) %}
+                {% if (ek + '.json') == entidades[0] and (ev[0] | length > 0 or ev[1] | length > 0) %}
                 <div class="row">
                     <div class="col">
                         <a class="mb-1 ms-5 btn btn-outline-warning btn-block list-group-item shadow rounded-2"
@@ -211,7 +211,7 @@
             {% for intents in dI %}
             <div class="list-group mx-5">
                 {% for ik, iv in resultados['intents'].items() %}
-                {% if (ik + '.json') in intents[0] and (iv[0] | length > 0 or iv[1] | length > 0) %}
+                {% if (ik + '.json') == intents[0] and (iv[0] | length > 0 or iv[1] | length > 0) %}
                 <div class="row">
                     <div class="col">
                         <a class="mb-1 ms-5 btn btn-outline-warning btn-block list-group-item shadow rounded-2"

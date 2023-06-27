@@ -1,9 +1,0 @@
-{
-  "id": "2c9b4b4c-e513-4a83-89e5-aaa861e48325",
-  "name": "Agente",
-  "isOverridable": true,
-  "isEnum": false,
-  "isRegexp": false,
-  "automatedExpansion": false,
-  "allowFuzzyExtraction": false
-}
