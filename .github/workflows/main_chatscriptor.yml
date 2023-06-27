@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'ChatScriptor'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6656282507F7451FAE39B667BCDB5A05 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D3520153B78C4AE3AC3C50A503735BF4 }}
