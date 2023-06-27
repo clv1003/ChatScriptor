@@ -95,7 +95,8 @@
                                 <form action="{{ url_for('remove_parameters', chat=chat, intent=intent, id=i['id']) }}"
                                       method="post">
                                     <button type="submit" class="btn btn-outline-danger btn-sm"
-                                    data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Eliminar" data-bs-content="Esta acción no se puede deshacer">
+                                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                            data-bs-title="Eliminar" data-bs-content="Esta acción no se puede deshacer">
                                         <i class="bi bi-x-lg"></i>
                                     </button>
                                 </form>
@@ -121,6 +122,21 @@
                     {% for i in inte[1] %}
                     <div class="card border-warning mb-3 mx-2 rounded-1">
 
+                        <div class="card-header border-warning bg-warning-subtle bg-opacity-50 row mx-1">
+                            <div class="col text-dark fw-bold"> {{i['id']}}</div>
+
+                            <div class="col-1">
+                                <form action="{{ url_for('remove_data', chat=chat, intent=intent, id=i['id']) }}"
+                                      method="post">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm"
+                                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                            data-bs-title="Eliminar"
+                                            data-bs-content="Esta acción no se puede deshacer">
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                         {% for j in i['data'] %}
                         <div class="card-body">
                             {% if j|length == 2 %}
@@ -131,15 +147,7 @@
                                         <input type="text" class="form-control" value="{{ j['text'] }}" name="atributo">
                                     </form>
                                 </div>
-                                <div class="col-1">
-                                    <form action="{{ url_for('remove_data', chat=chat, intent=intent, id=i['id']) }}"
-                                          method="post">
-                                        <button type="submit" class="btn btn-outline-danger btn-sm"
-                                        data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Eliminar" data-bs-content="Esta acción no se puede deshacer">
-                                            <i class="bi bi-x-lg"></i>
-                                        </button>
-                                    </form>
-                                </div>
+
 
                             </div>
 
@@ -235,8 +243,9 @@
                                 <form action="{{ url_for('remove_messages', chat=chat, intent=intent, speach=j ) }}"
                                       method="post">
                                     <button type="submit" class="btn btn-outline-danger btn-sm"
-                                        data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Eliminar" data-bs-content="Esta acción no se puede deshacer">
-                                            <i class="bi bi-x-lg"></i>
+                                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                            data-bs-title="Eliminar" data-bs-content="Esta acción no se puede deshacer">
+                                        <i class="bi bi-x-lg"></i>
                                     </button>
                                 </form>
                             </td>

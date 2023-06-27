@@ -31,8 +31,9 @@ def buscar_agente(root, busqueda):
     if busqueda.lower() in examples:
         resultados.append('examples')
 
-    if len(resultados) == 0:
-        return None
+    if 'avatarUri' in agente:
+        if busqueda.lower() in agente['avatarUri'].lower():
+            resultados.append('avatarUri')
 
     return resultados
 
@@ -53,12 +54,12 @@ def buscar_ent_int(rootP1, rootP2, busqueda):
 
         # segundo archivo de entidad
         for e in parte2:
-            if busqueda.lower() in e['value']:
+            if busqueda.lower() in e['value'].lower():
                 resultados2.append({"value": e['value'], "synonyms": e['synonyms']})
 
             else:
                 for s in e['synonyms']:
-                    if busqueda.lower() in s:
+                    if busqueda.lower() in s.lower():
                         resultados2.append({"value": e['value'], "synonyms": e['synonyms']})
                         break
 
@@ -79,30 +80,29 @@ def buscar_ent_int(rootP1, rootP2, busqueda):
             resultados1.append('responses')
 
         for i in parameters:
-            if busqueda.lower() in i['name'].lower() or \
-                    busqueda.lower() in i['dataType'].lower() or \
-                    busqueda.lower() in i['value'].lower():
-                resultados1.append({'responses': [{'parameters': i['id']}]})
+            if busqueda.lower() in i['name'].lower() or busqueda.lower() in i['dataType'].lower() or busqueda.lower() in i['value'].lower():
+                if 'responses' not in resultados1:
+                    resultados1.append('responses')
 
         if 'speech' in messages:
             lista = []
             for i in messages["speech"]:
                 if busqueda.lower() in i.lower():
                     lista.append(i)
-            resultados1.append({'speech': lista})
+
+            if len(lista) > 0:
+                resultados1.append({'speech': lista})
 
         # segundo archivo de intent
         for j in parte2:
             for k in j['data']:
                 if len(k) == 2:
                     if busqueda.lower() in k['text'].lower():
-                        resultados2.append({j['id']: 'data'})
+                        resultados2.append(j['id'])
                         break
-                elif len(k) != 2 and (
-                        busqueda.lower() in k['text'].lower() or
-                        busqueda.lower() in k['meta'].lower() or
-                        busqueda.lower() in k['alias'].lower()):
-                    resultados2.append(j['id'])
+                elif len(k) != 2:
+                    if busqueda.lower() in k['text'].lower() or busqueda.lower() in k['meta'].lower() or busqueda.lower() in k['alias'].lower():
+                        resultados2.append(j['id'])
 
         return [resultados1, resultados2]
 
