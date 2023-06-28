@@ -1,11 +1,11 @@
 
 import os.path
-import ProcesamientoAgente
+from web.endpoints.ProcesamientoAgente import *
 
 
 def traducirAgente(traductor, rootdir, chat):
     if os.path.exists(rootdir + chat):
-        agente = ProcesamientoAgente.get_agente(rootdir + chat)
+        agente = getAgente(rootdir + chat)
 
         print(f'')
         print("\033[91m ---------------------------- AGENTE \033[0m")
@@ -27,20 +27,20 @@ def traducirAgente(traductor, rootdir, chat):
         tr_diccionario = traductor.traducirDiccionario(diccionario)
 
         if 'displayName' in tr_diccionario.keys():
-            ProcesamientoAgente.set_agente(rootdir, chat, 'displayName', tr_diccionario['displayName'])
+            set_agente(rootdir, chat, 'displayName', tr_diccionario['displayName'])
             print("\033[92m -> OK! - Modificado displayName \033[0m")
 
         if 'shortDescription' in tr_diccionario.keys():
-            ProcesamientoAgente.set_agente(rootdir, chat, 'shortDescription', tr_diccionario['shortDescription'])
+            set_agente(rootdir, chat, 'shortDescription', tr_diccionario['shortDescription'])
             print("\033[92m -> OK! - Modificado shortDescription \033[0m")
 
         if 'description' in tr_diccionario.keys():
-            ProcesamientoAgente.set_agente(rootdir, chat, 'description', tr_diccionario['description'])
+            set_agente(rootdir, chat, 'description', tr_diccionario['description'])
             print("\033[92m -> OK! - Modificado description \033[0m")
 
         if 'examples' in tr_diccionario.keys():
-            ProcesamientoAgente.set_agente(rootdir, chat, 'examples', tr_diccionario['examples'])
+            set_agente(rootdir, chat, 'examples', tr_diccionario['examples'])
             print("\033[92m -> OK! - Modificado examples2 \033[0m")
 
-        ProcesamientoAgente.set_agente(rootdir, chat, 'language', traductor.getIdioma())
+        set_agente(rootdir, chat, 'language', traductor.getIdioma())
         print("\033[92m -> OK! - Modificado idioma \033[0m")
