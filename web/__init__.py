@@ -2,13 +2,13 @@ import os
 
 from flask import Flask, render_template, url_for, redirect, request, session
 
-import ProcesamientoAgente
-import ProcesamientoArchivos
-import ProcesamientoEntidadesIntents
-import ProcesamientoZip
-import ProcesamientoUsuario
-import ProcesamientoBuscador
-from traductor import Traducir
+from web.endpoints.ProcesamientoAgente import *
+from web.endpoints.ProcesamientoArchivos import *
+from web.endpoints.ProcesamientoEntidadesIntents import *
+from web.endpoints.ProcesamientoZip import *
+from web.endpoints.ProcesamientoUsuario import *
+from web.endpoints.ProcesamientoBuscador import *
+from web.endpoints.traductor import Traducir
 
 
 def start_app():
@@ -37,9 +37,9 @@ def start_app():
         if 'email' in session:
             if os.path.exists('./usuarios/' + session['email'] + '/'):
                 return render_template("principal/home.html", alerta=alerta,
-                                       datos=ProcesamientoArchivos.get_disponible(
+                                       datos=get_disponible(
                                            './usuarios/' + session['email'] + '/'),
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       usuario=get_usuario(email=session['email']))
             return redirect(url_for('login'))
 
         else:
@@ -51,8 +51,8 @@ def start_app():
         if 'email' in session:
             if os.path.exists('./usuarios'):
                 return render_template("principal/admin.html",
-                                       datos=ProcesamientoArchivos.get_disponible('./usuarios'),
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       datos=get_disponible('./usuarios'),
+                                       usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -61,7 +61,7 @@ def start_app():
         if 'email' in session:
             chat = request.args.get('chat')
             if os.path.exists('./usuarios/' + chat):
-                ProcesamientoUsuario.remove_user(chat)
+                remove_user(chat)
                 return redirect(url_for('paginaprincipaladmin'))
         else:
             return redirect(url_for('login'))
@@ -72,8 +72,8 @@ def start_app():
         if 'email' in session:
             return render_template('principal/importar-exportar.html',
                                    alerta=alerta, alertaImportacion=alertaImportacion, infoImportacion=infoImportacion,
-                                   datos=ProcesamientoArchivos.get_disponible('./usuarios/' + session['email'] + '/'),
-                                   usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                   datos=get_disponible('./usuarios/' + session['email'] + '/'),
+                                   usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -82,7 +82,7 @@ def start_app():
     @app.route('/subir_archivo', methods=["POST"])
     def procesar_archivo():
         if 'email' in session:
-            imp = ProcesamientoZip.descomprimir_archivo('./usuarios/' + session['email'] + '/')
+            imp = descomprimir_archivo('./usuarios/' + session['email'] + '/')
             if imp:
                 return importacionexportacion(infoImportacion=imp)
             else:
@@ -94,7 +94,7 @@ def start_app():
     def obtener_zip():
         if 'email' in session:
             chat = request.args.get('chat')
-            ProcesamientoZip.exportar_archivos('./usuarios/' + session['email'] + '/', chat)
+            exportar_archivos('./usuarios/' + session['email'] + '/', chat)
 
             return importacionexportacion(alerta=True)
         else:
@@ -103,7 +103,7 @@ def start_app():
     '''
         @app.route('/remove_unzip', methods=["POST"])
         def remove_unzip():
-            ProcesamientoZip.remove_unzip()
+            remove_unzip()
             return redirect(url_for('login'))
     '''
 
@@ -114,8 +114,8 @@ def start_app():
     def get_archivos(chat):
         if 'email' in session:
             return render_template('principal/pantallas/menu.html',
-                                   arbol=ProcesamientoArchivos.get_arbol('./usuarios/' + session['email'] + '/' + chat),
-                                   chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                   arbol=get_arbol('./usuarios/' + session['email'] + '/' + chat),
+                                   chat=chat, usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -125,8 +125,8 @@ def start_app():
     def get_agente(chat):
         if 'email' in session:
             return render_template("principal/pantallas/agente.html",
-                                   agente=ProcesamientoAgente.get_agente('./usuarios/' + session['email'] + '/' + chat),
-                                   chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                   agente=getAgente('./usuarios/' + session['email'] + '/' + chat),
+                                   chat=chat, usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -136,22 +136,22 @@ def start_app():
     def get_entidades(chat):
         if 'email' in session:
             return render_template("principal/pantallas/entidades.html",
-                                   entidades=ProcesamientoEntidadesIntents.get_entidades(
+                                   entidades=getEntidades(
                                        './usuarios/' + session['email'] + '/' + chat),
-                                   chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                   chat=chat, usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
     @app.route('/entidades/<string:chat>/entidad/<string:entidad>', methods=["GET"])
     def get_entidad(chat, entidad):
         if 'email' in session:
-            entidad = ProcesamientoArchivos.relistado(entidad)
+            entidad = relistado(entidad)
             return render_template("principal/pantallas/entidad.html",
-                                   ent=ProcesamientoEntidadesIntents.get_json(
+                                   ent=get_json(
                                        './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[0],
                                        './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad[1]),
                                    chat=chat, entidad=entidad[0],
-                                   usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                   usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -161,22 +161,22 @@ def start_app():
     def get_intents(chat):
         if 'email' in session:
             return render_template("principal/pantallas/intents.html",
-                                   intents=ProcesamientoEntidadesIntents.get_intents(
+                                   intents=getIntents(
                                        './usuarios/' + session['email'] + '/' + chat),
-                                   chat=chat, usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                   chat=chat, usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
     @app.route('/intents/<string:chat>/intent/<string:intent>', methods=["GET"])
     def get_intent(chat, intent):
         if 'email' in session:
-            intent = ProcesamientoArchivos.relistado(intent)
+            intent = relistado(intent)
             return render_template("principal/pantallas/intent.html",
-                                   inte=ProcesamientoEntidadesIntents.get_json(
+                                   inte=get_json(
                                        './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[0],
                                        './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent[1]),
                                    chat=chat, intent=intent[0],
-                                   usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                   usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -190,7 +190,7 @@ def start_app():
             clave = request.args.get('clave')
             atributo = request.form['atributo']
 
-            ProcesamientoAgente.set_agente('./usuarios/' + session['email'] + '/', chat, clave, atributo)
+            set_agente('./usuarios/' + session['email'] + '/', chat, clave, atributo)
             return redirect(url_for('get_agente', chat=chat))
         else:
             return redirect(url_for('login'))
@@ -207,7 +207,7 @@ def start_app():
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 if clave == 'name':
-                    ProcesamientoEntidadesIntents.editar_nombre(
+                    editar_nombre(
                         './usuarios/' + session['email'] + '/' + chat + '/entities/' + entidad,
                         clave=clave, atributo=atributo)
                     return redirect(url_for('get_entidades', chat=chat))
@@ -223,7 +223,7 @@ def start_app():
             atributo = request.form['atributo']
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.editar_v_ent(
+                editar_v_ent(
                     './usuarios/' + session['email'] + '/' + chat,
                     value=value, entidad=entidad, atributo=atributo)
                 return redirect(url_for('get_entidades', chat=chat))
@@ -240,7 +240,7 @@ def start_app():
             atributo = request.form['atributo']
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.editar_s_ent(
+                editar_s_ent(
                     './usuarios/' + session['email'] + '/' + chat,
                     value=value, entidad=entidad, atributo=atributo)
                 return redirect(url_for('get_entidades', chat=chat))
@@ -260,7 +260,7 @@ def start_app():
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 if clave == 'name':
-                    ProcesamientoEntidadesIntents.editar_nombre(
+                    editar_nombre(
                         './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent,
                         clave=clave, atributo=atributo)
                     return redirect(url_for('get_intents', chat=chat))
@@ -276,7 +276,7 @@ def start_app():
             atributo = request.form['atributo']
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.editar_parameters(
+                editar_parameters(
                     './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent,
                     subclave=subclave, atributo=atributo)
                 return redirect(url_for('get_intents', chat=chat))
@@ -293,7 +293,7 @@ def start_app():
             speachNew = request.form['atributo']
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.editar_messages(
+                editar_messages(
                     './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent,
                     speachOrg=speachOrg, speachNew=speachNew)
                 return redirect(url_for('get_intents', chat=chat))
@@ -308,7 +308,7 @@ def start_app():
             atributo = request.form['atributo']
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.editar_action(
+                editar_action(
                     './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent, atributo=atributo)
                 return redirect(url_for('get_intents', chat=chat))
         else:
@@ -324,7 +324,7 @@ def start_app():
             atributo = request.form['atributo']
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.editar_data(
+                editar_data(
                     './usuarios/' + session['email'] + '/' + chat,
                     intent=intent, old=old, tipo=tipo, atributo=atributo)
                 return redirect(url_for('get_intents', chat=chat))
@@ -344,7 +344,7 @@ def start_app():
             synonyms = request.form['synonyms']
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.add_entry(
+                addEntry(
                     './usuarios/' + session['email'] + '/' + chat,
                     entidad=entidad, value=value, synonyms=synonyms)
                 return redirect(url_for('get_entidades', chat=chat))
@@ -360,7 +360,7 @@ def start_app():
             speach = request.form['speach']
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.add_messages(
+                addMessages(
                     './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent, speach=speach)
                 return redirect(url_for('get_intents', chat=chat))
         else:
@@ -374,7 +374,7 @@ def start_app():
         if 'email' in session:
             chat = request.args.get('chat')
             if os.path.exists('./usuarios/' + session['email']):
-                ProcesamientoArchivos.remove_chatbot('./usuarios/' + session['email'] + '/', chat)
+                removeChatbot('./usuarios/' + session['email'] + '/', chat)
                 return redirect(url_for('paginaprincipal'))
             else:
                 return redirect(url_for('paginaprincipal'))
@@ -389,7 +389,7 @@ def start_app():
             entidad = request.args.get('entidad')
 
             if os.path.exists('./usuarios/' + session['email']):
-                ProcesamientoEntidadesIntents.remove_entidad('./usuarios/' + session['email'] + '/', chat, entidad)
+                removeEntidad('./usuarios/' + session['email'] + '/', chat, entidad)
                 return redirect(url_for('get_entidades', chat=chat))
             else:
                 return redirect(url_for('get_entidades', chat=chat))
@@ -405,7 +405,7 @@ def start_app():
             synonyms = request.args.get('synonyms')
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.remove_entry(
+                removeEntry(
                     './usuarios/' + session['email'] + '/' + chat,
                     entidad=entidad, value=value)
                 return redirect(url_for('get_entidades', chat=chat))
@@ -420,7 +420,7 @@ def start_app():
             intent = request.args.get('intent')
 
             if os.path.exists('./usuarios/' + session['email']):
-                ProcesamientoEntidadesIntents.remove_intent('./usuarios/' + session['email'] + '/', chat, intent)
+                removeIntent('./usuarios/' + session['email'] + '/', chat, intent)
                 return redirect(url_for('get_intents', chat=chat))
             else:
                 return redirect(url_for('get_intents', chat=chat))
@@ -435,7 +435,7 @@ def start_app():
             idR = request.args.get('id')
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.remove_parameters(
+                removeParameters(
                     './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent, idR=idR)
                 return redirect(url_for('get_intents', chat=chat))
         else:
@@ -449,7 +449,7 @@ def start_app():
             speach = request.args.get('speach')
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.remove_messages(
+                removeMessages(
                     './usuarios/' + session['email'] + '/' + chat + '/intents/' + intent, speech=speach)
                 return redirect(url_for('get_intents', chat=chat))
         else:
@@ -463,7 +463,7 @@ def start_app():
             idD = request.args.get('id')
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                ProcesamientoEntidadesIntents.remove_data(
+                removeData(
                     './usuarios/' + session['email'] + '/' + chat, intent=intent, idD=idD)
                 return redirect(url_for('get_intents', chat=chat))
         else:
@@ -476,12 +476,12 @@ def start_app():
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 return render_template("principal/buscador/buscadorAgente.html",
-                                       resultados=ProcesamientoBuscador.buscar_agente(
+                                       resultados=buscarAgente(
                                            './usuarios/' + session['email'] + '/' + chat,
                                            busqueda=busqueda), chat=chat, busqueda=busqueda,
-                                       agente=ProcesamientoAgente.get_agente(
+                                       agente=getAgente(
                                            './usuarios/' + session['email'] + '/' + chat),
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       usuario=get_usuario(email=session['email']))
 
         else:
             return redirect(url_for('login'))
@@ -491,14 +491,14 @@ def start_app():
         if 'email' in session:
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                enti = ProcesamientoEntidadesIntents.directoriosEntidad(
+                enti = directoriosEntidad(
                     './usuarios/' + session['email'] + '/' + chat, entidad)
                 return render_template("principal/buscador/buscadorEntidad.html",
-                                       resultados=ProcesamientoBuscador.buscar_ent_int(enti[0], enti[1],
+                                       resultados=buscar_ent_int(enti[0], enti[1],
                                                                                        busqueda=busqueda),
                                        chat=chat, busqueda=busqueda, entidad=entidad,
-                                       ent=ProcesamientoEntidadesIntents.get_json(enti[0], enti[1]),
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       ent=get_json(enti[0], enti[1]),
+                                       usuario=get_usuario(email=session['email']))
 
         else:
             return redirect(url_for('login'))
@@ -508,14 +508,14 @@ def start_app():
         if 'email' in session:
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                inten = ProcesamientoEntidadesIntents.directoriosIntent(
+                inten = directoriosIntent(
                     './usuarios/' + session['email'] + '/' + chat, intent)
                 return render_template("principal/buscador/buscadorIntent.html",
-                                       resultados=ProcesamientoBuscador.buscar_ent_int(inten[0], inten[1],
+                                       resultados=buscar_ent_int(inten[0], inten[1],
                                                                                        busqueda=busqueda),
                                        chat=chat, busqueda=busqueda, intent=intent,
-                                       inte=ProcesamientoEntidadesIntents.get_json(inten[0], inten[1]),
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       inte=get_json(inten[0], inten[1]),
+                                       usuario=get_usuario(email=session['email']))
 
         else:
             return redirect(url_for('login'))
@@ -527,12 +527,12 @@ def start_app():
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 chatbot.append(chat)
-                _, datosE, _ = ProcesamientoArchivos.obtener_datos('./usuarios/' + session['email'], chatbot)
+                _, datosE, _ = obtener_datos('./usuarios/' + session['email'], chatbot)
                 return render_template("principal/buscador/buscadorEntidades.html",
-                                       resultados=ProcesamientoBuscador.buscar_entidades(
+                                       resultados=buscarEntidades(
                                            './usuarios/' + session['email'] + '/' + chat, busqueda=busqueda),
                                        chat=chat, busqueda=busqueda, datosE=datosE,
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -543,12 +543,12 @@ def start_app():
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 chatbot.append(chat)
-                _, _, datosI = ProcesamientoArchivos.obtener_datos('./usuarios/' + session['email'], chatbot)
+                _, _, datosI = obtener_datos('./usuarios/' + session['email'], chatbot)
                 return render_template("principal/buscador/buscardorIntents.html",
-                                       resultados=ProcesamientoBuscador.buscar_intents(
+                                       resultados=buscarIntents(
                                            './usuarios/' + session['email'] + '/' + chat, busqueda=busqueda),
                                        chat=chat, busqueda=busqueda, datosI=datosI,
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -559,13 +559,13 @@ def start_app():
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 chatbot.append(chat)
-                datosA, datosE, datosI = ProcesamientoArchivos.obtener_datos('./usuarios/' + session['email'], chatbot)
+                datosA, datosE, datosI = obtener_datos('./usuarios/' + session['email'], chatbot)
                 return render_template("principal/buscador/buscadorChatbot.html",
-                                       resultados=ProcesamientoBuscador.buscar_chatbot(
+                                       resultados=buscarChatbot(
                                            './usuarios/' + session['email'] + '/' + chat,
                                            busqueda=busqueda), datosA=datosA, datosE=datosE, datosI=datosI,
                                        chat=chat, busqueda=busqueda,
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -574,13 +574,13 @@ def start_app():
         if 'email' in session:
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/' + session['email']):
-                chatbots = ProcesamientoArchivos.get_disponible('./usuarios/' + session['email'])
-                datosA, datosE, datosI = ProcesamientoArchivos.obtener_datos('./usuarios/' + session['email'], chatbots)
+                chatbots = get_disponible('./usuarios/' + session['email'])
+                datosA, datosE, datosI = obtener_datos('./usuarios/' + session['email'], chatbots)
                 return render_template("principal/buscador/buscadorChatbots.html",
-                                       resultados=ProcesamientoBuscador.buscar_chatbots(
+                                       resultados=buscarChatbots(
                                            './usuarios/' + session['email'], busqueda=busqueda), busqueda=busqueda,
                                        datosA=datosA, datosE=datosE, datosI=datosI,
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -590,9 +590,9 @@ def start_app():
             busqueda = request.args.get('busqueda')
             if os.path.exists('./usuarios/'):
                 return render_template("principal/buscador/buscadorUsuariosAdmin.html",
-                                       resultados=ProcesamientoBuscador.buscar_usuarios(busqueda=busqueda),
+                                       resultados=buscarUsuarios(busqueda=busqueda),
                                        busqueda=busqueda,
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       usuario=get_usuario(email=session['email']))
 
         else:
             return redirect(url_for('login'))
@@ -604,15 +604,15 @@ def start_app():
         datos = []
         if 'email' in session:
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
-                intents = ProcesamientoEntidadesIntents.get_intents('./usuarios/' + session['email'] + '/' + chat)
+                intents = getIntents('./usuarios/' + session['email'] + '/' + chat)
 
                 for i in intents:
-                    inte = ProcesamientoEntidadesIntents.directoriosIntent(
+                    inte = directoriosIntent(
                         './usuarios/' + session['email'] + '/' + chat, i[0])
-                    intent = ProcesamientoEntidadesIntents.get_json(inte[0], inte[1])
+                    intent = get_json(inte[0], inte[1])
                     datos.append(intent)
                 return render_template("principal/pantallas/informe.html", chat=chat, datos=datos, intents=intents,
-                                       usuario=ProcesamientoUsuario.get_usuario(email=session['email']))
+                                       usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
@@ -624,8 +624,8 @@ def start_app():
             email = request.form['email']
             password = request.form['password']
 
-            if ProcesamientoUsuario.verificar_usuario(email, password):
-                rootdir = ProcesamientoUsuario.verificar_usuario(email, password)
+            if verificar_usuario(email, password):
+                rootdir = verificar_usuario(email, password)
                 session['email'] = email
 
                 if rootdir == './usuarios/':
@@ -646,7 +646,7 @@ def start_app():
             password = request.form['password']
 
             # Agrega el usuario al archivo CSV y crea un directorio para el usuario
-            if ProcesamientoUsuario.registrar_usuario(nombre, email, password):
+            if registrar_usuario(nombre, email, password):
                 return redirect(url_for('login'))
             else:
                 return render_template('register.html', alerta=True)

@@ -3,7 +3,7 @@ import json
 
 
 # OBTENCIÓN DE LOS DATOS DEL AGENTE
-def get_agente(rootdir):
+def getAgente(rootdir):
     if os.path.exists(rootdir + '/agent.json'):
         with open(rootdir + '/agent.json', 'r', encoding='utf-8') as a:
             agente = json.load(a)
@@ -16,7 +16,7 @@ def get_agente(rootdir):
 
 # OBTENCIÓN DEL IDIOMA DEL AGENTE
 def get_agente_language(rootdir, language='language'):
-    agente = get_agente(rootdir)
+    agente = getAgente(rootdir)
     if language in agente:
         return agente[language]
     else:
@@ -30,7 +30,7 @@ def set_agente(rootdir, chat, clave, atributo):
     #    n_nombre = rootdir + atributo
     #else:
     #    n_nombre = rootdir + chat
-    diccionario = get_agente(rootdir + chat)
+    diccionario = getAgente(rootdir + chat)
     diccionario[clave] = atributo
 
     with open(rootdir + chat + '/agent.json', 'w') as a:

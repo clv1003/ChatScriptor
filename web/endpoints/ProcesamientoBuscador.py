@@ -1,12 +1,12 @@
-import ProcesamientoAgente
-import ProcesamientoArchivos
-import ProcesamientoEntidadesIntents
-import ProcesamientoUsuario
+from web.endpoints.ProcesamientoAgente import *
+from web.endpoints.ProcesamientoArchivos import *
+from web.endpoints.ProcesamientoEntidadesIntents import *
+from web.endpoints.ProcesamientoUsuario import *
 
 
 # OBTENCION DEL VALOR BUSCADO EN EL AGENTE
-def buscar_agente(root, busqueda):
-    agente = ProcesamientoAgente.get_agente(root)
+def buscarAgente(root, busqueda):
+    agente = getAgente(root)
 
     displayName = agente['displayName'].lower()
     language = agente['language'].lower()
@@ -42,8 +42,8 @@ def buscar_agente(root, busqueda):
 def buscar_ent_int(rootP1, rootP2, busqueda):
     resultados1 = []
     resultados2 = []
-    parte1 = ProcesamientoEntidadesIntents.get_parte(rootP1)
-    parte2 = ProcesamientoEntidadesIntents.get_parte(rootP2)
+    parte1 = get_parte(rootP1)
+    parte2 = get_parte(rootP2)
 
     # ------------- PARA LA ENTIDAD
     if 'entities' in rootP1 and 'entities' in rootP2:
@@ -107,8 +107,8 @@ def buscar_ent_int(rootP1, rootP2, busqueda):
         return [resultados1, resultados2]
 
 
-def buscar_entidades(dir_ents, busqueda):
-    entidades = ProcesamientoEntidadesIntents.get_entidades(dir_ents)
+def buscarEntidades(dir_ents, busqueda):
+    entidades = getEntidades(dir_ents)
     resultados = {}
 
     if not (entidades is None):
@@ -124,8 +124,8 @@ def buscar_entidades(dir_ents, busqueda):
     return resultados
 
 
-def buscar_intents(dir_ints, busqueda):
-    intents = ProcesamientoEntidadesIntents.get_intents(dir_ints)
+def buscarIntents(dir_ints, busqueda):
+    intents = getIntents(dir_ints)
     resultados = {}
 
     if not (intents is None):
@@ -141,12 +141,12 @@ def buscar_intents(dir_ints, busqueda):
     return resultados
 
 
-def buscar_chatbot(directorio, busqueda):
+def buscarChatbot(directorio, busqueda):
     resultados = {'agente': None, 'entidades': None, 'intents': None}
 
-    agente = buscar_agente(directorio, busqueda)
-    intents = buscar_intents(directorio, busqueda)
-    entidades = buscar_entidades(directorio, busqueda)
+    agente = buscarAgente(directorio, busqueda)
+    intents = buscarIntents(directorio, busqueda)
+    entidades = buscarEntidades(directorio, busqueda)
 
     resultados['agente'] = agente
     resultados['intents'] = intents
@@ -155,18 +155,18 @@ def buscar_chatbot(directorio, busqueda):
     return resultados
 
 
-def buscar_chatbots(directorio, busqueda):
-    chatbots = ProcesamientoArchivos.get_disponible(directorio)
+def buscarChatbots(directorio, busqueda):
+    chatbots = get_disponible(directorio)
     resultados = {}
 
     for cb in chatbots:
-        resultados[cb] = buscar_chatbot(directorio + '/' + cb, busqueda)
+        resultados[cb] = buscarChatbot(directorio + '/' + cb, busqueda)
 
     return resultados
 
 
-def buscar_usuarios(busqueda):
-    usuarios = ProcesamientoUsuario.get_usuarios()
+def buscarUsuarios(busqueda):
+    usuarios = get_usuarios()
     resultados = []
 
     for u in usuarios:

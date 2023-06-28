@@ -1,15 +1,16 @@
-from traductor import TraducirAgente, TraducirEntidades, TraducirIntents
-from traductor.Traductor import Traductor
-
+from web.endpoints.traductor.TraducirAgente import *
+from web.endpoints.traductor.TraducirEntidades import *
+from web.endpoints.traductor.TraducirIntents import *
+from web.endpoints.traductor.Traductor import Traductor
+from web.endpoints.ProcesamientoAgente import *
+from web.endpoints.ProcesamientoArchivos import *
 import os.path
-import ProcesamientoAgente
-import ProcesamientoArchivos
 import time
 
 
 def traducir(rootdir, chatbot, idioma):
     inicio = time.time()
-    original = ProcesamientoAgente.get_agente_language(rootdir + chatbot)
+    original = get_agente_language(rootdir + chatbot)
     print(f'')
     print(f"\033[35mTRADUCTOR de {original} a {idioma}\033[0m")
 
@@ -18,16 +19,16 @@ def traducir(rootdir, chatbot, idioma):
     chat = traductor.traducirFrase(chatbot)
     if chat == chatbot:
         chat = chat + f' ({idioma})'
-        ProcesamientoArchivos.copiarDir(rootdir, chatbot, chat)
+        copiarDir(rootdir, chatbot, chat)
     else:
-        ProcesamientoArchivos.copiarDir(rootdir, chatbot, chat)
+        copiarDir(rootdir, chatbot, chat)
 
     print(f'Nuevo nombre ({chatbot}): {chat} ')
 
     if os.path.exists(rootdir + chat):
 
-        TraducirAgente.traducirAgente(traductor, rootdir, chat)
-        TraducirEntidades.traducirEntidades(traductor, rootdir, chat)
-        TraducirIntents.traducirIntents(traductor, rootdir, chat)
+        traducirAgente(traductor, rootdir, chat)
+        traducirEntidades(traductor, rootdir, chat)
+        traducirIntents(traductor, rootdir, chat)
         print(f'\033[34mTiempo: {time.time() - inicio} \033[0m')
         return chat

@@ -1,17 +1,17 @@
 import os.path
-import ProcesamientoEntidadesIntents
+from web.endpoints.ProcesamientoEntidadesIntents import *
 
 
 def traducirEntidades(traductor, rootdir, chat):
     if os.path.exists(rootdir + chat + '/entities'):
         print(f'')
         print("\033[91m---------------------------- ENTIDADES \033[0m")
-        entidades = ProcesamientoEntidadesIntents.get_entidades(rootdir + chat, traductor.getOriginal())
+        entidades = getEntidades(rootdir + chat, traductor.getOriginal())
 
         for entidad in entidades:
-            dirs = ProcesamientoEntidadesIntents.directoriosEntidad(rootdir + chat, entidad[0],
+            dirs = directoriosEntidad(rootdir + chat, entidad[0],
                                                                     traductor.getOriginal())
-            datos = ProcesamientoEntidadesIntents.get_json(dirs[0], dirs[1])
+            datos = get_json(dirs[0], dirs[1])
 
             name = datos[0]['name']
             tr_name = traductor.traducirFrase(name)
@@ -25,12 +25,12 @@ def traducirEntidades(traductor, rootdir, chat):
                 tr_synonyms = traductor.traducirDiccionario(diccionarioSynonyms)
                 tr_synonyms = list(tr_synonyms.values())
 
-                ProcesamientoEntidadesIntents.editar_v_ent(rootdir + chat, value, entidad[0], tr_value,
+                editar_v_ent(rootdir + chat, value, entidad[0], tr_value,
                                                            traductor.getOriginal())
-                ProcesamientoEntidadesIntents.editar_s_ent(rootdir + chat, tr_value, entidad[0], tr_synonyms,
+                editar_s_ent(rootdir + chat, tr_value, entidad[0], tr_synonyms,
                                                            traductor.getOriginal())
 
-            ProcesamientoEntidadesIntents.editar_nombre(dirs[0], 'name', tr_name)
+            editar_nombre(dirs[0], 'name', tr_name)
 
             print(f"\033[92m-> OK! - Traducido entidad {entidad[0]}\033[0m")
 
