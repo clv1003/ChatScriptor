@@ -4,13 +4,12 @@
 <body>
 
 <div class="align-items-center justify-content-center animated-background"></div>
-<div class="container m-5">
-    <div class="container m-5 text-center">
-        <img src="{{ url_for('static', filename='imagenes/CSLogoCompleto.png') }}" alt="" width="50%">
-    </div>
+
+<div class="d-flex justify-content-center align-items-center m-5">
+    <img src="{{ url_for('static', filename='imagenes/CSLogoCompleto.png') }}" alt="" width="50%">
 </div>
 
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center align-items-center mt-5">
     {% if alerta %}
     <div class="alert alert-danger" role="alert">
         <h4 class="alert-heading mx-5">ERROR</h4>

@@ -3,20 +3,20 @@
 {% include 'comunes/cabecera.html' %}
 <body>
 
-<div class="align-items-center justify-content-center animated-background"></div>
-<div class="container m-5">
-    <div class="container m-5 text-center">
-        <img src="{{ url_for('static', filename='imagenes/CSLogoCompleto.png') }}" alt="" width="50%">
-    </div>
+<div class="d-flex justify-content-center align-items-center animated-background"></div>
+
+<div class="d-flex justify-content-center align-items-center m-5">
+    <img src="{{ url_for('static', filename='imagenes/CSLogoCompleto.png') }}" alt="" width="50%">
 </div>
 
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center align-items-center mt-5">
     {% if alerta %}
     <div class="alert alert-danger" role="alert">
         <h4 class="alert-heading mx-5">ERROR</h4>
         <p class="mx-5">Se ha producido un error al introducir los datos de usuario o el usuario no está registrado</p>
     </div>
     {% endif %}
+
     <div class="p-5 bg-light rounded-5 text-secondary shadow" style="width: 25rem">
         <div class="text-center fs-1 fw-bold">
             <i class="bi bi-person"></i> Login
