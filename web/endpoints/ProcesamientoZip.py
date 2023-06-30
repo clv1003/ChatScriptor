@@ -1,5 +1,4 @@
 import os
-import platform
 import shutil
 import zipfile
 from flask import request
@@ -25,30 +24,11 @@ def descomprimir_archivo(rootdir):
 
 
 # EXPORTAR EL ARCHIVO INDICADO
-def exportar_archivos(rootdir, name):  # rootdir = ./unzip/ ; name = Weather
+def exportar_archivos(rootdir, name):
     if os.path.exists(rootdir + name):
-        downloads_dir = os.path.join(os.path.expanduser('~'), 'Downloads')
-
-        if os.path.exists(downloads_dir + '/' + name + '.zip'):
-            num = 1
-            while os.path.exists(downloads_dir + '/' + name + '(' + str(num) + ')' + '.zip'):
-                num += 1
-
-            fnombre = name + '(' + str(num) + ')'
-            zip_dir = shutil.make_archive(fnombre, format='zip', root_dir=rootdir + name)
-
-            shutil.move(zip_dir, downloads_dir)
-            print(f'\033[34mEl chatbot se ha descargado\033[0m')
-
-        else:
-            zip_dir = shutil.make_archive(name, format='zip', root_dir=rootdir + name)
-            shutil.move(zip_dir, downloads_dir)
-            print(f'\033[34mEl chatbot se ha descargado\033[0m')
-
-
-# ELIMINAR EL CONTENIDO DEL DIRECTORIO UNZIP
-def remove_unzip():
-    shutil.rmtree('./unzip')
+        zip_dir = shutil.make_archive(name, format='zip', root_dir=rootdir + name)
+        print(f'\033[34mEl chatbot se ha descargado\033[0m')
+        return zip_dir
 
 
 def comprobar_estructura(archivo_zip):
