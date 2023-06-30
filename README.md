@@ -1,134 +1,195 @@
-<img src="web/static/imagenes/CSLogoCompleto.png" alt="">
+# ChatScriptor
 
-Interfaz gráfica para la gestión de chatbots en la plataforma DialogFlow
+<img href="https://chatscriptor.azurewebsites.net/" src="web/static/imagenes/CSLogoCompleto.png" alt="">
 
--------------------------------
+🔗 **Clica en el logo para acceder a la web**
 
-# Configuración del Entorno Virtual
-Este proyecto utiliza un entorno virtual de Python para gestionar las dependencias y bibliotecas necesarias.
-Sigue los siguientes pasos para configurarlo en tu máquina:
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-purple.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-## Paso 1: Instalar Python
-Es obligatorio y necesario tener instalado Python en tu máquina. Puedes descargarlo desde su sitio web oficial: [python.org/downloads](https://www.python.org/downloads/).
+## Índice
 
-La versión debe ser Python 3.9 en adelante (*recomendación: Python 3.10*)
+1. [¿Qué es ChatScriptor?] (#¿Qué-es-ChatScriptor?)
+2. [Participantes] (#Participantes)
+3. [Información relevante] (#Información-relevante)
+4. [Licencia] (#Licencia)
 
-## Paso 2: Clonación del repositorio
-Clonar el repositorio alojado en GitHub
+## ¿Qué es ChatScriptor?
+
+Dialogflow es una plataforma desarrollada por Google que permite desarrollar y administrar chatbots o asistentes
+virtuales utilizando técnicas como el procesamiento del lenguaje natural (PNL) que facilitan las interacciones entre
+aplicación y persona.
+
+La interfaz que nos encontramos en su versión básica y gratuita está, actualmente, muy limitada.
+
+Durante este proyecto, se analiza y evalúa esta herramienta, permitiendo identificar aquellos detalles que se han
+considerado como necesidades actuales a la hora de crear un chatbot. Dada la relevancia de este tipo de productos, es
+importante que posea elementos que hagan que la producción de chatbot esté al alcance de todos.
+
+Es por esto, que este trabajo se propone desarrollar una interfaz gráfica que mejore la interacción con respecto a la
+oficial de Google, así cómo añadir servicios que permitan optimizar y clarificar la experiencia del usuario.
+
+ChatScriptor es la web resultante y se encuentra disponible en su página
+oficial: https://chatscriptor.azurewebsites.net/
+
+## Participantes
+
+Trabajo de Fin de Grado en Ingeniería Informática bajo la Universidad de Burgos.
+
+- Alumna: Claudia Landeira Viñuela
+- Tutor: Raúl Marticorena Sánchez
+
+### Información de contacto
+
+Si se desea realizar alguna consulta o aportación: clv1003@alu.ubu.es
+
+## Información relevante
+
+### Estructura
+
+- **/**: se trata del directorio raíz y en él se encuentran el archivo \textit{README}, la base de datos con los
+  usuarios
+  con sus contraseñas cifradas, la web, el archivo de requerimientos y el archivo \textit{Dockerfile}, con su respectivo
+  archivo \textit{yml}
+- **/web/** se trata del módulo correspondiente a la aplicación web y es donde se encuentra la aplicación Flask y sus
+  subdirectorios
+- **/web/endpoints/**: se trata del módulo correspondiente al desarrollo de los procesamientos de la web
+- **/web/endpoints/traductor**: se trata del módulo que contiene los procedimientos para el traductor
+- **/web/static/imagenes/**: se trata del módulo correspondiente a las imágenes estáticas que se usan en la interfaz
+- **/web/static/css/**: se trata del módulo correspondiente a los archivos de diseño estáticos que se usan en la
+  interfaz
+- **/web/static/js/**: se trata del módulo correspondiente a las animaciones \textit{javascript} que se usan en la
+  interfaz
+- **/web/templates/**: se trata del módulo correspondiente a las diferentes pantallas de la interfaz web. En él se
+  encuentran las pantallas de carga, la de registro y la de inicio de sesión
+- **/web/templates/comunes/**: se trata del módulo que contiene las partes de la interfaz que son usadas en todas o la
+  mayor
+  parte de las pantallas
+- **/web/templates/principal/**: se trata del módulo que contiene las pantallas de visualización y modificación de los
+  chatbots, así como las pantallas de los buscadores
+- **/docs/**: documentación del proyecto, en formato \textit{pdf} y \LaTeX, así como los archivos que contienen la
+  información bibliográfica
+- **/docs/img/**: imágenes utilizadas en la documentación
+- **/img/**: imágenes relativas al directorio y al \textit{README} raíz
+- **/usuarios/**: directorio donde se almacenan los chatbots de los usuarios
+
+### Manual del programador
+
+A continuación, se muestran los elementos usados para el desarrollo de este proyecto con el fin de permitir que, en caso
+de continuar con el trabajo, cualquiera sea capaz de realizarlo con las mismas características con las que se ha
+desarrollado.
+
+#### Entorno de desarrollo
+
+Los programas y dependencias usados para el desarrollo de este proyecto, han sido los siguientes:
+
+- **Python 3.10**
+- **PyCharm Professional**
+- **Git**
+- **Bibliotecas Python**: flask, bcrypt, transformers, torch, torchvision, sentencepiece, sacremose, waitress
+- **Docker**
+
+#### Instalación y ejecución del proyecto
+
+Tal y como se ha descrito anteriormente, se deberán tener instalados todos los recursos nombrados. Para
+facilitar este proceso, se ha incluido un archivo _Dockerfile_ que acelerará la configuración y ejecución.
+
+##### Sin usar PyCharm
+
+Este proyecto necesita diferentes dependencias y bibliotecas. Siguiendo los siguientes pasos se facilita la
+configuración en cualquier máquina:
+
+###### _**Paso 1: instalar Python**_
+
+Es obligatorio y necesario tener instalado Python en tu máquina. Puedes descargarlo desde su sitio web
+oficial: https://www.python.org/downloads/
+
+La versión debe ser Python 3.10 en adelante.
+
+###### _**Paso 2: clonación del repositorio**_
+
+Clonar el repositorio alojado en GitHub:
+
 ~~~
 git clone https://github.com/clv1003/Chat-Scriptor
 cd Chat-Scriptor
 ~~~
 
-## Paso 3: Crear el entorno virtual
-Como para este proyecto se usan versiones de Python 3, crearemos el entorno virtual para este caso:
+###### _**Paso 3: Docker**_
+
+La aplicación posee un archivo _Dockerfile_ que permite la ejecución e instalación de todos los requerimientos.
+Para ellos, solo tendremos que construir la imagen y a continuación, iniciar el docker.
+
+Introduciremos en la terminal el siguiente comando, deberán realizarse desde el directorio donde tengamos el proyecto:
+
 ~~~
-python3 -m venv env
+docker compose up
 ~~~
 
-## Paso 4: Activar el entorno virtual
-Activaremos el entorno anterior.
+Con esto, construiremos y ejecutaremos el contenedor docker a través de los archivos _Dokerfile_ y el
+_docker-compose.yml_
 
-Para macOS y Linux:
-~~~
-source env/bin/activate
-~~~
+Una vez finalice, si introducimos la dirección http://localhost:8080/ o http://127.0.0.1:8080/, podremos
+acceder al servidor local con la aplicación.
 
-Para Windows
-~~~
-.\env\Scripts\activate
-~~~
+Para terminar, podremos finalizar los procesos con el comando inverso:
 
-**Para desactivarlo:** `desactivate`
-
-## Paso 5: Instalar las dependencias
-En el proyecto se encuentra un archivo de `requiremets.txt` con las dependencias necesarias.
 ~~~
-pip install -r requirements.txt
+docker compose down
 ~~~
 
-## Paso 6: Ejecutar proyecto
-Si se han realizado todos los pasos anteriores correctamente, será posible ejecutar el proyecto.
-~~~
-python app.py
-~~~
+##### Con PyCharm
 
-
-# Configuración del Entorno Virtual en Pycharm
 Debido a que para el desarrollo del proyecto se ha usado este IDE, se añade la configuración exacta.
 
-## Paso 1: Instalar PyCharm y Python
-Para esta configuración, es necesario tener instalados tanto el IDE Pycharm (en cualquiera de sus versiones, aunque si eres alumno de la Universidad de Burgos podrás acceder a la versión Pycharm Professional)
+###### _**Paso 1: instalar Pycharm y Python**_
 
-La versión debe ser Python 3.9 en adelante (*recomendación: Python 3.10*).
-Puedes descargarlo desde su sitio web oficial: [python.org/downloads](https://www.python.org/downloads/).
+Para esta configuración, es necesario tener instalado el IDE Pycharm (en cualquiera de sus versiones, aunque si eres
+alumno de la Universidad de Burgos podrás acceder a la versión Pycharm Professional)
 
-Para obtener Pycharm, puedes hacerlo desde su página oficial [pycharm/download](https://www.jetbrains.com/es-es/pycharm/download/).
+La versión debe ser Python 3.10 en adelante. Puedes descargarlo desde su sitio web
+oficial: https://www.python.org/downloads/
 
-## Paso 2: Clonación del repositorio
-Clonar el repositorio alojado en GitHub
+Para obtener Pycharm, puedes hacerlo desde su página oficial https://www.jetbrains.com/pycharm/download/?section=windows
+
+###### _**Paso 2: clonación del repositorio**_
+
+Clonar el repositorio alojado en GitHub:
+
 ~~~
 git clone https://github.com/clv1003/Chat-Scriptor
 cd Chat-Scriptor
 ~~~
 
-## Paso 3: Abrir el proyecto en Pycharm
-1. Abre PyCharm 
-2. Selecciona "Open" en el menú principal
-3. Navega hasta la carpeta raíz del proyecto 
-4. Selecciona el archivo pycharm.project o simplemente selecciona la carpeta raíz del proyecto.
+###### _**Paso 3: abrir el proyecto en Pycharm**_
 
-## Paso 4: Configurar del Entorno Virtual
-1. Ve a la pestaña `File` en la barra de menú superior
-2. Selecciona `Settings` para abrir la configuración de PyCharm.
+1. Abre PyCharm
+2. Selecciona _Open_ en el menú inicial
+3. Navega hasta la carpeta raíz del proyecto
+4. Selecciona el archivo _pycharm.project_ o simplemente selecciona la carpeta raíz del proyecto
 
-![img.png](img/img.png)
+###### _**Paso 4: Docker**_
 
-3. En la configuración, busca `Project` y selecciona tu proyecto (*Chat-Scriptor*).
-4. En la lista de configuraciones del proyecto, busca `Python Interpreter` y haz clic en él.
-5. Selecciona `Add Interpreter` y a continuación, en el desplegable `Add Local Interpreter...`
+La aplicación posee un archivo \textit{Dockerfile} que permite la ejecución e instalación de todos los requerimientos.
+Para ellos, solo tendremos que construir la imagen y a continuación, iniciar el docker.
 
-![img.png](img/img2.png)
+Para ello, abriremos una terminal (_View -> Tool Windows -> Terminal_) y ejecutaremos el comando:
 
-6. Selecciona "Existing environment" y navega hasta la ubicación del entorno virtual en tu proyecto.
-7. Selecciona el archivo ejecutable del entorno virtual (por ejemplo, bin/python para entornos virtuales basados en UNIX o Scripts\python.exe para entornos virtuales basados en Windows).
+~~~
+docker compose up
+~~~
 
-![img_1.png](img/img3.png)
+Con esto, construiremos y ejecutaremos el contenedor docker a través de los archivos _Dokerfile_ y el
+_docker-compose.yml_
 
-8. Haz clic en "OK" para agregar el intérprete virtual.
+Una vez finalice, si introducimos la dirección http://localhost:8080/ o http://127.0.0.1:8080/, podremos
+acceder al servidor local con la aplicación.
 
-### Otra opción
-En la parte inferior de la interfaz, podemos seleccionarlo accediendo rápidamente al menu anterior y realizando la configuración de la misma manera.
+Para terminar, podremos finalizar los procesos con el comando inverso:
 
-![img.png](img/img4.png)
+~~~
+docker compose down
+~~~
 
-## Paso 5: Instalación de dependencias
-1. Abre el archivo `requirements.txt` en PyCharm.
-2. PyCharm detectará automáticamente el archivo `requirements.txt` y ofrecerá instalar las dependencias.
-3. Haz clic en `Install requirements` para instalar todas las bibliotecas y dependencias especificadas en el archivo `requirements.txt`.
+## Licencia
 
-**Es importante abrir dicho archivo, ya que en él se encuentra la información necesaria para instalar Bootstrap y Bootstrap Icons.**
-
-### En caso de no salir esta opción
-Pycharm ofrece acceso a un Administrador de paquetes (`Python Packages`) al cual podemos acceder:
-1. Desde la parte inferior izquierda de la interfaz con este símbolo: ![img.png](img/img5.png)
-2. Desde el menu de la barra superior accedemos a `View -> Tool Windows -> Python Packages`
-
-![img.png](img/img6.png)
-
-Desde esta herramienta podremos añadir las bibliotecas y dependencias necesarias, realizando una búsqueda de las mismas.
-
-![img.png](img/img8.png)
-
-## Paso 6: Ejecutar proyecto
-Para ejecutarlo tenemos varias opciones:
-1. Abriendo el fichero `app.py` y clicando sobre el *play*.
-2. Utilizando el comando `Ctrl + Mayus + F10`
-3. Accediendo desde la parte superior indicandole el archivo `app.py` o abriendo dicho archivo y pulsando `Current File`
-
-![img.png](img/img7.png)
-
-# Otras configuraciones
-Para cualquier otra duda, se incluye la explicación completa de configuración en el `Anexo D: Manual del Programador` de la memoria.
-
--------------------------------
+[The GNU General Public License](https://www.gnu.org/licenses/)
