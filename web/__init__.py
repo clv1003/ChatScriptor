@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, url_for, redirect, request, session
+from flask import Flask, render_template, url_for, redirect, request, session, send_file
 
 from web.endpoints.ProcesamientoAgente import *
 from web.endpoints.ProcesamientoArchivos import *
@@ -94,18 +94,13 @@ def start_app():
     def obtener_zip():
         if 'email' in session:
             chat = request.args.get('chat')
-            exportar_archivos('./usuarios/' + session['email'] + '/', chat)
 
-            return importacionexportacion(alerta=True)
+            zip_dir = exportar_archivos('./usuarios/' + session['email'] + '/', chat)
+
+            return send_file(zip_dir, as_attachment=True)
         else:
             return redirect(url_for('login'))
 
-    '''
-        @app.route('/remove_unzip', methods=["POST"])
-        def remove_unzip():
-            remove_unzip()
-            return redirect(url_for('login'))
-    '''
 
     # --------------------------------------------------------------------------------------------------------
     # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (OBTENCION DE INFORMACION)
