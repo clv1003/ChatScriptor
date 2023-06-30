@@ -2,9 +2,8 @@
 
 <img href="https://chatscriptor.azurewebsites.net/" src="web/static/imagenes/CSLogoCompleto.png" alt="">
 
-🔗 **Clica en el logo para acceder a la web**
-
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-purple.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![ChatScriptor](https://img.shields.io/badge/ChatSciptor_Web-🔗-blue)](https://chatscriptor.azurewebsites.net/)
 
 ## Índice
 
