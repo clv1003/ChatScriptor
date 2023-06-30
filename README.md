@@ -5,13 +5,6 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-purple.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![ChatScriptor](https://img.shields.io/badge/ChatSciptor_Web-🔗-blue)](https://chatscriptor.azurewebsites.net/)
 
-## Índice
-
-1. [¿Qué es ChatScriptor?] (#¿Qué-es-ChatScriptor?)
-2. [Participantes] (#Participantes)
-3. [Información relevante] (#Información-relevante)
-4. [Licencia] (#Licencia)
-
 ## ¿Qué es ChatScriptor?
 
 Dialogflow es una plataforma desarrollada por Google que permite desarrollar y administrar chatbots o asistentes
@@ -190,5 +183,4 @@ docker compose down
 ~~~
 
 ## Licencia
-
 [The GNU General Public License](https://www.gnu.org/licenses/)
