@@ -1,3 +1,4 @@
+# IMPORTS
 import os
 
 from flask import Flask, render_template, url_for, redirect, request, session, send_file
@@ -10,20 +11,26 @@ from web.endpoints.ProcesamientoUsuario import *
 from web.endpoints.ProcesamientoBuscador import *
 from web.endpoints.traductor import Traducir
 
+'''
+__init__.py
+@Author: Claudia Landeira
 
+Inicializacion de la aplicacion Flask
+'''
+
+
+# FUNCION --> start_app
+# Funcion encargada de iniciar la aplicacion Flask y todos los procedimientos
 def start_app():
     app = Flask(__name__, static_folder='static')
     app.secret_key = 'estoesunaclavesecreta'
 
-    # --------------------------------------------------------------------------------------------------------
-    # ORGANIZAICIÓN DE LAS PÁGINAS
-
-    # página con la pantalla de carga
+    # Ruta de la pantalla de carga de la aplicacion
     @app.route('/', methods=["GET"])
     def home():
         return render_template('paginacarga.html')
 
-    # página con la información de creacion
+    # Ruta de la pantalla de la informacion de la aplicacion (A cerca de)
     @app.route('/about', methods=["GET"])
     def about():
         if 'email' in session:
@@ -31,7 +38,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # página principal no sesion
+    # Ruta de la pantalla principal de la aplicacion
     @app.route('/home', methods=["GET"])
     def paginaprincipal(alerta=False):
         if 'email' in session:
@@ -45,7 +52,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # pagina principal del administrador
+    # Ruta de la pantalla principal del administrador de la aplicacion
     @app.route('/admin', methods=["GET"])
     def paginaprincipaladmin():
         if 'email' in session:
@@ -56,6 +63,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para realizar la eliminacion de usuarios
     @app.route('/admin/remove', methods=["POST"])
     def removeuser():
         if 'email' in session:
@@ -66,19 +74,18 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # para importar y exportar los archivos
+    # Ruta de la pantalla de importacion y exportacion de la aplicacion
     @app.route('/importar-exportar', methods=['GET'])
-    def importacionexportacion(alerta=False, alertaImportacion=True, infoImportacion=False):
+    def importacionexportacion(alertaImportacion=True, infoImportacion=False):
         if 'email' in session:
             return render_template('principal/importar-exportar.html',
-                                   alerta=alerta, alertaImportacion=alertaImportacion, infoImportacion=infoImportacion,
+                                   alertaImportacion=alertaImportacion, infoImportacion=infoImportacion,
                                    datos=get_disponible('./usuarios/' + session['email'] + '/'),
                                    usuario=get_usuario(email=session['email']))
         else:
             return redirect(url_for('login'))
 
-    # --------------------------------------------------------------------------------------------------------
-    # ZONA DE PROCESAMIENTO DE DATOS AL IMPORTAR EL CHATBOT CON EL .ZIP
+    # Ruta para realizar la importacion de un chatbot al sistema
     @app.route('/subir_archivo', methods=["POST"])
     def procesar_archivo():
         if 'email' in session:
@@ -90,6 +97,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para realizar la exportacion de un chatbot
     @app.route('/bajar_archivo', methods=["GET"])
     def obtener_zip():
         if 'email' in session:
@@ -101,10 +109,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-
-    # --------------------------------------------------------------------------------------------------------
-    # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (OBTENCION DE INFORMACION)
-
+    # Ruta de la pantalla de menu del chatbot actual
     @app.route('/menu/<string:chat>', methods=["GET"])
     def get_archivos(chat):
         if 'email' in session:
@@ -114,8 +119,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # ------------------------
-    # GET DATOS DEL AGENTE
+    # Ruta para obtener la información del agente
     @app.route('/agente/<string:chat>', methods=["GET"])
     def get_agente(chat):
         if 'email' in session:
@@ -125,8 +129,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # ------------------------
-    # GET DATOS DEL ENTIDADES
+    # Ruta para obtener las entidades disponibles
     @app.route('/entidades/<string:chat>', methods=["GET"])
     def get_entidades(chat):
         if 'email' in session:
@@ -137,6 +140,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para obtener la información de una entidad
     @app.route('/entidades/<string:chat>/entidad/<string:entidad>', methods=["GET"])
     def get_entidad(chat, entidad):
         if 'email' in session:
@@ -150,8 +154,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # ------------------------
-    # GET DATOS DE INTENTS
+    # Ruta para obtener los intents disponibles
     @app.route('/intents/<string:chat>', methods=["GET"])
     def get_intents(chat):
         if 'email' in session:
@@ -162,6 +165,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para obtener la información de un intent
     @app.route('/intents/<string:chat>/intent/<string:intent>', methods=["GET"])
     def get_intent(chat, intent):
         if 'email' in session:
@@ -175,9 +179,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # --------------------------------------------------------------------------------------------------------
-    # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (MODIFICACION DE INFORMACION)
-    # ACTUALIZAR EL JSON DEL AGENTE
+    # Ruta para actualizar los datos del agente
     @app.route('/actualizar_json', methods=["POST"])
     def actualizar_json():
         if 'email' in session:
@@ -190,8 +192,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # =======================================================================
-    # ACTUALIZAR EL JSON DE LAS ENTIDADES
+    # Ruta para actualizar los datos del primer archivo de una entidad
     @app.route('/actualizar_json_ent', methods=["POST"])
     def actualizar_json_ent():
         if 'email' in session:
@@ -209,6 +210,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para actualizar los valores (segundo archivo) de una entidad
     @app.route('/actualizar_v_ent', methods=["POST"])
     def actualizar_v_ent():
         if 'email' in session:
@@ -226,6 +228,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para actualizar los sinónimos (segundo archivo) de una entidad
     @app.route('/actualizar_s_ent', methods=["POST"])
     def actualizar_s_ent():
         if 'email' in session:
@@ -243,8 +246,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # =======================================================================
-    # ACTUALIZAR EL JSON DE LOS INTENTS
+    # Ruta para actualizar los datos del primer archivo de un intent
     @app.route('/actualizar_json_int', methods=["POST"])
     def actualizar_json_int():
         if 'email' in session:
@@ -262,6 +264,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para actualizar los parametros de las frases de entrenamiento de un intent
     @app.route('/actualizar_parameters', methods=["POST"])
     def actualizar_parameters():
         if 'email' in session:
@@ -279,6 +282,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para actualizar las respuestas de un intent
     @app.route('/actualizar_messages', methods=["POST"])
     def actualizar_messages():
         if 'email' in session:
@@ -295,6 +299,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para actualizar el de un intent
     @app.route('/actualizar_action', methods=["POST"])
     def actualizar_action():
         if 'email' in session:
@@ -309,6 +314,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para actualizar la data de un intent
     @app.route('/actualizar_data', methods=["POST"])
     def actualizar_data():
         if 'email' in session:
@@ -327,9 +333,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # --------------------------------------------------------------------------------------------------------
-    # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (AÑADIR)
-    # AÑADIR ENTRY (ENTIDADES)
+    # Ruta para añadir una entrada a una entidad
     @app.route('/add_entry', methods=["POST"])
     def add_entry():
         if 'email' in session:
@@ -346,7 +350,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # AÑADIR MESSAGES (INTENTS)
+    # Ruta para añadir respuesta a un intent
     @app.route('/add_messages', methods=["POST"])
     def add_messages():
         if 'email' in session:
@@ -361,9 +365,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # --------------------------------------------------------------------------------------------------------
-    # TRATAMIENTO DE LOS DATOS DE LOS CHATBOTS (ELIMINAR)
-    # ELIMINAR CHATBOT
+    # Ruta para la eliminación de un chatbot completo
     @app.route('/remove_chatbot', methods=["POST"])
     def remove_chatbot():
         if 'email' in session:
@@ -376,7 +378,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # ELIMINAR ENTIDAD
+    # Ruta para la eliminación de una entidad
     @app.route('/remove_entidad', methods=["POST"])
     def remove_entidad():
         if 'email' in session:
@@ -391,13 +393,13 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Rura para la eliminación de una entrada
     @app.route('/remove_entry', methods=["POST"])
     def remove_entry():
         if 'email' in session:
             chat = request.args.get('chat')
             entidad = request.args.get('entidad')
             value = request.args.get('value')
-            synonyms = request.args.get('synonyms')
 
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 removeEntry(
@@ -407,7 +409,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # ELIMINAR INTENT
+    # Ruta para la eliminación de un intent completo
     @app.route('/remove_intent', methods=["POST"])
     def remove_intent():
         if 'email' in session:
@@ -422,6 +424,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para la eliminación de parameters de un intent
     @app.route('/remove_parameters', methods=["POST"])
     def remove_parameters():
         if 'email' in session:
@@ -436,6 +439,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para la eliminacion de respuesta en un intent
     @app.route('/remove_messages', methods=["POST"])
     def remove_messages():
         if 'email' in session:
@@ -450,6 +454,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para la eliminación de data de un intent
     @app.route('/remove_data', methods=["POST"])
     def remove_data():
         if 'email' in session:
@@ -464,7 +469,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # --------------------------------------------------------------------------------------------------------
+    # Ruta para la búsqueda de información dentro del agente de un chatbot
     @app.route('/buscar_agente/<string:chat>', methods=["GET"])
     def buscar_agente(chat):
         if 'email' in session:
@@ -481,6 +486,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para la búsqueda de información dentro de una entidad de un chatbot
     @app.route('/buscar_entidad/<string:chat>/<string:entidad>', methods=["GET"])
     def buscar_entidad(chat, entidad):
         if 'email' in session:
@@ -490,7 +496,7 @@ def start_app():
                     './usuarios/' + session['email'] + '/' + chat, entidad)
                 return render_template("principal/buscador/buscadorEntidad.html",
                                        resultados=buscar_ent_int(enti[0], enti[1],
-                                                                                       busqueda=busqueda),
+                                                                 busqueda=busqueda),
                                        chat=chat, busqueda=busqueda, entidad=entidad,
                                        ent=get_json(enti[0], enti[1]),
                                        usuario=get_usuario(email=session['email']))
@@ -498,6 +504,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para la búsqueda de información dentro de un intent de un chatbot
     @app.route('/buscar_intent/<string:chat>/<string:intent>', methods=["GET"])
     def buscar_intent(chat, intent):
         if 'email' in session:
@@ -507,7 +514,7 @@ def start_app():
                     './usuarios/' + session['email'] + '/' + chat, intent)
                 return render_template("principal/buscador/buscadorIntent.html",
                                        resultados=buscar_ent_int(inten[0], inten[1],
-                                                                                       busqueda=busqueda),
+                                                                 busqueda=busqueda),
                                        chat=chat, busqueda=busqueda, intent=intent,
                                        inte=get_json(inten[0], inten[1]),
                                        usuario=get_usuario(email=session['email']))
@@ -515,6 +522,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para la búsqueda de información dentro de las entidades de un chatbot
     @app.route('/buscar_entidades/<string:chat>', methods=["GET"])
     def buscar_entidades(chat):
         if 'email' in session:
@@ -531,6 +539,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para la búsqueda de información dentro de los intents de un chatbot
     @app.route('/buscar_intents/<string:chat>', methods=["GET"])
     def buscar_intents(chat):
         if 'email' in session:
@@ -547,6 +556,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para la búsqeuda de información dentro de un chatbot completo
     @app.route('/buscar_chatbot/<string:chat>', methods=["GET"])
     def buscar_chatbot(chat):
         if 'email' in session:
@@ -564,6 +574,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para la búsqueda de información dentro de todos los cahtbots de un usuario
     @app.route('/buscar_chatbots/', methods=["GET"])
     def buscar_chatbots():
         if 'email' in session:
@@ -579,6 +590,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
+    # Ruta para la búsqueda de los usuarios (*administrador*)
     @app.route('/buscar_usuarios/', methods=["GET"])
     def buscar_usuarios():
         if 'email' in session:
@@ -592,8 +604,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # ------------------------
-    # REPORTE CON EL RESUMEN DE TODA LA INFORMACION RELEVANTE
+    # Ruta para la generacion del informe de los intents
     @app.route('/informe/<string:chat>', methods=["GET"])
     def informe(chat):
         datos = []
@@ -611,8 +622,7 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # --------------------------------------------------------------------------------------------------------
-    # página login
+    # Ruta para realizar el inicio de sesión o mostrar la pantalla de inicio de sesión
     @app.route('/login', methods=["GET", "POST"])
     def login():
         if request.method == 'POST':
@@ -632,7 +642,7 @@ def start_app():
         else:
             return render_template('login.html', alerta=False)
 
-    # página de registro
+    # Ruta para realizar el registro de nuevos usuarios o mostrar la pantalla de inicio de sesión
     @app.route('/register', methods=["GET", "POST"])
     def register():
         if request.method == 'POST':
@@ -648,6 +658,7 @@ def start_app():
         else:
             return render_template('register.html', alerta=False)
 
+    # Ruta para realizar el cierre de la sesión actual
     @app.route('/logout')
     def logout():
         if 'email' in session:
@@ -656,11 +667,9 @@ def start_app():
         else:
             return redirect(url_for('login'))
 
-    # --------------------------------------------------------------------------------------------------------
-    # Traduccion
+    # Ruta para iniciar la traducción del chatbot
     @app.route('/traductor/<string:chat>/<string:idioma>', methods=["GET"])
     def traductor(chat, idioma):
-        # idioma = request.args.get('idioma')
         if 'email' in session:
             if os.path.exists('./usuarios/' + session['email'] + '/' + chat):
                 chatbot = Traducir.traducir('./usuarios/' + session['email'] + '/', chat, idioma)

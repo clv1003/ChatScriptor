@@ -1,7 +1,17 @@
+# IMPORTS
 import os.path
 from web.endpoints.ProcesamientoEntidadesIntents import *
 
+'''
+TRADUCIR ENTIDADES
+@Author: Claudia Landeira
 
+Funciones encargadas de realizar la traduccion del bloque de entidades
+'''
+
+
+# FUNCION --> traducirEntidades
+# Función encargada de traducir los datos de las entidades
 def traducirEntidades(traductor, rootdir, chat):
     if os.path.exists(rootdir + chat + '/entities'):
         print(f'')
@@ -25,10 +35,8 @@ def traducirEntidades(traductor, rootdir, chat):
                 tr_synonyms = traductor.traducirDiccionario(diccionarioSynonyms)
                 tr_synonyms = list(tr_synonyms.values())
 
-                editar_v_ent(rootdir + chat, value, entidad[0], tr_value,
-                                                           traductor.getOriginal())
-                editar_s_ent(rootdir + chat, tr_value, entidad[0], tr_synonyms,
-                                                           traductor.getOriginal())
+                editar_v_ent(rootdir + chat, value, entidad[0], tr_value, traductor.getOriginal())
+                editar_s_ent(rootdir + chat, tr_value, entidad[0], tr_synonyms, traductor.getOriginal())
 
             editar_nombre(dirs[0], 'name', tr_name)
 

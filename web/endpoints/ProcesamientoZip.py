@@ -1,10 +1,19 @@
+# IMPORTS
 import os
 import shutil
 import zipfile
 from flask import request
 
+'''
+PROCESAMIENTO ARCHIVOS ZIP
+@Author: Claudia Landeira
 
-# DESCOMPRIMIR EL ARCHIVO IMPORTADO
+Funciones encargadas de realizar los procesamientos de los archivos zip (importar, exportar)
+'''
+
+
+# FUNCION --> descomprimir_archivo
+# Función encargada de descomprimir el archivo zip del chatbot
 def descomprimir_archivo(rootdir):
     f = request.files['archivo_zip']
 
@@ -23,7 +32,8 @@ def descomprimir_archivo(rootdir):
     return False
 
 
-# EXPORTAR EL ARCHIVO INDICADO
+# FUNCION --> exportar_archivos
+# Función encargada de comprimir y exportar el directorio del chatbot
 def exportar_archivos(rootdir, name):
     if os.path.exists(rootdir + name):
         zip_dir = shutil.make_archive(name, format='zip', root_dir=rootdir + name)
@@ -31,6 +41,8 @@ def exportar_archivos(rootdir, name):
         return zip_dir
 
 
+# FUNCION --> comprobar_estructura
+# Función encargada de verificar que el archivo zip tiene la estructura necesaria
 def comprobar_estructura(archivo_zip):
     estructura = ['entities', 'intents', 'agent.json', 'package.json']
 

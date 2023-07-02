@@ -3,6 +3,9 @@
 {% include 'comunes/cabecera.html' %}
 
 <body>
+
+<!-- Página encargada de mostrar la página de carga -->
+
 <style>
     .loading-container {
         height: 100vh;
@@ -36,7 +39,7 @@
     <img src="{{ url_for('static', filename='imagenes/CSLogoCompleto.png') }}" alt="" width="65%" class="loading-image">
 </div>
 
-
+<!-- La pantalla de carga desaparecerá a los 5 segundos -->
 <script>
     setTimeout(function () {
         window.location.href = '/login';
