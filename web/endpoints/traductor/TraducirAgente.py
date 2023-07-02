@@ -1,8 +1,17 @@
-
+# IMPORTS
 import os.path
 from web.endpoints.ProcesamientoAgente import *
 
+'''
+TRADUCIR AGENTE
+@Author: Claudia Landeira
 
+Funciones encargadas de realizar la traduccion del bloque de agente
+'''
+
+
+# FUNCION --> traducirAgente
+# Función encargada de traducir los datos del agente
 def traducirAgente(traductor, rootdir, chat):
     if os.path.exists(rootdir + chat):
         agente = getAgente(rootdir + chat)

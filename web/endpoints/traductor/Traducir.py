@@ -1,3 +1,4 @@
+# IMPORTS
 from web.endpoints.traductor.TraducirAgente import *
 from web.endpoints.traductor.TraducirEntidades import *
 from web.endpoints.traductor.TraducirIntents import *
@@ -7,7 +8,16 @@ from web.endpoints.ProcesamientoArchivos import *
 import os.path
 import time
 
+'''
+TRADUCIR
+@Author: Claudia Landeira
 
+Funciones encargadas de realizar la traduccion de chatbots
+'''
+
+
+# FUNCION --> traducir
+# Función encargada de llamar a la clase Traductor e iniciar el proceso de traduccion
 def traducir(rootdir, chatbot, idioma):
     inicio = time.time()
     original = get_agente_language(rootdir + chatbot)
@@ -26,7 +36,6 @@ def traducir(rootdir, chatbot, idioma):
     print(f'Nuevo nombre ({chatbot}): {chat} ')
 
     if os.path.exists(rootdir + chat):
-
         traducirAgente(traductor, rootdir, chat)
         traducirEntidades(traductor, rootdir, chat)
         traducirIntents(traductor, rootdir, chat)

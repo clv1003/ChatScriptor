@@ -1,10 +1,20 @@
+# IMPORTS
 import json
 import os
 import re
 
 from web.endpoints.ProcesamientoAgente import get_agente_language
 
-# OBTENCIÓN DE LAS ENTIDADES DEL CHATBOT
+'''
+PROCESAMIENTO ENTIDADES/INTENTS
+@Author: Claudia Landeira
+
+Funciones encargadas de realizar los procesamientos de la informacion de entidades e intents
+'''
+
+
+# FUNCION --> getEntidades
+# Función encargada de obtener las entidades disponibles de un chatbot
 def getEntidades(rootdir, language=None):
     if os.path.exists(rootdir + '/entities'):
         if language is None:
@@ -24,7 +34,8 @@ def getEntidades(rootdir, language=None):
         return None
 
 
-# OBTENCIÓN DE LOS INTENTS DEL CHATBOT
+# FUNCION --> getIntents
+# Función encargada de obtener los intents disponibles de un chatbot
 def getIntents(rootdir, language=None):
     if os.path.exists(rootdir + '/intents'):
         if language is None:
@@ -45,8 +56,8 @@ def getIntents(rootdir, language=None):
         return None
 
 
-# ---------------------------------------------------------------------------------------------------------------------
-# AGRUPAR LOS DOS TIPOS DE JSON
+# FUNCION --> get_json
+# Función encargada de juntar los dos archivos que conforma una entidad o un intent
 def get_json(parte1, parte2):
     part1 = get_parte(parte1)
     part2 = get_parte(parte2)
@@ -54,7 +65,8 @@ def get_json(parte1, parte2):
     return [part1, part2]
 
 
-# OBTENER LOS DATOS DE LOS JSON
+# FUNCION --> get_parte
+# Función encargada de leer los archivos json de entidades e intents
 def get_parte(parte):
     if os.path.exists(parte):
         with open(parte, 'r', encoding='utf-8') as p:
@@ -65,8 +77,8 @@ def get_parte(parte):
         return None
 
 
-# ---------------------------------------------------------------------------------------------------------------------
-# OBTENER LOS DIRECTORIOS DE LOS ARCHIVOS
+# FUNCION --> directoriosEntidad
+# Función encargada de obtener los directorios de las entidades
 def directoriosEntidad(root, entidad, language=None):
     if entidad.endswith('.json'):
         entries1 = entidad
@@ -79,6 +91,8 @@ def directoriosEntidad(root, entidad, language=None):
         return ent
 
 
+# FUNCION --> directoriosIntent
+# Función encargada de obtener los directorios de los intents
 def directoriosIntent(root, intent, language=None):
     if intent.endswith('.json'):
         intent1 = intent
@@ -91,8 +105,8 @@ def directoriosIntent(root, intent, language=None):
         return inte
 
 
-# ---------------------------------------------------------------------------------------------------------------------
-# EDITAR EL NOMBRE DE ENTIDAD E INTENT
+# FUNCION --> editar_nombre
+# Función encargada de editar el nombre de entidad o intent (primer archivo que conforma o la entidad o el intent)
 def editar_nombre(root, clave, atributo):
     diccionario = get_parte(root)
     diccionario[clave] = atributo
@@ -101,8 +115,8 @@ def editar_nombre(root, clave, atributo):
         json.dump(diccionario, e)
 
 
-# ---------------------------------------------------------------------------------------------------------------------
-# ELIMINAR ENTIDAD
+# FUNCION --> removeEntidad
+# Función encargada de eliminar una entidad
 def removeEntidad(root, chat, entidad, language=None):
     rootdir = root + chat + '/entities/'
 
@@ -116,7 +130,8 @@ def removeEntidad(root, chat, entidad, language=None):
     os.remove(rootdir + enti)
 
 
-# ELIMINAR INTENT
+# FUNCION --> removeIntent
+# Función encargada de eliminar un intent
 def removeIntent(root, chat, intent, language=None):
     rootdir = root + chat + '/intents/'
 
@@ -130,8 +145,8 @@ def removeIntent(root, chat, intent, language=None):
     os.remove(rootdir + inte)
 
 
-# ---------------------------------------------------------------------------------------------------------------------
-# EDITAR VALUE DE LAS ENTIDADES
+# FUNCION --> editar_v_ent
+# Función encargada de modificar los valores de una entrada de una entidad
 def editar_v_ent(root, value, entidad, atributo, language=None):
     if entidad.endswith('.json'):
         if language is None:
@@ -150,7 +165,8 @@ def editar_v_ent(root, value, entidad, atributo, language=None):
             json.dump(diccionario, e)
 
 
-# EDITAR SYNONYMS DE LAS ENTIDADES
+# FUNCION --> editar_s_ent
+# Función encargada de modificar los sinonimos de una entrada de una entidad
 def editar_s_ent(root, value, entidad, atributo, language=None):
     if entidad.endswith('.json'):
         if language is None:
@@ -169,7 +185,8 @@ def editar_s_ent(root, value, entidad, atributo, language=None):
             json.dump(diccionario, e)
 
 
-# AÑADIR UNA NUEVA ENTRADA DE ENTIDAD
+# FUNCION --> addEntry
+# Función encargada de añadir una entrada a una entidad
 def addEntry(root, entidad, value, synonyms, language=None):
     if entidad.endswith('.json'):
         if language is None:
@@ -187,7 +204,8 @@ def addEntry(root, entidad, value, synonyms, language=None):
             json.dump(diccionario, e)
 
 
-# ELIMINAR ENTRADA DE ENTIDAD
+# FUNCION --> removeEntry
+# Función encargada de eliminar una entrada a una entidad
 def removeEntry(root, entidad, value, language=None):
     if entidad.endswith('.json'):
         if language is None:
@@ -205,8 +223,8 @@ def removeEntry(root, entidad, value, language=None):
             json.dump(diccionario, e)
 
 
-# ---------------------------------------------------------------------------------------------------------------------
-# AÑADIR MESSAGES A INTENTS
+# FUNCION --> addMessages
+# Función encargada de añadir a los intents el parametros speech(respuesta) de la etiqueta messages
 def addMessages(root, speach):
     diccionario = get_parte(root)
 
@@ -220,26 +238,8 @@ def addMessages(root, speach):
         json.dump(diccionario, i)
 
 
-# EDITAR RESPONSES DE INTENTS
-def editar_parameters(root, subclave, atributo):
-    diccionario = get_parte(root)
-    for i in diccionario["responses"][0]["parameters"]:
-        if subclave in i:
-            i[subclave] = atributo
-
-    with open(root, 'w') as i:
-        json.dump(diccionario, i)
-
-
-def editar_action(root, atributo):
-    diccionario = get_parte(root)
-    if diccionario["responses"][0]["action"]:
-        diccionario["responses"][0]["action"] = atributo
-
-        with open(root, 'w') as i:
-            json.dump(diccionario, i)
-
-
+# FUNCION --> editar_messages
+# Función encargada de modificar el parametros speech(respuesta) de la etiqueta messages de los intents
 def editar_messages(root, speachOrg, speachNew):
     diccionario = get_parte(root)
     if diccionario["responses"][0]["messages"]:
@@ -256,19 +256,8 @@ def editar_messages(root, speachOrg, speachNew):
             json.dump(diccionario, i)
 
 
-# ELIMINAR RESPONSES DE INTENTS
-def removeParameters(root, idR):
-    diccionario = get_parte(root)
-
-    for i in diccionario["responses"][0]["parameters"]:
-        if i["id"] == idR:
-            diccionario["responses"][0]["parameters"].remove(i)
-            break
-
-    with open(root, 'w') as i:
-        json.dump(diccionario, i)
-
-
+# FUNCION --> removeMessages
+# Función encargada de eliminar el parametros speech(respuesta) de la etiqueta messages de los intents
 def removeMessages(root, speech):
     diccionario = get_parte(root)
     lista = []
@@ -283,7 +272,45 @@ def removeMessages(root, speech):
         json.dump(diccionario, i)
 
 
-# EDITAR DATA DE INTENTS
+# FUNCION --> editar_parameters
+# Función encargada de editar los parametros de las responses (frases de entrenamiento) de los intents
+def editar_parameters(root, subclave, atributo):
+    diccionario = get_parte(root)
+    for i in diccionario["responses"][0]["parameters"]:
+        if subclave in i:
+            i[subclave] = atributo
+
+    with open(root, 'w') as i:
+        json.dump(diccionario, i)
+
+
+# FUNCION --> editar_action
+# Función encargada de eliminar parametros de los intents mediante ID
+def removeParameters(root, idR):
+    diccionario = get_parte(root)
+
+    for i in diccionario["responses"][0]["parameters"]:
+        if i["id"] == idR:
+            diccionario["responses"][0]["parameters"].remove(i)
+            break
+
+    with open(root, 'w') as i:
+        json.dump(diccionario, i)
+
+
+# FUNCION --> editar_action
+# Función encargada de editar el parametro action de las responses (frases de entrenamiento) de los intents
+def editar_action(root, atributo):
+    diccionario = get_parte(root)
+    if diccionario["responses"][0]["action"]:
+        diccionario["responses"][0]["action"] = atributo
+
+        with open(root, 'w') as i:
+            json.dump(diccionario, i)
+
+
+# FUNCION --> editar_data
+# Función encargada de editar data de los intents (segundo archivo de los intents)
 def editar_data(root, intent, old, tipo, atributo, language=None):
     if intent.endswith('.json'):
         stopflag = False
@@ -314,7 +341,8 @@ def editar_data(root, intent, old, tipo, atributo, language=None):
             json.dump(diccionario, i)
 
 
-# ELIMINAR DATA DE INTENTS
+# FUNCION --> removeData
+# Función encargada de eliminar data de los intents (segundo archivo de los intents)
 def removeData(root, intent, idD, language=None):
     if intent.endswith('.json'):
         if language is None:

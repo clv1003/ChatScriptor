@@ -1,10 +1,20 @@
+# IMPORTS
 import csv
 import os
 import shutil
 
 import bcrypt
 
+'''
+PROCESAMIENTO USUARIOS
+@Author: Claudia Landeira
 
+Funciones encargadas de realizar los procesamientos de la informacion de los usuarios
+'''
+
+
+# FUNCION --> registrar_usuario
+# Función encargada de registrar a los nuevos usuarios en la database.csv
 def registrar_usuario(nombre, email, password):
     if os.path.exists('database.csv'):
         # Verificar si el email ya está en uso
@@ -44,6 +54,8 @@ def registrar_usuario(nombre, email, password):
         registrar_usuario(nombre, email, password)
 
 
+# FUNCION --> verificar_usuario
+# Función encargada de la verificacion a los usuarios que se encuentren en la database.csv
 def verificar_usuario(email, password):
     with open('database.csv', mode='r') as db:
         reader = csv.reader(db, delimiter=';')
@@ -60,6 +72,8 @@ def verificar_usuario(email, password):
     return False
 
 
+# FUNCION --> get_usuarios
+# Función encargada de obtener los usuarios de la database.csv omitiendo la cuenta de la administracion
 def get_usuarios():
     usuarios = []
 
@@ -71,6 +85,8 @@ def get_usuarios():
     return usuarios
 
 
+# FUNCION --> get_usuario
+# Función encargada de obtener el correo del usuario
 def get_usuario(email):
     with open('database.csv', 'r') as db:
         reader = csv.reader(db, delimiter=';')
@@ -82,6 +98,8 @@ def get_usuario(email):
     return None
 
 
+# FUNCION --> administracion_usuarios
+# Función encargada de comprobar la cuenta del administracion
 def administracion_usuarios(email):
     correo = 'administrador@administrador.com'
 
@@ -91,6 +109,8 @@ def administracion_usuarios(email):
     return False
 
 
+# FUNCION --> remove_user
+# Función encargada de eliminar usuarios, tanto de la base de datos como sus chatbots
 def remove_user(email):
     with open('database.csv', newline='') as db:
         reader = csv.reader(db, delimiter=';')

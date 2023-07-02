@@ -1,45 +1,18 @@
-from transformers import pipeline, MarianMTModel, MarianTokenizer
-import os.path
+# IMPORTS
+from transformers import MarianMTModel, MarianTokenizer
 
 '''
-class Traductor:
-    def traductor(self, text):
-        pass
+CLASE TRADUCTOR
+@Author: Claudia Landeira
 
-
-class TraductorAdaptador(Traductor):
-    def __init__(self, model_names):
-        self.translators = {}
-        for source_lang, target_lang, model_name in model_names:
-            self.translators[(source_lang, target_lang)] = pipeline("translation", model=model_name,
-                                                                    src_lang=source_lang, tgt_lang=target_lang)
-
-    def traducir(self, text, source_language, target_language):
-        key = (source_language, target_language)
-        if key in self.translators:
-            result = self.translators[key](text)
-            return result[0]['translation_text']
-        else:
-            raise ValueError(
-                f"No se encontró un modelo de traducción para el par de idiomas: {source_language}-{target_language}")
-
-
-def traducirArchivo(rootdir, chat, original1, original2, archivo1, archivo2, tipo):
-    if original1.endswith('.json') and original2.endswith('.json') and archivo1.endswith('.json') and archivo2.endswith(
-            '.json'):
-
-        if tipo == 'entidad':
-            rutaOr1 = rootdir + chat + '/entities/' + original1
-            os.rename(rutaOr1, archivo1)
-
-        elif tipo == 'intent':
-            rutaOr1 = rootdir + chat + '/intents/' + original1
-            os.rename(rutaOr1, archivo1)
-
+Funciones encargadas de realizar la traduccion del bloque de intents
 '''
 
 
+# CLASE --> Traductor
+# Clase adaptador que hace uso de los modelos de traduccion de Hugging Face para realizar el proceso de traudccion
 class Traductor:
+    # Inicializar la clase Traductor
     def __init__(self, original, idioma):
         modelos = {
             'en-es': {
@@ -61,24 +34,30 @@ class Traductor:
         self.original = original
         self.idioma = idioma
 
+    # FUNCION --> getOriginal
+    # Funcion encargada de la obtencion del idioma original del chatbot
     def getOriginal(self):
         return self.original
 
+    # FUNCION --> getIdioma
+    # Funcion encargada de la obtencion del idioma al que se va a traducir el chatbot
     def getIdioma(self):
         return self.idioma
 
+    # FUNCION --> traducirFrase
+    # Funcion encargada de la traduccion de frases o palabras
     def traducirFrase(self, frase, max_length=512):
         input = self.token(frase, return_tensors='pt')
         input_ids = input['input_ids']
         attention_mask = input['attention_mask']
 
-        tr_model = self.modelo.generate(input_ids=input_ids,
-                                        attention_mask=attention_mask,
-                                        max_length=max_length)
+        tr_model = self.modelo.generate(input_ids=input_ids, attention_mask=attention_mask, max_length=max_length)
         tr_token = self.token.decode(tr_model[0], skip_special_tokens=True)
 
         return tr_token
 
+    # FUNCION --> traducirDiccionario
+    # Funcion encargada de la traduccion de diccionarios
     def traducirDiccionario(self, diccionario):
         tr_diccionario = {}
 
@@ -87,4 +66,3 @@ class Traductor:
             tr_diccionario[clave] = tr_frase
 
         return tr_diccionario
-

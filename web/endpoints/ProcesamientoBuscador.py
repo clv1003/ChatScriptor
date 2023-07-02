@@ -1,10 +1,20 @@
+# IMPORTS
 from web.endpoints.ProcesamientoAgente import *
 from web.endpoints.ProcesamientoArchivos import *
 from web.endpoints.ProcesamientoEntidadesIntents import *
 from web.endpoints.ProcesamientoUsuario import *
 
 
-# OBTENCION DEL VALOR BUSCADO EN EL AGENTE
+'''
+PROCESAMIENTO BUSCADOR
+@Author: Claudia Landeira
+
+Funciones encargadas de realizar las busquedas
+'''
+
+
+# FUNCION --> buscarAgente
+# Función encargada de encontrar las coincidencias dentro del agente
 def buscarAgente(root, busqueda):
     agente = getAgente(root)
 
@@ -38,7 +48,8 @@ def buscarAgente(root, busqueda):
     return resultados
 
 
-# OBTENCION DEL VALOR BUSCADO EN UNA ENTIDAD O EN UN INTENT
+# FUNCION --> buscar_ent_int
+# Función encargada de encontrar las coincidencias dentro de una entidad o un intent de un chatbot
 def buscar_ent_int(rootP1, rootP2, busqueda):
     resultados1 = []
     resultados2 = []
@@ -107,6 +118,8 @@ def buscar_ent_int(rootP1, rootP2, busqueda):
         return [resultados1, resultados2]
 
 
+# FUNCION --> buscarEntidades
+# Función encargada de encontrar las coincidencias dentro de las entidades de un chatbot
 def buscarEntidades(dir_ents, busqueda):
     entidades = getEntidades(dir_ents)
     resultados = {}
@@ -124,6 +137,8 @@ def buscarEntidades(dir_ents, busqueda):
     return resultados
 
 
+# FUNCION --> buscarIntents
+# Función encargada de encontrar las coincidencias dentro de los intents de un chatbot
 def buscarIntents(dir_ints, busqueda):
     intents = getIntents(dir_ints)
     resultados = {}
@@ -141,6 +156,8 @@ def buscarIntents(dir_ints, busqueda):
     return resultados
 
 
+# FUNCION --> buscarChatbot
+# Función encargada de encontrar las coincidencias dentro de un chatbot
 def buscarChatbot(directorio, busqueda):
     resultados = {'agente': None, 'entidades': None, 'intents': None}
 
@@ -155,6 +172,8 @@ def buscarChatbot(directorio, busqueda):
     return resultados
 
 
+# FUNCION --> buscarChatbots
+# Función encargada de encontrar las coincidencias dentro de todos los chatbots de un usuario
 def buscarChatbots(directorio, busqueda):
     chatbots = get_disponible(directorio)
     resultados = {}
@@ -165,6 +184,8 @@ def buscarChatbots(directorio, busqueda):
     return resultados
 
 
+# FUNCION *administrador* --> buscarUsuarios
+# Función encargada de encontrar las coincidencias dentro los usuarios
 def buscarUsuarios(busqueda):
     usuarios = get_usuarios()
     resultados = []

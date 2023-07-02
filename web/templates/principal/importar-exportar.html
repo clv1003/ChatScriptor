@@ -3,16 +3,11 @@
 {% include 'comunes/cabecera.html' %}
 <body>
 
+<!-- Página encargada de mostrar la interfaz de importación y exportación junto con los formularios para obtener el archivo zip -->
+
 <div class="sticky-top">
     {% include 'comunes/navbar.html' %}
 </div>
-
-{% if alerta %}
-<div class="alert alert-primary" role="alert">
-    <h4 class="alert-heading mx-5">El archivo se ha descargado</h4>
-    <p class="mx-5">Lo podrás encontrar en tu carpeta de <em>Descargas</em> local</p>
-</div>
-{% endif %}
 
 {% if alertaImportacion is false %}
 <div class="alert alert-danger" role="alert">
@@ -60,7 +55,7 @@
 
         <div class="col-md-6">
             <div class="container mt-5">
-                <h1 class="text-center mb-4">Comprimir archivo .zip</h1>
+                <h1 class="text-center mb-4">Exportar archivo .zip</h1>
                 <div class="list-group mt-5">
                     {% for dir in datos %}
                     <a class="mb-1 btn btn-outline-warning btn-block list-group-item shadow"

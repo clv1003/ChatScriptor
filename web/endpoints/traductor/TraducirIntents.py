@@ -1,7 +1,17 @@
+# IMPORTS
 import os.path
 from web.endpoints.ProcesamientoEntidadesIntents import *
 
+'''
+TRADUCIR INTENTS
+@Author: Claudia Landeira
 
+Funciones encargadas de realizar la traduccion del bloque de intents
+'''
+
+
+# FUNCION --> traducirIntents
+# Función encargada de traducir los datos de los intents
 def traducirIntents(traductor, rootdir, chat):
     if os.path.exists(rootdir + chat + '/intents'):
         print(f'')
@@ -25,14 +35,12 @@ def traducirIntents(traductor, rootdir, chat):
                         text = j['text']
                         if len(text) > 0 and text != " ":
                             tr_text = traductor.traducirFrase(text)
-                            editar_data(rootdir+chat, intent[0], text, 'text', tr_text
-                                                                      , traductor.getOriginal())
+                            editar_data(rootdir+chat, intent[0], text, 'text', tr_text, traductor.getOriginal())
                     elif j['meta']:
                         text = j['text']
                         if len(text) > 0 and text != " ":
                             tr_text = traductor.traducirFrase(text)
-                            editar_data(rootdir+chat, intent[0], text, 'text', tr_text
-                                                                      , traductor.getOriginal())
+                            editar_data(rootdir+chat, intent[0], text, 'text', tr_text, traductor.getOriginal())
             print(f"\033[92m-> OK! - Traducido intent {intent[0]}\033[0m")
 
             if intent[1].endswith('_usersays_' + traductor.getOriginal() + '.json'):

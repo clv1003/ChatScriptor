@@ -1,3 +1,4 @@
+# IMPORTS
 import os
 import re
 import shutil
@@ -5,7 +6,16 @@ import shutil
 from web.endpoints.ProcesamientoAgente import getAgente
 from web.endpoints.ProcesamientoEntidadesIntents import getEntidades, getIntents
 
+'''
+PROCESAMIENTO ARCHIVOS
+@Author: Claudia Landeira
 
+Funciones encargadas de realizar acciones generales sobre los archivos de los chatbots
+'''
+
+
+# FUNCION --> get_disponible
+# Función encargada de obtener todos los chatbos disponibles de un usuario
 def get_disponible(rootdir):
     chatbots = []
 
@@ -17,6 +27,8 @@ def get_disponible(rootdir):
     return chatbots
 
 
+# FUNCION --> get_arbol
+# Función encargada de obtener el arbol de archivos que contiene un chatbot
 def get_arbol(rootdir):
     arbol = {}
 
@@ -34,15 +46,21 @@ def get_arbol(rootdir):
     return arbol
 
 
+# FUNCION --> relistado
+# Función encargada de convertir valores entre comillas en una cadena
 def relistado(cadena):
     valores = re.findall(r"'(.*?)'", cadena)
     return [valores[0], valores[1]]
 
 
+# FUNCION --> removeChatbot
+# Función encargada de eliminar un chatbot del sistema
 def removeChatbot(rootdir, chat):
     shutil.rmtree(rootdir + chat)
 
 
+# FUNCION --> obtener_datos
+# Función encargada de recoger los datos de todos los chatbots de un usuario
 def obtener_datos(rootdir, chatbots):
     diccionarioAgentes = {}
     diccionarioEntidades = {}
@@ -56,6 +74,8 @@ def obtener_datos(rootdir, chatbots):
     return diccionarioAgentes, diccionarioEntidades, diccionarioIntents
 
 
+# FUNCION --> copiarDir
+# Función encargada de copiar el chatbot completo de un usuario
 def copiarDir(rootdir, chat, nombre):
     try:
         shutil.copytree(rootdir + chat, './' + nombre)
