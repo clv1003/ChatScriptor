@@ -61,7 +61,6 @@ Si se desea realizar alguna consulta o aportación: clv1003@alu.ubu.es
 - **/docs/**: documentación del proyecto, en formato pdf y Latex, así como los archivos que contienen la
   información bibliográfica
 - **/docs/img/**: imágenes utilizadas en la documentación
-- **/img/**: imágenes relativas al directorio y al README raíz
 - **/usuarios/**: directorio donde se almacenan los chatbots de los usuarios
 
 ### Manual del programador
