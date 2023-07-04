@@ -53,7 +53,7 @@ Cuando se obtuvo un resultado final funcional, se realizó el despliegue mediant
 \section{Problemas encontrados}
 Como es habitual en el desarrollo de un proyecto, no todo lo que se planea se puede llevar a cabo.
 
-\subsection{Interacciones con la API de Dialoglow}
+\subsection{Interacciones con la API de Dialogflow}
 Una de las primeras ideas que se barajaron para desarrollar la web fue el uso de la API de Dialogflow para realizar las peticiones de información de los chatbots. Para esto, se quiso establecer un inicio de sesión con la cuenta de Google asociada a la cuenta de Dialogflow que permitiera el acceso a los chatbots de ese usuario. El primer problema fue este mismo inicio de sesión. 
 
 Se probó si esto era posible. Se realizaron peticiones a la API, haciendo uso de \textit{Postman} \cite{PostmanA62:online}. Los resultados fueron satisfactorios para chatbots de prueba, para los cuales se obtuvo su ``token'' y su autentificador \textit{OAuth2} de forma manual. A continuación, se muestran unas capturas (ver figuras 5.2, 5.3, 5.4, 5.5 y 5.6) de ejemplo:
@@ -143,3 +143,5 @@ El problema que se ha encontrado, explicado en apartados anteriores, ha sido el 
 La solución que se ha encontrado a los problemas de almacenamiento de este tipo, a largo plazo, consiste en establecer fechas de caducidad para los chatbots que lleven un determinado tiempo sin ser usados, con previo aviso al dueño de los mismos. Esta idea no será desarrollada a fechas de entrega, pero formará parte de las ``\textit{Líneas de trabajo futuras}''.
 
 La página resultante se encuentra en la siguiente dirección: \url{https://chatscriptor.azurewebsites.net/}
+
+Añadir, que Azure limita los \textit{timeouts} de las peticiones del servidor a cuatro minutos no modificables \cite{Applicat61:online} (obligan a adquirir un plan de pago más elevado), por lo que de forma productiva está reducido su uso a chatbots de pequeño tamaño.
