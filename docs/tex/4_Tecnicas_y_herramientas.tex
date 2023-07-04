@@ -1,0 +1,123 @@
+\capitulo{4}{Técnicas y herramientas}
+
+\section{Técnicas}
+
+\subsection{Metodologías}
+
+\subsubsection{Scrum}
+Scrum \cite{WhatisSc12:online}  es un tipo de metodología ágil muy recomendada para el desarrollo de productos software. Se trata de trabajar de manera incremental, haciendo que cada una de las iteraciones contenga una parte funcional del desarrollo, estas iteraciones se denominan sprints.
+
+\subsection{Patrones de diseño}
+\subsubsection{\textit{Model-View-Presenter} (MVP)}
+\textit{Model-View-Presenter} (MVP) \cite{mvp:online} es un patrón de diseño que está enfocado en el desarrollo de interfaces de usuario. Esto facilita el diseño de las diferentes partes lógicas permitiendo estructurar el proyecto en módulos.
+\begin{itemize}
+    \item Model (M) \cite{mvp:online}: se trata de definir una interfaz donde se establece la información que se va a mostrar y cómo actuará dicha interfaz. Es el encargado de tratar con los datos usados en la aplicación.
+    \item View (V) \cite{mvp:online}: se trata de la interfaz pasiva que recibirá las ordenes y le transmitirá al presentador para que realice la acción, evitando la interacción directa con el modelo.
+    \item Presenter (P) \cite{mvp:online}: se trata del intermediario entre el modelo y la vista, se encarga de recibir las acciones a realizar, obtiene los datos necesarios del modelo y los muestra en la vista.
+\end{itemize}
+
+\imagen{MVP}{Patrón de diseño MVP \cite{ModelVie14:online}}{.9}
+
+\subsubsection{Adaptador}
+El patrón de diseño software \textit{Adapter} o Adaptador \cite{apuntesDMStema2} es un patrón estructural que permite convertir dos interfaces que, inicialmente no son compatibles, en compatibles, permitiendo trabajar juntas. Esto provoca que podamos usar un intermediario (el adaptador) que sea el encargado de hacer que ambas se entiendan, con esto conseguimos crear clases reutilizables.
+
+\begin{itemize}
+    \item Cliente: será el encargado de usar la interfaz ``Adaptador'' para interactuar con el ``Adaptado''. No sabe de la existencia de ``Adaptador''.
+    \item Objetivo: interfaz que espera ``Cliente'' y que ``Adaptador'' implementa.
+    \item Adaptado: es el elemento que necesita ser adaptado porque es incompatible por si solo.
+    \item Adaptador: implementa a ``Objetivo'' y se encarga de hacer que las peticiones de ``Cliente'' y ``Adaptado'' se entiendan.
+\end{itemize}
+\imagen{Adaptador}{Patrón de diseño Adaptador \cite{apuntesDMStema2}}{.9}
+
+\section{Herramientas}
+\subsection{Gestión del proyecto}
+\subsubsection{Control de versiones}
+Para el control de versiones, se ha utilizado Git. 
+
+Git es un software gratuito y \textit{open source} que permite llevar un registro de los cambios en un proyecto, archivo, etc. que tengamos en local, incluyendo la capacidad de trabajar junto a varias personas.
+
+Además de esto, permite realizar y gestionar flujos de trabajo, el más conocido es Git-Flow.
+
+\subsubsection{Gestor del proyecto}
+A la hora de gestionar las tareas pendientes, cuáles están en proceso y cuáles están hechas, se ha utilizado el \textit{software} Trello \cite{trello}, una herramienta muy útil para estos casos y, que en su versión gratuita, ha permitido seguir fácilmente cada uno de los objetivos para cada sprint. 
+
+A continuación se muestra una prueba de cómo se ha utilizado:
+\imagen{TrelloScrum}{Interfaz de Trello \cite{trello}}{1.0}
+
+\subsubsection{\textit{Hosting} del repositorio}
+Para hospedar el repositorio se ha usado GitHub (\url{https://github.com/}).
+
+Github es la plataforma de hospedaje de repositorios más conocida. Permite usar las funcionalidades de Git, además de otras muchas que la hacen una de las mejores opciones para el desarrollo de proyectos software.
+
+A continuación, se incluye el enlace directo al repositorio de este proyecto: \url{https://github.com/clv1003/Chat-Scriptor}
+
+\subsection{Entorno de desarrollo integrado}
+\subsubsection{Python (IDE)}
+El entorno de desarrollo (IDE) seleccionado para el desarrollo del proyecto ha sido PyCharm Professional.
+
+Está decisión se tomó debido a la gran cantidad de opciones y funcionalidades que posee la herramienta. Además de tener un sistema propio de descarga de bibliotecas y \textit{plugins} que permiten añadir todo aquello que se necesite sin necesidad de salir del producto.
+
+También existe una versión gratuita con una menor cantidad de opciones, pero debido a la cuenta educativa de la Universidad, este proyecto se ha desarrollado en la versión completa.
+
+\subsubsection{Markdown}
+Los textos escritos con este lenguaje, no se han desarrollado con ningún software añadido, ya que, como se explicó en el apartado anterior, PyCharm Professional da la opción de editar este tipo de archivos y visualizarlos.
+
+\imagen{Markdown}{Interfaz para el uso de Markdown a través de Pycharm Professional}{1.0}
+
+\subsubsection{\LaTeX}
+Para escribir en \LaTeX{} se ha optado por la herramienta Overleaf.
+
+Overleaf es un editor gratuito online que permite escribir documentos con \LaTeX, eligiendo el compilador así como el visor de PDF.
+
+\imagen{Overleaf}{Interfaz para el uso de \LaTeX{} a través de Overleaf}{1.0}
+
+\subsubsection{Docker}
+Docker \cite{Dockerov1:online} es una herramienta de contenedores que permite el aislamiento de las estructura de código, facilitando la compilación, ejecución y producción de proyectos software. 
+
+Genera imágenes de contenedores que encapsulan todas las funcionalidades y dependencias, dando un elemento muy liviano y capaz de ser ejecutado en cualquier sistema operativo.
+
+\subsection{Documentación}
+Para redactar la documentación, se ha usado \LaTeX, para la realización de esta memoria, y Markdown, para la escritura de los ficheros .md que se encuentran en el repositorio.
+
+
+\subsection{Librerías}
+Todas las librerías descritas a continuación, se han incluido en el archivo \textit{requirements.txt} del respositorio permitiendo una fácil instalación de las mismas, además de que, al tener un archivo \textit{Dockerfile} se facilita aún más. Se incluye más información acerca de esto en el ``\textit{Anexo D}''.
+\begin{itemize}
+    \item Bootstrap 5.3.0: utilizado para el diseño de interfaz.
+    \item Bootstrap Icons: obtención de los iconos usados en la interfaz.
+    \item os: gestión de directorios y archivos, operaciones de rutas y nombres de archivos, etc.
+    \item Flask: framework web ligero flexible desarrollado en Python.
+    \begin{itemize}
+        \item render\_template: permite renderizar plantillas HTML.
+        \item url\_for: permite generar URLs dinámicas.
+        \item redirect: permite redirigir al usuario hacia una nueva URL.
+        \item request: permite hacer solicitudes HTTP para recibir o enviar información, para más tarde hacer uso de la misma.
+        \item session: permite almacenar datos en forma de variables de sesión.
+    \end{itemize}
+    \item json: funciones para trabajar con datos en formato JSON (codificar o descodificar archivos).
+    \item re: amplia gama de funciones para trabajar con expresiones regulares.
+    \item shutil: operaciones de gestión y manejo de archivos y directorios.
+    \item csv: funciones para trabajar con datos en formato CSV.
+    \item bcrypt: funciones para el cifrado y descifrado de datos, además de su verificación de forma segura.
+    \item zipfile: funciones relacionadas con el tratamiento de ficheros ZIP (comprensión y descomprensión de archivos).
+    \item transformers, torch, torchvision, sentencepiece, sacremoses: combinación de librerías que permiten usar los modelos de lenguajes de traducción.
+    \item waitress: librería encargada de generar servidores HTTP muy ligeros y fáciles de utilizar incluso en productivo.
+\end{itemize}
+
+\subsection{Página web}
+
+\subsubsection{Bootstrap y Bootstrap Icons}
+Bootstrap \cite{Getstart3:online} es un framework para diseño de interfaces. Contiene una serie de estilos que permiten ser usados directamente sobre las páginas HTML, que junto  a Bootstrap Icons y su extensa documentación, agiliza el proceso de desarrollo \textit{front-end}.
+
+
+\subsubsection{Microsoft Azure}
+Microsoft Azure \cite{Document56:online} es un producto de Microsoft centrado en el servicio en la nube que ofrece una gran variedad de funcionalidades de desarrollo, administración y despliegue de aplicaciones web.
+
+Es por esto, que al tener licencias gratuitas de la cuenta de estudiantes y su gran catalogo de servicios, se ha decidido usar para el despliegue de la aplicación web.
+
+\subsection{Otras herramientas}
+\subsubsection{Draw.io}
+Draw.io \cite{drawio54:online} es una herramienta online que permite crear cualquier tipo de diagrama necesario con gran cantidad de personalización, además de ser un software con opciones gratuitas muy completas.
+
+\subsubsection{Postman}
+Postman \cite{PostmanA62:online} es una herramienta que realiza peticiones a APIs, permitiendo comprender el comportamiento de las mismas, así como saber si ese tipo de \textit{requests} funcionan con las claves o \textit{tokens} que hayamos asignado a dichas peticiones.

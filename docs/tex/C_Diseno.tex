@@ -1,0 +1,122 @@
+\apendice{Especificación de diseño}
+
+\section{Introducción}
+En este anexo, se pretende desarrollar la información necesaria para comprender el diseño de los datos, el diseño procedimental, el diseño arquitectónico y del diseño de las interfaces que se encuentran en ChatScriptor.
+
+\section{Diseño de datos}
+En esta sección, se muestran las diferentes formas que poseen los datos usados para la aplicación web y los chatbots.
+
+\subsection{Datos de los usuarios}
+Para el almacenaje de los datos de los usuarios registrados, se ha usado un archivo \textit{CSV} con tres columnas diferenciadas: 
+\begin{itemize}
+    \item Nombre de usuario
+    \item Correo de acceso
+    \item Contraseña, cifrada mediante el uso de la librería \textit{bcrypt}.
+\end{itemize}
+
+Con esto, conseguimos tener los datos de los usuarios almacenados de forma segura y, a la vez, accesible para el sistema.
+
+\subsection{Datos de los chatbots}
+El almacenaje de los chatbots se realiza bajo una estructura de directorios, donde se le asigna el chatbot introducido durante una sesión, al usuario que tiene esa sesión iniciada. Así podemos definir las diferentes rutas a las distintas sesiones de los usuarios accediendo solo a sus datos.
+
+Respecto al diseño de los datos internos de cada chatbot, se encuentra con una estructura de archivos como la de la figura C.1
+\imagen{EstructuraGeneral}{Estructura de directorios de un chatbot}{.3}
+
+La complejidad de estos archivos se encuentra en el interior de cada archivo \textit{JSON}. Para organizar la información, se construyeron tres bloques principales, centrados en las informaciones relevantes para el usuario.
+\begin{itemize}
+    \item Agente: la información del agente se encuentra en el archivo \textit{agent.json}. Este archivo se analizó y, junto a lo que se mostraba en la interfaz de Dialogflow, se determinó que los datos a recoger serían: \textit{displayName}, \textit{language}, \textit{avatar}, \textit{shortDescription}, \textit{description} y \textit{examples}.
+    \item Entidades: los datos de las entidades se encuentran divididos en dos ficheros diferentes, lo que complicó el procesamiento de los mismos:
+    \begin{itemize}
+        \item \textit{entidad.json}: en este tipo de ficheros, se encuentra la información principal de la entidad. Se determinó que el dato a recoger sería: \textit{name}.
+        \item \textit{entidad\_entries\_idioma.json}: estos ficheros contienen las entradas del chatbot, se trata de una lista de diccionarios donde cada posición es otro diccionario con las palabras y sus sinónimos. Se recogen todas las posiciones de esta lista y se muestran en la interfaz.
+    \end{itemize}
+    \item \textit{Intents}: al igual que para las entidades, la información de este bloque, se encuentra dividida en dos ficheros:
+    \begin{itemize}
+        \item \textit{intent.json}: este archivo contiene la información principal de los \textit{intents}. Se recogen los siguientes datos: \textit{name}, \textit{parameters} (\textit{name}, \textit{dataType} y \textit{value}) y \textit{messages} (\textit{speech}).
+        \item \textit{intent\_usersays\_idioma.json}: este archivo posee las frases de entrenamiento y las diferentes informaciones relevantes de las mismas.
+    \end{itemize}
+\end{itemize}
+
+\section{Diseño procedimental}
+En este apartado, se mostrarán los diferentes procedimientos representados mediante diagramas de secuencias.
+
+\subsection{Inicio de sesión}
+El diagrama de secuencia sobre el inicio de sesión muestra como un usuario accede al login e introduce sus datos. A partir de ese momento, los procedimientos internos junto con los datos que ha recibido, realizan una verificación, comprobando el correo y la contraseña introducidos se encuentran en el archivo \textit{CSV}.
+\imagen{diagrama_secuencia_iniciosesion}{Diagrama de secuencia: inicio de sesión}{1}
+
+\subsection{Registro}
+Al igual que para el \textit{login}, recogen los datos introducidos por el usuario y, con los procedimientos, se realiza la verificación de si se encuentra el usuario registrado o no, siendo la segunda la que permitiría añadir el usuario en el archivo \textit{CSV}.
+\imagen{diagrama_secuencia_registro}{Diagrama de secuencia: registro de usuario}{1}
+
+\subsection{Consulta de información}
+A la hora de consultar la información, se da por hecho que el usuario y, al menos, un chatbot se encuentran en el sistema. Cuando el usuario quiera visualizar los datos del agente en cualquiera de los bloques (agente, entidades, \textit{intents}), los procedimientos internos consultarán los archivos del agente específico, recogiendo los datos y mostrándolos en pantalla.
+\imagen{diagrama_secuencia_consulta}{Diagrama de secuencia: consulta de información}{1}
+
+\subsection{Modificación de información}
+La modificación de los datos tiene como base la consulta. El usuario realiza una petición de cambio introduciendo el nuevo valor, el sistema envía el nuevo parámetro, busca el antiguo dentro de los ficheros del chatbot actual y lo sustituye por el valor nuevo.
+\imagen{diagrama_secuencia_modificacion}{Diagrama de secuencia: modificación de información}{1}
+
+\subsection{Eliminación de información}
+Siguiendo la misma línea, la eliminación se apoya en la consulta. El usuario realiza la petición de eliminar un datos de los archivos, dependiendo de si tiene identificador o no, los procedimientos internos buscarán el valor y lo eliminarán.
+\imagen{diagrama_secuencia_eliminar}{Diagrama de secuencia: eliminación de información}{1}
+
+\subsection{Búsqueda de información}
+Para realizar una búsqueda de información, el usuario introducirá el término a localizar. Dependiendo del buscador, realizará una búsqueda más interna o más externa, pero el procedimiento está basado en lo mismo cambiando los ficheros a los que accede. Una vez encuentra las coincidencias, devuelve un resultado que se muestra a los usuarios en pantalla.
+\imagen{diagrama_secuencia_buscar}{Diagrama de secuencia: búsqueda de información}{1}
+
+\subsection{Traducción de agente}
+Cuando el usuario quiere traducir un chatbot, el sistema recibe el idioma actual y el nuevo, realiza una búsqueda dentro de los modelos de traducción que tiene disponibles y comienza a traducir los ficheros del chatbot, generando una copia del mismo para no sobrescribir la información.
+\imagen{diagrama_secuencia_traducir}{Diagrama de secuencia: traducción de agente}{1}
+
+\subsection{Administración}
+Para poder acceder a este módulo, el usuario debe poseer el usuario y contraseña del administrador, en este caso, \textit{administrador@administrador.com} con contraseña \textit{admin}. Una vez se ingresa en el sistema, el administrador podrá realizar peticiones de eliminación o búsqueda de usuarios con el mismo tipo de procedimiento interno que para la eliminación y búsqueda explicados anteriormente, pero centrados en el archivo \textit{CSV}.
+\imagen{diagrama_secuencia_administrador}{Diagrama de secuencia: administración}{1}
+
+\section{Diseño arquitectónico}
+En esta sección, se tratarán todos los patrones de diseño arquitectónico usados en el proyecto, así como una explicación de cada uno de ellos.
+
+\subsection{\textit{Model-View-Presenter (MVP)}}
+El patrón principal para la aplicación web es el Modelo-Vista-Presentador \cite{mvp:online}. Este es uno de los patrones más usados y enfocados en el desarrollo de interfaces de usuario. Esto facilita el diseño de diferentes partes lógicas dando la opción de estructurar el proyecto en distintos módulos.
+
+\begin{itemize}
+    \item Model (M) \cite{mvp:online}: se trata de definir una interfaz donde se establece la información que se va a mostrar y cómo actuará dicha interfaz. Es el encargado de tratar con los datos usados en la aplicación.
+    \item View (V) \cite{mvp:online}: se trata de la interfaz pasiva que recibirá las ordenes y le transmitirá al presentador para que realice la acción, evitando la interacción directa con el modelo.
+    \item Presenter (P) \cite{mvp:online}: se trata del intermediario entre el modelo y la vista, se encarga de recibir las acciones a realizar, obtiene los datos necesarios del modelo y los muestra en la vista.
+\end{itemize}
+
+\imagen{MVP}{Patrón de diseño MVP \cite{ModelVie14:online}}{.9}
+
+A continuación, se muestra un diagrama de despliegue donde se sitúan las distintas partes de la aplicación web en este patrón de diseño:
+\imagen{diagramas_despliegue}{Diagrama de despliegue}{1}
+
+\subsection{Adaptador}
+El patrón de diseño software \textit{Adapter} o Adaptador \cite{apuntesDMStema2} es un patrón estructural que permite compatibilizar dos interfaces que, inicialmente no lo son. Esto provoca que podamos usar un intermediario (el adaptador) que sea el encargado de hacer que ambas se entiendan y con esto conseguimos crear clases reutilizables.
+
+\begin{itemize}
+    \item Cliente: será el encargado de usar la interfaz ``Adaptador'' para interactuar con el ``Adaptado''. No sabe de la existencia de ``Adaptador''.
+    \item Objetivo: interfaz que espera ``Cliente'' y que ``Adaptador'' implementa.
+    \item Adaptado: es el elemento que necesita ser adaptado porque es incompatible por si solo.
+    \item Adaptador: implementa a ``Objetivo'' y se encarga de hacer que las peticiones de ``Cliente'' y ``Adaptado'' se entiendan.
+\end{itemize}
+\imagen{Adaptador}{Patrón de diseño Adaptador \cite{apuntesDMStema2}}{.9}
+
+\section{Diseño de interfaces}
+Al comenzar el proyecto, se realizaron una serie de bocetos e ideas de diseño de interfaz para tener la información bien organizada y clara. 
+
+Para ello se tomó como referencia la página original ya que una de las cosas que se tuvo en cuenta fue el intentar no hacer un cambio brusco de interfaz, permitiendo una fácil adaptación de Dialogflow a ChatScriptor.
+
+A continuación, se muestra varias capturas con el primer diseño:
+\imagen{Interfaz_Home}{Primer diseño de la página principal}{1}
+\imagen{Interfaz_Contenido}{Página que mostraba el contenido de los \textit{ZIP} (no disponible actualmente)}{1}
+\imagen{Interfaz_Agente}{Primer diseño de la página del agente}{1}
+\imagen{Interfaz_Entidades}{Primer diseño de la página de entidades}{1}
+\imagen{Interfaz_Entidad1}{Primer diseño de la página de una entidad (primer archivo\textit{JSON}}{1}
+\imagen{Interfaz_Entidad2}{Primer diseño de la página de una entidad (segundo archivo\textit{JSON}}{1}
+\imagen{Interfaz_Intents}{Primer diseño de la página de \textit{intents}}{1}
+
+Después de múltiples cambios, la interfaz actual está mucho mejor organizada y diseñada, dando al usuario un mejora experiencia de uso.
+
+Como se puede comparar en las imágenes anteriores y el diseño actual, que puede consultarse en ``\textit{Anexo E Manual de usuario}'', se ha cambiado el logo y las tonalidades. Esto se realizó para evitar problemas legales. En la siguiente imagen se muestra la paleta de colores usada en la interfaz final:
+\imagen{colorscheme}{Paleta de colores}{1}
+
+

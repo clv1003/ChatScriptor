@@ -1,0 +1,125 @@
+\apendice{Documentación de usuario}
+\section{Introducción}
+En este anexo. se desarrolla toda la documentación necesaria para los usuarios de ChatScriptor, describiendo los requisitos de usuario, el proceso de instalación y el manual de usuario. Todo ello, para hacer conocedor al navegante de todo lo que puede hacer y cómo hacerlo.
+
+\section{Requisitos de usuarios}
+En esta sección, se determinan los requisitos que el usuario debe cumplir para poder utilizar la aplicación web.
+\begin{itemize}
+    \item Dispositivo: es necesario que sea compatible con la navegación web, como puede ser un ordenador, \textit{smarthphone} o \textit{tablet}, aunque se recomienda el uso de un ordenador.
+    \item Sistema operativo: no hay limitación en cuanto a sistema operativo ya que se trata de una aplicación multiplataforna.
+    \item Conexión a internet: para poder usar la aplicación web, es necesario el acceso a una conexión a internet.
+    \item Navegador web: cualquiera mientras esté actualizado. Algunos ejemplos son \textit{Google Chrome}, \textit{Microsoft Edge} o \textit{Mozilla Firefox}, entre otros.
+    \item Requisitos adicionales: conocimientos básicos de navegación web y cuenta de correo electrónico.
+\end{itemize}
+
+\section{Instalación}
+ChatScriptor es una aplicación web, por lo que no necesita ningún tipo de instalación, más allá de tener en el dispositivo un navegador web.
+
+Se recomienda usar un ordenador con uno de los siguientes navegadores, aunque, tal y como se ha indicado en los requisitos, se puede usar otro tipo de dispositivo y otros navegadores:
+\begin{itemize}
+    \item \textit{Google Chrome}: \url{https://www.google.com/intl/es_es/chrome/}
+    \item \textit{Microsoft Edge}: \url{https://www.microsoft.com/es-es/edge/download?form=MA13FJ}
+    \item \textit{Mozilla Firefox}: \url{https://www.mozilla.org/es-ES/firefox/new/}
+    \item \textit{Opera}: \url{https://www.opera.com/es/download}
+\end{itemize}
+
+Una vez se tienen los requisitos, solo será necesario acceder a la aplicación web: \url{https://chatscriptor.azurewebsites.net/}
+
+\section{Manual del usuario}
+En este manual, se mostrará todo el proceso para realizar las acciones disponibles en ChatScriptor.
+
+\subsection{Importación y exportación desde Dialogflow}
+El primer paso para poder usar esta aplicación, es tener en el sistema un chatbot previamente creado en Dialogflow.
+
+Para ello, se accederá a Dialogflow (\url{https://dialogflow.cloud.google.com/?hl=es-419}) y se creará un chatbot siguiendo los pasos que te indica la interfaz.
+
+Una vez está creado, se entra a la configuración del agente y, en el apartado \textit{Export and Import}, se exporta el archivo \textit{ZIP} del chatbot.
+\imagen{exportar_chatbot}{Exportación de agente desde Dialogflow}{1}
+
+La realización del proceso inverso, es decir, importar el agente en Dialogflow, se hace desde esta misma pantalla.
+
+\textbf{Advertencia}: el funcionamiento de las opciones de \textit{RESTORE} y de \textit{IMPORT} no siempre funciona bien, pero esto no es problema de ChatScriptor, sino de Dialogflow.
+
+\subsection{Registro de nuevo usuario}
+Para poder usar ChatScriptor, es necesario tener una cuenta de usuario registrada en el servidor.
+
+\begin{enumerate}
+    \item Acceder a la página: \url{https://chatscriptor.azurewebsites.net/}.
+    \item Desde la página de \textit{login}, acceder al registro de usuarios o mediante la dirección: \url{https://chatscriptor.azurewebsites.net/register}.
+    \item Se introducirán los datos del usuario: nombre de usuario, correo electrónico y una contraseña.
+    \imagen{MU_Registro}{Registro de un nuevo usuario}{1}
+    \item Una vez se complete el registro, la página redirigirá al inicio de sesión.
+    \item Se introducirá el correo electrónico y la contraseña.
+    \imagen{MU_Login}{Inicio de sesión del usuario recien creado}{1}
+\end{enumerate}
+
+Con esto, se dispondrá de una cuenta habilitada para el uso de ChatScriptor.
+
+\subsection{Importación y exportación de agente}
+Una vez se accede a la página principal, se verá que no tenemos ningún agente añadido. Para añadirlo, se accederá desde la barra superior a \textit{Importar/Exportar}.
+\imagen{MU_PaginaPrincipal}{Pagina principal y acceso a la importación del nuevo agente}{1}
+
+Cuando completemos el acceso a esta página, será posible seleccionar el archivo \textit{ZIP} que se quiere importar. Al terminar, aparecerá un mensaje, indicando que el archivo se ha importado en el sistema.
+\imagen{MU_Importar}{Proceso de importación de un nuevo agente}{1}
+
+Para obtener el agente (exportarlo), en la misma pantalla, se encuentra una opción de exportación de agentes, donde es posible indicar el que se quiere adquirir.
+\imagen{MU_Exportacion}{Localización de la exportación de archivos}{1}
+
+\subsection{Datos del agente}
+Ahora que está disponible el chatbot, desde la página de inicio se accederá a este agente. A continuación, aparecerá un menú, donde se elegirá el bloque al que se quiera acceder (agente, entidades, \textit{intents}).
+\imagen{MU_Menu}{Menú del agente actual}{1}
+
+Una vez se entra a cualquiera de los bloques, cuando se visualice la información, se podrá añadir, modificar o eliminar en aquellos puntos donde se indique en la interfaz.
+
+\textbf{Importante}: si se va a eliminar algún parámetro, tener en cuenta que este no se podrá recuperar.
+
+\subsubsection{Agente}
+Si desde el menú anterior, se accede a \textit{Agente}, se cargará la información del agente en pantalla.
+\imagen{CP 7.1 - 1}{Interfaz con la información del agente}{1}
+Como se ha indicado anteriormente, en cada formulario se podrá modificar los diferentes parámetros.
+
+\subsubsection{Entidades}
+Si desde el menú anterior, se accede a \textit{Entidades}, se cargarán todas las entidades disponibles para el chatbot, mostrándose en una lista de botones con las entidades.
+\imagen{MU_Entidades}{Interfaz con el listado de entidades}{1}
+
+\textbf{Entidad} \\
+Entrando a una de estas entidades, se accede a su información. Como se ha especificado anteriormente, los formularios permiten la modificación y los botones rojos con ``X'' permiten su eliminación (\textbf{recordatorio}, si se elimina, el dato eliminado no se podrá recuperar).
+\imagen{CP 7.2 - 1}{Interfaz con la información de la entidad}{1}
+\subsubsection{Intents}
+Si desde el menú anterior, se accede a \textit{Intents}, se cargarán todos los \textit{intents} disponibles para el chatbot y, al igual que con las entidades, se mostrará una lista de botones con los \textit{intents}.
+\imagen{MU_Intents}{Interfaz con el listado de \textit{intents}}{1}
+
+Como se puede observar en la \textit{Figura E.10}, existe un botón con el nombre de ``Informe''. Al pulsar dicho botón, se genera una nueva pantalla que devuelve un informe con las diferentes frases de entrenamiento y respuestas. Además, es posible pulsar en el nombre de cada uno de los \textit{intents} que aparecen, lo que nos dará acceso directo al \textit{intent}.
+\imagen{MU_Informe}{Interfaz con el informe de los \textit{intents}}{1}
+
+\textbf{Intent} \\
+Entrando a un de estos \textit{intents}, se accederá a su información. Al igual que en el resto de casos, es posible modificar los parámetros y eliminar algunos de ellos (\textbf{recordatorio}, si se elimina, el dato eliminado no se podrá recuperar).
+\imagen{CP 7.3 - 1}{Interfaz con la información del \textit{intent}}{1}
+
+\subsection{Buscadores}
+Al igual que cualquier otro buscador, los formularios disponibles en numerosa cantidad de pantallas a lo largo de ChatScript, permiten obtener la información reducida, encontrando el termino introducido.
+
+La diferencia se encuentra en que el funcionamiento de los buscadores dependerá de la pantalla en la que nos encontremos.
+\begin{itemize}
+    \item Buscador en la página de inicio: devolverá cualquier coincidencia que encuentre en todos los chatbots que tengamos disponibles.
+    \item Buscador en la página general de un agente: devolverá cualquier coincidencia que encuentre entre los datos del asistente (agente, entidades e \textit{intents}).
+    \item Buscador en la página de datos del agente: devolverá cualquier coincidencia que encuentre en el agente.
+    \item Buscador en la página de entidades: devolverá cualquier coincidencia que encuentre entre todas las entidades.
+    \item Buscador en la página de \textit{intents}: devolverá cualquier coincidencia que encuentre entre todos los \textit{intents}.
+    \item Buscador en la página de una entidad: devolverá cualquier coincidencia que encuentre en esa entidad.
+    \item Buscador en la página de un \textit{intent}: devolverá cualquier coincidencia que encuentre en ese \textit{intent}.
+\end{itemize}
+
+\subsection{Traductor}
+El traductor se encuentra disponible en la pantalla de los datos del agente (Figura E.7). Actualmente, está solo disponible la traducción de español a inglés y viceversa.
+
+El proceso de traducción es lento, por lo que no es de extrañar que tarde varios minutos en traducir el agente completo.
+\imagen{MU_Traductor}{Traducción de un chatbot}{1}
+
+
+\subsection{Otras indicaciones}
+\subsubsection{Cerrar sesión}
+Para cerrar la sesión actual, se encuentra disponible en todas la pantalla, un botón en la parte superior derecha, que permite realizar esta acción.
+
+\subsubsection{Acerca de}
+En la barra de navegación superior, se encuentra un apartado de información sobre el proyecto, acceso al repositorio del código fuente y el correo electrónico de contacto.
