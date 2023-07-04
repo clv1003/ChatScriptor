@@ -182,5 +182,7 @@ Para terminar, podremos finalizar los procesos con el comando inverso:
 docker compose down
 ~~~
 
+### Chatbots de ejemplo
+[Carpeta compartida con algunos agentes](https://universidaddeburgos-my.sharepoint.com/:f:/g/personal/clv1003_alu_ubu_es/EpCnl0HnKBRDi2I4tRlaYTwBvYpzJZDTckz0qWBcacVkzw?e=cjCCJp)
 ## Licencia
 [The GNU General Public License](https://www.gnu.org/licenses/)
