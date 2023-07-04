@@ -38,10 +38,10 @@ Si se desea realizar alguna consulta o aportación: clv1003@alu.ubu.es
 
 ### Estructura
 
-- **/**: se trata del directorio raíz y en él se encuentran el archivo \textit{README}, la base de datos con los
+- **/**: se trata del directorio raíz y en él se encuentran el archivo README, la base de datos con los
   usuarios
-  con sus contraseñas cifradas, la web, el archivo de requerimientos y el archivo \textit{Dockerfile}, con su respectivo
-  archivo \textit{yml}
+  con sus contraseñas cifradas, la web, el archivo de requerimientos y el archivo Dockerfile, con su respectivo
+  archivo yml
 - **/web/** se trata del módulo correspondiente a la aplicación web y es donde se encuentra la aplicación Flask y sus
   subdirectorios
 - **/web/endpoints/**: se trata del módulo correspondiente al desarrollo de los procesamientos de la web
@@ -49,7 +49,7 @@ Si se desea realizar alguna consulta o aportación: clv1003@alu.ubu.es
 - **/web/static/imagenes/**: se trata del módulo correspondiente a las imágenes estáticas que se usan en la interfaz
 - **/web/static/css/**: se trata del módulo correspondiente a los archivos de diseño estáticos que se usan en la
   interfaz
-- **/web/static/js/**: se trata del módulo correspondiente a las animaciones \textit{javascript} que se usan en la
+- **/web/static/js/**: se trata del módulo correspondiente a las animaciones javascript que se usan en la
   interfaz
 - **/web/templates/**: se trata del módulo correspondiente a las diferentes pantallas de la interfaz web. En él se
   encuentran las pantallas de carga, la de registro y la de inicio de sesión
@@ -58,10 +58,10 @@ Si se desea realizar alguna consulta o aportación: clv1003@alu.ubu.es
   parte de las pantallas
 - **/web/templates/principal/**: se trata del módulo que contiene las pantallas de visualización y modificación de los
   chatbots, así como las pantallas de los buscadores
-- **/docs/**: documentación del proyecto, en formato \textit{pdf} y \LaTeX, así como los archivos que contienen la
+- **/docs/**: documentación del proyecto, en formato pdf y Latex, así como los archivos que contienen la
   información bibliográfica
 - **/docs/img/**: imágenes utilizadas en la documentación
-- **/img/**: imágenes relativas al directorio y al \textit{README} raíz
+- **/img/**: imágenes relativas al directorio y al README raíz
 - **/usuarios/**: directorio donde se almacenan los chatbots de los usuarios
 
 ### Manual del programador
@@ -161,7 +161,7 @@ cd Chat-Scriptor
 
 ###### _**Paso 4: Docker**_
 
-La aplicación posee un archivo \textit{Dockerfile} que permite la ejecución e instalación de todos los requerimientos.
+La aplicación posee un archivo Dockerfile que permite la ejecución e instalación de todos los requerimientos.
 Para ellos, solo tendremos que construir la imagen y a continuación, iniciar el docker.
 
 Para ello, abriremos una terminal (_View -> Tool Windows -> Terminal_) y ejecutaremos el comando:
