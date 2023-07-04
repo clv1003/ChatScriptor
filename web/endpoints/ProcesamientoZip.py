@@ -44,7 +44,8 @@ def exportar_archivos(rootdir, name):
 # FUNCION --> comprobar_estructura
 # Función encargada de verificar que el archivo zip tiene la estructura necesaria
 def comprobar_estructura(archivo_zip):
-    estructura = ['entities', 'intents', 'agent.json', 'package.json']
+    estructura1 = ['entities', 'intents', 'agent.json', 'package.json']
+    estructura2 = ['intents', 'agent.json', 'package.json']
 
     with zipfile.ZipFile(archivo_zip, 'r') as zip_ref:
         estructura_zip = set()
@@ -58,7 +59,7 @@ def comprobar_estructura(archivo_zip):
             if '/' not in nombre:
                 estructura_zip.add(nombre)
 
-        if estructura_zip == set(estructura):
+        if estructura_zip == set(estructura1) or estructura_zip == set(estructura2):
             return True
         else:
             return False
