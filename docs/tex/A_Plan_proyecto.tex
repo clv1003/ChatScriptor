@@ -1,0 +1,567 @@
+\apendice{Plan de Proyecto Software}
+Para saber si un proyecto se puede llevar a cabo o no, es necesario invertir parte del tiempo en crear un plan de proyecto. En este apartado, se desarrollará dicho plan, se analizarán cada una de las partes del proyecto, cómo se ha planificado y el estudio de viabilidad.
+
+En la sección de ``Viabilidad económica'', se pretende hacer una estimación de los costes que llevaría hacer este proyecto y mantenerlo.
+
+En la sección de ``Viabilidad legal'', se verán aquellas bases y puntos legales que influyen sobre el proyecto, así como todas las licencias de Copyright y la Ley de Protección de Datos. 
+
+\section{Planificación temporal}
+Tal y como se explicó en los apartados de la memoria \textit{``Técnicas y herramientas''} y \textit{``Aspectos relevantes del desarrollo del proyecto''}, desde el inicio del proyecto, se ha usado una metodología ágil, la metodología \textit{Scrum} concretamente, una de las más recomendadas para los desarrollos software.
+
+Al tratarse de un proyecto realizado por una única persona, se ha seguido de forma flexible, pero manteniendo las bases de esta forma de trabajo. La aplicación de dicha metodología, ha sido la siguiente:
+
+\begin{itemize}
+    \item Marcar fechas objetivo, tanto para la finalización del proyecto, como para ciertas partes de la implementación de funcionalidades.
+    \item Realización de \textit{sprints} cada dos semanas, incrementando la frecuencia en los últimos meses, realizándolos cada semana.
+    \item Entregar un producto funcional al finalizar cada \textit{sprint}, realizando una reunión de seguimiento, donde se actualiza lo completado y lo que ha quedado sin añadir.
+    \item En esas reuniones de seguimiento, establecer las tareas a completar para la siguiente iteración.
+\end{itemize}
+
+\subsection{Herramientas}
+Para que este tipo de metodología ágil funcionara, se han usado varias herramientas que han permitido seguir los anteriores puntos.
+
+La primera herramienta software usada, ha sido \textit{Microsoft OneNote}, un cuaderno digital que permite organizar fácilmente todo tipo de tareas. Referido para este caso, apuntar todas las sugerencias y necesidades comentadas en las reuniones de seguimiento.
+
+La siguiente herramienta usada con el objetivo de tener una organización visual de las tareas sin empezar, en progreso y completadas, es \textit{Trello} un tablero \textit{kanban} que permite la creación de tarjetas personalizables. Para este proyecto, se ha creado en cada \textit{sprint} un nuevo tablero con cuatro tarjetas bien diferenciadas.
+
+\begin{itemize}
+    \item ``\textit{To Do - Doc}'': tareas pendientes no iniciadas referidas a la parte de documentación.
+    \item ``\textit{To Do - Dev}'': tareas pendientes no iniciadas referidas a la parte de desarrollo.
+    \item ``\textit{WIP}'': tareas en progreso.
+    \item ``\textit{Done}'': tareas finalizadas.
+\end{itemize}
+
+\imagen{TarjetasTrello}{Tarjetas del \textit{kanban} creado en \textit{Trello}}{1}
+
+\subsection{Planificación temporal (\textit{sprints})}
+\subsubsection{\textit{Sprint} 0 (1 de diciembre de 2022)}
+Primera reunión después de la asignación del tema del trabajo. Esta fue la única reunión donde el periodo temporal establecido para los \textit{sprints} no se mantuvo, debido a que fue introductoria y se comentó que el proyecto comenzaría su desarrollo en el segundo cuatrimestre del curso académico 2022/2023. 
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 0 (1 de diciembre  de 2022)   \\
+\midrule
+T1 - Probar la viabilidad del proyecto \\
+T2 - Prototipo de aplicación web con Python (Flask)\\
+T3 - Probar con \textit{Postman} las peticiones \textit{HTTP} \\
+T4 - Prototipo GUI con HTML \\
+T5 - Repaso de gestión de repositorios \\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 0}
+\end{table}
+
+\subsubsection{\textit{Sprint} 1 (1 de marzo de 2023)}
+Primera reunión real del proyecto, donde se mostraron completadas las tareas del \textit{sprint} 0, dando el visto bueno al comienzo del desarrollo de ChatScriptor.
+
+En esta reunión, se tomaron decisiones respecto a la documentación y con qué gestor de texto se iba a realizar, en este caso, \LaTeX y el \textit{framework} a usar para la web, \textit{Bootstrap}, \textit{Bootstrap Icons} y Flask.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 1 (1 de marzo de 2023)   \\
+\midrule
+T1 - Obtener \textit{tokens} para la autenticación de usuarios (``\textit{Auth2.0}'')\\
+T2 - Centrar los \textit{endpoints} en las funcionalidades básicas\\
+T3 - Añadir \textit{Bootstrap} al prototipo\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 1}
+\end{table}
+
+\subsubsection{\textit{Sprint} 2 (15 de marzo de 2023)}
+Durante la revisión de las tareas, se comenzaron a ver los primeros problemas con la obtención de \textit{tokens} para la autenticación de usuarios y por lo tanto, con la gestión de los \textit{endpoints}, ya que las peticiones a la API de Dialogflow se realizan teniendo en cuenta dicho \textit{token}.
+
+Respecto a la interfaz, cambió radicalmente de aspecto al introducir el \textit{framework}.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 2 (15 de marzo de 2023)   \\
+\midrule
+T1 - Búsqueda e implementación de bibliotecas Python (``\textit{Auth2.0}'')\\
+T2 - Investigar APIs de traducción para aplicar multilenguaje\\
+T3 - Avanzar usando la opción de exportación de los archivos \textit{ZIP}\\
+T4 - Comenzar el procesamiento de los archivos \textit{JSON} \\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 2}
+\end{table}
+
+\subsubsection{\textit{Sprint} 3 (28 de marzo de 2023)}
+En esta sesión continuaron los problemas del inicio de sesión, se consiguió obtener el \textit{token} para el usuario que quería acceder, pero no se realizaba correctamente el \textit{callback} redireccionando a la página principal de ChatScriptor. Se avanzó con el procesamiento de los archivos \textit{JSON} hasta tal punto, que se pudieron realizar la obtención de toda la información de cada bloque (agente, entidades, \textit{intents}) y se completaron las funcionalidades de modificación de los archivos del agente.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 3 (28 de marzo de 2023)   \\
+\midrule
+T1 - Exportación del agente con el mismo formato y estructura inicial\\
+T2 - Botón tipo \textit{moodle} para mejorar la interfaz a la hora de editar\\
+T3 - Funcionalidades básicas para entidades e intents\\
+T4 - Comenzar documentación en \textit{Overleaf}\\
+T5 - Mejorar estética de interfaz\\
+T6 - Solucionar \textit{callback}\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 3}
+\end{table}
+
+\subsubsection{\textit{Sprint} 4 (12 de abril de 2023)}
+Continuaban los problemas con los \textit{tokens} y las peticiones a la API de Dialogflow. El resto de tareas fueron completadas con éxito, con algún \textit{bug} en las modificaciones que rompía la estructura inicial.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 4 (12 de abril de 2023)   \\
+\midrule
+T1 - Buscar solución a la obtención de \textit{tokens} y probar con \textit{API key}\\
+T2 - Solucionar \textit{bugs} en funcionalidades básicas\\
+T3 - Desarrollar más \textit{endpoints} en versión local\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 4}
+\end{table}
+
+
+\subsubsection{\textit{Sprint} 5 (20 de abril de 2023)}
+Visto que continuaron los problemas tanto con \textit{tokens} como con \textit{API keys}, se completaron con prioridad el resto de tareas, se probaron profundamente las funcionalidades básicas en local y se mejoró drásticamente la interfaz añadiendo iconos, cambios de colores e imágenes de los logos iniciales.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 5 (20 de abril de 2023)   \\
+\midrule
+T1 - Mejorar importación, modificación y exportación\\
+T2 - Seguir probando funcionalidades básicas\\
+T3 - Leer documentaciones de APIs para añadir el multilenguje\\
+T4 - Continuar con la mejora de diseño\\
+T5 - Comprobar la importación del agente modificado en Dialogflow\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 5}
+\end{table}
+
+\subsubsection{\textit{Sprint} 6 (26 de abril de 2023)}
+Durante la revisión del \textit{sprint} anterior, se consiguió resolver el problema de los \textit{tokens}, pero apareció otro, descrito en el apartado de la memoria ``\textit{Aspectos relevantes del desarrollo del proyecto}'', los accesos desde la API de Dialogflow solo permiten acceso al chatbot del proyecto de Google Cloud, por lo que se investigó la opción de explicar en el manual de usuario cómo obtenerlo, pero se descartó esa idea debido a la complejidad y pérdida de valor del producto. 
+
+Respecto a las APIs de traducción, se encontró el problema del reducido número de peticiones o el límite de caracteres que ofrecen, ya que los textos de los agentes los superaban. El resto de tareas fueron desarrolladas correctamente.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 6 (26 de abril de 2023)   \\
+\midrule
+T1 - Investigar ``\textit{Hugging face}'' y los modelos de traducción\\
+T2 - Crear inicio de sesión con contraseñas cifradas en archivo \textit{CSV}\\
+T3 - Investigar servidores de despliegue\\
+T4 - Centrar el desarrollo en local\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 6}
+\end{table}
+
+\subsubsection{\textit{Sprint} 7 (3 de mayo de 2023)}
+En la revisión, se habló sobre el logo y nombre del proyecto, ya que inicialmente, se le denominó ``Dialogflow Manager'' y se usaba la misma imagen, y esto podría llegar a generar un problema de licencias. 
+
+``\textit{Hugging face}'' resultó ser la solución para la implementación del multilenguaje, además del uso de modelos de traducción con procesamiento natural del lenguaje. También surgió un problema, al ser modelos descargados en local, ocupan espacio en disco, lo que provocó que el tamaño del proyecto se incremente drásticamente. Se probó dicho traductor en un proyecto externo antes de implementarlo en ChatScriptor.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 7 (3 de mayo de 2023)   \\
+\midrule
+T1 - Implementar el traductor de español a inglés y viceversa\\
+T2 - Pulir la interfaz\\
+T3 - Pulir funcionalidades\\
+T4 - Investigar a cerca del almacenamiento en los servidores\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 7}
+\end{table}
+
+\subsubsection{\textit{Sprint} 8 (10 de mayo de 2023)}
+Revisando los objetivos del anterior \textit{sprint}, se encontró un problema con la adición de agentes, ya que analizando las estructuras y los diferentes identificadores que poseen algunos parámetros, resultaba imposible añadirlo incluso teniendo una plantilla de la estructura. Los identificadores, aunque se hubiera creado una función que los generase, al importarlo en Dialogflow, este los detectaba y devolvía un error.
+
+Respecto a los servidores, ningún servicio gratuito posee el almacenamiento suficiente para el despliegue de ChatScriptor. Sobre el traductor, no se completó la tarea, pero estaba en proceso.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 8 (10 de mayo de 2023)   \\
+\midrule
+T1 - Implementar el traductor de español a inglés y viceversa\\
+T2 - Investigar servicios de pago para el despliegue\\
+T3 - Solucionar \textit{bugs} en funcionalidades\\
+T4 - Escribir el manual del programador\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 8}
+\end{table}
+
+\subsubsection{\textit{Sprint} 9 (17 de mayo de 2023)}
+En esta sesión, se repasaron las tareas realizadas, así como correcciones en el manual del programador que impidieron al tutor el comienzo de sus pruebas.
+
+El traductor comenzó a funcionar sobre el bloque del agente, pero los tiempos de traducción fueron exageradamente elevados. Además, se añadieron, más modelos de traducción a otros idiomas.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 9 (17 de mayo de 2023)   \\
+\midrule
+T1 - Pulir traductor y añadir en entidades e \textit{intents}\\
+T2 - Añadir buscadores en las diferentes pantallas\\
+T3 - Añadir un informe en los \textit{intents}\\
+T4 - Continuar con documentación e investigación de servidores\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 9}
+\end{table}
+
+\subsubsection{\textit{Sprint} 10 (24 de mayo de 2023)}
+Al incluir más partes para traducir, los tiempos seguían creciendo, generando una nueva prioridad sobre el proyecto. Se implementó el informe de \textit{intents}, así como los buscadores dentro de la interfaz, aunque su funcionamiento no era el esperado. 
+
+Respecto a los servidores, esto quedó parado, priorizando que las funcionalidades y la interfaz empezaran a pulirse.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 10 (24 de mayo de 2023)   \\
+\midrule
+T1 - Mejorar la eficiencia del traductor\\
+T2 - Pulir funcionamiento de buscadores\\
+T3 - Continuar con la memoria\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 10}
+\end{table}
+
+\subsubsection{\textit{Sprint} 11 (31 de mayo de 2023)}
+Primera revisión de la memoria del trabajo y determinar puntos a corregir y mejorar. 
+
+Revisión de las tareas cumplidas, mejorada la eficiencia del traductor, aunque seguía con tiempos grandes, valorar patrones de diseño que permitan mejorar.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 11 (31 de mayo de 2023)   \\
+\midrule
+T1 - Implementar algún patrón de diseño en el traductor\\
+T2 - Pulir interfaz\\
+T3 - Añadir alertas e indicaciones visuales de acciones\\
+T4 - Continuar con la memoria\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 11}
+\end{table}
+
+\subsubsection{\textit{Sprint} 12 (7 de junio de 2023)}
+En esta reunión, vistas las fechas, se determinó que la entrega del proyecto se haría en la segunda convocatoria. 
+
+De las tareas del \textit{sprint} anterior, se implementó el patrón de diseño adaptador, reduciendo cerca del 50\% los tiempos de traducción. La interfaz se ve clara y despejada y se descubrieron nuevos \textit{bugs} respecto a los buscadores.
+
+Se volvió a realizar investigación sobre los servidores y debido a la cuenta de la Universidad, asociada con Microsoft, Azure posee una opción para estudiantes, que ofrece 100\$ para probar despliegues, entre otras múltiples funciones.
+
+Probando las distintas funcionalidades, el tutor desveló diferentes parámetros que faltaban por incluir en la interfaz.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 12 (7 de junio de 2023)   \\
+\midrule
+T1 - Reducir los modelos de traducción\\
+T2 - Añadir las respuestas a la interfaz\\
+T3 - Solucionar \textit{bugs} en buscadores\\
+T4 - Desarrollar un administrador y sus funcionalidades\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 12}
+\end{table}
+
+\subsubsection{\textit{Sprint} 13 (14 de junio de 2023)}
+El proyecto en este punto comenzaba su fase final, ya que solo se determinaron pequeños \textit{bugs} y fallos de fácil solución.
+
+Continuaba el problema de los servidores, Azure ofrece muchos servicios, se ha creado el \textit{app server} y sus respectivos paquetes de recursos, pero no se consiguió implementar el código directamente de la rama \textit{main} del repositorio.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 13 (14 de junio de 2023)   \\
+\midrule
+T1 - Cambiar la estética del informe\\
+T2 - Intentar reducir los tiempos del traductor\\
+T3 - Escribir documentación\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 13}
+\end{table}
+
+\subsubsection{\textit{Sprint} 14 (21 de junio de 2023)}
+Se continuaban las pruebas de las diferentes partes, correcciones de \textit{bugs} y desarrollo de la documentación del proyecto.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 14 (21 de junio de 2023)   \\
+\midrule
+T1 - Añadir la licencia al repositorio\\
+T2 - Escribir documentación\\
+T3 - Añadir botones en el informe redireccionando al \textit{intent} concreto\\
+T4 - Añadir detalles en la interfaz\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 14}
+\end{table}
+
+\subsubsection{\textit{Sprint} 15 (28 de junio de 2023)}
+Comentarios sobre la documentación y correcciones de \textit{bugs}.
+
+Se establecieron las siguientes tareas:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textit{Sprint} 15 (28 de junio de 2023)   \\
+\midrule
+T1 - Escribir documentación\\
+T2 - Añadir detalles en la interfaz\\
+T3 - Seguir intentando el despliegue\\
+T4 - Buscar posible alternativa (archivo \textit{EXE})\\
+\bottomrule
+\end{tabular}
+\caption{Tareas \textit{Sprint} 15}
+\end{table}
+
+\section{Estudio de viabilidad}
+
+\subsection{Viabilidad económica}
+Este apartado se centra en obtener los costes y beneficios que determinarían el potencial de este trabajo si se tratara de un proyecto empresarial.
+
+Los aspectos más relevantes para la obtención de todos los valores son:
+\begin{itemize}
+    \item Localización: Burgos (España). Los cálculos económicos varían dependiendo del país donde nos situemos.
+    \item Duración: 4 meses. El tiempo de duración del desarrollo del proyecto.
+    \item Equipo de desarrollo: 2 participante. En este caso, ha sido realizado por alumna, como desarrolladora principal, y el tutor, como líder de proyecto, ambos haciendo funciones de \textit{tester}.
+\end{itemize}
+
+\subsubsection{Costes}
+Con esta sección, se pretende realizar el cálculo de costes de todas las partes. Consultando la definición del Diccionario de Real Academia Española, se define coste como ``\textit{gasto realizado para la obtención o adquisición de una cosa o de un servicio}'' \cite{costeDef59:online}.
+
+\textbf{Costes de personal} \\
+En este tipo de costes, se tiene en cuenta el tiempo invertido, el número de personas que trabajan en él, el salario medio en España de cada una de las funciones, teniendo en cuenta que se trata de una jornada de tiempo completo, la retención por \textit{IRPF} \cite{Segurida22:online} y la Seguridad Social \cite{Segurida90:online}.
+
+Para hacer los cálculos de la forma más real posible, como ambos miembros del equipo han realizado dos funciones, es decir, alumna, como desarrolladora y \textit{tester}, y tutor, como líder de proyecto y \textit{tester}, se contarán tres salarios correspondientes a las diferentes funciones cubiertas.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Concepto & Coste (€)  \\
+\midrule
+Salario mensual bruto (desarrollador) & 2\,083 \\
+Salario mensual bruto (\textit{tester}) & 2\,271\\
+Salario mensual bruto (líder de proyecto) & 2\,982\\
+\bottomrule
+\end{tabular}
+\caption{Salarios brutos mensuales}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Concepto & Porcentaje (\%)  \\
+\midrule
+\textbf{IRPF} & \textbf{Variable} \\
+\midrule
+Contingencias comunes & 23,60\\
+Desempleo & 5,50 \\
+FOGASA & 0,20\\
+Formación profesional & 0,60 \\
+Accidente laboral & 5,50\\
+\midrule
+\textbf{Toral Seguridad Social}  & \textbf{35,40} \\
+\bottomrule
+\end{tabular}
+\caption{Porcentaje de cotización y retención mensual}
+\end{table}
+
+Teniendo en cuenta que el IRPF tiene porcentaje variable dependiendo de las ganancias anuales del trabajador y que depende del trabajador, se realizarán los cálculos sin tenerlo en cuenta. Además, tal y como se ha dicho con anterioridad, se tratará de una jornada completa. 
+
+Para realizar el coste del personal a la empresa, sumaremos a su mensualidad, el valor correspondiente de cotización y retención, teniendo en cuenta el porcentaje calculado.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Función & Gasto mensual (€)  \\
+\midrule
+Desarrollador & 2\,820,38 \\
+\textit{Tester} & 3\,074,93 \\
+Líder de proyecto & 4\,037,63 \\
+\midrule
+\textbf{Total costes de personal}  & \textbf{9\,932,94} \\
+\bottomrule
+\end{tabular}
+\caption{Total costes de personal mensual}
+\end{table}
+
+
+\textbf{Costes de material} \\
+Siguiendo la línea del anterior cálculo de costes, para este tendremos en cuenta que los costes a nivel \textit{hardware} y a nivel \textit{software}.
+
+Para el cálculo del valor del ordenado, haciendo referencia a los costes a nivel \textit{hardware}, tendremos en cuenta el que se ha usado para el completo desarrollo del trabajo, un ``\textit{HP Laptop 15-da0xx}'' de valor aproximado de 600€. Con esto, calcularemos su valor amortizado a 5 años.
+
+Para el cálculo del valor de los diferentes \textit{software} usados, reduciremos el tiempo para el cálculo de la amortización a 2 años. Una cosa a tener en cuenta, es la opción de reducción de este tipo de costes debido del uso de IDEs gratuitos, sin tener la necesidad de utilizar \textit{PyCharm Professional}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Concepto (\textit{hardware})} & \textbf{Coste (€)} & \textbf{Coste amortizado (€)}  \\
+\midrule
+Ordenador & 600 & 120 \\
+\toprule
+\textbf{Concepto (\textit{software})} & \textbf{Coste (€)} & \textbf{Coste amortizado (€)}  \\
+\midrule
+Windows 11 Home & 145 & 72,5 \\
+\midrule
+\textbf{Costes de material total} & \textbf{Coste (€)} & \textbf{Coste amortizado (€)} \\
+ & 745 & 192,5 \\
+\bottomrule
+\end{tabular}
+\caption{Total costes de \textit{hardware} y \textit{software} mensuales}
+\end{table}
+
+\textbf{Costes fijos} \\
+Actualmente, se están usando los servicios de Azure para el despliegue de la web mediante el plan de estudiantes, donde te dan 100\$ para que uses en sus diferentes planes. En este caso, se hace uso de la versión \textit{Premium0V3 (P0v3)} \cite{Preciosd99:online}, debido al problema de almacenamiento, con un valor 79,10€ mensuales.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Concepto & Coste (€) \\
+\midrule
+App Service (Microsoft Azure) & 79,10 \\
+Alquiler oficina & 500  \\
+Internet & 27  \\
+Gastos corrientes (agua, luz, etc.) & 150  \\
+\midrule
+\textbf{Costes fijos totales} & \textbf{756,1} \\
+\bottomrule
+\end{tabular}
+\caption{Total costes fijos mensuales}
+\end{table}
+
+\textbf{Costes totales mensuales} \\
+Obtención de los costes en su totalidad:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+Concepto & Coste (€) \\
+\midrule
+Costes de personal totales & 9\,932,94 \\
+Costes materiales totales & 192,5  \\
+Costes fijos totales & 756,1  \\
+\midrule
+\textbf{Coste total del proyecto mensual} & \textbf{10\,881,54} \\
+\midrule
+\textbf{Coste total del proyecto} & \textbf{43\,526,16} \\
+\bottomrule
+\end{tabular}
+\caption{Total costes fijos mensuales}
+\end{table}
+
+\subsubsection{Beneficios}
+ChatScriptor está pensada para ser una aplicación web de uso gratuito y libre de publicidad, por lo que a corto plazo, no se conseguirían beneficios.
+
+Si nos colocamos en una situación hipotética, se podría valorar crear planes de pago mensuales de diferentes tipos, donde se vayan aumentando las funcionalidades dependiendo de cual tenga el usuario y, al mismo tiempo, incrementar el precio de dicho plan. Añadir que, como no se plantea la opción de incluir publicidad, se podría añadir algún tipo de herramienta de micromecenazgo que permitiera a los usuarios dar al proyecto una cantidad de dinero.
+
+Otra opción, sería buscar empresas que estuvieran interesadas en el proyecto y que pudieran proporcionar apoyo a la aplicación web.
+
+\subsection{Viabilidad legal}
+En este apartado, se desarrollará todo lo relacionado con normativas y leyes que influyan sobre el proyecto. Se tendrá en cuenta que es una aplicación web \textit{open source} y por lo tanto, se verá afectada por dicha normativa.
+
+Otra aspecto relevante, el nombre de la aplicación, los logos y las diferentes imágenes usadas, han sido creadas por la alumna que realiza este proyecto, es decir, no están afectadas por las leyes de \textit{Copyright}.
+
+Respecto a la permisos de la aplicación web, se ha elegido dependiendo de las licencias que poseen las dependencias usadas:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+Dependencia & Licencia \\
+\midrule
+Bootstrap 5.3.0 & Licencia MIT \\
+Bootstrap Icons & Licencia MIT \\
+os & Licencia \textit{Python Software Foundation (PSF)} \\
+Flask & Licencia \textit{Python Software Foundation (PSF)} \\
+json & Licencia \textit{Python Software Foundation (PSF)} \\
+re & Licencia \textit{Python Software Foundation (PSF)} \\
+shutil & Licencia \textit{Python Software Foundation (PSF)} \\
+csv & Licencia \textit{Python Software Foundation (PSF)} \\
+bcrypt & Apache 2.0 \\
+zipfile & Licencia \textit{Python Software Foundation (PSF)} \\
+Hugging face & Licencia MIT \\
+transformers & Apache 2.0 \\
+torch & Licencia BSD \\
+torchvision & Licencia BSD \\
+sentencepiece & Apache 2.0 \\
+sacremoses & Licencia MIT \\
+waitress & Licencia \textit{Zope Public License} (ZPL) \\
+\bottomrule
+\end{tabular}
+\caption{Tabla resumen de licencias}
+\end{table}
+
+De todas las que se han usado, la más restrictiva es la licencia Apache 2.0 \cite{ApacheLi88:online}, aún así, para lo que se pretende con ChatScriptor no supone grandes problemas con las cláusulas.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\toprule
+Licencia Apache 2.0 \\
+\midrule
+Permite el uso comercial \\
+Permite distribuir y modificar el software \\
+Exige el código fuente y avisos de los derechos de autor \\
+Incluye una licencia para el uso de patentes  \\
+\bottomrule
+\end{tabular}
+\caption{Tabla resumen de la licencia Apache 2.0}
+\end{table}
+
+La licencia establecida para el código fuente del proyecto es GPL-3.0 que, junto con el resto de licencias, proporciona una combinación compatible y que cubre el objetivo de que ChatScriptor sea una aplicación web \textit{open source}.

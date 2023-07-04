@@ -1,0 +1,968 @@
+\apendice{Especificación de Requisitos}
+
+\section{Introducción}
+En este anexo, se realiza el estudio y análisis de los diferentes requisitos, tanto funcionales como no funcionales, que deberá cumplir la página web. 
+
+En la primera sección, trataremos los objetivos generales de ChatScriptor, a partir de los cuales se formarán todos los demás apartados. A continuación, se recogerá un catálogo de requisitos, estableciendo los resultados esperados, con los cuales se establecerá el éxito de ese requisito. Seguidamente, se mostrarán las especificaciones de requisitos. Por último, se mostrarán una serie de diagramas creando una referencia visual y física que permita entender la estructuración del proyecto.
+
+\section{Objetivos generales}
+Los siguientes puntos, definen los objetivos generales del proyecto:
+\begin{itemize}
+    \item Desarrollar una aplicación web que permita realizar el mantenimiento y la gestión de chatbots Dialogflow.
+    \item Mejorar la interfaz gráfica desarrollada por Google para su aplicación web Dialogflow.
+    \item Aportar nuevas funcionalidades a la aplicación desarrollada, entre ellas buscadores precisos, generador de informes de las frases de entrenamiento y sus respuestas y traducir los agentes.
+\end{itemize}
+
+
+\section{Catalogo de requisitos}
+Se presenta el catálogo de requisitos funcionales y no funcionales de la aplicación web.
+
+\subsection{Requisitos funcionales}
+\begin{itemize}
+    \item \textbf{RF1 - Gestión de usuarios}
+    \begin{itemize}
+        \item RF1.1: La aplicación permitirá la autenticación mediante un correo y una contraseña válidos.
+        \item RF1.2: La aplicación permitirá el registro de usuarios mediante un nombre, un correo y una contraseña válidos.
+        \item RF1.3: La aplicación permitirá la eliminación de usuarios mediante un correo y una contraseña válidos de administrador.
+        \item RF1.4: La aplicación permitirá cerrar la sesión actual.
+        \item RF1.5: La aplicación procesará el archivo \textit{CSV} que contiene los datos de los usuarios.
+    \end{itemize}
+
+    \item \textbf{RF2 - Lectura de datos}
+    \begin{itemize}
+        \item RF2.1: La aplicación procesará los datos de los archivos \textit{JSON} referidos al agente y permitirá mostrarlos en interfaz.
+        \item RF2.2: La aplicación procesará los datos de los archivos \textit{JSON} referidos a las entidades y permitirá mostrarlas en interfaz.
+        \item RF2.3: La aplicación procesará los datos de los archivos \textit{JSON} referidos a los \textit{intents} y permitirá mostrarlos en interfaz.
+        \item RF2.4: La aplicación procesará los datos de los archivos \textit{JSON} referidos a los \textit{intents} y mostrará un informe de las frases de entrenamiento y sus respuestas.
+    \end{itemize}
+
+    \item \textbf{RF3 - Modificación de datos}
+    \begin{itemize}
+        \item RF3.1: La aplicación procesará los datos de los archivos \textit{JSON} referidos al agente y permitirá modificarlos desde interfaz.
+        \item RF3.2: La aplicación procesará los datos de los archivos \textit{JSON} referidos a las entidades y permitirá modificarlas desde interfaz.
+        \item RF3.3: La aplicación procesará los datos de los archivos \textit{JSON} referidos a los \textit{intents} y permitirá modificarlos desde interfaz.
+    \end{itemize}
+
+    \item \textbf{RF4 - Eliminación de datos}
+    \begin{itemize}
+        \item RF4.1: La aplicación procesará los datos de los archivos \textit{JSON} y permitirá la eliminación del agente.
+        \item RF4.2: La aplicación procesará los datos de los archivos \textit{JSON} y permitirá la eliminación de entidades.
+        \item RF4.3: La aplicación procesará los datos de los archivos \textit{JSON} y permitirá la eliminación de valores y sinónimos de una entidad.
+        \item RF4.4: La aplicación procesará los datos de los archivos \textit{JSON} y permitirá la eliminación de \textit{intents}.
+        \item RF4.5: La aplicación procesará los datos de los archivos \textit{JSON} y permitirá la eliminación de frases de entrenamiento de un \textit{intent}.
+        \item RF4.6: La aplicación procesará los datos de los archivos \textit{JSON} y permitirá la eliminación de respuestas de un \textit{intent}.
+    \end{itemize}
+
+    \item \textbf{RF5 - Añadir datos}
+    \begin{itemize}
+        \item RF5.1: La aplicación permitirá añadir entradas en las entidades.
+        \item RF5.2: La aplicación permitirá añadir respuestas a los \textit{intents}.
+    \end{itemize}
+
+    \item \textbf{RF6 - Buscadores}
+    \begin{itemize}
+        \item RF6.1: La aplicación permitirá buscar desde la página de inicio recibiendo todas las coincidencias de todos los agentes disponibles.
+        \item RF6.2: La aplicación permitirá buscar desde la página general del agente recibiendo todas las coincidencias entre los datos del agente, las entidades y los \textit{intents}.
+        \item RF6.3: La aplicación permitirá buscar desde la página del agente recibiendo todas las coincidencias con los datos del agente.
+        \item RF6.4: La aplicación permitirá buscar desde la página de las entidades recibiendo todas las coincidencias con los datos de todas las entidades.
+        \item RF6.5: La aplicación permitirá buscar desde la página de los \textit{intents} recibiendo todas las coincidencias con los datos de todos los \textit{intents}.
+        \item RF6.6: La aplicación permitirá buscar desde la página de una entidad recibiendo todas las coincidencias con los datos de esa entidad.
+        \item RF6.7: La aplicación permitirá buscar desde la página de un \textit{intent} recibiendo todas las coincidencias con los datos de ese \textit{intent}.
+    \end{itemize}
+
+    \item \textbf{RF7 - Traductor}
+    \begin{itemize}
+        \item RF7.1: La aplicación permitirá la traducción de un agente completo de inglés a español y de español a inglés.
+    \end{itemize}
+
+    \item \textbf{RF8 - Importación/Exportación}
+    \begin{itemize}
+        \item RF8.1: La aplicación permitirá importar archivos \textit{zip} con el formato de los agentes de Dialogflow y que se añadan a la página del usuario.
+        \item RF8.2: La aplicación permitirá exportar archivos en formato \textit{zip} con el agente completo.
+    \end{itemize}
+\end{itemize}
+    
+\subsection{Requisitos no funcionales}
+
+\begin{itemize}
+    \item \textbf{RNF1 - Seguridad}
+    \begin{itemize}
+        \item RNF1.1: La aplicación tendrá que cifrar las contraseñas de los usuarios que se registren en ChatScriptor.
+        \item RNF1.2: La aplicación permitirá el acceso a las diferentes pantallas siempre y cuando el usuario haya iniciado sesión.
+    \end{itemize}
+    
+    \item \textbf{RNF2 - Usabilidad}
+    \begin{itemize}
+        \item RNF2.1: La aplicación poseerá una interfaz clara y fácil de utilizar.
+    \end{itemize}
+
+    \item \textbf{RNF3 - Mantenibilidad}
+    \begin{itemize}
+        \item RNF3.1: La aplicación debe poseer patrones de diseño.
+        \item RNF3.2: El código deberá estar bien organizado y documentado.
+    \end{itemize}
+    
+    \item \textbf{RNF4 - Rendimiento}
+    \begin{itemize}
+        \item RNF4.1: La aplicación deberá tener un buen rendimiento a la hora de realizar las funciones básicas.
+        \item RNF4.2: La aplicación deberá traducir los chatbots de la manera más eficiente posible.
+    \end{itemize}
+\end{itemize}
+
+
+\section{Especificación de requisitos}
+Respecto a los casos de uso obtenidos de los requisitos desarrollados en el apartado anterior, se ha obtenido los siguientes:
+\begin{itemize}
+    \item \textbf{CU 1 - Inicio de sesión}
+    \begin{itemize}
+        \item CU 1.1 - Acceso correcto del usuario a la web
+        \item CU 1.2 - Acceso incorrecto del usuario a la web
+    \end{itemize}
+
+    \item \textbf{CU 2 - Registro}
+    \begin{itemize}
+        \item CU 2.1 - Registro correcto del usuario a la web
+        \item CU 2.2 - Registro incorrecto del usuario a la web
+    \end{itemize}
+
+    \item \textbf{CU 3 - Cerrar sesión}
+
+    \item \textbf{CU 4 - Importación}
+    \begin{itemize}
+        \item CU 4.1 - Importar agente con estructura y formatos correctos
+        \item CU 4.2 - Importar agente con estructura y formatos incorrectos
+    \end{itemize}
+
+    \item \textbf{CU 5 - Exportar}
+    \begin{itemize}
+        \item CU 5.1 - Exportar chatbot
+        \item CU 5.2 - Comprobar en Dialogflow que funciona la exportación
+    \end{itemize}
+
+    \item \textbf{CU 6 - Modificar}
+    \begin{itemize}
+        \item CU 6.1 - Modificar datos del agente
+        \item CU 6.2 - Modificar datos de una entidad
+        \item CU 6.3 - Modificar datos de un \textit{intent}
+    \end{itemize}
+
+    \item \textbf{CU 7 - Eliminar}
+    \begin{itemize}
+        \item CU 7.1 - Eliminar algún dato en \textit{intent} (\textit{speech}, \textit{data})
+        \item CU 7.2 - Eliminar algún dato en entidad (\textit{entry})
+        \item CU 7.3 - Eliminar un \textit{intent}
+        \item CU 7.4 - Eliminar una entidad
+        \item CU 7.5 - Eliminar un agente completo
+    \end{itemize}
+
+    \item \textbf{CU 8 - Añadir}
+    \begin{itemize}
+        \item CU 8.1 - Añadir entrada en entidad
+        \item CU 8.2 - Añadir \textit{speech}
+    \end{itemize}
+
+    \item \textbf{CU 9 - Buscadores}
+    \begin{itemize}
+        \item CU 9.1 - Buscador de la página de inicio
+        \item CU 9.2 - Buscador de la página general del agente
+        \item CU 9.3 - Buscador de la página de agente
+        \item CU 9.4 - Buscador de la página de entidades
+        \item CU 9.5 - Buscador de la página de \textit{intents}
+        \item CU 9.6 - Buscador de la página de entidad
+        \item CU 9.7 - Buscador de la página de \textit{intent}
+    \end{itemize}
+
+    \item \textbf{CU 10 - Traductor}
+    \begin{itemize}
+        \item CU 10.1 - Traducción completa de inglés a español
+        \item CU 10.2 - Traducción completa de español a inglés
+    \end{itemize}
+
+    \item \textbf{CU 11 - Administrador}
+    \begin{itemize}
+        \item CU 11.1 - Correcto acceso a la cuenta del administrador
+        \item CU 11.2 - Buscar usuario
+        \item CU 11.3 - Eliminar usuario
+    \end{itemize}
+\end{itemize}
+
+\newpage
+\subsection{Diagrama de casos de uso}
+\imagen{diagrama_casos_uso}{Diagrama de casos de uso}{.8}
+
+\subsection{Especificación de casos de uso}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 1.1}    & \textbf{Acceso correcto del usuario a la web}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-1.1\\
+		\textbf{Descripción}          & Acceder a la web mediante un usuario y una contraseña válidas\\
+		\textbf{Precondición}         & Inicio correcto de la aplicación \\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+			\item Introducir correo válido y registrado
+			\item Introducir contraseña correcta y registrada
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Acceso a la página de inicio del usuario \\
+		\textbf{Excepciones}          & No se accede la web \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 1.1 - Acceso correcto del usuario a la web}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 1.2}    & \textbf{Acceso incorrecto del usuario a la web}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-1.1\\
+		\textbf{Descripción}          & Acceder a la web mediante combinación de un usuario y una contraseña incorrectas\\
+		\textbf{Precondición}         & Inicio correcto de la aplicación \\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+			\item Introducir correo no válido y/o no registrado
+			\item Introducir contraseña correcta no válido y/o no registrada
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Mensaje de error \\
+		\textbf{Excepciones}          & Se accede a la web \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 1.2 - Acceso incorrecto del usuario a la web}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 2.1}    & \textbf{Registro correcto del usuario a la web}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-1.2\\
+		\textbf{Descripción}          & Registro correcto de un usuario\\
+		\textbf{Precondición}         & Acceder a la página de registro\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Introducir nombre de usuario válido
+			\item Introducir correo válido y no registrado
+			\item Introducir contraseña válido
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Redirigir al inicio de sesión para introducir los valores registrados \\
+		\textbf{Excepciones}          & Devuelve error y no registra \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 2.1 - Registro correcto del usuario a la web}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 2.2}    & \textbf{Registro incorrecto del usuario a la web}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-1.2\\
+		\textbf{Descripción}          & Registro incorrecto de un usuario\\
+		\textbf{Precondición}         & Acceder a la página de registro\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Introducir nombre de usuario no válido
+			\item Introducir correo no válido y/o registrado
+			\item Introducir contraseña no válida
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Mensaje de error de registro \\
+		\textbf{Excepciones}          & Devuelve al login \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 2.2 - Registro incorrecto del usuario a la web}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 3}    & \textbf{Cerrar sesión}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-1.4\\
+		\textbf{Descripción}          & Cerrar sesión de usuario\\
+		\textbf{Precondición}         & Encontrarse en la aplicación con la sesión iniciada\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Pulsar botón de cerrar sesión
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Volver al login \\
+		\textbf{Excepciones}          & No cerrar la sesión \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 3 - Cerrar sesión}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 4.1}    & \textbf{Importar agente con estructura y formatos correctos}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-8.1\\
+		\textbf{Descripción}          & Importación de chatbot en el sistema\\
+		\textbf{Precondición}         & Acceder con sesión de usuario\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Encontrarse en la pantallas ``\textit{Importar/Exportar}''
+			\item Seleccionar importar y el archivo zip con estructura a importar
+			\item Importar el archivo
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Un nuevo chatbot agregado \\
+		\textbf{Excepciones}          & Error en la importación \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 4.1 - Importar agente con estructura y formatos correctos}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 4.2}    & \textbf{Importar agente con estructura y formatos incorrectos}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-8.1\\
+		\textbf{Descripción}          & Importación errónea de chatbot en el sistema\\
+		\textbf{Precondición}         & Acceder con sesión de usuario\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Encontrarse en la pantallas ``\textit{Importar/Exportar}''
+			\item Seleccionar importar y el archivo zip con estructura a importar
+			\item Importar el archivo
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Error en la importación \\
+		\textbf{Excepciones}          & Adición del chatbot \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 4.2 - Importar agente con estructura y formatos incorrectos}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 5.1}    & \textbf{Exportar chatbot}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-8.2\\
+		\textbf{Descripción}          & Exportación de chatbot\\
+		\textbf{Precondición}         & Acceder con sesión de usuario\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Encontrarse en la pantallas ``\textit{Importar/Exportar}''
+			\item Seleccionar exportar y el nombre del agente a exportar
+			\item Obtener el archivo
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Archivo exportado correctamente \\
+		\textbf{Excepciones}          & No exportación \\
+		\textbf{Importancia}          & Media \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 5.1 - Exportar chatbot}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 5.3}    & \textbf{Comprobar en Dialogflow que funciona la exportación}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-8.2\\
+		\textbf{Descripción}          & Importar el archivo exportado\\
+		\textbf{Precondición}         & Acceder a Dialogflow\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Acceder a la configuración del agente, seleccionar las sección de importar exportar e importar (\textit{restore})
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Archivo importado o restaurado  \\
+		\textbf{Excepciones}          & Error de importación \\
+		\textbf{Importancia}          & Baja \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 5.3 - Comprobar en Dialogflow que funciona la exportación}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 6.1}    & \textbf{Modificar datos del agente}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.1, RF-3.1\\
+		\textbf{Descripción}          & Modificación de agente\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Acceder a un agente y entrar en el bloque de agente
+                \item Ver información actual del agente
+                \item Realizar la modificación
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Agente modificado  \\
+		\textbf{Excepciones}          & No se modifica el agente \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 6.1 - Modificar datos del agente}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 6.2}    & \textbf{Modificar datos de una entidad}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.2, RF-3.2\\
+		\textbf{Descripción}          & Modificación de entidad\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Acceder a un agente y entrar en el bloque de entidades y escoger una
+                \item Ver información actual de esa entidad
+                \item Realizar la modificación
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Entidad modificada  \\
+		\textbf{Excepciones}          & No se modifica la entidad \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 6.2 - Modificar datos de una entidad}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 6.3}    & \textbf{Modificar datos de un \textit{intent}}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.3, RF-3.3\\
+		\textbf{Descripción}          & Modificación de \textit{intent}\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Acceder a un agente y entrar en el bloque de \textit{intents} y escoger uno
+                \item Ver información actual de ese \textit{intent}
+                \item Realizar la modificación
+		\end{enumerate}\\
+		\textbf{Postcondición}        & \textit{Intent} modificada  \\
+		\textbf{Excepciones}          & No se modifica el \textit{intent} \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 6.3 - Modificar datos de un \textit{intent}}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 7.1}    & \textbf{Eliminar algún dato en \textit{intent} (\textit{speech}, \textit{data})}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.3, RF-4.5, RF-4.6\\
+		\textbf{Descripción}          & Eliminación de datos \textit{intent} (\textit{speech}, \textit{data})\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Acceder a un agente y entrar en el bloque de \textit{intents} y escoger uno
+                \item Dentro de ese \textit{intent}, pulsar el bóton eliminar en \textit{speech} y/o en \textit{data}
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Dato(s) eliminado(s)  \\
+		\textbf{Excepciones}          & No se elimina la información \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 7.1 - Eliminar algún dato en \textit{intent} (\textit{speech}, \textit{data})}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 7.2}    & \textbf{Eliminar algún datos en entidad (\textit{entry}) }\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.2, RF-4.3\\
+		\textbf{Descripción}          & Eliminación de una entrada de una entidad\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Acceder a un agente y entrar en el bloque de entidades y escoger una
+                \item Dentro de esa entidad, pulsar el botón eliminar en una o varias \textit{entrys}
+		\end{enumerate}\\
+		\textbf{Postcondición}        & \textit{Entry} eliminada  \\
+		\textbf{Excepciones}          & No se elimina \textit{entry} \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 7.2 - Eliminar algún datos en entidad (\textit{entry})}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 7.3}    & \textbf{Eliminar un \textit{intent}}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.3, RF-4.4\\
+		\textbf{Descripción}          & Eliminación de \textit{intent}\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Acceder a un agente y entrar en el bloque de \textit{intents} y escoger uno
+                \item Eliminar a través del botón dicho \textit{intent}
+		\end{enumerate}\\
+		\textbf{Postcondición}        & \textit{Intent} eliminado  \\
+		\textbf{Excepciones}          & No se elimina el \textit{intent} \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 7.3 - Eliminar un \textit{intent}}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 7.4}    & \textbf{Eliminar una entidad}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.2, RF-4.2\\
+		\textbf{Descripción}          & Eliminación de entidad\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Acceder a un agente y entrar en el bloque de entidades y escoger una
+                \item Eliminar a través del botón dicha entidad
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Entidad eliminada  \\
+		\textbf{Excepciones}          & No se elimina la entidad \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 7.4 - Eliminar una entidad}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 7.5}    & \textbf{Eliminar un agente completo}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.1, RF-2.2, RF-2.3, FR-2.4, RF-4.1\\
+		\textbf{Descripción}          & Eliminación del agente completo\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Escoger un agente
+                \item Eliminarlo a través del botón
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Agente eliminado  \\
+		\textbf{Excepciones}          & No se elimina el agente \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 7.5 - Eliminar un agente completo}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 8.1}    & \textbf{Añadir entrada en entidad}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.2, RF-5.1\\
+		\textbf{Descripción}          & Adición de entrada a una entidad\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Acceder a un agente y entrar en el bloque de entidades y escoger una
+                \item Añadir entrada a través del formulario
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Entrada añadida  \\
+		\textbf{Excepciones}          & No se añade la entrada \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 8.1 - Añadir entrada en entidad}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 8.2}    & \textbf{Añadir \textit{speech}}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.3, FR-5.2\\
+		\textbf{Descripción}          & Adición de \textit{speech} a un intent\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Acceder a un agente y entrar en el bloque de \textit{intents} y escoger uno
+                \item Añadir \textit{speech} a través del formulario
+		\end{enumerate}\\
+		\textbf{Postcondición}        & \textit{Speech} añadido  \\
+		\textbf{Excepciones}          & No se añade el \textit{speech} \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 8.2 - Añadir \textit{speech}}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 9.2}    & \textbf{Buscador de la página general del agente}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.1, RF-2.2, RF-2.3, FR-6.2\\
+		\textbf{Descripción}          & Búsqueda desde la página general del agente\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Desde la página de inicio general del agente, realizar una búsqueda
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Mostrar coincidencias  \\
+		\textbf{Excepciones}          & No realizar la búsqueda correctamente \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 9.2 - Buscador de la página general del agente}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 9.3}    & \textbf{Buscador de la página de agente}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.1, FR-6.3\\
+		\textbf{Descripción}          & Búsqueda desde la página del agente\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Desde la página del agente, realizar una búsqueda
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Mostrar coincidencias  \\
+		\textbf{Excepciones}          & No realizar la búsqueda correctamente \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 9.3 - Buscador de la página de agente}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 9.4}    & \textbf{Buscador de la página de entidades}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.2, FR-6.4\\
+		\textbf{Descripción}          & Búsqueda desde la página de entidades\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Desde la página de entidades, realizar una búsqueda
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Mostrar coincidencias  \\
+		\textbf{Excepciones}          & No realizar la búsqueda correctamente \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 9.4 - Buscador de la página de entidades}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 9.5}    & \textbf{Buscador de la página de \textit{intents}}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.3, FR-6.5\\
+		\textbf{Descripción}          & Búsqueda desde la página de \textit{intents}\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Desde la página de \textit{intents}, realizar una búsqueda
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Mostrar coincidencias  \\
+		\textbf{Excepciones}          & No realizar la búsqueda correctamente \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 9.5 - Buscador de la página de \textit{intents}}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 9.6}    & \textbf{Buscador de la página de entidad}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.2, FR-6.6\\
+		\textbf{Descripción}          & Búsqueda desde la página de una entidad\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Desde la página de una entidad, realizar una búsqueda
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Mostrar coincidencias  \\
+		\textbf{Excepciones}          & No realizar la búsqueda correctamente \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 9.6 - Buscador de la página de entidad}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 9.7}    & \textbf{Buscador de la página de un \textit{intent}}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.3, FR-6.7\\
+		\textbf{Descripción}          & Búsqueda desde la página de in \textit{intent}\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Desde la página de un \textit{intent}, realizar una búsqueda
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Mostrar coincidencias  \\
+		\textbf{Excepciones}          & No realizar la búsqueda correctamente \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 9.7 - Buscador de la página de un \textit{intent}}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 10.1}    & \textbf{Traducción completa de inglés a español}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.1, RF-2.2, RF-2.3, RF-7.1\\
+		\textbf{Descripción}          & Traducción de chatbot de inglés a español\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Desde la página del agente, pulsar el botón ``\textit{Inglés}''
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Traducir chatbot  \\
+		\textbf{Excepciones}          & No se traduce el chatbot \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 10.1 - Traducción completa de inglés a español}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 10.2}    & \textbf{Traducción completa de español a inglés}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-2.1, RF-2.2, RF-2.3, RF-7.1\\
+		\textbf{Descripción}          & Traducción de chatbot de español a inglés\\
+		\textbf{Precondición}         & Acceder a ChatScriptor\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Desde la página del agente, pulsar el botón ``\textit{Español}''
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Traducir chatbot  \\
+		\textbf{Excepciones}          & No se traduce el chatbot \\
+		\textbf{Importancia}          & Alta \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 10.2 - Traducción completa de español a inglés}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 11.1}    & \textbf{Correcto acceso a la cuenta del administrador}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-1.1\\
+		\textbf{Descripción}          & Acceso a la cuenta de administrador\\
+		\textbf{Precondición}         & Acceso a la aplicación web\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Iniciar sesión con los datos del usuario administrador
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Acceder a la administración de usuarios  \\
+		\textbf{Excepciones}          & No permitir el acceso \\
+		\textbf{Importancia}          & Baja \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 11.1 - Correcto acceso a la cuenta del administrador}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 11.2}    & \textbf{Buscar usuarios}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-1.5\\
+		\textbf{Descripción}          & Realizar una búsqueda entre los usuarios registrados en ChatScriptor\\
+		\textbf{Precondición}         & Acceder a la administración de usuarios\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Introducir término a buscar en el formulario
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Mostrar coincidencias  \\
+		\textbf{Excepciones}          & No realizar la búsqueda correctamente\\
+		\textbf{Importancia}          & Baja \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 11.2 - Correcto acceso a la cuenta del administrador}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\begin{tabularx}{\linewidth}{ p{0.21\columnwidth} p{0.71\columnwidth} }
+		\toprule
+		\textbf{CU 11.3}    & \textbf{Eliminar usuarios}\\
+		\toprule
+		\textbf{Versión}              & 1.0    \\
+		\textbf{Autor}                & Claudia Landeira \\
+		\textbf{Requisitos asociados} & RF-1.3, RF-1.5\\
+		\textbf{Descripción}          & Eliminar usuarios\\
+		\textbf{Precondición}         & Acceder a la administración de usuarios\\
+		\textbf{Acciones}             &
+		\begin{enumerate}
+			\def\labelenumi{\arabic{enumi}.}
+			\tightlist
+                \item Escoger entre los usuarios y elimininar a través del botón.
+		\end{enumerate}\\
+		\textbf{Postcondición}        & Eliminar usuario  \\
+		\textbf{Excepciones}          & No eliminar el usuario\\
+		\textbf{Importancia}          & Baja \\
+		\bottomrule
+	\end{tabularx}
+	\caption{CU 11. - Eliminar usuarios}
+\end{table}

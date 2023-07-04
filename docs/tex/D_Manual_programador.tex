@@ -1,0 +1,606 @@
+\apendice{Documentación técnica de programación}
+
+\section{Introducción}
+En este anexo, se desarrolla la documentación técnica de programación. Se mostrará la instalación del entorno de desarrollo, la estructura de los directorios, su compilación, instalación y ejecución y la configuración de las pruebas.
+
+\section{Estructura de directorios}
+En el repositorio del proyecto (\url{https://github.com/clv1003/Chat-Scriptor}), se encuentra la siguiente estructura de directorios:
+
+\begin{itemize}
+    \item /: se trata del directorio raíz y en él se encuentran el archivo \textit{README}, la base de datos con los usuarios con sus contraseñas cifradas, la web, el archivo de requerimientos y el archivo \textit{Dockerfile}, con su respectivo archivo \textit{yml}.
+    \item /web/: se trata del módulo correspondiente a la aplicación web y es donde se encuentra la aplicación Flask y sus subdirectorios.
+    
+    \item /web/endpoints/: se trata del módulo correspondiente al desarrollo de los procesamientos de la web.
+    \item /web/endpoints/traductor: se trata del módulo que contiene los procedimientos para el traductor.
+    
+    \item /web/static/imagenes/: se trata del módulo correspondiente a las imágenes estáticas que se usan en la interfaz.
+    \item /web/static/css/: se trata del módulo correspondiente a los archivos de diseño estáticos que se usan en la interfaz.
+    \item /web/static/js/: se trata del módulo correspondiente a las animaciones \textit{javascript} que se usan en la interfaz.
+    
+    \item /web/templates/: se trata del módulo correspondiente a las diferentes pantallas de la interfaz web. En él se encuentran las pantallas de carga, la de registro y la de inicio de sesión.
+    \item /web/templates/comunes/: se trata del módulo que contiene las partes de la interfaz que son usadas en todas o la mayor parte de las pantallas.
+    \item /web/templates/principal/: se trata del módulo que contiene las pantallas de visualización y modificación de los chatbots, así como las pantallas de los buscadores.
+    
+    \item /docs/: documentación del proyecto, en formato \textit{pdf} y \LaTeX, así como los archivos que contienen la información bibliográfica.
+    \item /docs/img/: imágenes utilizadas en la documentación.
+    \item /docs/tex/: documentación del proyecto en formato \LaTeX.
+
+    \item /img/: imágenes relativas al directorio y al \textit{README} raíz.
+    \item /usuarios/: directorio donde se almacenan los chatbots de los usuarios.
+    
+\end{itemize}
+
+\section{Manual del programador}
+A continuación, se muestran los elementos usados para el desarrollo de este proyecto con el fin de permitir que, en caso de continuar con el trabajo, cualquiera sea capaz de realizarlo con las mismas características con las que se ha desarrollado.
+
+\subsection{Entorno de desarrollo}
+Los programas y dependencias usados para el desarrollo de este proyecto, han sido los siguientes:
+\begin{itemize}
+    \item Python 3.10
+    \item PyCharm Professional
+    \item Git
+    \item Bibliotecas Python
+    \item Docker
+\end{itemize}
+
+\subsubsection{Python 3.10}
+Versión del lenguaje de programación Python \cite{PythonRe2:online}.
+
+\subsubsection{Pycharm Professional}
+A la hora de realizar la aplicación web, se ha programado en lenguaje Python, por lo que PyCharm Professional (JetBrains) \cite{PyCharme42:online} es uno de los IDEs más recomendados para este tipo de proyectos.
+Además, debido a las ventajas de la Universidad de Burgos, este IDE se puede encontrar en su versión completa.
+A continuación, se muestra su interfaz en la Figura D.1:
+
+\imagen{PyCharmProfessional}{Interfaz PyCharm Professional}{1}
+
+\subsubsection{Git}
+Git es un gestor de versiones de proyectos gratuito y \textit{open source}. Se usará para clonar el repositorio, mantener un histórico de cambios, etc. permitiendo el trabajo colaborativo.
+
+
+\subsubsection{Bibliotecas Python y \textit{frameworks}}
+A continuación, se muestra todo lo que se necesita para que el proyecto funciones correctamente. Todo ello, viene en el archivo \textit{requirements.txt} del repositorio y que más tarde, se explicará su instalación.
+
+El \textit{framework} utilizado para el front-end, los iconos y las animaciones, es \textit{Bootstrap}.
+\begin{itemize}
+    \item Bootstrap 5.3.0: bootstrap
+    \item Bootstrap Icons: bootstrap-icons
+\end{itemize}
+
+Las bibliotecas Python necesarias son las siguientes, en el archivo de requerimientos aparecen algunas de ellas desglosadas para evitar fallos de versión:
+\begin{itemize}
+    \item ``\textit{flask}'' \cite{flask}: base para la creación de la aplicación de este proyecto.
+    \item ``\textit{bcrypt}'' \cite{bcrypt·P95:online}: cifrado de las contraseñas de los usuarios.
+    \item ``\textit{transformers}'' \cite{Transf61:online}: base para los modelos de traducción junto con:
+    \begin{itemize}
+        \item ``\textit{torch}'' \cite{PyTorch69:online}
+        \item ``\textit{torchvision}'' \cite{torchvis91:online}
+        \item ``\textit{sentencepiece}'' \cite{sentence91:online}
+        \item ``\textit{sacremoses}'' \cite{sacremos42:online}
+    \end{itemize}
+    \item ``\textit{waitress}'' \cite{waitress41:online}
+\end{itemize}
+
+
+\section{Instalación y ejecución del proyecto}
+\subsection{Instalación y ejecución}
+Tal y como se ha descrito en el apartado anterior, se deberán tener instalados todos los recursos nombrados. Para facilitar este proceso, se ha incluido un archivo \textit{Dockerfile} que acelerará la configuración y ejecución.
+
+\subsection{Sin usar PyCharm}
+Este proyecto necesita diferentes dependencias y bibliotecas. Siguiendo los siguientes pasos se facilita la configuración en cualquier máquina:
+
+\subsubsection{Paso 1: instalar Python}
+Es obligatorio y necesario tener instalado Python en tu máquina. Puedes descargarlo desde su sitio web oficial: \url{python.org/downloads}.
+
+La versión debe ser Python 3.10 en adelante.
+
+\subsubsection{Paso 2: clonación del repositorio}
+Clonar el repositorio alojado en GitHub:
+\begin{verbatim}
+    git clone https://github.com/clv1003/Chat-Scriptor
+    cd Chat-Scriptor
+\end{verbatim}
+
+\subsubsection{Paso 3: Docker}
+La aplicación posee un archivo \textit{Dockerfile} que permite la ejecución e instalación de todos los requerimientos. Para ellos, solo tendremos que construir la imagen y a continuación, iniciar el docker.
+
+Introduciremos en la terminal el siguiente comando, deberán realizarse desde el directorio donde tengamos el proyecto.
+
+\begin{verbatim}
+    docker compose up
+\end{verbatim}
+
+Con esto, construiremos y ejecutaremos el contenedor docker a través de los archivos \textit{Dokerfile} y el \textit{docker-compose.yml}
+
+Una vez finalice, si introducimos la dirección \url{http://localhost:8080/} o \url{http://127.0.0.1:8080/}, podremos acceder al servidor local con la aplicación.
+
+Para terminar, podremos finalizar los procesos con el comando inverso:
+\begin{verbatim}
+    docker compose down
+\end{verbatim}
+
+\subsection{PyCharm}
+Debido a que para el desarrollo del proyecto se ha usado este IDE, se añade la configuración exacta.
+
+\subsubsection{Paso 1: instalar Pycharm y Python}
+Para esta configuración, es necesario tener instalado el IDE Pycharm (en cualquiera de sus versiones, aunque si eres alumno de la Universidad de Burgos podrás acceder a la versión Pycharm Professional).
+
+La versión debe ser Python 3.10 en adelante. Puedes descargarlo desde su sitio web oficial: \url{https://www.python.org/downloads/}.
+
+Para obtener Pycharm, puedes hacerlo desde su página oficial \url{https://www.jetbrains.com/pycharm/download/?section=windows}.
+
+\subsubsection{Paso 2: clonación del repositorio}
+Clonar el repositorio alojado en GitHub:
+\begin{verbatim}
+    git clone https://github.com/clv1003/Chat-Scriptor
+    cd Chat-Scriptor
+\end{verbatim}
+
+\subsubsection{Paso 3: abrir el proyecto en Pycharm}
+\begin{enumerate}
+    \item Abre PyCharm.
+    \item Selecciona \textit{Open} en el menú principal.
+    \item Navega hasta la carpeta raíz del proyecto.
+    \item Selecciona el archivo \textit{pycharm.project} o simplemente selecciona la carpeta raíz del proyecto.
+\end{enumerate}
+
+\subsubsection{Paso 4: Docker}
+La aplicación posee un archivo \textit{Dockerfile} que permite la ejecución e instalación de todos los requerimientos. Para ellos, solo tendremos que construir la imagen y a continuación, iniciar el docker.
+
+Para ello, abriremos una terminal (View -> Tool Windows -> Terminal) y ejecutaremos el comando:
+
+\begin{verbatim}
+    docker compose up
+\end{verbatim}
+
+Con esto, construiremos y ejecutaremos el contenedor docker a través de los archivos \textit{Dokerfile} y el \textit{docker-compose.yml}
+
+Una vez finalice, si introducimos la dirección \url{http://localhost:8080/} o \url{http://127.0.0.1:8080/}, podremos acceder al servidor local con la aplicación.
+
+Para terminar, podremos finalizar los procesos con el comando inverso:
+\begin{verbatim}
+    docker compose down
+\end{verbatim}
+
+\subsection{Azure}
+Para realizar el despliegue de la aplicación, se han necesitado crear tres elementos dentro del portal de Azure: 
+\begin{itemize}
+    \item Un grupo de recursos: engloba al resto de elementos.
+    \item Un registro de contenedor: funciona como un repositorio.
+    \item Un \textit{app service}: será el encargado de crear la aplicación web.
+\end{itemize}
+
+\imagen{AZ-0}{Recursos usados en Azure}{1}
+
+Una vez estén esto tres elementos, se debe obtener una clave de acceso dentro del registro de contenedor, que permitirá identificar nuestro usuario dentro del repositorio y poder subir el código.
+
+\imagen{AZ-1}{Clave de acceso al registro de contenedor}{1}
+
+Ahora se necesita obtener del repositorio de GitHub todos los archivos, descargando en formato \textit{ZIP}. Se guardará y descomprimirá en un directorio conocido. Deberá tener el siguiente aspecto:
+
+\imagen{AZ-2}{Archivos necesarios para el despliegue en Azure}{1}
+
+Una vez tengamos estos, abriremos Docker y una terminal que apunte al directorio donde se encuentra el archivo anterior. A continuación, se introducirán los siguientes comandos:
+
+\begin{verbatim}
+    docker build -t chatscriptor.azurecr.io/flask .
+    docker login chatscriptor.azurecr.io --username *NU* --password *PSW*
+    docker push chatscriptor.azurecr.io/flask
+\end{verbatim}
+
+Donde ``NU'' es donde se pondrá el nombre de usuario y ``PSW'' la clave de acceso, ambos disponibles en la página de claves de acceso (ver figura D.3).
+
+Completado este proceso, podremos acceder al recurso de \textit{app service}, donde se añadirá una nueva configuración de la aplicación:
+\begin{verbatim}
+    WEBSITES_PORT
+    8080
+\end{verbatim}
+
+\imagen{AZ-3}{Nueva configuración de la aplicación}{1}
+
+Accediendo a la configuración del centro de implementación, se deberá de asegurar que está marcada la opción de implementación continua (ver figura D.6). Esto permitirá que al hacer una nueva petición \textit{push}, la web se actualice automáticamente.
+
+\imagen{AZ-4}{Configuración de implementación continua}{1}
+
+Si realizamos todos estos pasos, se podrá acceder a la web (\url{https://chatscriptor.azurewebsites.net/}).
+
+\section{Pruebas del sistema}
+En la presente sección, se mostrarán las diferentes pruebas realizadas. Destacar que estas pruebas se han ido realizando a lo largo de todo el desarrollo, ya que cada vez que se ha añadido una nueva funcionalidad, se efectuaba todo el ciclo de comprobaciones, evitando que las acciones que ya estuvieran en funcionamiento continuaran comportándose de la misma forma.
+
+Además, las figuras de las siguientes divisiones son demostraciones de un solo chatbot, pero todas las funcionalidades han sido probadas con más de uno con diferentes características.
+
+\subsection{Sesión}
+En este apartado se muestran las diferentes pruebas sobre los campos de las sesiones de usuarios. Esta era una parte fundamental del proyecto, dado que cada usuario solo debe tener acceso a sus agentes.
+
+\subsubsection{Inicio de sesión}
+Se han tenido en cuenta que ChatScriptor cumpliera los siguientes casos de prueba:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 1 - Inicio de sesión   \\
+\midrule
+CP 1.1 - Acceso correcto del usuario a la web   \\
+CP 1.2 - Acceso incorrecto del usuario a la web \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para inicio de sesión}
+\end{table}
+
+\textbf{CP 1.1 - Acceso correcto del usuario a la web} \\
+Iniciamos sesión con una cuenta ya registradas, en este caso será la del usuario de pruebas \textit{usuario1@correo.com} con contraseña \textit{1234}.
+\imagen{CP 1.1}{Inicio de sesión correcto}{1}
+
+\textbf{CP 1.2 - Acceso incorrecto del usuario a la web.} \\
+A continuación, se comprueba si al introducir una combinación errónea de usuario y/o contraseña está nos devuelve error.
+\imagen{CP 1.2}{Inicio de sesión incorrecto}{1}
+
+\subsubsection{Registro}
+Se han tenido en cuenta que ChatScriptor cumpliera los siguientes casos de prueba:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 2 - Registro   \\
+\midrule
+CP 2.1 - Registro correcto del usuario a la web   \\
+CP 2.2 - Registro incorrecto del usuario a la web \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para registro de usuarios}
+\end{table}
+
+\textbf{CP 2.1 - Registro correcto del usuario a la web} \\
+Como se ha visto en la anterior prueba, el usuario \textit{user@correo.com} con contraseña \textit{asdf} no está registrado, así se comprobará si al introducir los datos, este se añade correctamente a la lista de acceso de usuarios.
+\imagen{CP 2.1}{Registro de nuevo usuario correcto}{1}
+\imagen{CP 2.1 - BD}{Nuevo usuario añadido a la lista de acceso}{.7}
+Además, con esto comprobamos también que las contraseñas están siendo cifradas.
+
+\textbf{CP 2.2 - Registro incorrecto del usuario a la web} \\
+Ahora, se comprobará si al introducir diferentes combinaciones de errores en el registro, este responde correctamente.
+\imagen{CP 2.2 - 1}{Introducción errónea de correo electrónico}{1}
+\imagen{CP 2.2 - 2}{Falta contraseña}{1}
+\imagen{CP 2.2 - 3}{Falta nombre de usuario}{1}
+\imagen{CP 2.2 - 4}{El usuario ya se encuentra registrado}{1}
+
+\subsubsection{Cerrar sesión}
+Se han tenido en cuenta que ChatScriptor cumpliera el siguiente caso de prueba: 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 3 - Cerrar sesión   \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para el cierre de sesión}
+\end{table}
+
+Para comprobarlo, se inicia sesión con la cuenta de prueba y se realiza el posterior cierre de sesión. Si este vuelve a la página de inicio de sesión, el resultado será satisfactorio.
+
+\imagen{CP 3}{Cierre de sesión}{1}
+
+\subsubsection{Direcciones}
+Se han tenido en cuenta que ChatScriptor cumpliera los siguientes casos de prueba:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 4 - Direcciones   \\
+\midrule
+CP 4.1 - Permitir acceso a través de dirección con inicio de sesión aceptado   \\
+CP 4.2 - No permitir acceso a través dirección sin inicio de sesión \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para las direcciones}
+\end{table}
+
+\textbf{CP 4.1 - Permitir acceso a través de dirección con inicio de sesión aceptado} \\
+Comprobar si accediendo a la cuenta del usuario, si cambiando las \textit{URLs} se puede mover de un sitio a otro.
+\imagen{CP 4.1}{Cambio de \textit{URL} para ir a esa página teniendo acceso}{1}
+\textbf{CP 4.2 - No permitir acceso a través dirección sin inicio de sesión}
+
+Comprobar que sin haber accedido a ninguna sesión, al cambiar la dirección, esta te devuelve a la página de inicio de sesión, evitando accesos indeseados.
+\imagen{CP 4.2}{Cambio de \textit{URL} para ir a esa página sin tener acceso}{1}
+
+\subsection{Importar/Exportar agente}
+Seguidamente, se comprobará si las funcionalidades de importación y exportación de agentes funciona. Recordemos que debido a la generación de identificadores de Google, no se puede crear un chatbot desde cero al completo, pero es posible crear un chatbot vacío e ir añadiendo todos los parámetros que necesitemos (si no tienen \textit{id}).
+
+\subsubsection{Importar}
+Se han tenido en cuenta que ChatScriptor cumpliera los siguiente casos de prueba:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 5 - Importación   \\
+\midrule
+CP 5.1 - Importar agente con estructura y formatos correctos   \\
+CP 5.2 - Importar agente con estructura y formatos incorrectos \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para las importaciones}
+\end{table}
+
+\textbf{CP 5.1 - Importar agente con estructura y formatos correctos} \\
+Importación de un agente con la estructura y formatos correctos.
+\imagen{CP 5.1 - 1}{Importación de un nuevo chatbot correcto}{1}
+\imagen{CP 5.1 - 2}{Comprobación de que este nuevo chatbot ahora está en el usuario}{1}
+
+\textbf{CP 5.2 - Importar agente con estructura y formatos incorrectos} \\
+Ahora probamos a introducir un archivo sin formato .zip y/o sin la estructura de un chatbot.
+\imagen{CP 5.2 - 1}{Importación de un nuevo chatbot de estructura incorrecta}{1}
+\imagen{CP 5.2 - 2}{Importación de un nuevo chatbot sin el formato adecuado}{1}
+\imagen{CP 5.2 - 3}{Mensaje en caso de no importar nada}{1}
+
+\subsubsection{Exportar}
+Se han tenido en cuenta que ChatScriptor cumpliera los siguiente casos de prueba:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 6 - Exportar   \\
+\midrule
+CP 6.1 - Exportar chatbot   \\
+CP 6.2 - Comprobar la exportación múltiple del mismo agente \\
+CP 6.3 - Comprobar en Dialogflow que funciona la exportación \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para las exportaciones}
+\end{table}
+
+\textbf{CP 6.1 - Exportar chatbot} \\
+Exportar un chatbot y comprobar que se ha realizado dicha exportación.
+\imagen{CP 6.1}{Exportación y comprobación de su existencia en el directorio correcto}{1}
+
+\textbf{CP 6.2 - Comprobar la exportación múltiple del mismo agente} \\
+Exportar el mismo chatbot varias veces y comprobar que se ha realizado dicha exportación sin sobrescribir el archivo anterior.
+\imagen{CP 6.2}{Exportación y comprobación}{1}
+
+\textbf{CP 6.3 - Comprobar en Dialogflow que funciona la exportación} \\
+Escoger uno de los chatbots exportados en las pruebas anteriores y comprobar, que al importarlo de nuevo a Dialogflow, la estructura de los archivos y su contenido se mantiene. En esta prueba, se tiene en cuenta lo descrito en el apartado de la memoria \textit{``Aspectos relevante del desarrollo del proyecto''}, ya que nos encontramos con que algunos cambios no se realizan debido fallos dentro del propio Dialogflow.
+\imagen{CP 6.3}{Importación en Dialogflow}{1}
+
+\subsection{Funcionalidades básicas}
+Una vez se sabe que se pueden acceder a la página de forma segura e incorporar agentes, ahora toca probar si las modificaciones, eliminaciones y adiciones de información suceden correctamente. Al finalizar, se hará una comprobación extra en la que después de haber editado el chatbot, lo importemos en Dialogflow, cerciorándonos de que, a pesar de los cambios ejecutados, no hay ningún problema.
+
+\subsubsection{Modificar}
+En esta sección, editaremos en todas las partes posibles del chatbot.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 7 - Modificar   \\
+\midrule
+CP 7.1 - Modificar datos del agente  \\
+CP 7.2 - Modificar datos de una entidad \\
+CP 7.3 - Modificar datos de un intent \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para las modificaciones}
+\end{table}
+
+\textbf{CP 7.1 - Modificar datos del agente} \\
+Modificación de los diferentes parámetros encontrados en el agente.
+\imagen{CP 7.1 - 1}{Información actual del agente}{1}
+\imagen{CP 7.1 - 2}{Información cambiada del agente}{1}
+
+\textbf{CP 7.2 - Modificar datos de una entidad} \\
+Modificación de los diferentes parámetros encontrados en la entidad.
+\imagen{CP 7.2 - 1}{Información actual de la entidad}{1}
+\imagen{CP 7.2 - 2}{Información cambiada de la entidad}{1}
+
+\textbf{CP 7.3 - Modificar datos de un intent} \\
+Modificación de los diferentes parámetros encontrados en el intent.
+\imagen{CP 7.3 - 1}{Información actual del intent}{1}
+\imagen{CP 7.3 - 2}{Información cambiada del intent}{1}
+
+\subsubsection{Eliminar}
+En esta sección, se elimina en todas las partes posibles del chatbot. El estado actual para la realización de estas pruebas, es el modificado del apartado anterior.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 8 - Eliminar   \\
+\midrule
+CP 8.1 - Eliminar algún dato en intent (speech, data)  \\
+CP 8.2 - Eliminar algún dato en entidad (entry) \\
+CP 8.3 - Eliminar un intent \\
+CP 8.4 - Eliminar una entidad \\
+CP 8.5 - Eliminar un agente completo \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para las eliminaciones}
+\end{table}
+
+\textbf{CP 8.1 - Eliminar algún dato en intent (speech, data)}  \\
+Eliminar un speech y una frase de entrenamiento del intent.
+\imagen{CP 8.1 - 1}{Intent con eliminación de frase de entrenamiento}{1}
+\imagen{CP 8.1 - 2}{Intent con eliminación de speech}{1}
+
+\textbf{CP 8.2 - Eliminar algún dato en entidad (entry)} \\
+Eliminar una entrada de la entidad.
+\imagen{CP 8.2}{Entidad con eliminación de una entrada de sinónimos}{1}
+
+\textbf{CP 8.3 - Eliminar un intent} \\
+Eliminar un intent completo. Se eliminará un intent de un agente diferente para no eliminar el efecto de las modificaciones.
+\imagen{CP 8.3}{Eliminación de un intent}{1}
+
+\textbf{CP 8.4 - Eliminar una entidad} \\
+Eliminar una entidad completa. Se eliminará una entidad de un chatbot distinto para no afectar a las modificaciones.
+\imagen{CP 8.4}{Eliminación de una entidad completa}{1}
+
+\textbf{CP 8.5 - Eliminar un agente completo} \\
+Eliminar un agente completo. Para este ejemplo, se eliminará otro chatbot que no sea el modificado para poder seguir las pruebas siguientes.
+\imagen{CP 8.5}{Eliminación de un agente completo}{1}
+
+
+\subsubsection{Añadir}
+En esta sección, se añadirá en todas las partes posibles del chatbot. El estado actual de las entidades e intents es el mismo que en el apartado anterior.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 9 - Añadir   \\
+\midrule
+CP 9.1 - Añadir entrada en entidad  \\
+CP 9.2 - Añadir speech \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para las adiciones}
+\end{table}
+
+\textbf{CP 9.1 - Añadir entrada en entidad} \\
+Añadir una entrada a una entidad.
+\imagen{CP 9.1}{Adición de nueva entrada a entidad}{1}
+
+\textbf{CP 9.2 - Añadir speech} \\
+Añadir una respuesta a un intent.
+\imagen{CP 9.2}{Adición de una nueva respuesta}{1}
+
+\subsubsection{Agente editado en Dialogflow}
+Comprobación extra donde vemos si la edición en ChatScriptor no causa problemas una vez que se ha importado a Dialogflow.
+\imagen{CP 9.3 - 1}{Restauración del agente en Dialogflow}{1}
+\imagen{CP 9.3 - 2}{Comprobación de que está la nueva entrada en entidades}{1}
+
+\subsection{Funcionalidades}
+A continuación, se realizan las pruebas correspondientes a los buscadores de las diferentes pantallas y del traductor.
+
+\subsubsection{Buscadores}
+Al igual que en los anteriores puntos, se busca que se cumplan los siguientes casos de prueba:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 10 - Buscadores   \\
+\midrule
+CP 10.1 - Buscador de la página de inicio  \\
+CP 10.2 - Buscador de la página general del agente \\
+CP 10.3 - Buscador de la página de agente \\
+CP 10.4 - Buscador de la página de entidades \\
+CP 10.5 - Buscador de la página de intents \\
+CP 10.6 - Buscador de la página de entidad \\
+CP 10.7 - Buscador de la página de intent \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para los buscadores}
+\end{table}
+
+\textbf{CP 10.1 - Correcto funcionamiento del buscador de la página de inicio} \\
+Realizar una búsqueda en la página de inicio con todos los chatbots y comprobar que el resultado de la búsqueda es correcto.
+\imagen{CP 10.1}{Resultado de la búsqueda en la página de inicio}{1}
+
+\textbf{CP 10.2 - Correcto funcionamiento del buscador de la página general del agente} \\
+Realizar una búsqueda en la página de inicio con todos los chatbots y comprobar que el resultado de la búsqueda es correcto.
+\imagen{CP 10.2}{Resultado de la búsqueda en la página general del agente}{1}
+
+\textbf{CP 10.3 - Correcto funcionamiento del buscador de la página de agente} \\
+Realizar una búsqueda en la página del agente de un chatbot y comprobar que el resultado de la búsqueda es correcto.
+\imagen{CP 10.3}{Resultado de la búsqueda en un agente}{1}
+
+\textbf{CP 10.4 - Correcto funcionamiento del buscador de la página de entidades} \\
+Realizar una búsqueda en la página de entidades de un chatbot y comprobar que el resultado de la búsqueda es correcto.
+\imagen{CP 10.4}{Resultado de la búsqueda en entidades}{1}
+
+\textbf{CP 10.5 - Correcto funcionamiento del buscador de la página de intents} \\
+Realizar una búsqueda en la página de intents de un chatbot y comprobar que el resultado de la búsqueda es correcto.
+\imagen{CP 10.5}{Resultado de la búsqueda en intents}{1}
+
+\textbf{CP 10.6 - Correcto funcionamiento del buscador de la página de entidad} \\
+Realizar una búsqueda en la página una entidad y comprobar que el resultado de la búsqueda es correcto.
+\imagen{CP 10.6}{Resultado de la búsqueda en una entidad}{1}
+
+\textbf{CP 10.7 - Correcto funcionamiento del buscador de la página de intent} \\
+Realizar una búsqueda en la página de un intent y comprobar que el resultado de la búsqueda es correcto.
+\imagen{CP 10.7}{Resultado de la búsqueda en un intent}{1}
+
+
+\subsubsection{Traductor}
+Se busca que se cumplan los siguientes casos de prueba:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 11 - Traductor   \\
+\midrule
+CP 11.1 - Traducción completa de inglés a español  \\
+CP 11.2 - Traducción completa de español a inglés \\
+CP 11.3 - Comprobación de datos traducidos del agente \\
+CP 11.4 - Comprobación de datos traducidos de las entidades \\
+CP 11.5 - Comprobación de datos traducidos de las intents \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para los buscadores}
+\end{table}
+
+\textbf{CP 11.1 - Traducción completa de inglés a español} \\
+Iniciar el proceso de traducción de un chatbot en inglés a español y comprobar si funciona correctamente.
+\imagen{CP 11.1 - 1}{Traducción de inglés a español}{1}
+\imagen{CP 11.1 - 2}{Comprobación por consola}{1}
+
+\textbf{CP 11.2 - Traducción completa de español a inglés} \\
+Iniciar el proceso de traducción de un chatbot en español a inglés y comprobar si funciona correctamente.
+\imagen{CP 11.2 - 1}{Traducción de español a inglés}{1}
+\imagen{CP 11.2 - 2}{Comprobación por consola}{1}
+
+\textbf{CP 11.3 - Comprobación de datos traducidos del agente} \\
+Realizar una búsqueda en la página del agente de un chatbot y comprobar que el resultado de la búsqueda es correcto.
+\imagen{CP 11.3 - 1}{Comprobar traducción agente (en-es)}{1}
+\imagen{CP 11.3 - 2}{Comprobar traducción agente (es-en)}{1}
+
+\textbf{CP 11.4 - Comprobación de datos traducidos de las entidades} \\
+Realizar una búsqueda en la página de entidades de un chatbot y comprobar que el resultado de la búsqueda es correcto.
+\imagen{CP 11.4 - 1}{Comprobar traducción entidades (en-es)}{1}
+\imagen{CP 11.4 - 2}{Comprobar traducción entidades (es-en)}{1}
+
+\textbf{CP 11.5 - Comprobación de datos traducidos de las intents} \\
+Realizar una búsqueda en la página de intents de un chatbot y comprobar que el resultado de la búsqueda es correcto.
+\imagen{CP 11.5 - 1}{Comprobar traducción intents (en-es)}{1}
+\imagen{CP 11.5 - 2}{Comprobar traducción intents (es-en)}{1}
+
+
+\subsection{Administrador}
+Para evitar tener que tratar con el archivo de acceso de los usuarios, se ha creado una pantalla aparte para el administrador, donde se puede eliminar los usuarios que estén registrados. Para acceder a dicho ``\textit{superusuario}'', se introduce \textit{administrador@administrador.com} con contraseña \textit{admin}.
+
+Se comprueba el correcto funcionamiento de los siguientes casos de prueba:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\toprule
+CP 12 - Administrador   \\
+\midrule
+CP 12.1 - Correcto acceso a la cuenta del administrador  \\
+CP 12.2 - Mostrar todos los usuarios registrados \\
+CP 12.3 - Buscar usuario \\
+CP 12.4 - Eliminar usuario \\
+\bottomrule
+\end{tabular}
+\caption{Casos de prueba testeados para el administrador}
+\end{table}
+
+\textbf{CP 12.1 - Correcto acceso a la cuenta del administrador} \\
+Acceder a la página de administración.
+\imagen{CP 12.1}{Acceso a la página de administrador}{1}
+
+\textbf{CP 12.2 - Mostrar todos los usuarios registrados} \\
+Comprobar si se muestran todos los usuarios registrados en la página del administrador.
+\imagen{CP 12.2 - 1}{Usuarios en la interfaz}{1}
+\imagen{CP 12.2 - 2}{Usuarios en la tabla}{1}
+
+\textbf{CP 12.3 - Buscar usuario} \\
+Comprobar que el buscador encuentra al usuario concreto correctamente.
+\imagen{CP 12.3}{Buscar un usuario}{1}
+
+\textbf{CP 12.4 - Eliminar usuario} \\
+Aprovechando la búsqueda anterior, eliminamos ese usuario.
+\imagen{CP 12.4 - 1}{Eliminación del usuario}{1}
+\imagen{CP 12.4 - 2}{Comprobación de la tabla}{1}

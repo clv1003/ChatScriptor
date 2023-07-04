@@ -1,0 +1,145 @@
+\capitulo{5}{Aspectos relevantes del desarrollo del proyecto}
+En este apartado, se va a comentar todo lo relacionado con el proyecto y su realización. Desde cómo se ha empezado, las decisiones tomadas, los problemas encontrados, etc.
+
+\section{Inicio del proyecto}
+La idea de poder realizar un proyecto de desarrollo software y más concretamente del diseño de interfaces siempre ha sido una de las cosas que más me ha llamado la atención desde que empecé mis estudios. 
+
+Esta es la razón principal por la que, en el momento en el que me puse a buscar un tema para el proyecto, este fue el elegido.
+
+Una vez se dio el visto bueno y se me otorgó el tema, comenzó el proceso de desarrollo.
+
+\imagen{CSLogoCompleto}{Logo ChatScriptor}{1.0}
+
+\section{Metodologías}
+A la hora de poder mantener una organización y un buen proceso de desarrollo, tal y como se nos enseñó en algunas de las asignaturas de la carrera, se estableció desde el principio el uso de metodologías ágiles. Se debe tener en cuenta que, al tratarse de un proyecto en el que no interviene un gran equipo, esta metodología se ha tratado de forma flexible.
+
+\subsection{¿Cómo se ha aplicado?}
+\begin{itemize}
+    \item Se estableció una fecha objetivo para la finalización del proyecto.
+    \item Se estableció la realización de \textit{sprints} cada dos semanas, aunque una vez se acercaba la fecha de objetivo, se incrementaron haciéndolas cada semana.
+    \item En cada fin de \textit{sprint}, se entregaba una parte incremental funcional del proyecto, se realizaba una reunión de revisión y, en la misma, se establecían las tareas para la siguiente iteración del proyecto.
+    \item Una vez se establecían dichas tareas, se ha realizado un tablero nuevo en \textit{Trello} de tareas a completar, ordenadas con una plantilla de colores que ha determinado su prioridad.
+\end{itemize}
+
+\section{Formación}
+Para poder realizar el proyecto, se han utilizado muchos de los conceptos aprendidos a lo largo de mi trayectoria académica en la Universidad de Burgos, pero respecto al desarrollo web, ha habido una gran parte del tiempo invertido en el auto-aprendizaje e investigación personal.
+
+Se han realizado pruebas de proyectos de desarrollos web con la idea de conocer el funcionamiento antes de comenzar con el trabajo final. Además de investigar entre varias comunidades como \textit{StackOverflow} o tutoriales en la plataforma de \textit{Youtube}, para adquirir ciertas habilidades.
+
+
+\section{Desarrollo del proyecto}
+En esta sección, se explicarán los diferentes puntos a completar para conseguir cumplir los diferentes objetivos propuestos para el proyecto. Siendo los problemas generales que se han querido solventar:
+
+\begin{enumerate}
+    \item \textbf{La visualización de los datos del agente, las entidades y los \textit{intents}}. Debido a la similitud de las pantallas en la interfaz oficial, se ha querido implementar una visualización de los datos de tal forma, que el usuario pueda tener toda la información lo más limpia posible.
+    \item \textbf{En el caso de querer buscar una entidad o \textit{intent} para ver o cambiar su información, se debe ir accediendo a cada una individualmente.} Es por esto, que se ha querido desarrollar una serie de buscadores que permitan obtener la información rápidamente, ofreciendo una función que antes no existía.
+    \item \textbf{Obtener un informe representativo de los \textit{intents}.} Esto permitiría buscar y poder obtener las frases de entrenamiento a golpe de vista, permitiendo al usuario obtener fácilmente una vista de las diferentes opciones del chatbot.
+\end{enumerate}
+
+Se comenzó interactuando con la página como si de un usuario que quiere crear chatbots para uso personal se tratase. Con esto, se obtuvieron los primeros contactos e impresiones para realizar una exhaustiva investigación, así como la lectura de las documentaciones.
+
+El primer paso en el desarrollo, fue crear una interfaz que fuera capaz de mostrar la información de los chatbots a través del tratamiento de sus archivos \textit{json} obtenidos de la exportación de la página oficial. Con esto, se pudo planificar la estructura inicial de la página, así como la eliminación de toda la información irrelevante para el usuario.
+
+Una vez, este prototipo se desarrolló y se le incluyó la capacidad de visualización, se agregaron funcionalidades y se eliminaron ciertas opciones a causa de las restricciones presentadas por Google ante la creación de identificadores propios, desarrollado más adelante en el apartado de ``\textit{Aspectos relevantes del proyecto}''.
+
+Cuando las funciones básicas estaban ya cubiertas, se trabajó en la implementación de los buscadores, estableciendo que, dependiendo de la zona en la que se encontrara el usuario, el buscador mostraría las coincidencias dentro de este. Haciendo que si buscásemos un término en la pantalla inicial de selección de chatbots, buscaría entre todos los chatbots y, si estuviéramos en el agente de uno concreto, nos mostraría solo las coincidencias dentro del agente. Se pensó que esta sería una buena forma para mejora la capacidad de la interfaz original para que el usuario pudiera buscar, ver y editar la información que deseara.
+
+Al finalizar la implementación de las opciones principales, se llevó a cabo la inclusión de un traductor que posibilitara la traducción de los chatbots. Se pensó que sería una funcionalidad interesante que permitiría que los chatbots fueran multilenguaje, convirtiéndolos en un producto de gran adaptabilidad a las diferentes situaciones donde fueran a ser usados.
+
+Una vez se implementó el traductor basado en modelos de NPL (\textit{Natural Processing Language}) de ``\textit{Hugging Face}'' \cite{ModelsHu68:online}, se realizaron un gran número de pruebas, intentando mejorar todas las funcionalidades e incluso incrementar su eficiencia.
+
+Cuando se obtuvo un resultado final funcional, se realizó el despliegue mediante los servicios de \textit{Microsoft Azure}, pudiendo tener ChatScriptor en productivo: \url{https://chatscriptor.azurewebsites.net/}
+
+\section{Problemas encontrados}
+Como es habitual en el desarrollo de un proyecto, no todo lo que se planea se puede llevar a cabo.
+
+\subsection{Interacciones con la API de Dialoglow}
+Una de las primeras ideas que se barajaron para desarrollar la web fue el uso de la API de Dialogflow para realizar las peticiones de información de los chatbots. Para esto, se quiso establecer un inicio de sesión con la cuenta de Google asociada a la cuenta de Dialogflow que permitiera el acceso a los chatbots de ese usuario. El primer problema fue este mismo inicio de sesión. 
+
+Se probó si esto era posible. Se realizaron peticiones a la API, haciendo uso de \textit{Postman} \cite{PostmanA62:online}. Los resultados fueron satisfactorios para chatbots de prueba, para los cuales se obtuvo su ``token'' y su autentificador \textit{OAuth2} de forma manual. A continuación, se muestran unas capturas (ver figuras 5.2, 5.3, 5.4, 5.5 y 5.6) de ejemplo:
+\imagen{P01_agente}{Petición \textit{GET} del agente}{1}
+\imagen{P02_intents}{Petición \textit{GET} de los intents}{1}
+\imagen{P03_intent}{Petición \textit{GET} de un intent}{1}
+\imagen{P04_entidades}{Petición \textit{GET} de las entidades}{1}
+\imagen{P05_entidad}{Petición \textit{GET} de una entidad}{1}
+
+El siguiente paso fue la implementación en la propia aplicación web. Para conseguir acceso a estas interacciones vía API de forma automática, se investigaron las diferentes documentaciones que ofrece Google junto con otras encontradas de personas que en sus proyectos usaban esta API. El proceso consiste en lo siguiente:
+\begin{itemize}
+    \item Acceder a la página de la consola de Google Cloud, uno de los múltiples servicios que ofrece Google, y seguir los pasos para crear un proyecto.
+    \imagen{DialogflowAPI5}{Crear proyecto en la consola de Google Cloud}{1.0}
+    \imagen{DialogflowAPI}{Panel principal del nuevo proyecto}{.8}
+    \item Añadir las APIs que se quieran usar y habilitarlas. En este caso, la API de Dialogflow.
+    \imagen{DialogflowAPI2}{Acceso a las APIs y servicios}{.5}
+    \imagen{DialogflowAPI3}{Buscar y habilitar la API de Dialogflow}{1.0}
+    \item Crear las credenciales de acceso que se introducen en el código del proyecto.
+    \imagen{DialogflowAPI4}{Credenciales para el proyecto}{1.0}
+\end{itemize} 
+
+Con el proceso anterior, se consiguió la obtención de las credenciales. 
+
+Otro problema que se encontró al terminarlo, fue el añadir el acceso a través del inicio de sesión de Google, ya que muchas partes de la documentación tenían versiones obsoletas o se estaban sustituyendo, produciéndose un problema de compatibilidad. Aunque después de buscar y probar muchas combinaciones, se encontró la versión correcta.
+
+Una vez se pudo acceder, se realizaron pruebas con la misma cuenta asignada a la creación del proyecto en la consola de Google Cloud, esto provocó que se evitara lo que más tarde hizo que no se pudiera implementar el uso de la API. 
+
+El problema fue el siguiente: las opciones que ofrece Google para el uso de sus APIs van ligadas a un proyecto al que solo tiene acceso la cuenta que ha creado el proyecto. Visto de otra manera, si se usara un usuario diferente para iniciar sesión a la que está establecida en el proyecto, no se podría acceder. 
+
+Se buscaron varias alternativas para solucionar esto, como crear una parte en la guía de usuario que explica que como crear su proyecto con sus credenciales y modificar el código de tal forma que introduciendo dichas credenciales en la interfaz, pudieras acceder. Se llegó a la conclusión de que esto no era práctico ni mejoraría la experiencia de usuario. Además, la API está diseñada con el objetivo de que puedas personalizar un chatbot completamente, configurando campos que la web oficial no permite.
+
+La solución elegida fue desarrollar una versión a través de la exportación de los chatbots desde Dialogflow. A partir de aquí, se trabajó con los ficheros JSON.
+
+\subsection{Estructura y archivos \textit{JSON}}
+El siguiente problema encontrado, fue la estructuración de los directorios y ficheros \textit{JSON}. Que presentan la siguiente estructura genérica:
+\imagen{EstructuraGeneral}{Estructura de directorios de un chatbot ejemplo}{.3}
+
+Dialogflow te muestra los datos en archivos \textit{JSON}, donde en varias ocasiones se pueden encontrar listas con diccionarios que poseen más listas anidadas, formando archivos difíciles de tratar. Añadido a esto, dentro de los directorios que contienen entidades e \textit{intents} (\textit{entities} e \textit{intents}), nos encontramos con otra estructuración compleja que divide los archivos de cada entidad y cada \textit{intent} en dos partes que contienen información diferente.
+
+Este análisis, es también la solución, ya que se obtuvieron los puntos relevantes y la forma de unificar los archivos, determinando la información que se ha terminado mostrando por pantalla.
+
+\subsection{Generación de identificadores}
+El siguiente problema descubierto, está relacionado con la adición de información en aquellos zonas que necesitan la generación de identificadores. 
+
+Como posible solución, se intentó implementar un método de generación de identificadores o \textit{IDs} con la misma estructura con la que los creo el propio Dialogflow. A pesar de que dichos IDs no coincidían con los originados por la aplicación oficial, al intentar importar el chatbot con las partes nuevas en la aplicación oficial, nos indica que algo falla al cargar el agente. Por esta razón, la capacidad de añadir la información se ha reducido a aquellos lugares que no dependan de identificadores.
+
+\subsection{Traductor}
+Respecto al traductor, han surgidos diversas complicaciones. Se ha tratado de implementar mediante APIs de diferentes traductores, siendo el principal problema el tamaño de los chatbots (presentan una gran variabilidad) y las limitaciones de los propios traductores (en cuanto a opciones y número de palabras). Por lo que se tuvieron que buscar alternativas.
+
+La solución encontrada ha sido el uso de modelos entrenados desarrollados en ``\textit{Hugging Face}'' \cite{ModelsHu68:online} (\url{https://huggingface.co/}).
+
+Estos modelos permiten realizar la traducción a un idioma, teniendo en local los archivos del idioma. Esto nos da la ventaja de que la traducción no depende de algo exterior al proyecto, pero al mismo tiempo, genera que aumente el tamaño del proyecto, lo que genera otro tipo de problemas.
+
+\subsection{Despliegue de la aplicación web}
+El problema que genera el uso de los modelos de traducción es el aumento de tamaño del proyecto, tal y como se ha explicado anteriormente. Esta es la razón por la cual se ha tenido que extender la búsqueda del servidor de despliegue a aquellos que posean un límite amplio de capacidad de almacenamiento.
+
+Durante la investigación, se barajaron varias posibilidades como los servicios del propio Google, el despliegue en GitHub (que está limitado a aplicaciones estáticas), Heroku, entre otros muchos. De entre estas opciones apareció la idea de usar la cuenta educativa en los servicios de Azure \cite{Document56:online}, esperando conseguir alguna alternativa, ya que sus servidores en la versión gratuita están muy limitados, pero al final esta resultó ser la solución.
+
+Debido a dicha cuenta educativa, \textit{Microsoft Azure} ofrece 100\$ para la realización de pruebas en todos sus servicios. Con esto, se pudo elegir un plan que permitiera tener el almacenamiento suficiente.
+
+\subsection{Opciones de importación y restauración en Dialogflow}
+Una vez se realizan todos los cambios pertinentes del agente en ChatScriptor y queremos volverlo a importar en Dialogflow, se ha descubierto que tanto la opción de importación como de restauración ofrecidas no tiene un funcionamiento pulido.
+
+ Varios de los problemas son la falta de carga de los archivos \textit{JSON}, es decir, algunas partes de los mismos no las interpreta y no las cambia. Algunos ejemplos de esto son la carga de la imagen del agente, así como las respuestas de los \textit{intents}, punto muy relevante para el chatbot.
+
+
+\section{Testing}
+A la hora de hacer pruebas sobre la aplicación, surgieron una serie de cuestiones a tener en cuenta.
+
+Al no poder utilizar la API de Dialogflow para realizar las peticiones, se tuvo que cambiar la forma de pensar de todo el funcionamiento de la aplicación web y con ello la forma de probarla. Añadir a esto, que tampoco era posible añadir información en todos aquellos lugares donde había un identificador. Por consiguiente, ha sido necesario tener unos chatbots de prueba creados desde Dialogflow para poder añadirlos y hacer las pruebas.
+
+Todo esto, ha llevado a que el proceso de pruebas de cada una de las funciones y pantallas se haya realizado de forma manual. Estas pruebas se realizaron por pares (auto-test y por parte del tutor del proyecto), con chatbots tanto de ejemplo que permite crear Dialogflow, como por chatbots creados para uso personal.
+
+Todas las pruebas, desarrolladas en el ``\textit{Anexo D. Manual del programador}'', se han realizado tanto en desarrollo (a través de un servidor local) y a través del servidor en producción.
+
+\section{Documentación}
+Desde la primera reunión, se ha establecido que la memoria se haría con la plantilla en \LaTeX, utilizando el editor online \textit{Overleaf}. 
+
+Para la toma de notas de las reuniones y otros apuntes que se incluyen en esta memoria, se utilizó \textit{Microsoft OneNote}. 
+
+
+\section{Uso en producción}
+A la hora de poner este proyecto en producción, se han analizado muchas de las opciones más conocidas para hospedar aplicaciones web. Muchas de ellas proporcionan servicios gratuitos muy básicos, que para páginas web estáticas o para pequeños proyectos son interesantes.
+
+El problema que se ha encontrado, explicado en apartados anteriores, ha sido el almacenamiento. Los modelos de traducción usados ocupan un amplio lugar en disco, por lo que es necesario que el servidor donde se despliegue la aplicación tenga la posibilidad de almacenar el traductor y todos los chatbots con los que trabaja cada usuario que, a pesar de ser archivos de pequeño tamaño, si nos ponemos en la situación de tener numerosos usuarios con varios chatbots cada uno, podría llegar a provocar problemas de capacidad. Para reducir el tamaño, se tomo la decisión de hacer el despliegue utilizando contenedores Docker.
+
+La solución que se ha encontrado a los problemas de almacenamiento de este tipo, a largo plazo, consiste en establecer fechas de caducidad para los chatbots que lleven un determinado tiempo sin ser usados, con previo aviso al dueño de los mismos. Esta idea no será desarrollada a fechas de entrega, pero formará parte de las ``\textit{Líneas de trabajo futuras}''.
+
+La página resultante se encuentra en la siguiente dirección: \url{https://chatscriptor.azurewebsites.net/}

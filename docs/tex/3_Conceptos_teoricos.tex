@@ -1,0 +1,144 @@
+\capitulo{3}{Conceptos teóricos}
+En este apartado se explicarán de manera teórica todos los conceptos y detalles necesarios para el completo entendimiento del proyecto.
+
+En primera instancia, se incluyen conceptos sobre chatbots, su funcionamiento y cuáles son las consecuencias de su uso en la vida cotidiana. En el segundo apartado, se desarrollan las alternativas que existen en el mercado. Por último, se analizará en profundidad la página de Dialogflow en su estado actual.
+
+\section{Introducción a chatbots}
+Tal y como se ha descrito en la introducción de esta memoria, los chatbots son herramientas software que permiten realizar una serie de interacciones con respuestas inmediatas. 
+
+En esta sección, se hablará de los diferentes tipos de tecnologías que utilizan los agentes virtuales actuales, así como sus tipos, cuáles de estas son las que utilizan y cómo influye su uso en la sociedad.
+
+Como primera idea, debemos saber que los chatbots trabajan con una combinación de diferentes técnicas como son la inteligencia artificial, los modelos de interacción Hombre-Máquina \cite{bansal2018review} y el ``Natural Language Processing'' (NLP) \cite{khurana2023natural} o ``Procesamiento del Lenguaje Natural'' (PLN), que permiten que los chatbots puedan realizar sus actividades objetivo. 
+
+A continuación se muestra una figura esquemática (ver Figura 3.1) extraída del artículo ``\textit{An Overview of Machine Learning in Chatbots}'' \cite{suta2020overview}, que muestra una vista general de un chatbot.
+
+\imagen{PropertiesChatbots}{Esquema introductorio para chatbots \cite{suta2020overview}}{1.0}
+
+\subsection{Tecnologías detrás del funcionamiento de los chatbots}
+Hablemos de las tecnologías que intervienen en el funcionamiento de estos productos software. 
+
+A lo largo de los últimos años, se ha visto como este tipo de elementos se han desarrollado y se han introducido en nuestras vidas sin saber exactamente cómo funcionan. 
+
+En primer lugar, una de las herramientas más conocidas y que interviene en gran medida en este proceso, es la \textbf{inteligencia artificial}.
+
+Siguiendo su definición: ``\textit{Disciplina científica que se ocupa de crear programas informáticos que ejecutan operaciones comparables a las que realiza la mente humana, como el aprendizaje o el razonamiento lógico}'' \cite{intelige84:online}, obtenida del diccionario de la \textit{Real Academia Española} en su edición 23, se puede establecer como la lógica detrás de la generación de respuestas coherentes a las entradas del usuario al mantener una conversación con un chatbot. 
+
+El campo de la inteligencia artificial es inmenso, con lo que debemos buscar aquellas áreas que se encarguen de procesos concretos para la realización de funciones como son el procesamiento del lenguaje o el aprendizaje automático.
+
+\subsubsection{Aprendizaje automático (\textit{Machine Learning})}
+El primer gran grupo que interviene en el funcionamiento de los asistentes virtuales dentro de la inteligencia artificial, es el aprendizaje automático o \textit{machine learning}, definido como los algoritmos computacionales que, basados en la inteligencia humana y las redes neuronales, es capaz de analizar y obtener la información relevante de un conjunto de datos en busca de patrones, en nuestro caso lingüísticos o auditivos, adquiriendo de ellos conocimientos para mejorar y predecir comportamientos a partir de los que ya se han producido \cite{el2015machine}. Viendo esta acepción, es más que obvio la elevada relevancia que tiene y la capacidad de adaptabilidad que otorga a los agentes.
+
+Concretando en nuestro objetivo, esta tecnología permite a los chatbots analizar los mensajes recibidos de los usuarios, clasificar e identificar la información relevante, generar una respuesta y predecir lo siguiente que puede ser preguntado por el usuario.
+
+\subsubsection{Natural Language Processing (NLP)}
+Otro punto muy importante a la hora de tratar con conversaciones humanas en las que es relevante el contexto, es la comprensión de esa situación por parte de nuestra máquina. Para completar este objetivo, se combina el aprendizaje automático junto con los Procesadores de Lenguaje Natural (PLN) o ``\textit{Natural Language Processing}'' (NLP).
+
+En este caso, suelen intervenir tres herramientas conjuntamente, los procesadores del lenguaje natural y, dentro de su ámbito, el ``\textit{Natural Language Understanding}'' (NLU) y el ``\textit{Natural Language Generation}'' (NLG).
+
+El primero de ellos (NLP) \cite{nadkarni2011natural}, es el encargado de establecer las interacciones entre el agente y el usuario. Esto conlleva que el chatbot tenga la necesidad de conocer y comprender el lenguaje, su sintaxis principalmente, permitiendo analizar la conversación y entenderla.
+
+Esto nos deja con un problema, ya que comprender y conocer la sintaxis de un idioma, muchas veces no es lo que se busca en un agente conversacional, si no que también se quiere que la máquina comprenda semánticamente la conversación, permitiendo que las respuestas puedan ser más concretas y fiables. Para esto se utiliza el ``\textit{Natural Language Understanding}'' (NLU) \cite{bates1995models}, capaz de interpretar y extraer el contexto.
+
+Teniendo estas dos tecnologías implementadas en nuestros chatbots, faltaría una última función importante, ya que a parte de comprender sintácticamente y semánticamente una conversación, un asistente debe ser capaz de hacer el proceso contrario, generar de manera coherente las respuestas. La herramienta encargada de esto es el ``\textit{Natural Language Generation (NLG)}'' \cite{mcdonald2010natural}, que le otorga la habilidad de poder generar la información estructurada y bien redactada a partir de los datos que ya posee y que ya ha analizado (\textit{machine learning}).
+
+Para finalizar, es importante guardar un histórico, tanto de la parte sintáctica como de la semántica, que fomentará que la siguiente interacción pueda ser mejor, permitiendo al agente tener un grupo de conocimientos que ya conoce y otros que no, creando un posible contenido relevante para esa conversación.
+
+\subsection{Tipos de chatbots}
+Las tecnologías explicadas anteriormente son una base general para tener conocimientos básicos sobre el funcionamiento de los chatbots, pero no todos hacen uso de todas, incluso hay algunos que no las utilizan.
+
+Para crear una clasificación mucho más clara, se hará uso de una serie de parámetros. Esta diferenciación está basada en la desarrollada en el artículo ``\textit{An Overview of Chatbot Technology}'' \cite{hussain2019survey}.
+
+La primera forma de clasificación se centra en el alcance que tiene un chatbot para obtener el conocimiento.
+\begin{itemize}
+    \item Dominio abierto: este hace referencia a los chatbots en los que los conceptos son globales, con un gran acceso y alcance a mucho contenido.
+    \item Dominio cerrado: son asistentes creados para usos concretos y de campos más precisos, donde sus conocimientos están preestablecidos.
+\end{itemize}
+
+La segunda clasificación se basa en el tipo de relación que se establece entre el usuario y la máquina.
+\begin{itemize}
+    \item Interpersonal: son aquello en los que la comunicación es mucho más fría. Son los más usados para los agentes de preguntas frecuentes o de ejecución de comandos, entre otros.
+    \item Intrapersonal: poseen cierta personalidad que los hace más cercanos con el usuario. Se utilizan en aplicaciones de redes sociales como \textit{Discord} o \textit{Telegram}.
+\end{itemize}
+
+La siguiente y última clasificación, es la más representativa, ya que se tiene en cuentan las tecnologías que utiliza.
+\begin{itemize}
+    \item Basado en reglas: estos se programan bajo unas directrices que utilizan cuando el usuario emplea una serie de términos específicos. Esto los convierte en los más precisos, pero a la vez, en los menos adaptable e inflexibles.
+    \item Basado en inteligencia artificial: son los asistentes más versátiles, pudiendo analizar las conversaciones y las interacciones para generar una respuesta en tiempo real.
+\end{itemize}
+
+\subsection{Consecuencias en el mundo real}
+Conocido el funcionamiento interno que tienen los chatbots, es posible vislumbrar el inmenso número de puertas que nos abre. Este apartado tratará de resumir algunos de los ámbitos más importantes, ya que durante la investigación se han encontrado un exorbitante número de artículos relacionados.
+
+\subsubsection{Educación}
+Uno de esto campos es el de la educación \cite{cunningham2019review}. Visto que los agentes virtuales poseen un gran potencial a la hora de introducirse en las aulas, podrían llegar a ser un elemento clave en la interacción alumno-profesor.
+
+Una de las posibles aplicaciones es el uso de un chatbot abierto las 24 horas del día para preguntas frecuentes, permitiendo al alumno resolver sus dudas rápidamente. Esto aporta una serie de beneficios, también para el profesor, porque podrá ver las estadísticas de aquellos conceptos que han sido más buscados y poder insistir en la explicación de los mismos. Además, si se utiliza un tipo de chatbot mediante inteligencia artificial, se podría tener una máquina capaz de ir añadiendo los conceptos nuevos basándose en la frecuencia de las preguntas.
+
+Siguiendo dentro de esta categoría, otra posible utilidad sería crear chatbots con cuestionarios que permitan a los alumnos profundizar de forma práctica los conocimientos impartidos, así como tenerlos disponibles en cualquier momento y lugar, evolucionando la forma de aprender. No todo son cosas positivas, ya que, como bien está descrito en el artículo de \textit{Sam Cunningham-Nelson} y colaboradores (``\textit{A review of chatbots in education: Practical steps forward}'') \cite{cunningham2019review}, estaríamos adentrándonos en la creación de chatbots de una complejidad mucho más elevada, además de tener que adaptar el concepto de aprendizaje. Siendo esta una idea muy interesante, es recomendable usarlo como mecanismo de apoyo y no como como algo único a la hora de hablar de educación.
+
+\subsubsection{Sanidad}
+El siguiente sector es el de la sanidad \cite{xu2021chatbot}. Al igual que cuando se ha tratado el de educación, no se puede sustituir la tradicional forma de cubrir las necesidades médicas con este tipo de tecnología, pero si que pueden resultar bastante útiles en varios aspectos.
+
+En el artículo ``\textit{Chatbot for Health Care and Oncology Applications Using Artificial Intelligence and Machine Learning: Systematic Review}'' \cite{xu2021chatbot}, explican como los agentes virtuales pueden mejorar la experiencia del paciente, pudiendo recibir información verídica a sus dudas o ser intermediario en situaciones delicadas. Además de poder obtener datos informativos de la evolución de las enfermedades y cómo reacciona un paciente a los tratamientos, permitiendo predecir o detectar más rápidamente otros problemas.
+
+Otra posible aplicación es la capacidad de mejorar el estilo de vida de la población, consiguiendo crear chatbots con rutinas de cuidado físico y psicológico, todo ello siguiendo con la facilidad de disponibilidad de esta herramienta.
+
+\subsubsection{Comercio electrónico}
+Otro área que utiliza con gran frecuencia estos asistentes, es el comercio electrónico. Las oportunidades que puede ofrecer un chatbot de cara a un página de venta de productos en línea son muy elevadas. 
+
+Podemos encontrarnos agentes encargados de la asistencia técnica, como tiene \textit{Amazon}, o los que realizan comparativas de productos con el único objetivo de facilitar al cliente la toma de decisiones, o encontrarnos otros mucho más complejos, como \textit{SuperAgent} \cite{cui2017superagent}, un chatbot especializado en la búsqueda de información que al cliente le puede resultar relevante sobre el producto que está viendo en ese momento, usando todos los datos disponibles públicamente y a gran escala. 
+
+\subsubsection{Marketing}
+Por último, el siguiente sector donde más se usan los chatbots es en Marketing \cite{barics2020new}. 
+
+Varias de las posibilidades que ofrecen los agentes se centran en la promoción de productos y en devolver la retroalimentación de los mismos, pero también son claves en el uso de las redes sociales, base fundamental del marketing en los tiempos actuales. Las funciones principales a las que se dedican este tipo de asistentes es a responder mensajes claros y fáciles de interpretar, generar una nueva interacción cuando un producto ha sido lanzado al mercado, entre otras muchas actividades representativas.
+
+\subsubsection{Lo más conocido}
+Todo lo anterior nos vale como marca representativa en situaciones y campos específicos, donde son claros los objetivos de los usuarios que los utilizan, pero es cierto que actualmente, existen varios chatbots muy reconocidos que ofrecen una innumerable cantidad de recursos. 
+
+Entre estos están los siguientes: \textit{Siri} \cite{SiriAppl32:online}, \textit{Alexa} \cite{AmazonAl60:online}, \textit{Google Assistant} \cite{Asistent39:online}, \textit{Cortana} \cite{Cortana96:online} y \textit{ChatGPT} \cite{ChatGPT91:online}. Debido a los mercados de hoy en día, todas las grandes empresas, desarrollan sus propios agentes, pero el objetivo que tienen todos es muy similar, facilitar las actividades cotidianas teniendo esta herramienta disponible en cualquiera de nuestros dispositivos digitales.
+
+
+\section{Dialogflow}
+Tal y como se ha explicado con antererioridad, Dialogflow es una plataforma de Google de creación y gestión de agentes\footnote{Término usado por Dialogflow para definir a los chatbots.} que basa su funcionamiento en el entendimiento del lenguaje natural.
+
+En este apartado, se analizará la aplicación web de Dialogflow, realizando los correspondientes comentarios y razones por los que se podría mejorar.
+
+\subsection{Acceso}
+El acceso a la web oficial es un tanto confuso, ya que si hacemos la consulta en el buscador, el primer enlace, el que suele ser para cualquier web su página principal, nos encontramos, directamente, con la página de compra del producto.
+
+\imagen{Busqueda}{Búsqueda desde Google de Dialogflow \cite{Dialogfl63:online}}{.7}
+
+No es hasta el apartado de ediciones, encontrado en la parte inferior, que se desvela el acceso a la versión gratuita de Dialogflow.
+
+Esto ya es una desventaja. Un usuario espera hacer una sencilla búsqueda y encontrar el resultado con facilidad.
+
+\subsection{Interfaz principal}
+Una vez accedemos a la pantalla principal se nos muestra una interfaz de diseño sencillo. Las divisiones de las distintas partes, al estar en una tonalidad muy parecida, dificultan en leve medida su distinción.
+
+Al iniciar el proceso de creación de un agente\footnote{Término usado por Dialogflow para los chatbots.}, nos aparece una interfaz donde se nos pide indicar diferentes parámetros iniciales, entre ellos y del cual se habla en el apartado de ``\textit{Aspectos relevantes}'', la creación de un proyecto \textit{Google Cloud}, pero no se explica claramente la función de este parámetro, ya que es probable que para el tipo de chatbot que nos permite crear esta versión gratuita, no sea relevante. Además de esto, como cada asistente va asignado a uno de estos proyectos de Google y se tiene una limitación a la hora de crearlos, suma otra desventaja. Añadir que el borrado de un proyecto de este tipo, en caso de necesitar crear un nuevo chatbot, conlleva esperar a que pase un tiempo antes de que este se haya desactivado y podamos generar uno nuevo.
+
+Una vez hemos creado esta parte, llegamos al menú principal del agente, con estética idéntica al de la creación del agente o la del inicio, si no tenemos ningún chatbot creado.
+
+\imagen{P01}{Primera pantalla después de crear un agente}{.8}
+
+En la barra de navegación de la parte izquierda, podemos ir accediendo a las entidades e intents de nuestro chatbot y para acceder a la configuración, a través del engranaje al lado del nombre. 
+
+Centrándonos en las partes importantes, veamos la creación de un nuevo intent y una nueva entidad. 
+
+\begin{itemize}
+    \item Entidad: este primer elemento permite establecer sinónimos de palabras o acciones claves. Su creación se centra en ir añadiendo filas a una tabla con los diferentes vocablos.
+    \imagen{P02}{Creación de entidad}{.8}
+    
+    \item Intent: es el lugar donde se establecen la frases de entrenamiento y las normas o reglas que sigue el chatbot para contestar. Su creación se basa en ir añadiendo dichas frases en tablas. Al contrario que en las entidades, crea uno por defecto con saludos iniciales de conversación.
+    \imagen{P03}{Frases de entrenamiento}{.8}
+    \imagen{P04}{Respuestas}{.8}
+\end{itemize}
+
+La parte negativa de esto, es la similitud de ambas interfaces, ya que esto confunde en que parte estás. Además, la gran cantidad de parámetros que están disponibles están poco explicados, lo que dificulta saber cuál es el efecto que tendrán sobre el agente. Es cierto que se dispone de una extensa documentación \cite{Document16:online}, pero esto no es algo que se consulte con frecuencia por los usuarios y sería algo más claro si se añadiera una zona de parámetros más específicos de configuración que fuera ocultada hasta que el usuario quisiera especificarlos.
+
+Siguiendo con la configuración (engranaje) del agente, es donde encontraremos los parámetros para establecer una imagen y descripción al asistente, así como la opción de importar, restaurar o exportar, entre otras. También posee un apartado de ``\textit{Language}'', esta funcionalidad está creada con el objetivo de poder tener el agente en varios idiomas, pero no funciona tan bien como debería. Este ha sido uno de los principales objetivos de este proyecto, crear una opción dentro de la aplicación que permita traducir el chatbot generando uno equivalente en el idioma deseado.
+
+\imagen{P05}{Interfaz de configuración del agente}{.8}
+
+Como último detalle, Dialogflow incluye buscadores tanto en entidades como en \textit{intents}. Cuando se realiza un búsqueda en ellos, estos proporcionan una respuesta sobre los datos que se ven en pantalla. Esto provoca búsquedas algo engorrosas, puesto que si estamos buscando un término concreto que aparezca dentro de varias de las frases o de los sinónimos, no aparecerán y tendremos que ir uno por uno localizando lo que queramos cambiar. Al igual que con el traductor, este ha sido otro de los objetivos del trabajo.
